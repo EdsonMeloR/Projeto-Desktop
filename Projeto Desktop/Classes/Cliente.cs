@@ -52,6 +52,8 @@ namespace Projeto_Desktop.Classes
         { }
         public void AlterarSenhaCliente()
         { }
+        public void EfetuarLogin(string email, string senha)
+        { }
         public string GerarSenhaMd5(string senha)
         {
             var hash = MD5.Create();
