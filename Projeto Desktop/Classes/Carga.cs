@@ -55,10 +55,10 @@ namespace Projeto_Desktop.Classes
         /// <summary>
         /// Método utilizando para inserir carga
         /// </summary>      
-        public void inserirCarga(int _idPedido, double _peso,double _largura,double _altura, double _comprimento,string _nomeProduto,string _detalhesProduto)
+        public void InserirCarga(int _idPedido, double _peso,double _largura,double _altura, double _comprimento,string _nomeProduto,string _detalhesProduto)
         {
             db = new Banco();
-            var comm = db.AbrirConexao(out _);
+            var comm = db.AbrirConexao();
             comm.CommandType = CommandType.StoredProcedure;
             comm.CommandText = "insert_carga";
             comm.Parameters.Add("_idpedido", MySqlDbType.Int32).Value = _idPedido;
@@ -70,12 +70,12 @@ namespace Projeto_Desktop.Classes
             comm.Parameters.Add("_detalhesproduto", MySqlDbType.VarChar).Value = _detalhesProduto;
             this.Id = Convert.ToInt32(comm.ExecuteScalar());
         }
-        public bool atualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto)
+        public bool AtualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto)
         {
             db = new Banco();
             try 
             { 
-                var comm = db.AbrirConexao(out _);
+                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_carga";            
                 comm.Parameters.Add("_peso", MySqlDbType.Decimal).Value = _peso;
@@ -94,12 +94,16 @@ namespace Projeto_Desktop.Classes
                 return false;
             }
         }
+        /// <summary>
+        /// Consultand carga
+        /// </summary>
+        /// <param name="_id"></param>
         public void ConsultarCarga(int _id)
         {
             db = new Banco();
             try
             {
-                var comm = db.AbrirConexao(out _);
+                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from carga where idCarga = " + _id;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -126,7 +130,7 @@ namespace Projeto_Desktop.Classes
             List<Carga> listaCarga = new List<Carga>(); ;
             try
             {
-                var comm = db.AbrirConexao(out _);
+                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from carga";
                 var dr = comm.ExecuteReader();
 
@@ -160,7 +164,7 @@ namespace Projeto_Desktop.Classes
             List<Carga> listaCarga = new List<Carga>(); ;
             try
             {
-                var comm = db.AbrirConexao(out _);
+                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from carga where idPedidos = "+ _idPedido;
                 var dr = comm.ExecuteReader();
 

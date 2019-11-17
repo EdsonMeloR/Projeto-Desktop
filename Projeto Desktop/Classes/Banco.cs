@@ -13,7 +13,7 @@ namespace Projeto_Desktop.Classes
 
         public Banco()//Método Construtor
         { }        
-        public MySqlCommand AbrirConexao(out string Erro)//Método que abre conexão com banco de dados
+        public MySqlCommand AbrirConexao()//Método abre conexão com banco de dados
         {
             stringBuilder.Database = "prosperitydb";
             stringBuilder.Server = "192.168.1.17";
@@ -28,14 +28,13 @@ namespace Projeto_Desktop.Classes
                 comm = new MySqlCommand
                 {
                     Connection = cn
-                };
-                Erro = "";
+                };                
                 return comm;
             }
             catch (Exception ex)
             {
-                Erro = "Erro capturado: " + ex.Message.ToString();
-                return comm = null;
+                ex.Message.ToString();
+                return null;
             }
         }
     }

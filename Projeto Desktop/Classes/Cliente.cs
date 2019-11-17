@@ -47,7 +47,7 @@ namespace Projeto_Desktop.Classes
         //Métodos
         public void InserirCliente(string _razaoSocial, string _cnpj, string _email, string _inscricaoEstadual, string _senha, string _telefone, string _nomeContato)
         {
-            var comm = db.AbrirConexao(out _);
+            var comm = db.AbrirConexao();
             comm.CommandType = CommandType.StoredProcedure;
             comm.CommandText = "insert_cliente";
             comm.Parameters.Add("_razaosocial", MySqlDbType.VarChar).Value = _razaoSocial;
@@ -68,7 +68,7 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             try
             {
-                var comm = db.AbrirConexao(out _);
+                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_cliente";
                 comm.Parameters.Add("_idcliente", MySqlDbType.Int32).Value = _idcliente;
@@ -90,7 +90,7 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             try
             {
-                var comm = db.AbrirConexao(out _);
+                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from cliente where idCliente = " + _id;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -117,7 +117,7 @@ namespace Projeto_Desktop.Classes
             
             try
             {
-                var comm = db.AbrirConexao(out _);
+                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from cliente";
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -148,7 +148,7 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             try
             {
-                var comm = db.AbrirConexao(out _);
+                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_password_cliente";
                 comm.Parameters.Add("_idcliente", MySqlDbType.Int32).Value = _idcliente;
@@ -167,7 +167,7 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             try
             {
-                var comm = db.AbrirConexao(out _);                
+                var comm = db.AbrirConexao();                
                 comm.CommandText = "select * from cliente where Cnpj = '"+_cnpj+"' && Senha = '"+GerarSenhaMd5(_senha)+"'";                
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
