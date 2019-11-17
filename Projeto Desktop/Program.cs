@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projeto_Desktop.Formularios;
 
 namespace Projeto_Desktop
 {
@@ -16,7 +17,7 @@ namespace Projeto_Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+            Application.Run(new FrmCliente());
         }
     }
 }

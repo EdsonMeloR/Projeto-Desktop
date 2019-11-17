@@ -126,19 +126,19 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="novoPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="novoPedidoToolStripMenuItem.Text" xml:space="preserve">
     <value>Novo Pedido</value>
   </data>
   <data name="consultarPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="consultarPedidoToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Pedido</value>
   </data>
   <data name="alterarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="alterarToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Pedido</value>
@@ -150,19 +150,19 @@
     <value>Pedidos</value>
   </data>
   <data name="inserirPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>150, 22</value>
   </data>
   <data name="inserirPlanoToolStripMenuItem.Text" xml:space="preserve">
     <value>Inserir Plano</value>
   </data>
   <data name="alterarPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>150, 22</value>
   </data>
   <data name="alterarPlanoToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Plano</value>
   </data>
   <data name="renovarPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>150, 22</value>
   </data>
   <data name="renovarPlanoToolStripMenuItem.Text" xml:space="preserve">
     <value>Renovar Plano</value>
@@ -174,19 +174,19 @@
     <value>Planos</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Cadastrar Cliente</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Cliente</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Cliente</value>
@@ -204,7 +204,7 @@
     <value>Entregas</value>
   </data>
   <data name="usuáriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="usuáriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Usuários</value>
@@ -327,11 +327,17 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>50</value>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1264, 681</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -339,58 +345,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Menu Principal - Prosperity Log</value>
   </data>
-  <data name="&gt;&gt;planoToolStripMenuItem.Name" xml:space="preserve">
-    <value>planoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;planoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clienteToolStripMenuItem.Name" xml:space="preserve">
-    <value>clienteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;clienteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;pedidosToolStripMenuItem.Name" xml:space="preserve">
     <value>pedidosToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;pedidosToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;entregasToolStripMenuItem.Name" xml:space="preserve">
-    <value>entregasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;entregasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;inserirPlanoToolStripMenuItem.Name" xml:space="preserve">
-    <value>inserirPlanoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;inserirPlanoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;alterarPlanoToolStripMenuItem.Name" xml:space="preserve">
-    <value>alterarPlanoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;alterarPlanoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;renovarPlanoToolStripMenuItem.Name" xml:space="preserve">
-    <value>renovarPlanoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;renovarPlanoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cadastrarClienteToolStripMenuItem.Name" xml:space="preserve">
-    <value>cadastrarClienteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cadastrarClienteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;alterarClienteToolStripMenuItem.Name" xml:space="preserve">
-    <value>alterarClienteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;alterarClienteToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;novoPedidoToolStripMenuItem.Name" xml:space="preserve">
@@ -411,10 +369,58 @@
   <data name="&gt;&gt;alterarToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;planoToolStripMenuItem.Name" xml:space="preserve">
+    <value>planoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;planoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;inserirPlanoToolStripMenuItem.Name" xml:space="preserve">
+    <value>inserirPlanoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;inserirPlanoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;alterarPlanoToolStripMenuItem.Name" xml:space="preserve">
+    <value>alterarPlanoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;alterarPlanoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;renovarPlanoToolStripMenuItem.Name" xml:space="preserve">
+    <value>renovarPlanoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;renovarPlanoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clienteToolStripMenuItem.Name" xml:space="preserve">
+    <value>clienteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;clienteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cadastrarClienteToolStripMenuItem.Name" xml:space="preserve">
+    <value>cadastrarClienteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cadastrarClienteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;consultarClienteToolStripMenuItem.Name" xml:space="preserve">
     <value>consultarClienteToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;consultarClienteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;alterarClienteToolStripMenuItem.Name" xml:space="preserve">
+    <value>alterarClienteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;alterarClienteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;entregasToolStripMenuItem.Name" xml:space="preserve">
+    <value>entregasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;entregasToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;administraçãoToolStripMenuItem.Name" xml:space="preserve">

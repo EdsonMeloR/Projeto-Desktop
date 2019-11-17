@@ -1,9 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projeto_Desktop.Classes
 {
@@ -16,10 +12,9 @@ namespace Projeto_Desktop.Classes
         public MySqlCommand AbrirConexao()//Método abre conexão com banco de dados
         {
             stringBuilder.Database = "prosperitydb";
-            stringBuilder.Server = "192.168.1.17";
+            stringBuilder.Server = "localhost";
             stringBuilder.Port = 3306;
-            stringBuilder.UserID = "remote";
-            stringBuilder.Password = "edsonmelo710";
+            stringBuilder.UserID = "root";            
             MySqlCommand comm;
             try
             {

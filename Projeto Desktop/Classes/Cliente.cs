@@ -47,6 +47,7 @@ namespace Projeto_Desktop.Classes
         //Métodos
         public void InserirCliente(string _razaoSocial, string _cnpj, string _email, string _inscricaoEstadual, string _senha, string _telefone, string _nomeContato)
         {
+            db = new Banco();
             var comm = db.AbrirConexao();
             comm.CommandType = CommandType.StoredProcedure;
             comm.CommandText = "insert_cliente";
@@ -106,6 +107,31 @@ namespace Projeto_Desktop.Classes
                 }
             }
             catch(Exception e)
+            {
+                e.Message.ToString();
+            }
+        }
+        public void ConsultarClienteCnpj(int _cnpj)
+        {
+            db = new Banco();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select * from cliente where Cnpj = " + _cnpj;
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.Id = dr.GetInt32(0);
+                    this.RazaoSocial = dr.GetString(1);
+                    this.Cnpj = dr.GetString(2);
+                    this.Email = dr.GetString(3);
+                    this.InscricaoEstadual = dr.GetString(4);
+                    this.Senha = dr.GetString(5);
+                    this.Telefone = dr.GetString(6);
+                    this.NomeContato = dr.GetString(7);
+                }
+            }
+            catch (Exception e)
             {
                 e.Message.ToString();
             }
