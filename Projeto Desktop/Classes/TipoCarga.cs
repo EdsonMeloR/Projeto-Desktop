@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_Desktop.Classes
 {
-    public class Pedido
+    public class TipoCarga
     {
         private int id;
 

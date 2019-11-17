@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_Desktop.Classes
 {
-    public class Pedido
+    public class Motorista
     {
-        private int id;
-
-        public int Id { get => id; set => id = value; }
     }
 }
