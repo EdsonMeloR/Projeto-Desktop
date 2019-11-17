@@ -8,5 +8,8 @@ namespace Projeto_Desktop.Classes
 {
     public class Usuario
     {
+        private int id;
+
+        public int Id { get => id; set => id = value; }
     }
 }
