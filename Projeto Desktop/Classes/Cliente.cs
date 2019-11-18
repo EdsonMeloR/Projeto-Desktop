@@ -211,6 +211,11 @@ namespace Projeto_Desktop.Classes
                 return false;
             }
         }
+        /// <summary>
+        /// Gera uma senha em md5
+        /// </summary>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         public string GerarSenhaMd5(string senha)
         {
             var hash = MD5.Create();
