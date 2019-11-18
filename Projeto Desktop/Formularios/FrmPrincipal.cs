@@ -19,7 +19,7 @@ namespace Projeto_Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)

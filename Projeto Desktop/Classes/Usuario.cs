@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
+using System.Net.Mail;
+using System.Net;
 
 namespace Projeto_Desktop.Classes
 {
@@ -19,6 +21,7 @@ namespace Projeto_Desktop.Classes
         private string senha;
         private string email;
         private Niveis idNivel;
+        private bool primeiroLogin;
         Banco db;
         //Propiedades
         public int Id { get => id; set => id = value; }
@@ -28,8 +31,10 @@ namespace Projeto_Desktop.Classes
         public string Senha { get => senha; set => senha = value; }
         public string Email { get => email; set => email = value; }
         public Niveis IdNivel { get => idNivel; set => idNivel = value; }
+        public bool PrimeiroLogin { get => primeiroLogin; set => primeiroLogin = value; }
+
         //Métodos construtores
-        public Usuario(int id, string nome, string cpf, string telefone, string senha, string email, Niveis idNivel)
+        public Usuario(int id, string nome, string cpf, string telefone, string senha, string email, Niveis idNivel, bool primeiroLogin)
         {
             this.id = id;
             this.nome = nome;
@@ -38,6 +43,7 @@ namespace Projeto_Desktop.Classes
             this.senha = senha;
             this.email = email;
             this.idNivel = idNivel;
+            this.primeiroLogin = primeiroLogin;
         }
         public Usuario()
         { }
@@ -65,6 +71,7 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_senha", MySqlDbType.VarChar).Value = GerarSenhaMd5(senha);
                 comm.Parameters.Add("_email", MySqlDbType.VarChar).Value = email;
                 comm.Parameters.Add("_nivel", MySqlDbType.Int32).Value = idNivel;
+                comm.Parameters.Add("_firstlogin", MySqlDbType.Bit).Value = 1;
                 this.Id = Convert.ToInt32(comm.ExecuteScalar());                
             }
             catch(Exception e)
@@ -115,6 +122,7 @@ namespace Projeto_Desktop.Classes
                     this.Senha = dr.GetString(4);
                     this.Email = dr.GetString(5);
                     this.IdNivel.IdNivel = dr.GetInt32(6);
+                    this.PrimeiroLogin = dr.GetBoolean(7);
                 }
             }
             catch (Exception e)
@@ -146,6 +154,7 @@ namespace Projeto_Desktop.Classes
                     user.Senha = dr.GetString(4);
                     user.Email = dr.GetString(5);
                     user.IdNivel.IdNivel = dr.GetInt32(6);
+                    user.PrimeiroLogin = dr.GetBoolean(7);
                     lista.Add(user);
                 }
                 return lista;
@@ -159,11 +168,13 @@ namespace Projeto_Desktop.Classes
         public bool EfetuarLogin(string cpf, string senha)
         {
             db = new Banco();
+            var senhac = GerarSenhaMd5(senha);
             try
             {
                 var comm = db.AbrirConexao();
-                comm.CommandText = "select * from usuario where Cpf = '" + cpf + "' && Senha = '"+GerarSenhaMd5(senha)+"'";
+                comm.CommandText = "select * from usuario where Cpf = '" + cpf + "' && Senha = '"+senhac+"'";
                 var dr = comm.ExecuteReader();
+                IdNivel = new Niveis();
                 while (dr.Read())
                 {
                     this.Id = dr.GetInt32(0);
@@ -173,6 +184,7 @@ namespace Projeto_Desktop.Classes
                     this.Senha = dr.GetString(4);
                     this.Email = dr.GetString(5);
                     this.IdNivel.IdNivel = dr.GetInt32(6);
+                    this.PrimeiroLogin = dr.GetBoolean(7);
                 }
                 return true;
             }
@@ -181,7 +193,46 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
-        }        
+        }       
+        /// <summary>
+        /// Alterando senha do usuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="senha"></param>
+        public bool AlterarSenha(int id, string senha)
+        {
+            db = new Banco();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "update usuario set Senha = '" + senha + "' where idUsuario =" + id;                
+                comm.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return false;
+            }
+        }
+        /// <summary>
+        /// Alterando primeiro login para false
+        /// </summary>
+        /// <param name="id"></param>
+        public void AlterarFirstLogin(int id)
+        {
+            db = new Banco();
+            try
+            {
+                var comm = db.AbrirConexao();                
+                comm.CommandText = "update usuario set PrimeiroLogin = 0";                
+                comm.ExecuteNonQuery();                
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();                
+            }
+        }
         /// <summary>
         /// Gera uma senha em md5
         /// </summary>            
@@ -195,6 +246,61 @@ namespace Projeto_Desktop.Classes
                 builder.Append(chave[i].ToString("X2"));
             }
             return builder.ToString();
+        }
+        public bool RecuperarSenha(string CPF)
+        {
+            IdNivel = new Niveis();
+            db = new Banco();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select * from usuario where Cpf = '" + CPF + "'";
+                var dr = comm.ExecuteReader();                
+                while (dr.Read())
+                {
+                    this.Id = dr.GetInt32(0);
+                    this.Nome = dr.GetString(1);
+                    this.Cpf = dr.GetString(2);
+                    this.Telefone = dr.GetString(3);
+                    this.Senha = dr.GetString(4);
+                    this.Email = dr.GetString(5);
+                    this.IdNivel.IdNivel = dr.GetInt32(6);
+                }
+                //cria uma mensagem
+                MailMessage mail = new MailMessage();
+
+                //define os endereços
+                mail.From = new MailAddress("prosperitylogistica@gmail.com");
+                mail.To.Add(this.Email.ToString());
+                mail.Priority = MailPriority.Normal;
+                mail.IsBodyHtml = true;
+
+                //define o conteúdo
+                var senhaRecuperada = GerarSenhaMd5(DateTime.Now.ToString());
+                mail.Subject = "Esté é um email de recuperação de senha da prosperity";
+                mail.Body = "Utilize esta senha : "+ senhaRecuperada;
+                mail.SubjectEncoding = Encoding.GetEncoding("ISO-8859-1");
+                mail.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
+
+                //envia a mensagem
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                smtp.Credentials = new NetworkCredential("prosperitylogistica@gmail.com", "prospe123");
+                smtp.Send(mail);
+
+                //Redefine a senha
+                comm.Connection.Close();
+                comm.Connection.Open();
+                comm.CommandText = "update usuario set Senha = '"+ GerarSenhaMd5(senhaRecuperada)+"', PrimeiroLogin = 1 where idUsuario = "+this.Id;
+                comm.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return false;
+            }
         }
     }
 }

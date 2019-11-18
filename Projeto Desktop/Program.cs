@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_Desktop.Formularios;
+using Projeto_Desktop.Classes;
 
 namespace Projeto_Desktop
 {
@@ -17,7 +18,8 @@ namespace Projeto_Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCliente());
+            Application.Run(new FrmLogin());
         }
+        public static Usuario userLogado = new Usuario();
     }
 }
