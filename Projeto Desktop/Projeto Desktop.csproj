@@ -85,11 +85,17 @@
     <Compile Include="Classes\TipoFrete.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\Veiculo.cs" />
-    <Compile Include="Formularios\FrmCliente.cs">
+    <Compile Include="Formularios\FrmClienteAlterar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmCliente.Designer.cs">
-      <DependentUpon>FrmCliente.cs</DependentUpon>
+    <Compile Include="Formularios\FrmClienteAlterar.Designer.cs">
+      <DependentUpon>FrmClienteAlterar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmClienteCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmClienteCadastrar.Designer.cs">
+      <DependentUpon>FrmClienteCadastrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -117,8 +123,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\FrmCliente.resx">
-      <DependentUpon>FrmCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmClienteAlterar.resx">
+      <DependentUpon>FrmClienteAlterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmClienteCadastrar.resx">
+      <DependentUpon>FrmClienteCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

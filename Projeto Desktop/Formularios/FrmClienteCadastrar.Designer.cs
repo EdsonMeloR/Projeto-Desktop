@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Desktop.Formularios
 {
-    partial class FrmCliente
+    partial class FrmClienteCadastrar
     {
         /// <summary>
         /// Required designer variable.
@@ -44,12 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.txtIdCliente = new System.Windows.Forms.Button();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.btnListarClientes = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +65,7 @@
             // 
             // txtInscricaoEstadual
             // 
-            this.txtInscricaoEstadual.Location = new System.Drawing.Point(533, 73);
+            this.txtInscricaoEstadual.Location = new System.Drawing.Point(216, 121);
             this.txtInscricaoEstadual.Name = "txtInscricaoEstadual";
             this.txtInscricaoEstadual.Size = new System.Drawing.Size(166, 20);
             this.txtInscricaoEstadual.TabIndex = 7;
@@ -78,7 +73,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(530, 57);
+            this.label5.Location = new System.Drawing.Point(213, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 6;
@@ -86,7 +81,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(29, 121);
+            this.txtSenha.Location = new System.Drawing.Point(29, 168);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(181, 20);
             this.txtSenha.TabIndex = 13;
@@ -94,7 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 105);
+            this.label4.Location = new System.Drawing.Point(26, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 12;
@@ -102,7 +97,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(216, 121);
+            this.txtTelefone.Location = new System.Drawing.Point(29, 215);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(134, 20);
             this.txtTelefone.TabIndex = 15;
@@ -110,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(213, 105);
+            this.label2.Location = new System.Drawing.Point(26, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 14;
@@ -118,15 +113,15 @@
             // 
             // txtNomeContato
             // 
-            this.txtNomeContato.Location = new System.Drawing.Point(356, 121);
+            this.txtNomeContato.Location = new System.Drawing.Point(216, 168);
             this.txtNomeContato.Name = "txtNomeContato";
-            this.txtNomeContato.Size = new System.Drawing.Size(171, 20);
+            this.txtNomeContato.Size = new System.Drawing.Size(166, 20);
             this.txtNomeContato.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(353, 105);
+            this.label3.Location = new System.Drawing.Point(213, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 16;
@@ -136,7 +131,7 @@
             // 
             this.txtCnpj.Location = new System.Drawing.Point(216, 73);
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(134, 20);
+            this.txtCnpj.Size = new System.Drawing.Size(166, 20);
             this.txtCnpj.TabIndex = 19;
             // 
             // label6
@@ -150,15 +145,15 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(356, 73);
+            this.txtEmail.Location = new System.Drawing.Point(29, 121);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(171, 20);
+            this.txtEmail.Size = new System.Drawing.Size(181, 20);
             this.txtEmail.TabIndex = 21;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(353, 57);
+            this.label7.Location = new System.Drawing.Point(26, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 20;
@@ -175,33 +170,13 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(29, 188);
+            this.btnCadastrar.Location = new System.Drawing.Point(29, 260);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(134, 36);
             this.btnCadastrar.TabIndex = 24;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(110, 188);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 25;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(191, 188);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 26;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // txtIdCliente
             // 
@@ -210,36 +185,12 @@
             this.txtIdCliente.Size = new System.Drawing.Size(75, 23);
             this.txtIdCliente.TabIndex = 29;
             // 
-            // dgvClientes
-            // 
-            this.dgvClientes.AllowUserToOrderColumns = true;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(12, 217);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(776, 221);
-            this.dgvClientes.TabIndex = 28;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
-            // 
-            // btnListarClientes
-            // 
-            this.btnListarClientes.Location = new System.Drawing.Point(272, 188);
-            this.btnListarClientes.Name = "btnListarClientes";
-            this.btnListarClientes.Size = new System.Drawing.Size(75, 23);
-            this.btnListarClientes.TabIndex = 30;
-            this.btnListarClientes.Text = "Listar";
-            this.btnListarClientes.UseVisualStyleBackColor = true;
-            this.btnListarClientes.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // FrmCliente
+            // FrmClienteCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnListarClientes);
-            this.Controls.Add(this.dgvClientes);
+            this.ClientSize = new System.Drawing.Size(418, 330);
             this.Controls.Add(this.txtIdCliente);
-            this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtEmail);
@@ -256,10 +207,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtRazaoSocial);
             this.Controls.Add(this.label1);
-            this.Name = "FrmCliente";
+            this.Name = "FrmClienteCadastrar";
             this.Text = "FrmCliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,10 +233,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button txtIdCliente;
-        private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.Button btnListarClientes;
     }
 }

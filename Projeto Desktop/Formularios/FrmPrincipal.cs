@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projeto_Desktop.Formularios;
+using Projeto_Desktop.Classes;
 
 namespace Projeto_Desktop
 {
@@ -30,6 +32,18 @@ namespace Projeto_Desktop
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cadastrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClienteCadastrar frm = new FrmClienteCadastrar();
+            frm.Show();
+        }
+
+        private void alterarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClienteAlterar frm = new FrmClienteAlterar();
+            frm.Show();
         }
     }
 }

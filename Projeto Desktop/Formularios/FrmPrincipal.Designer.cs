@@ -128,6 +128,7 @@
             // 
             this.cadastrarClienteToolStripMenuItem.Name = "cadastrarClienteToolStripMenuItem";
             resources.ApplyResources(this.cadastrarClienteToolStripMenuItem, "cadastrarClienteToolStripMenuItem");
+            this.cadastrarClienteToolStripMenuItem.Click += new System.EventHandler(this.cadastrarClienteToolStripMenuItem_Click);
             // 
             // consultarClienteToolStripMenuItem
             // 
@@ -138,6 +139,7 @@
             // 
             this.alterarClienteToolStripMenuItem.Name = "alterarClienteToolStripMenuItem";
             resources.ApplyResources(this.alterarClienteToolStripMenuItem, "alterarClienteToolStripMenuItem");
+            this.alterarClienteToolStripMenuItem.Click += new System.EventHandler(this.alterarClienteToolStripMenuItem_Click);
             // 
             // entregasToolStripMenuItem
             // 
