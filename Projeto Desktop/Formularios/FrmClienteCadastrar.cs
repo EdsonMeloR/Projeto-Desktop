@@ -46,7 +46,7 @@ namespace Projeto_Desktop.Formularios
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             Cliente c = new Cliente();
-            c.ConsultarClienteCnpj(Convert.ToInt32(txtCnpj.Text));
+            c.ConsultarClienteCnpj(txtCnpj.Text);
             txtIdCliente.Text = c.Id.ToString();
             txtCnpj.Text = c.Cnpj.ToString();
             txtEmail.Text = c.Email.ToString();

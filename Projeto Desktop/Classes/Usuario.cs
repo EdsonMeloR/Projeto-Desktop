@@ -46,17 +46,13 @@ namespace Projeto_Desktop.Classes
             this.primeiroLogin = primeiroLogin;
         }
         public Usuario()
-        { }
+        {
+            IdNivel = new Niveis();
+        }
         //Métodos
         /// <summary>
         /// Inserindo usuario
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <param name="cpf"></param>
-        /// <param name="telefone"></param>
-        /// <param name="senha"></param>
-        /// <param name="email"></param>
-        /// <param name="idNivel"></param>
+        /// </summary>        
         public void InserirUsuario(string nome, string cpf, string telefone, string senha, string email, int idNivel)
         {
             db = new Banco();
@@ -89,7 +85,8 @@ namespace Projeto_Desktop.Classes
             {
                 var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.CommandText = "update_usuario";                
+                comm.CommandText = "update_usuario";
+                comm.Parameters.Add("_id", MySqlDbType.Int32).Value = id;
                 comm.Parameters.Add("_telefone", MySqlDbType.VarChar).Value = telefone;                
                 comm.Parameters.Add("_email", MySqlDbType.VarChar).Value = email;
                 comm.ExecuteNonQuery();
@@ -128,6 +125,34 @@ namespace Projeto_Desktop.Classes
             catch (Exception e)
             {
                 e.Message.ToString();                
+            }
+        }
+        /// <summary>
+        /// Consultando usuario pelo CPF
+        /// </summary>       
+        public void ConsultarUsuario(string cpf)
+        {
+            db = new Banco();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select * from usuario where Cpf = " + cpf;
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.Id = dr.GetInt32(0);
+                    this.Nome = dr.GetString(1);
+                    this.Cpf = dr.GetString(2);
+                    this.Telefone = dr.GetString(3);
+                    this.Senha = dr.GetString(4);
+                    this.Email = dr.GetString(5);
+                    this.IdNivel.IdNivel = dr.GetInt32(6);
+                    this.PrimeiroLogin = dr.GetBoolean(7);
+                }
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
             }
         }
         /// <summary>

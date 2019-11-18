@@ -97,11 +97,29 @@
     <Compile Include="Formularios\FrmClienteCadastrar.Designer.cs">
       <DependentUpon>FrmClienteCadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmClienteConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmClienteConsultar.Designer.cs">
+      <DependentUpon>FrmClienteConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPedido.Designer.cs">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPlanos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPlanos.Designer.cs">
+      <DependentUpon>FrmPlanos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -109,11 +127,17 @@
     <Compile Include="Formularios\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmUsuario.cs">
+    <Compile Include="Formularios\FrmUsuarioAlterar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmUsuario.Designer.cs">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <Compile Include="Formularios\FrmUsuarioAlterar.Designer.cs">
+      <DependentUpon>FrmUsuarioAlterar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuarioCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuarioCadastrar.Designer.cs">
+      <DependentUpon>FrmUsuarioCadastrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmPrimeiroLogin.cs">
       <SubType>Form</SubType>
@@ -129,8 +153,17 @@
     <EmbeddedResource Include="Formularios\FrmClienteCadastrar.resx">
       <DependentUpon>FrmClienteCadastrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmClienteConsultar.resx">
+      <DependentUpon>FrmClienteConsultar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPedido.resx">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPlanos.resx">
+      <DependentUpon>FrmPlanos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrimeiroLogin.resx">
       <DependentUpon>FrmPrimeiroLogin.cs</DependentUpon>
@@ -140,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsuarioAlterar.resx">
+      <DependentUpon>FrmUsuarioAlterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsuarioCadastrar.resx">
+      <DependentUpon>FrmUsuarioCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

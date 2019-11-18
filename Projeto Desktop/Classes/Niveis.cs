@@ -111,5 +111,30 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
             }
         }
+        public List<Niveis> ListarNiveis()
+        {
+            db = new Banco();
+            Niveis n;
+            List<Niveis> lista = new List<Niveis>();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select * from niveis ";
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    n = new Niveis();
+                    n.IdNivel = dr.GetInt32(0);
+                    n.NomeNivel = dr.GetString(1);
+                    lista.Add(n);
+                }
+                return lista;
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return null;
+            }
+        }
     }
 }

@@ -111,13 +111,13 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
             }
         }
-        public void ConsultarClienteCnpj(int _cnpj)
+        public void ConsultarClienteCnpj(string _cnpj)
         {
             db = new Banco();
             try
             {
                 var comm = db.AbrirConexao();
-                comm.CommandText = "select * from cliente where Cnpj = " + _cnpj;
+                comm.CommandText = "select * from cliente where Cnpj = '" + _cnpj + "'";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
                 {

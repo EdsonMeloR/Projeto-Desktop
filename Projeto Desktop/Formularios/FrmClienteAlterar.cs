@@ -28,5 +28,25 @@ namespace Projeto_Desktop.Formularios
             else
                 MessageBox.Show("Falha ao alterar", "Erro");
         }
+
+        private void btnListarClientes_Click(object sender, EventArgs e)
+        {
+            c = new Cliente();
+            dgvClientes.DataSource = c.ListarCliente();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            c = new Cliente();
+            c.ConsultarClienteCnpj(txtCnpj.Text);
+            txtIdCliente.Text = c.Id.ToString();
+            txtCnpj.Text = c.Cnpj.ToString();
+            txtEmail.Text = c.Email.ToString();
+            txtInscricaoEstadual.Text = c.InscricaoEstadual.ToString();
+            txtNomeContato.Text = c.NomeContato;
+            txtRazaoSocial.Text = c.RazaoSocial;
+            txtSenha.Text = c.Senha;
+            txtTelefone.Text = c.Telefone;
+        }
     }
 }

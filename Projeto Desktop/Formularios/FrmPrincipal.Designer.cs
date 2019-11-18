@@ -35,9 +35,6 @@
             this.consultarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserirPlanoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarPlanoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renovarPlanoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +42,9 @@
             this.entregasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -93,27 +93,9 @@
             // 
             // planoToolStripMenuItem
             // 
-            this.planoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inserirPlanoToolStripMenuItem,
-            this.alterarPlanoToolStripMenuItem,
-            this.renovarPlanoToolStripMenuItem});
             this.planoToolStripMenuItem.Name = "planoToolStripMenuItem";
             resources.ApplyResources(this.planoToolStripMenuItem, "planoToolStripMenuItem");
-            // 
-            // inserirPlanoToolStripMenuItem
-            // 
-            this.inserirPlanoToolStripMenuItem.Name = "inserirPlanoToolStripMenuItem";
-            resources.ApplyResources(this.inserirPlanoToolStripMenuItem, "inserirPlanoToolStripMenuItem");
-            // 
-            // alterarPlanoToolStripMenuItem
-            // 
-            this.alterarPlanoToolStripMenuItem.Name = "alterarPlanoToolStripMenuItem";
-            resources.ApplyResources(this.alterarPlanoToolStripMenuItem, "alterarPlanoToolStripMenuItem");
-            // 
-            // renovarPlanoToolStripMenuItem
-            // 
-            this.renovarPlanoToolStripMenuItem.Name = "renovarPlanoToolStripMenuItem";
-            resources.ApplyResources(this.renovarPlanoToolStripMenuItem, "renovarPlanoToolStripMenuItem");
+            this.planoToolStripMenuItem.Click += new System.EventHandler(this.planoToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem
             // 
@@ -134,6 +116,7 @@
             // 
             this.consultarClienteToolStripMenuItem.Name = "consultarClienteToolStripMenuItem";
             resources.ApplyResources(this.consultarClienteToolStripMenuItem, "consultarClienteToolStripMenuItem");
+            this.consultarClienteToolStripMenuItem.Click += new System.EventHandler(this.consultarClienteToolStripMenuItem_Click);
             // 
             // alterarClienteToolStripMenuItem
             // 
@@ -155,9 +138,31 @@
             // 
             // usuáriosToolStripMenuItem
             // 
+            this.usuáriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserirToolStripMenuItem,
+            this.alterarToolStripMenuItem1,
+            this.consultarToolStripMenuItem});
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
             resources.ApplyResources(this.usuáriosToolStripMenuItem, "usuáriosToolStripMenuItem");
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
+            // 
+            // inserirToolStripMenuItem
+            // 
+            this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
+            resources.ApplyResources(this.inserirToolStripMenuItem, "inserirToolStripMenuItem");
+            this.inserirToolStripMenuItem.Click += new System.EventHandler(this.inserirToolStripMenuItem_Click);
+            // 
+            // alterarToolStripMenuItem1
+            // 
+            this.alterarToolStripMenuItem1.Name = "alterarToolStripMenuItem1";
+            resources.ApplyResources(this.alterarToolStripMenuItem1, "alterarToolStripMenuItem1");
+            this.alterarToolStripMenuItem1.Click += new System.EventHandler(this.alterarToolStripMenuItem1_Click);
+            // 
+            // consultarToolStripMenuItem
+            // 
+            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            resources.ApplyResources(this.consultarToolStripMenuItem, "consultarToolStripMenuItem");
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -166,6 +171,7 @@
             this.panel1.Controls.Add(this.button1);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button2
             // 
@@ -215,9 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem novoPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inserirPlanoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterarPlanoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem renovarPlanoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarClienteToolStripMenuItem;
@@ -228,6 +231,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
     }
 }
 

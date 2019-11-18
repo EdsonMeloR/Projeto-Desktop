@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projeto_Desktop.Formularios
 {
-    public partial class FrmUsuario : Form
+    public partial class FrmClienteConsultar : Form
     {
-        public FrmUsuario()
+        public FrmClienteConsultar()
         {
             InitializeComponent();
         }

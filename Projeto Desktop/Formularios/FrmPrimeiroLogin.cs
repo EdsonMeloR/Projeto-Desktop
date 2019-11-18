@@ -47,5 +47,10 @@ namespace Projeto_Desktop.Formularios
                 MessageBox.Show("As senhas devem ser compativeis");
             }
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

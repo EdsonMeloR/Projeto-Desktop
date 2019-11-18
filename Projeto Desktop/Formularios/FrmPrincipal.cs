@@ -45,5 +45,39 @@ namespace Projeto_Desktop
             FrmClienteAlterar frm = new FrmClienteAlterar();
             frm.Show();
         }
+
+        private void consultarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClienteConsultar frm = new FrmClienteConsultar();
+            frm.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void inserirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuarioCadastrar f = new FrmUsuarioCadastrar();
+            f.Show();                
+        }
+
+        private void alterarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmUsuarioAlterar f = new FrmUsuarioAlterar();
+            f.Show();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void planoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPlanos frmp = new FrmPlanos();
+            frmp.Show();
+        }
     }
 }
