@@ -27,7 +27,7 @@ namespace Projeto_Desktop.Formularios
         private void btnLogar_Click(object sender, EventArgs e)
         {
             Usuario user = new Usuario();
-            if (user.EfetuarLogin(txtCpf.Text.ToString(), txtSenha.Text.ToString()))
+            if (user.EfetuarLogin(txtCpf.Text.Trim(), txtSenha.Text.Trim()))
             {
                 if(user.PrimeiroLogin == false)
                 {

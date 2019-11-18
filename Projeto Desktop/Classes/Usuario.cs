@@ -68,7 +68,7 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_nome", MySqlDbType.VarChar).Value = nome;
                 comm.Parameters.Add("_cpf", MySqlDbType.VarChar).Value = cpf;
                 comm.Parameters.Add("_telefone", MySqlDbType.VarChar).Value = telefone;
-                comm.Parameters.Add("_senha", MySqlDbType.VarChar).Value = GerarSenhaMd5(senha);
+                comm.Parameters.Add("_senha", MySqlDbType.VarChar).Value = GerarSenhaMd5(senha).Trim();
                 comm.Parameters.Add("_email", MySqlDbType.VarChar).Value = email;
                 comm.Parameters.Add("_nivel", MySqlDbType.Int32).Value = idNivel;
                 comm.Parameters.Add("_firstlogin", MySqlDbType.Bit).Value = 1;
@@ -186,7 +186,11 @@ namespace Projeto_Desktop.Classes
                     this.IdNivel.IdNivel = dr.GetInt32(6);
                     this.PrimeiroLogin = dr.GetBoolean(7);
                 }
-                return true;
+                if (this.Id > 0)
+                    return true;
+
+                else
+                    return false;                
             }
             catch (Exception e)
             {
