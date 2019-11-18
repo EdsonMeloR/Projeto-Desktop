@@ -29,21 +29,23 @@ namespace Projeto_Desktop.Formularios
             Usuario user = new Usuario();
             if (user.EfetuarLogin(txtCpf.Text.Trim(), txtSenha.Text.Trim()))
             {
-                if(user.PrimeiroLogin == false)
+                if (user.PrimeiroLogin == false)
                 {
                     this.Hide();
-                    FrmPrincipal frm = new FrmPrincipal();                    
-                    frm.Show();                    
+                    FrmPrincipal frm = new FrmPrincipal();
+                    frm.Show();
                     Program.userLogado = user;
                 }
                 else if (user.PrimeiroLogin)
                 {
                     this.Hide();
-                    FrmPrimeiroLogin frm = new FrmPrimeiroLogin();                    
-                    frm.Show();                    
-                    //Program.userLogado = user;                    
-                }                              
+                    FrmPrimeiroLogin frm = new FrmPrimeiroLogin();
+                    frm.Show();
+                    Program.userLogado = user;                    
+                }
             }
+            else
+                MessageBox.Show("Cpf ou Senha incorretos");
         }
     }
 }

@@ -36,6 +36,7 @@ namespace Projeto_Desktop.Formularios
             {
                 if(user.AlterarSenha(Program.userLogado.Id,txtSenha.Text.ToString()))
                 {
+                    user.AlterarFirstLogin(Program.userLogado.Id);
                     this.Hide();
                     FrmPrincipal frm = new FrmPrincipal();
                     frm.Show();

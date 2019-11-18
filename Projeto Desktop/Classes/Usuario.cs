@@ -205,11 +205,12 @@ namespace Projeto_Desktop.Classes
         /// <param name="senha"></param>
         public bool AlterarSenha(int id, string senha)
         {
+            var senhac = GerarSenhaMd5(senha);
             db = new Banco();
             try
             {
                 var comm = db.AbrirConexao();
-                comm.CommandText = "update usuario set Senha = '" + senha + "' where idUsuario =" + id;                
+                comm.CommandText = "update usuario set Senha = '" + senhac + "' where idUsuario =" + id;                
                 comm.ExecuteNonQuery();
                 return true;
             }
