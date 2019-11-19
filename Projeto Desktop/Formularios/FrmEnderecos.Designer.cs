@@ -44,11 +44,15 @@
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCadastrarEndereco = new System.Windows.Forms.Button();
+            this.btnConsultarEndereco = new System.Windows.Forms.Button();
+            this.btnListarEndereco = new System.Windows.Forms.Button();
+            this.dgvEnderecos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnderecos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConsultarCep
             // 
-            this.btnConsultarCep.Location = new System.Drawing.Point(170, 140);
+            this.btnConsultarCep.Location = new System.Drawing.Point(421, 32);
             this.btnConsultarCep.Name = "btnConsultarCep";
             this.btnConsultarCep.Size = new System.Drawing.Size(88, 23);
             this.btnConsultarCep.TabIndex = 0;
@@ -59,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 73);
+            this.label1.Location = new System.Drawing.Point(147, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 1;
@@ -68,22 +72,22 @@
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(12, 89);
+            this.txtId.Location = new System.Drawing.Point(150, 35);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 2;
             // 
             // txtLogradouro
             // 
-            this.txtLogradouro.Location = new System.Drawing.Point(12, 192);
+            this.txtLogradouro.Location = new System.Drawing.Point(12, 75);
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(224, 20);
+            this.txtLogradouro.Size = new System.Drawing.Size(238, 20);
             this.txtLogradouro.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 176);
+            this.label2.Location = new System.Drawing.Point(9, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 3;
@@ -91,15 +95,15 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(12, 244);
+            this.txtComplemento.Location = new System.Drawing.Point(12, 114);
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(333, 20);
+            this.txtComplemento.Size = new System.Drawing.Size(403, 20);
             this.txtComplemento.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 228);
+            this.label3.Location = new System.Drawing.Point(9, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 5;
@@ -108,7 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 124);
+            this.label4.Location = new System.Drawing.Point(260, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 7;
@@ -116,16 +120,16 @@
             // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(12, 283);
+            this.txtReferencia.Location = new System.Drawing.Point(12, 153);
             this.txtReferencia.Multiline = true;
             this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(333, 54);
+            this.txtReferencia.Size = new System.Drawing.Size(497, 54);
             this.txtReferencia.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 267);
+            this.label5.Location = new System.Drawing.Point(9, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 9;
@@ -133,15 +137,15 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(245, 192);
+            this.txtNumero.Location = new System.Drawing.Point(263, 75);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(100, 20);
+            this.txtNumero.Size = new System.Drawing.Size(152, 20);
             this.txtNumero.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(242, 176);
+            this.label6.Location = new System.Drawing.Point(260, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 11;
@@ -149,7 +153,7 @@
             // 
             // txtCep
             // 
-            this.txtCep.Location = new System.Drawing.Point(12, 140);
+            this.txtCep.Location = new System.Drawing.Point(263, 35);
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(152, 20);
@@ -174,19 +178,50 @@
             // 
             // btnCadastrarEndereco
             // 
-            this.btnCadastrarEndereco.Location = new System.Drawing.Point(12, 343);
+            this.btnCadastrarEndereco.Location = new System.Drawing.Point(12, 213);
             this.btnCadastrarEndereco.Name = "btnCadastrarEndereco";
-            this.btnCadastrarEndereco.Size = new System.Drawing.Size(121, 23);
+            this.btnCadastrarEndereco.Size = new System.Drawing.Size(100, 23);
             this.btnCadastrarEndereco.TabIndex = 16;
-            this.btnCadastrarEndereco.Text = "Cadastrar Endereco";
+            this.btnCadastrarEndereco.Text = "Cadastrar";
             this.btnCadastrarEndereco.UseVisualStyleBackColor = true;
             this.btnCadastrarEndereco.Click += new System.EventHandler(this.btnCadastrarEndereco_Click);
+            // 
+            // btnConsultarEndereco
+            // 
+            this.btnConsultarEndereco.Location = new System.Drawing.Point(118, 213);
+            this.btnConsultarEndereco.Name = "btnConsultarEndereco";
+            this.btnConsultarEndereco.Size = new System.Drawing.Size(121, 23);
+            this.btnConsultarEndereco.TabIndex = 17;
+            this.btnConsultarEndereco.Text = "Consultar";
+            this.btnConsultarEndereco.UseVisualStyleBackColor = true;
+            this.btnConsultarEndereco.Click += new System.EventHandler(this.btnConsultarEndereco_Click);
+            // 
+            // btnListarEndereco
+            // 
+            this.btnListarEndereco.Location = new System.Drawing.Point(245, 213);
+            this.btnListarEndereco.Name = "btnListarEndereco";
+            this.btnListarEndereco.Size = new System.Drawing.Size(100, 23);
+            this.btnListarEndereco.TabIndex = 18;
+            this.btnListarEndereco.Text = "Listar";
+            this.btnListarEndereco.UseVisualStyleBackColor = true;
+            // 
+            // dgvEnderecos
+            // 
+            this.dgvEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnderecos.Location = new System.Drawing.Point(18, 242);
+            this.dgvEnderecos.Name = "dgvEnderecos";
+            this.dgvEnderecos.RowHeadersVisible = false;
+            this.dgvEnderecos.Size = new System.Drawing.Size(491, 220);
+            this.dgvEnderecos.TabIndex = 19;
             // 
             // FrmEnderecos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 450);
+            this.ClientSize = new System.Drawing.Size(528, 474);
+            this.Controls.Add(this.dgvEnderecos);
+            this.Controls.Add(this.btnListarEndereco);
+            this.Controls.Add(this.btnConsultarEndereco);
             this.Controls.Add(this.btnCadastrarEndereco);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbClientes);
@@ -206,6 +241,7 @@
             this.Name = "FrmEnderecos";
             this.Text = "Enderecos";
             this.Load += new System.EventHandler(this.FrmEnderecos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnderecos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +265,8 @@
         private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCadastrarEndereco;
+        private System.Windows.Forms.Button btnConsultarEndereco;
+        private System.Windows.Forms.Button btnListarEndereco;
+        private System.Windows.Forms.DataGridView dgvEnderecos;
     }
 }

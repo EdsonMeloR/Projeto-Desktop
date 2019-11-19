@@ -22,11 +22,9 @@ namespace Projeto_Desktop.Formularios
         private void FrmUsuarioCadastrar_Load(object sender, EventArgs e)
         {
             Niveis n = new Niveis();
-            foreach (var a in n.ListarNiveis())
-            {
-                cmbNivel.Items.Add(a.NomeNivel);
-                cmbNivel.ValueMember = a.IdNivel.ToString();               
-            }
+            cmbNivel.DataSource = n.ListarNiveis();
+            cmbNivel.DisplayMember = "NomeNivel";
+            cmbNivel.ValueMember = "IdNivel";            
         }
 
         private void cmbNivel_SelectedIndexChanged(object sender, EventArgs e)

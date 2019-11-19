@@ -39,7 +39,9 @@ namespace Projeto_Desktop.Classes
             this.idCliente = idCliente;
         }
         public Endereco()
-        { }
+        {
+            IdCliente = new Cliente();
+        }
         //Métodos
         /// <summary>
         /// Inserindo endereco do cliente
@@ -160,23 +162,24 @@ namespace Projeto_Desktop.Classes
         public List<Endereco> ListarEnderecosCliente(int _id)
         {
             db = new Banco();
+            Endereco en;
             List<Endereco> lista = new List<Endereco>();
             try
             {
                 var comm = db.AbrirConexao();
-                comm.CommandText = "select * from endereco where IdCliente = " + _id;
-                var dr = comm.ExecuteReader();
-                Endereco e = new Endereco();
+                comm.CommandText = "select end.idEndereco as Id, end.Logradouro, end.Cep, end.Numero,  end.Complemento, " +
+                "c.RazaoSocial from endereco as end inner join cliente as c on end.IdCliente = c.IdCliente where end.IdCliente = " + _id + "";
+                var dr = comm.ExecuteReader();                
                 while(dr.Read())
                 {
-                    e.Id = dr.GetInt32(0);
-                    e.Logradouro = dr.GetString(1);
-                    e.Cep = dr.GetString(2);
-                    e.Numero = dr.GetInt32(3);
-                    e.Complemento = dr.GetString(4);
-                    e.Referencia = dr.GetString(5);
-                    e.IdCliente.Id = dr.GetInt32(6);
-                    lista.Add(e);
+                    en = new Endereco();
+                    en.Id = dr.GetInt32(0);
+                    en.Logradouro = dr.GetString(1);
+                    en.Cep = dr.GetString(2);
+                    en.Numero = dr.GetInt32(3);
+                    en.Complemento = dr.GetString(4);                    
+                    en.IdCliente.RazaoSocial = dr.GetString(5);
+                    lista.Add(en);
                 }
                 return lista;
             }
