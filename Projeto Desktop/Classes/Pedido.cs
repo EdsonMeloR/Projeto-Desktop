@@ -16,6 +16,7 @@ namespace Projeto_Desktop.Classes
         private DateTime dataPedido;
         private bool retirar;
         private Usuario idUsuario;
+        private Cliente idCliente;
         Banco db;
         //Propiedades
         public int Id { get => id; set => id = value; }
@@ -23,22 +24,27 @@ namespace Projeto_Desktop.Classes
         public DateTime DataPedido { get => dataPedido; set => dataPedido = value; }
         public bool Retirar { get => retirar; set => retirar = value; }
         public Usuario IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public Cliente IdCliente { get => idCliente; set => idCliente = value; }
         //Métodos construtores
-        public Pedido(int id, string situacao, DateTime dataPedido, bool retirar, Usuario idUsuario)
+        public Pedido(int id, string situacao, DateTime dataPedido, bool retirar, Usuario idUsuario,Cliente idCliente)
         {
             this.id = id;
             this.situacao = situacao;
             this.dataPedido = dataPedido;
             this.retirar = retirar;
             this.idUsuario = idUsuario;
+            this.idCliente = idCliente;
         }
         public Pedido()
-        { }
+        {
+            IdUsuario = new Usuario();
+            IdCliente = new Cliente();
+        }
         //Métodos
         /// <summary>
         /// Inserindo um novo pedido
         /// </summary>
-        public void InserirPedido(string situacao, DateTime dataPedido, bool retirar, int idUsuario)
+        public void InserirPedido(string situacao, DateTime dataPedido, bool retirar, int idUsuario, int idCliente)
         {
             db = new Banco();
             try
@@ -50,6 +56,7 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_datapedido", MySqlDbType.DateTime).Value = dataPedido;
                 comm.Parameters.Add("_retirar", MySqlDbType.Bit).Value = retirar;
                 comm.Parameters.Add("_idusuario", MySqlDbType.Int32).Value = idUsuario;
+                comm.Parameters.Add("_idcliente", MySqlDbType.Int32).Value = idCliente;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
                 {
