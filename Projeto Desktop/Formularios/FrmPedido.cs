@@ -75,12 +75,24 @@ namespace Projeto_Desktop.Formularios
         {
             
             Endereco en = new Endereco();
-            cmbEnderecoDestino.DisplayMember = "Logradouro";
-            cmbEnderecoDestino.ValueMember = "Id";
-            cmbEnderecoDestino.DataSource = en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue));
-            cmbEnderecoRemetente.DisplayMember = "Logradouro";
-            cmbEnderecoRemetente.ValueMember = "Id";
-            cmbEnderecoRemetente.DataSource = en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue));            
+            if(en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue)).Count < 2)
+            {
+                var result = MessageBox.Show("É necessário que o cliente tenha mais de dois endereços \n Deseja cadastrar um novo endereço?","Erro",MessageBoxButtons.YesNo);
+                if(result == DialogResult.Yes)
+                {
+                    FrmEnderecos frm = new FrmEnderecos();
+                    frm.Show();
+                }
+            }
+            else
+            {
+                cmbEnderecoDestino.DisplayMember = "Logradouro";
+                cmbEnderecoDestino.ValueMember = "Id";
+                cmbEnderecoDestino.DataSource = en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue));
+                cmbEnderecoRemetente.DisplayMember = "Logradouro";
+                cmbEnderecoRemetente.ValueMember = "Id";
+                cmbEnderecoRemetente.DataSource = en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue));
+            }
         }
 
         private void cmbEnderecoRemetente_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,16 +136,23 @@ namespace Projeto_Desktop.Formularios
         }
 
         private void btnAdicionarEnderecoDestino_Click(object sender, EventArgs e)
-        {
-            PedidosEnderecos pe = new PedidosEnderecos();
-            TipoEndereco te = new TipoEndereco();
-            te.ConsultarTipoEnderecoNome("Destinatário");            
-            pe.InserirPedidoEndereco(Convert.ToInt32(cmbEnderecoDestino.SelectedValue), Convert.ToInt32(txtIdPedido.Text), te.Id);
-            if (pe.Id > 0)
+        {               
+            if(cmbEnderecoRemetente.SelectedValue.ToString() == cmbEnderecoDestino.SelectedValue.ToString())
             {
-                MessageBox.Show("Endereço de Destino inserido com sucesso !!");
-                grbEnderecoDestino.Enabled = false;
-                btnAdicionarCargas.Enabled = true;
+                MessageBox.Show("Os endereços devem ser diferentes");
+            }
+            else
+            {
+                PedidosEnderecos pe = new PedidosEnderecos();
+                TipoEndereco te = new TipoEndereco();
+                te.ConsultarTipoEnderecoNome("Destinatário");
+                pe.InserirPedidoEndereco(Convert.ToInt32(cmbEnderecoDestino.SelectedValue), Convert.ToInt32(txtIdPedido.Text), te.Id);
+                if (pe.Id > 0)
+                {
+                    MessageBox.Show("Endereço de Destino inserido com sucesso !!");
+                    grbEnderecoDestino.Enabled = false;
+                    btnAdicionarCargas.Enabled = true;
+                }
             }
         }
 

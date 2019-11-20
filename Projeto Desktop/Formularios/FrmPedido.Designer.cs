@@ -196,6 +196,7 @@
             // 
             // cmbEnderecoRemetente
             // 
+            this.cmbEnderecoRemetente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEnderecoRemetente.FormattingEnabled = true;
             this.cmbEnderecoRemetente.Location = new System.Drawing.Point(6, 39);
             this.cmbEnderecoRemetente.Name = "cmbEnderecoRemetente";
@@ -462,6 +463,7 @@
             // 
             // cmbEnderecoDestino
             // 
+            this.cmbEnderecoDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEnderecoDestino.FormattingEnabled = true;
             this.cmbEnderecoDestino.Location = new System.Drawing.Point(6, 39);
             this.cmbEnderecoDestino.Name = "cmbEnderecoDestino";

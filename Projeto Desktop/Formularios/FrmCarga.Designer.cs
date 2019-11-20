@@ -40,6 +40,8 @@
             this.txtDetalhes = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.grbCarga = new System.Windows.Forms.GroupBox();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,8 +59,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.grpListaCargasPedido = new System.Windows.Forms.GroupBox();
             this.dgvCargasPedido = new System.Windows.Forms.DataGridView();
-            this.txtNomeProduto = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.grbCarga.SuspendLayout();
             this.grpListaCargasPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
@@ -195,6 +196,22 @@
             this.grbCarga.TabStop = false;
             this.grbCarga.Text = "Inserir Cargas";
             // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.Location = new System.Drawing.Point(213, 46);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(141, 20);
+            this.txtNomeProduto.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(210, 30);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 13);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Nome Produto";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -283,6 +300,7 @@
             this.btnAlterarCarga.TabIndex = 24;
             this.btnAlterarCarga.Text = "Alterar Carga";
             this.btnAlterarCarga.UseVisualStyleBackColor = true;
+            this.btnAlterarCarga.Click += new System.EventHandler(this.btnAlterarCarga_Click);
             // 
             // btnConsultarCargas
             // 
@@ -344,27 +362,21 @@
             this.dgvCargasPedido.TabIndex = 5;
             this.dgvCargasPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargasPedido_CellContentClick);
             // 
-            // txtNomeProduto
+            // button1
             // 
-            this.txtNomeProduto.Location = new System.Drawing.Point(213, 46);
-            this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(141, 20);
-            this.txtNomeProduto.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(210, 30);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 13);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "Nome Produto";
+            this.button1.Location = new System.Drawing.Point(18, 530);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Inserir Carga";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 536);
+            this.ClientSize = new System.Drawing.Size(585, 572);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.grpListaCargasPedido);
             this.Controls.Add(this.grbCarga);
             this.Name = "FrmCarga";
@@ -412,5 +424,6 @@
         private System.Windows.Forms.MaskedTextBox mskPeso;
         private System.Windows.Forms.TextBox txtNomeProduto;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button1;
     }
 }

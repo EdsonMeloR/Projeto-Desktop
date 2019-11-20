@@ -79,7 +79,7 @@ namespace Projeto_Desktop.Classes
             comm.Parameters.Add("_valor", MySqlDbType.Int32).Value = valor;
             this.Id = Convert.ToInt32(comm.ExecuteScalar());
         }
-        public bool AtualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto)
+        public bool AtualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto,int _idtipo,double _valor)
         {
             db = new Banco();
             try 
@@ -94,6 +94,8 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_nomeproduto", MySqlDbType.VarChar).Value = _nomeProduto;
                 comm.Parameters.Add("_detalhesproduto", MySqlDbType.VarChar).Value = _detalhesProduto;
                 comm.Parameters.Add("_id", MySqlDbType.Int32).Value = _id;
+                comm.Parameters.Add("_idtipo", MySqlDbType.Int32).Value = _idtipo;
+                comm.Parameters.Add("_valor", MySqlDbType.Decimal).Value = _valor;
                 comm.ExecuteNonQuery();
                 return true;
             }

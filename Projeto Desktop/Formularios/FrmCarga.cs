@@ -37,19 +37,8 @@ namespace Projeto_Desktop.Formularios
         {
 
         }
-
-        private void btnInserirCarga_Click(object sender, EventArgs e)
+        private void CarregarDataGridInner()
         {
-            carga = new Carga();
-            carga.InserirCarga(Pedido.Id, Convert.ToDouble(mskPeso.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskComprimento.Text), txtNomeProduto.Text, txtDetalhes.Text, Convert.ToInt32(cmbTiposCargas.SelectedValue), Convert.ToDouble(mskValorProduto.Text));
-            if(carga.Id > 0)
-            {
-                MessageBox.Show("Carga inserido com sucesso !");
-            }
-            else
-            {
-                MessageBox.Show("Falha ao inserir a carga");
-            }            
             dgvCargasPedido.Columns.Clear();
             dgvCargasPedido.Columns.Add("idPedido", "Pedido ID");
             dgvCargasPedido.Columns.Add("idCarga", "Carga ID");
@@ -74,7 +63,22 @@ namespace Projeto_Desktop.Formularios
                 item.Cells[7].Value = car.ValorProduto.ToString("C");
                 item.Cells[8].Value = car.IdTipo.Nome;
                 dgvCargasPedido.Rows.Add(item);
-            }            
+            }
+        }
+        private void btnInserirCarga_Click(object sender, EventArgs e)
+        {
+            carga = new Carga();
+            carga.InserirCarga(Pedido.Id, Convert.ToDouble(mskPeso.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskComprimento.Text), txtNomeProduto.Text, txtDetalhes.Text, Convert.ToInt32(cmbTiposCargas.SelectedValue), Convert.ToDouble(mskValorProduto.Text));
+            if(carga.Id > 0)
+            {
+                MessageBox.Show("Carga inserido com sucesso !");
+                txtIdCarga.Text = carga.Id.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Falha ao inserir a carga");
+            }
+            CarregarDataGridInner();                    
         }
 
         private void mskValorProduto_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -84,19 +88,43 @@ namespace Projeto_Desktop.Formularios
 
         private void btnConsultarCargas_Click(object sender, EventArgs e)
         {
-            carga = new Carga();
-            tc = new TipoCarga();            
-            carga.ConsultarCarga(Convert.ToInt32(txtIdCarga.Text));
-            tc.ConsultarTipoCarga(carga.IdTipo.Id);
-            txtIdCarga.Text = carga.Id.ToString();
-            txtDetalhes.Text = carga.DetalhesProduto;
-            txtNomeProduto.Text = carga.NomeProduto;
-            mskAltura.Text = carga.Altura.ToString();
-            mskComprimento.Text = carga.Comprimento.ToString();
-            mskLargura.Text = carga.Largura.ToString();
-            mskPeso.Text = carga.Peso.ToString();
-            mskValorProduto.Text = carga.ValorProduto.ToString();
-            cmbTiposCargas.Text = tc.Nome;
+            if (txtIdCarga.Text != string.Empty)
+            {
+                carga = new Carga();
+                tc = new TipoCarga();
+                carga.ConsultarCarga(Convert.ToInt32(txtIdCarga.Text));
+                tc.ConsultarTipoCarga(carga.IdTipo.Id);
+                txtIdCarga.Text = carga.Id.ToString();
+                txtDetalhes.Text = carga.DetalhesProduto;
+                txtNomeProduto.Text = carga.NomeProduto;
+                mskAltura.Text = carga.Altura.ToString();
+                mskComprimento.Text = carga.Comprimento.ToString();
+                mskLargura.Text = carga.Largura.ToString();
+                mskPeso.Text = carga.Peso.ToString();
+                mskValorProduto.Text = carga.ValorProduto.ToString();
+                cmbTiposCargas.Text = tc.Nome;
+            }
+            else
+            {
+                MessageBox.Show("É necessário preencher o compo ID Carga");
+            }
+        }
+
+        private void btnAlterarCarga_Click(object sender, EventArgs e)
+        {
+            if(txtIdCarga.Text != string.Empty && txtDetalhes.Text != string.Empty && txtNomeProduto.Text != string.Empty && mskAltura.Text != string.Empty && mskComprimento.Text != string.Empty && mskLargura.Text != string.Empty && mskPeso.Text != string.Empty && mskValorProduto.Text != string.Empty)
+            {
+                carga = new Carga();
+                if (carga.AtualizarCarga(Convert.ToInt32(txtIdCarga.Text), Convert.ToDouble(mskPeso.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskComprimento.Text), txtNomeProduto.Text, txtDetalhes.Text, Convert.ToInt32(cmbTiposCargas.SelectedValue), Convert.ToDouble(mskValorProduto.Text)))
+                {
+                    MessageBox.Show("Carga alterada com sucesso !!","Sucesso",MessageBoxButtons.OK);
+                    CarregarDataGridInner();
+                }               
+            }
+            else
+            {
+                MessageBox.Show("Preencha todos os campos para realizar a alteração");
+            }
         }
     }
 }
