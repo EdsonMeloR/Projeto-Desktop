@@ -486,6 +486,7 @@
             this.btnAdicionarCargas.TabIndex = 32;
             this.btnAdicionarCargas.Text = "Adicionar Cargas";
             this.btnAdicionarCargas.UseVisualStyleBackColor = true;
+            this.btnAdicionarCargas.Click += new System.EventHandler(this.btnAdicionarCargas_Click);
             // 
             // FrmPedido
             // 

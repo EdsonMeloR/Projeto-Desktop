@@ -127,5 +127,16 @@ namespace Projeto_Desktop.Formularios
                 grbEnderecoDestino.Enabled = false;
             }
         }
+
+        private void btnAdicionarCargas_Click(object sender, EventArgs e)                       
+        {
+            Usuario user = new Usuario { Id = Convert.ToInt32(cmbUsuario.SelectedValue) };
+            Cliente c = new Cliente { Id = Convert.ToInt32(cmbClientes.SelectedValue) };
+            Pedido PedidoFinalizado = new Pedido(Convert.ToInt32(txtIdPedido.Text), cmbSituacao.Text,
+            Convert.ToDateTime(mskDataPedido.Text), chkRetirar.Checked, user, c);
+            FrmCarga frm = new FrmCarga(PedidoFinalizado);
+            this.Hide();
+            frm.Show();
+        }
     }
 }

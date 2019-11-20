@@ -166,6 +166,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmCarga.resx">
+      <DependentUpon>FrmCarga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmEnderecos.resx">
       <DependentUpon>FrmEnderecos.cs</DependentUpon>
     </EmbeddedResource>
