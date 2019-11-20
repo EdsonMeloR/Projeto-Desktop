@@ -38,7 +38,7 @@ namespace Projeto_Desktop.Classes
         /// <summary>
         /// Inserindo um novo pedido
         /// </summary>
-        public void InserirPedido(string situacao, DateTime dataPedido, bool retirar, int idUsuario)
+        public void InserirPedido(string situacao, bool retirar, int idUsuario,int idCliente)
         {
             db = new Banco();
             try
@@ -46,14 +46,15 @@ namespace Projeto_Desktop.Classes
                 var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_pedido";
-                comm.Parameters.Add("_situacao", MySqlDbType.VarChar).Value = situacao;
-                comm.Parameters.Add("_datapedido", MySqlDbType.DateTime).Value = dataPedido;
+                comm.Parameters.Add("_situacao", MySqlDbType.VarChar).Value = situacao;                
                 comm.Parameters.Add("_retirar", MySqlDbType.Bit).Value = retirar;
                 comm.Parameters.Add("_idusuario", MySqlDbType.Int32).Value = idUsuario;
+                comm.Parameters.Add("_idcliente", MySqlDbType.Int32).Value = idCliente;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
                 {
                     this.Id = dr.GetInt32(0);
+                    this.DataPedido = dr.GetDateTime(2);
                 }
             }
             catch(Exception e)

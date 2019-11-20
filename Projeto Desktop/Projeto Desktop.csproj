@@ -92,6 +92,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCarga.Designer.cs">
+      <DependentUpon>FrmCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmEnderecos.cs">
       <SubType>Form</SubType>
     </Compile>

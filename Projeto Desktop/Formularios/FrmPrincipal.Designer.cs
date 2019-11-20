@@ -80,6 +80,7 @@
             // 
             this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
             resources.ApplyResources(this.novoPedidoToolStripMenuItem, "novoPedidoToolStripMenuItem");
+            this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click);
             // 
             // consultarPedidoToolStripMenuItem
             // 

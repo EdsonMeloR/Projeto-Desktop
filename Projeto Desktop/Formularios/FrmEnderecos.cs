@@ -43,7 +43,7 @@ namespace Projeto_Desktop.Formularios
         private void btnCadastrarEndereco_Click(object sender, EventArgs e)
         {
             Endereco end = new Endereco();
-            end.InserirEndereco(txtLogradouro.Text, txtCep.Text.Replace("-", ""), txtNumero.Text, txtComplemento.Text, txtReferencia.Text, Convert.ToInt32(cmbClientes.ValueMember));
+            end.InserirEndereco(txtLogradouro.Text, txtCep.Text.Replace("-", ""), txtNumero.Text, txtComplemento.Text, txtReferencia.Text, Convert.ToInt32(cmbClientes.SelectedValue));
             if(end.Id > 0)
             {
                 MessageBox.Show("Endereço inserido com sucesso");

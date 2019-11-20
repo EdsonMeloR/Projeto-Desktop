@@ -41,7 +41,7 @@ namespace Projeto_Desktop.Formularios
             }
             else
             {
-                user.InserirUsuario(txtNome.Text, txtCpf.Text, txtTelefone.Text, txtSenha.Text, txtEmail.Text, Convert.ToInt32(cmbNivel.ValueMember));
+                user.InserirUsuario(txtNome.Text, txtCpf.Text, txtTelefone.Text, txtSenha.Text, txtEmail.Text, Convert.ToInt32(cmbNivel.SelectedValue));
                 if (user.Id > 0)
                 {
                     MessageBox.Show("Usuario cadastrado com sucesso", "Sucesso");

@@ -105,7 +105,7 @@ namespace Projeto_Desktop.Classes
             try
             {
                 var comm = db.AbrirConexao();
-                comm.CommandText = "select * from endereco where idCliente = '" + _idcliente + "' && idEndereco = '" + _idendereco + "'";
+                comm.CommandText = "select * from endereco where idCliente = " + _idcliente + " && idEndereco = " + _idendereco;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
                 {

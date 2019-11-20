@@ -156,19 +156,19 @@
     <value>Planos</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Cadastrar Cliente</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Cliente</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Cliente</value>
@@ -186,25 +186,25 @@
     <value>Entregas</value>
   </data>
   <data name="inserirToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>125, 22</value>
   </data>
   <data name="inserirToolStripMenuItem.Text" xml:space="preserve">
     <value>Inserir</value>
   </data>
   <data name="alterarToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>125, 22</value>
   </data>
   <data name="alterarToolStripMenuItem1.Text" xml:space="preserve">
     <value>Alterar</value>
   </data>
   <data name="consultarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>125, 22</value>
   </data>
   <data name="consultarToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar</value>
   </data>
   <data name="usuáriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>119, 22</value>
   </data>
   <data name="usuáriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Usuários</value>

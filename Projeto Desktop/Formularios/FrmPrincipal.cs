@@ -79,5 +79,11 @@ namespace Projeto_Desktop
             FrmPlanos frmp = new FrmPlanos();
             frmp.Show();
         }
+
+        private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPedido frm = new FrmPedido();
+            frm.Show();
+        }
     }
 }

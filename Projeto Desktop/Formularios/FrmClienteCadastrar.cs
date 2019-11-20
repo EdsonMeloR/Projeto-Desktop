@@ -56,5 +56,11 @@ namespace Projeto_Desktop.Formularios
             txtSenha.Text = c.Senha.ToString();
             txtTelefone.Text = c.Telefone.ToString();
         }
+
+        private void btnCadastrarEndereco_Click(object sender, EventArgs e)
+        {
+            FrmEnderecos frm = new FrmEnderecos();
+            frm.Show();
+        }
     }
 }

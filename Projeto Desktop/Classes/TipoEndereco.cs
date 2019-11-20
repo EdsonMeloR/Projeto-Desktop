@@ -84,8 +84,30 @@ namespace Projeto_Desktop.Classes
         }
         /// <summary>
         /// Consultando tipo de endereco
-        /// </summary>
-        
+        /// </summary>        
+        public void ConsultarTipoEnderecoNome(string _nome)
+        {
+            db = new Banco();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select * from tiposenderecos where Nome = '" + _nome + "'";
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.Id = dr.GetInt32(0);
+                    this.Nome = dr.GetString(1);
+                    this.Descricao = dr.GetString(2);
+                }
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+            }
+        }
+        /// <summary>
+        /// Consultando tipo de endereco
+        /// </summary>        
         public void ConsultarTipoEndereco(int _id)
         {
             db = new Banco();
