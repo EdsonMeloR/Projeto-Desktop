@@ -62,6 +62,7 @@ namespace Projeto_Desktop.Formularios
             {
                 MessageBox.Show("Endereço de remetente inserido com sucesso !!");
                 grbEnderecosRemetente.Enabled = false;
+                grbEnderecoDestino.Enabled = true;
             }
         }
 
@@ -107,12 +108,19 @@ namespace Projeto_Desktop.Formularios
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
             Pedido p = new Pedido();
-            p.InserirPedido(cmbSituacao.Text, chkRetirar.Checked, Convert.ToInt32(cmbUsuario.SelectedValue), Convert.ToInt32(cmbClientes.SelectedValue));
-            mskDataPedido.Text = p.DataPedido.ToString();
-            txtIdPedido.Text = p.Id.ToString();
-            grbEnderecosRemetente.Enabled = true;
-            grbEnderecoDestino.Enabled = true;
-            cmbClientes.Enabled = false;
+            if(cmbSituacao.Text != string.Empty && Convert.ToInt32(cmbUsuario.SelectedValue) != 0 && Convert.ToInt32(cmbClientes.SelectedValue) != 0)
+            {
+                p.InserirPedido(cmbSituacao.Text, chkRetirar.Checked, Convert.ToInt32(cmbUsuario.SelectedValue), Convert.ToInt32(cmbClientes.SelectedValue));
+                mskDataPedido.Text = p.DataPedido.ToString();
+                txtIdPedido.Text = p.Id.ToString();
+                grbEnderecosRemetente.Enabled = true;
+                grbEnderecoDestino.Enabled = false;
+                cmbClientes.Enabled = false;
+            } 
+            else
+            {
+                MessageBox.Show("É necessários preencher todos os campos ");
+            }
         }
 
         private void btnAdicionarEnderecoDestino_Click(object sender, EventArgs e)
@@ -125,6 +133,7 @@ namespace Projeto_Desktop.Formularios
             {
                 MessageBox.Show("Endereço de Destino inserido com sucesso !!");
                 grbEnderecoDestino.Enabled = false;
+                btnAdicionarCargas.Enabled = true;
             }
         }
 

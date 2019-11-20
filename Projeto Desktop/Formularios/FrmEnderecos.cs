@@ -77,5 +77,10 @@ namespace Projeto_Desktop.Formularios
                 dgvEnderecos.Rows.Add(item);
             }            
         }
+
+        private void dgvEnderecos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

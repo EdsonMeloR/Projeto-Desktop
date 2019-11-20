@@ -60,6 +60,7 @@ namespace Projeto_Desktop.Classes
                 while (dr.Read())
                 {
                     this.Id = dr.GetInt32(0);
+                    this.DataPedido = dr.GetDateTime(2);
                 }
             }
             catch(Exception e)

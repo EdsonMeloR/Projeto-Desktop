@@ -213,6 +213,7 @@
             this.dgvEnderecos.RowHeadersVisible = false;
             this.dgvEnderecos.Size = new System.Drawing.Size(491, 220);
             this.dgvEnderecos.TabIndex = 19;
+            this.dgvEnderecos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnderecos_CellContentClick);
             // 
             // FrmEnderecos
             // 

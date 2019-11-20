@@ -21,6 +21,7 @@ namespace Projeto_Desktop.Classes
         private double comprimento;
         private string nomeProduto;
         private string detalhesProduto;
+        private double valorProduto;
         private Banco db;
 
         //Propiedades
@@ -33,8 +34,10 @@ namespace Projeto_Desktop.Classes
         public string NomeProduto { get => nomeProduto; set => nomeProduto = value; }
         public string DetalhesProduto { get => detalhesProduto; set => detalhesProduto = value; }
         public TipoCarga IdTipo { get => idTipo; set => idTipo = value; }
+        public double ValorProduto { get => valorProduto; set => valorProduto = value; }
+
         //Métodos construtores
-        public Carga(int id, TipoCarga idTipo, Pedido idPedido, double peso, double largura, double altura, double comprimento, string nomeProduto, string detalhesProduto)
+        public Carga(int id, TipoCarga idTipo, Pedido idPedido, double peso, double largura, double altura, double comprimento, string nomeProduto, string detalhesProduto, double valorProduto)
         {
             this.id = id;
             this.idTipo = idTipo;
@@ -44,18 +47,22 @@ namespace Projeto_Desktop.Classes
             this.altura = altura;
             this.comprimento = comprimento;
             this.nomeProduto = nomeProduto;
-            this.detalhesProduto = detalhesProduto;            
+            this.detalhesProduto = detalhesProduto;
+            this.valorProduto = valorProduto;
         }
         public Carga()
-        { }
-        
+        {
+            IdTipo = new TipoCarga();
+            IdPedido = new Pedido();
+        }
+
 
         //Métodos
 
         /// <summary>
         /// Método utilizando para inserir carga
         /// </summary>      
-        public void InserirCarga(int _idPedido, double _peso,double _largura,double _altura, double _comprimento,string _nomeProduto,string _detalhesProduto)
+        public void InserirCarga(int _idPedido, double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto, int idtipo, double valor)
         {
             db = new Banco();
             var comm = db.AbrirConexao();
@@ -68,6 +75,8 @@ namespace Projeto_Desktop.Classes
             comm.Parameters.Add("_comprimento", MySqlDbType.Decimal).Value = _comprimento;
             comm.Parameters.Add("_nomeproduto", MySqlDbType.VarChar).Value = _nomeProduto;
             comm.Parameters.Add("_detalhesproduto", MySqlDbType.VarChar).Value = _detalhesProduto;
+            comm.Parameters.Add("_idtipo", MySqlDbType.Int32).Value = idtipo;
+            comm.Parameters.Add("_valor", MySqlDbType.Int32).Value = valor;
             this.Id = Convert.ToInt32(comm.ExecuteScalar());
         }
         public bool AtualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto)
@@ -117,6 +126,7 @@ namespace Projeto_Desktop.Classes
                     this.Comprimento = dr.GetDouble(6);
                     this.NomeProduto = dr.GetString(7);
                     this.DetalhesProduto = dr.GetString(8);
+                    this.ValorProduto = dr.GetDouble(9);
                 }
             }
             catch (Exception e)
@@ -178,11 +188,50 @@ namespace Projeto_Desktop.Classes
                         Altura = dr.GetDouble(5),
                         Comprimento = dr.GetDouble(6),
                         NomeProduto = dr.GetString(7),
-                        DetalhesProduto = dr.GetString(8)
+                        DetalhesProduto = dr.GetString(8),
+                        ValorProduto = dr.GetDouble(9)
                     };
                     C.idTipo.Id = dr.GetInt32(1);
                     C.idPedido.Id = dr.GetInt32(2);
                     listaCarga.Add(C);
+                }
+                return listaCarga;
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return null;
+            }
+        }
+        public List<Carga> ListarCargasPedidoInner(int _idPedido)
+        {
+            db = new Banco();
+            Carga c;
+            List<Carga> listaCarga = new List<Carga>(); ;
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select c.idPedidos as idPedido, c.idCarga, c.NomeProduto,c.Peso,c.Largura, "+
+                            "c.Altura,c.Comprimento, c.ValorProduto, tipo.Nome from carga as c "+
+                             "inner join tiposcargas as tipo on c.idTipo = tipo.idTipo "+
+                            "where idPedidos = " + _idPedido;
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    c = new Carga
+                    {
+                        Id = dr.GetInt32(1),
+                        NomeProduto = dr.GetString(2),
+                        Peso = dr.GetDouble(3),
+                        Largura = dr.GetDouble(4),
+                        Altura = dr.GetDouble(5),
+                        Comprimento = dr.GetDouble(6),
+                        ValorProduto = dr.GetDouble(7),
+
+                    };
+                    c.IdPedido.Id = dr.GetInt32(0);
+                    c.IdTipo.Nome = dr.GetString(8);
+                    listaCarga.Add(c);
                 }
                 return listaCarga;
             }

@@ -161,7 +161,7 @@
             // 
             this.mskDataPedido.Enabled = false;
             this.mskDataPedido.Location = new System.Drawing.Point(155, 81);
-            this.mskDataPedido.Mask = "00/00/0000";
+            this.mskDataPedido.Mask = "00/00/0000   00:00";
             this.mskDataPedido.Name = "mskDataPedido";
             this.mskDataPedido.Size = new System.Drawing.Size(123, 20);
             this.mskDataPedido.TabIndex = 15;
@@ -480,6 +480,7 @@
             // 
             // btnAdicionarCargas
             // 
+            this.btnAdicionarCargas.Enabled = false;
             this.btnAdicionarCargas.Location = new System.Drawing.Point(12, 415);
             this.btnAdicionarCargas.Name = "btnAdicionarCargas";
             this.btnAdicionarCargas.Size = new System.Drawing.Size(129, 23);
