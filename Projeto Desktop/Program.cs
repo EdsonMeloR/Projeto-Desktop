@@ -18,7 +18,7 @@ namespace Projeto_Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPedido());
+            Application.Run(new FrmConsultarPedido());
         }
         public static Usuario userLogado = new Usuario();
     }

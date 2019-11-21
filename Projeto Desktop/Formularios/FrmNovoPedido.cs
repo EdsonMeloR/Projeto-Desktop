@@ -11,9 +11,9 @@ using Projeto_Desktop.Classes;
 
 namespace Projeto_Desktop.Formularios
 {
-    public partial class FrmPedido : Form
+    public partial class FrmNovoPedido : Form
     {
-        public FrmPedido()
+        public FrmNovoPedido()
         {
             InitializeComponent();
         }

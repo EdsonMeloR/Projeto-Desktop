@@ -106,6 +106,7 @@ namespace Projeto_Desktop.Classes
                     this.DataPedido = dr.GetDateTime(2);
                     this.Retirar = dr.GetBoolean(3);
                     this.IdUsuario.Id = dr.GetInt32(4);
+                    this.IdCliente.Id = dr.GetInt32(5);
                 }
             }
             catch (Exception e)
@@ -113,6 +114,9 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
             }
         }
+        /// <summary>
+        /// Consulta o pedido pelo idCliente e Id Pedido
+        /// </summary>        
         public MySqlDataReader ConsultarPedidosCliente(int idCliente,int idPedido)
         {
             db = new Banco();
@@ -122,6 +126,41 @@ namespace Projeto_Desktop.Classes
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "viewPedidosClientes";
                 return comm.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return null;
+            }
+        }
+        /// <summary>
+        /// Retorna uma lista de pedidos efetuado pelo cliente
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <returns></returns>
+        public List<Pedido> ConsultarPedidosCliente(int idCliente)
+        {
+            db = new Banco();
+            Pedido p;
+            List<Pedido> lista = new List<Pedido>();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "select * from pedidos where cliente_IdCliente = " + idCliente;
+                var dr = comm.ExecuteReader();
+                while(dr.Read())
+                {
+                    p = new Pedido();
+                    this.Id = dr.GetInt32(0);
+                    this.Situacao = dr.GetString(1);
+                    this.DataPedido = dr.GetDateTime(2);
+                    this.Retirar = dr.GetBoolean(3);
+                    this.IdUsuario.Id = dr.GetInt32(4);
+                    this.IdCliente.Id = dr.GetInt32(5);
+                    lista.Add(p);
+                }
+                return lista;
             }
             catch (Exception e)
             {

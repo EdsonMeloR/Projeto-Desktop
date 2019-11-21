@@ -82,7 +82,7 @@ namespace Projeto_Desktop
 
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPedido frm = new FrmPedido();
+            FrmNovoPedido frm = new FrmNovoPedido();
             frm.Show();
         }
     }
