@@ -87,6 +87,7 @@
     <Compile Include="Classes\TipoFrete.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\Veiculo.cs" />
+    <Compile Include="Classes\Voucher.cs" />
     <Compile Include="Connected Services\WsCorreios\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -82,9 +82,9 @@ namespace Projeto_Desktop.Classes
         public bool AtualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto,int _idtipo,double _valor)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try 
-            { 
-                var comm = db.AbrirConexao();
+            {                 
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_carga";            
                 comm.Parameters.Add("_peso", MySqlDbType.Decimal).Value = _peso;
@@ -104,6 +104,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultand carga
@@ -112,9 +116,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarCarga(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from carga where idCarga = " + _id;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -135,17 +139,20 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public List<Carga> ListarCargas()
         {
             db = new Banco();
             List<Carga> listaCarga = new List<Carga>(); ;
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from carga";
                 var dr = comm.ExecuteReader();
-
                 while (dr.Read())
                 {
                     Carga C = new Carga
@@ -168,6 +175,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         public List<Carga> ListarCargasPedido(int _idPedido)
