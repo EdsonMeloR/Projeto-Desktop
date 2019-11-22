@@ -15,14 +15,14 @@ namespace Projeto_Desktop.Classes
         private string codigo;
         private DateTime dataInicio;
         private DateTime dataTermino;
-        private Cliente Cliente;
+        private Cliente cliente;
         Banco db;
         //Propiedades
         public int Id { get => id; set => id = value; }
         public string Codigo { get => codigo; set => codigo = value; }
         public DateTime DataInicio { get => dataInicio; set => dataInicio = value; }
         public DateTime DataTermino { get => dataTermino; set => dataTermino = value; }
-        public Cliente Cliente1 { get => Cliente; set => Cliente = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
         //Métodos construtores
         public Voucher(int id, string codigo, DateTime dataInicio, DateTime dataTermino, Cliente cliente)
         {
@@ -30,7 +30,7 @@ namespace Projeto_Desktop.Classes
             this.codigo = codigo;
             this.dataInicio = dataInicio;
             this.dataTermino = dataTermino;
-            Cliente = cliente;
+            this.Cliente = cliente;
         }
         public Voucher ()
         {
@@ -45,10 +45,11 @@ namespace Projeto_Desktop.Classes
             {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_voucher";
-                comm.Parameters.Add("_codigo",MySqlDbType.VarChar).Value = codigo;
-                comm.Parameters.Add("_dataInicio", MySqlDbType.DateTime).Value = dataInicio;
-                comm.Parameters.Add("_dataTermino", MySqlDbType.DateTime).Value = dataTermino;
-                comm.Parameters.Add("_idCliente", MySqlDbType.Int32).Value = idCliente;
+                comm.Parameters.Add("codigo",MySqlDbType.VarChar).Value = codigo;
+                comm.Parameters.Add("dataInicio", MySqlDbType.DateTime).Value = dataInicio;
+                comm.Parameters.Add("dataTermino", MySqlDbType.DateTime).Value = dataTermino;
+                comm.Parameters.Add("idcliente", MySqlDbType.Int32).Value = idCliente;
+                comm.Parameters.Add("idplano", MySqlDbType.Int32).Value = idCliente;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())                    
                 {
