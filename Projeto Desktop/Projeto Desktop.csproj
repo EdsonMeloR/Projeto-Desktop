@@ -93,17 +93,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmAssociarPlano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAssociarPlano.Designer.cs">
+      <DependentUpon>FrmAssociarPlano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmAssociarPlanoAlterar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAssociarPlanoAlterar.Designer.cs">
+      <DependentUpon>FrmAssociarPlanoAlterar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmCarga.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmCarga.Designer.cs">
       <DependentUpon>FrmCarga.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmConsultarPedido.cs">
+    <Compile Include="Formularios\FrmPedidoConsultar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmConsultarPedido.Designer.cs">
-      <DependentUpon>FrmConsultarPedido.cs</DependentUpon>
+    <Compile Include="Formularios\FrmPedidoConsultar.Designer.cs">
+      <DependentUpon>FrmPedidoConsultar.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmEnderecos.cs">
       <SubType>Form</SubType>
@@ -135,17 +147,17 @@
     <Compile Include="Formularios\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmNovoPedido.cs">
+    <Compile Include="Formularios\FrmPedidoNovo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmNovoPedido.Designer.cs">
-      <DependentUpon>FrmNovoPedido.cs</DependentUpon>
+    <Compile Include="Formularios\FrmPedidoNovo.Designer.cs">
+      <DependentUpon>FrmPedidoNovo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmPlanos.cs">
+    <Compile Include="Formularios\FrmPlano.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmPlanos.Designer.cs">
-      <DependentUpon>FrmPlanos.cs</DependentUpon>
+    <Compile Include="Formularios\FrmPlano.Designer.cs">
+      <DependentUpon>FrmPlano.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -173,11 +185,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmAssociarPlano.resx">
+      <DependentUpon>FrmAssociarPlano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmAssociarPlanoAlterar.resx">
+      <DependentUpon>FrmAssociarPlanoAlterar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCarga.resx">
       <DependentUpon>FrmCarga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmConsultarPedido.resx">
-      <DependentUpon>FrmConsultarPedido.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmPedidoConsultar.resx">
+      <DependentUpon>FrmPedidoConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmEnderecos.resx">
       <DependentUpon>FrmEnderecos.cs</DependentUpon>
@@ -194,11 +212,11 @@
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmNovoPedido.resx">
-      <DependentUpon>FrmNovoPedido.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmPedidoNovo.resx">
+      <DependentUpon>FrmPedidoNovo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmPlanos.resx">
-      <DependentUpon>FrmPlanos.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmPlano.resx">
+      <DependentUpon>FrmPlano.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrimeiroLogin.resx">
       <DependentUpon>FrmPrimeiroLogin.cs</DependentUpon>

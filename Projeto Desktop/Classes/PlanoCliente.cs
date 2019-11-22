@@ -36,7 +36,10 @@ namespace Projeto_Desktop.Classes
             this.idPlano = idPlano;
         }
         public PlanoCliente()
-        { }
+        {
+            IdCliente = new Cliente();
+            IdPlano = new Plano();
+        }
         //Métodos
         /// <summary>
         /// Associando plano ao cliente
@@ -64,7 +67,7 @@ namespace Projeto_Desktop.Classes
         /// <summary>
         /// Alterando plano já associado ao cliente
         /// </summary>
-        public bool AlterarPlanoClinete(int _idplanocliente,double _desconto)
+        public bool AlterarPlanoCliente(int _idplanocliente,double _desconto)
         {
             db = new Banco();
             try
@@ -110,6 +113,30 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
             }
         }
+
+        public void ConsultarPlanoClienteAtivo(int _id)
+        {
+            db = new Banco();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select * from planocliente where idCliente = " + _id + " && now() < DataTermino";
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.Id = dr.GetInt32(0);
+                    this.DataInicio = dr.GetDateTime(1);
+                    this.DataTermino = dr.GetDateTime(2);
+                    this.Desconto = dr.GetDouble(3);
+                    this.IdCliente.Id = dr.GetInt32(4);
+                    this.IdPlano.Id = dr.GetInt32(5);
+                }
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+            }
+        }
         /// <summary>
         /// Listando planos associado á clientes
         /// </summary>
@@ -141,6 +168,36 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+        }
+        /// <summary>
+        /// Alterar Plano Associado ao Cliente
+        /// </summary>
+        /// <Retorno>True, se for alterado com sucesso. False em caso de falha ao alterar</Retorno>
+        public bool AlterarPlanoAssociado(int idPlanoCliente,int idPlano, int idCliente, DateTime dataInicio , DateTime dataTermino,double desconto )
+        {
+            db = new Banco();
+            var comm = db.AbrirConexao();
+            try
+            {
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "alterar_planocliente";
+                comm.Parameters.Add("_idPlanoCliente", MySqlDbType.Int32).Value = idPlanoCliente;
+                comm.Parameters.Add("_DataInicio", MySqlDbType.DateTime).Value = dataInicio;
+                comm.Parameters.Add("_DataTermino", MySqlDbType.DateTime).Value = dataTermino;
+                comm.Parameters.Add("_Desconto", MySqlDbType.Decimal).Value = desconto;
+                comm.Parameters.Add("_idPlano", MySqlDbType.Int32).Value = idPlano;
+                comm.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
+            {
+                e.Message.ToString();
+                return false;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

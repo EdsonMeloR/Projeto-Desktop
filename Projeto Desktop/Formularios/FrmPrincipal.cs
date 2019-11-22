@@ -76,13 +76,34 @@ namespace Projeto_Desktop
 
         private void planoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPlanos frmp = new FrmPlanos();
+            FrmPlano frmp = new FrmPlano();
             frmp.Show();
         }
 
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmNovoPedido frm = new FrmNovoPedido();
+            FrmPedidoNovo frm = new FrmPedidoNovo();
+            frm.Show();
+        }
+
+        private void consultarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void associarPlanoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAssociarPlano frm = new FrmAssociarPlano();
             frm.Show();
         }
     }

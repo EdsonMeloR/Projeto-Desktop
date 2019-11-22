@@ -145,8 +145,7 @@ namespace Projeto_Desktop.Classes
             List<Pedido> lista = new List<Pedido>();
             try
             {
-                var comm = db.AbrirConexao();
-                comm.CommandType = CommandType.StoredProcedure;
+                var comm = db.AbrirConexao();                
                 comm.CommandText = "select * from pedidos where cliente_IdCliente = " + idCliente;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())

@@ -11,9 +11,9 @@ using Projeto_Desktop.Classes;
 
 namespace Projeto_Desktop.Formularios
 {
-    public partial class FrmNovoPedido : Form
+    public partial class FrmPedidoNovo : Form
     {
-        public FrmNovoPedido()
+        public FrmPedidoNovo()
         {
             InitializeComponent();
         }
@@ -73,25 +73,42 @@ namespace Projeto_Desktop.Formularios
 
         private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            Endereco en = new Endereco();
-            if(en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue)).Count < 2)
+            Pedido ped = new Pedido();
+            var listaPedidos = ped.ConsultarPedidosCliente(Convert.ToInt32(cmbClientes.SelectedValue));
+            Plano p = new Plano();
+            PlanoCliente pc = new PlanoCliente();
+            pc.ConsultarPlanoClienteIdCliente(Convert.ToInt32(cmbClientes.SelectedValue));
+            p.ConsultarPlanoId(pc.IdPlano.Id);
+            if (listaPedidos.Count <= p.LimitePedido)
             {
-                var result = MessageBox.Show("É necessário que o cliente tenha mais de dois endereços \n Deseja cadastrar um novo endereço?","Erro",MessageBoxButtons.YesNo);
-                if(result == DialogResult.Yes)
+                Endereco en = new Endereco();
+                if (en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue)).Count < 2)
                 {
-                    FrmEnderecos frm = new FrmEnderecos();
-                    frm.Show();
+                    var result = MessageBox.Show("É necessário que o cliente tenha mais de dois endereços \n Deseja cadastrar um novo endereço?", "Erro", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        FrmEnderecos frm = new FrmEnderecos();
+                        frm.Show();
+                    }
+                }
+                else
+                {
+                    cmbEnderecoDestino.DisplayMember = "Logradouro";
+                    cmbEnderecoDestino.ValueMember = "Id";
+                    cmbEnderecoDestino.DataSource = en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue));
+                    cmbEnderecoRemetente.DisplayMember = "Logradouro";
+                    cmbEnderecoRemetente.ValueMember = "Id";
+                    cmbEnderecoRemetente.DataSource = en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue));
                 }
             }
             else
             {
-                cmbEnderecoDestino.DisplayMember = "Logradouro";
-                cmbEnderecoDestino.ValueMember = "Id";
-                cmbEnderecoDestino.DataSource = en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue));
-                cmbEnderecoRemetente.DisplayMember = "Logradouro";
-                cmbEnderecoRemetente.ValueMember = "Id";
-                cmbEnderecoRemetente.DataSource = en.ListarEnderecosCliente(Convert.ToInt32(cmbClientes.SelectedValue));
+                var a = MessageBox.Show("Limite de pedidos excedido \n Deseja Trocar de plano?","Limite Excedido",MessageBoxButtons.YesNo);
+                if(DialogResult.Yes == a)
+                {
+                    FrmPlano frm = new FrmPlano();
+                    frm.Show();
+                }
             }
         }
 

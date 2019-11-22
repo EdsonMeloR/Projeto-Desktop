@@ -11,10 +11,10 @@ using Projeto_Desktop.Classes;
 
 namespace Projeto_Desktop.Formularios
 {
-    public partial class FrmPlanos : Form
+    public partial class FrmPlano : Form
     {
         Plano p;
-        public FrmPlanos()
+        public FrmPlano()
         {
             InitializeComponent();
         }

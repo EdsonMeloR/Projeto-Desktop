@@ -126,19 +126,19 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="novoPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="novoPedidoToolStripMenuItem.Text" xml:space="preserve">
     <value>Novo Pedido</value>
   </data>
   <data name="consultarPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="consultarPedidoToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Pedido</value>
   </data>
   <data name="alterarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="alterarToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Pedido</value>
@@ -156,22 +156,28 @@
     <value>Planos</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Cadastrar Cliente</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Cliente</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Cliente</value>
+  </data>
+  <data name="associarPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="associarPlanoToolStripMenuItem.Text" xml:space="preserve">
+    <value>AssociarPlano</value>
   </data>
   <data name="clienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
@@ -204,7 +210,7 @@
     <value>Consultar</value>
   </data>
   <data name="usuáriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="usuáriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Usuários</value>
@@ -394,6 +400,12 @@
     <value>alterarClienteToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;alterarClienteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;associarPlanoToolStripMenuItem.Name" xml:space="preserve">
+    <value>associarPlanoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;associarPlanoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;entregasToolStripMenuItem.Name" xml:space="preserve">

@@ -11,9 +11,9 @@ using Projeto_Desktop.Classes;
 
 namespace Projeto_Desktop.Formularios
 {
-    public partial class FrmConsultarPedido : Form
+    public partial class FrmPedidoConsultar : Form
     {
-        public FrmConsultarPedido()
+        public FrmPedidoConsultar()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace Projeto_Desktop.Formularios
         private void CarregarComboBoxUsuario()
         {
             //Carregando combo box de Usuarios
-            User = new Usuario();
+            User = new Usuario();            
             Ped.ConsultarPedido(Convert.ToInt32(cmbPedidos.SelectedValue));
             User.ConsultarUsuario(Ped.IdUsuario.Id);
             cmbUsuario.Text = User.Nome;
@@ -61,8 +61,13 @@ namespace Projeto_Desktop.Formularios
             Ped = new Pedido();
             Ped.ConsultarPedido(Convert.ToInt32(cmbPedidos.SelectedValue));
             PedEnd.ListarPedidoEndereco();
-            txtEnderecoDestino.Text = Ped.
-            CarregarComboBoxUsuario();            
+            //txtEnderecoDestino.Text = Ped.
+            CarregarComboBoxUsuario();   
+        }
+
+        private void btnListarCargasPedido_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

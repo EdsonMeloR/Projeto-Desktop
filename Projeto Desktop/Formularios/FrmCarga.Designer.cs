@@ -31,8 +31,6 @@
             this.txtIdCarga = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnInserirCarga = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,6 +58,8 @@
             this.grpListaCargasPedido = new System.Windows.Forms.GroupBox();
             this.dgvCargasPedido = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtIdPedido = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.grbCarga.SuspendLayout();
             this.grpListaCargasPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
@@ -90,23 +90,6 @@
             this.btnInserirCarga.Text = "Inserir Carga";
             this.btnInserirCarga.UseVisualStyleBackColor = true;
             this.btnInserirCarga.Click += new System.EventHandler(this.btnInserirCarga_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Id Pedido";
-            // 
-            // txtIdPedido
-            // 
-            this.txtIdPedido.Enabled = false;
-            this.txtIdPedido.Location = new System.Drawing.Point(6, 32);
-            this.txtIdPedido.Name = "txtIdPedido";
-            this.txtIdPedido.Size = new System.Drawing.Size(100, 20);
-            this.txtIdPedido.TabIndex = 3;
             // 
             // label5
             // 
@@ -189,7 +172,7 @@
             this.grbCarga.Controls.Add(this.label5);
             this.grbCarga.Controls.Add(this.label7);
             this.grbCarga.Controls.Add(this.label6);
-            this.grbCarga.Location = new System.Drawing.Point(12, 12);
+            this.grbCarga.Location = new System.Drawing.Point(12, 58);
             this.grbCarga.Name = "grbCarga";
             this.grbCarga.Size = new System.Drawing.Size(561, 242);
             this.grbCarga.TabIndex = 19;
@@ -342,11 +325,9 @@
             // grpListaCargasPedido
             // 
             this.grpListaCargasPedido.Controls.Add(this.dgvCargasPedido);
-            this.grpListaCargasPedido.Controls.Add(this.txtIdPedido);
-            this.grpListaCargasPedido.Controls.Add(this.label2);
-            this.grpListaCargasPedido.Location = new System.Drawing.Point(12, 260);
+            this.grpListaCargasPedido.Location = new System.Drawing.Point(12, 306);
             this.grpListaCargasPedido.Name = "grpListaCargasPedido";
-            this.grpListaCargasPedido.Size = new System.Drawing.Size(561, 264);
+            this.grpListaCargasPedido.Size = new System.Drawing.Size(561, 237);
             this.grpListaCargasPedido.TabIndex = 21;
             this.grpListaCargasPedido.TabStop = false;
             this.grpListaCargasPedido.Text = "Cargas Pedidos";
@@ -355,27 +336,46 @@
             // 
             this.dgvCargasPedido.AllowUserToOrderColumns = true;
             this.dgvCargasPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCargasPedido.Location = new System.Drawing.Point(6, 58);
+            this.dgvCargasPedido.Location = new System.Drawing.Point(6, 19);
             this.dgvCargasPedido.Name = "dgvCargasPedido";
             this.dgvCargasPedido.RowHeadersVisible = false;
-            this.dgvCargasPedido.Size = new System.Drawing.Size(549, 200);
+            this.dgvCargasPedido.Size = new System.Drawing.Size(549, 212);
             this.dgvCargasPedido.TabIndex = 5;
             this.dgvCargasPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargasPedido_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 530);
+            this.button1.Location = new System.Drawing.Point(18, 549);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.Size = new System.Drawing.Size(149, 35);
             this.button1.TabIndex = 35;
-            this.button1.Text = "Inserir Carga";
+            this.button1.Text = "Gerar Nota Transporte";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtIdPedido
+            // 
+            this.txtIdPedido.Enabled = false;
+            this.txtIdPedido.Location = new System.Drawing.Point(18, 22);
+            this.txtIdPedido.Name = "txtIdPedido";
+            this.txtIdPedido.Size = new System.Drawing.Size(138, 20);
+            this.txtIdPedido.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Id Pedido";
             // 
             // FrmCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 572);
+            this.ClientSize = new System.Drawing.Size(585, 585);
+            this.Controls.Add(this.txtIdPedido);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grpListaCargasPedido);
             this.Controls.Add(this.grbCarga);
@@ -385,9 +385,9 @@
             this.grbCarga.ResumeLayout(false);
             this.grbCarga.PerformLayout();
             this.grpListaCargasPedido.ResumeLayout(false);
-            this.grpListaCargasPedido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -396,8 +396,6 @@
         private System.Windows.Forms.TextBox txtIdCarga;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInserirCarga;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdPedido;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -425,5 +423,7 @@
         private System.Windows.Forms.TextBox txtNomeProduto;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtIdPedido;
+        private System.Windows.Forms.Label label2;
     }
 }

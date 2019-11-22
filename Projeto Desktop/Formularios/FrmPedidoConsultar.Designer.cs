@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Desktop.Formularios
 {
-    partial class FrmConsultarPedido
+    partial class FrmPedidoConsultar
     {
         /// <summary>
         /// Required designer variable.
@@ -63,16 +63,16 @@
             // 
             this.cmbClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(513, 79);
+            this.cmbClientes.Location = new System.Drawing.Point(14, 28);
             this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(172, 21);
+            this.cmbClientes.Size = new System.Drawing.Size(280, 21);
             this.cmbClientes.TabIndex = 45;
             this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(510, 62);
+            this.label9.Location = new System.Drawing.Point(11, 11);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 44;
@@ -81,7 +81,7 @@
             // mskDataPedido
             // 
             this.mskDataPedido.Enabled = false;
-            this.mskDataPedido.Location = new System.Drawing.Point(157, 80);
+            this.mskDataPedido.Location = new System.Drawing.Point(300, 78);
             this.mskDataPedido.Mask = "00/00/0000   00:00";
             this.mskDataPedido.Name = "mskDataPedido";
             this.mskDataPedido.Size = new System.Drawing.Size(172, 20);
@@ -93,7 +93,7 @@
             this.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUsuario.Enabled = false;
             this.cmbUsuario.FormattingEnabled = true;
-            this.cmbUsuario.Location = new System.Drawing.Point(335, 79);
+            this.cmbUsuario.Location = new System.Drawing.Point(478, 77);
             this.cmbUsuario.Name = "cmbUsuario";
             this.cmbUsuario.Size = new System.Drawing.Size(172, 21);
             this.cmbUsuario.TabIndex = 41;
@@ -102,7 +102,7 @@
             // 
             this.chkRetirar.AutoSize = true;
             this.chkRetirar.Enabled = false;
-            this.chkRetirar.Location = new System.Drawing.Point(713, 82);
+            this.chkRetirar.Location = new System.Drawing.Point(656, 79);
             this.chkRetirar.Name = "chkRetirar";
             this.chkRetirar.Size = new System.Drawing.Size(57, 17);
             this.chkRetirar.TabIndex = 40;
@@ -114,7 +114,7 @@
             this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSituacao.Enabled = false;
             this.cmbSituacao.FormattingEnabled = true;
-            this.cmbSituacao.Location = new System.Drawing.Point(14, 79);
+            this.cmbSituacao.Location = new System.Drawing.Point(157, 77);
             this.cmbSituacao.Name = "cmbSituacao";
             this.cmbSituacao.Size = new System.Drawing.Size(137, 21);
             this.cmbSituacao.TabIndex = 39;
@@ -122,7 +122,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(332, 62);
+            this.label4.Location = new System.Drawing.Point(475, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 38;
@@ -131,7 +131,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(154, 62);
+            this.label3.Location = new System.Drawing.Point(297, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 37;
@@ -140,7 +140,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 64);
+            this.label2.Location = new System.Drawing.Point(154, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 36;
@@ -149,7 +149,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 14);
+            this.label1.Location = new System.Drawing.Point(11, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 34;
@@ -159,7 +159,7 @@
             // 
             this.cmbPedidos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPedidos.FormattingEnabled = true;
-            this.cmbPedidos.Location = new System.Drawing.Point(14, 30);
+            this.cmbPedidos.Location = new System.Drawing.Point(14, 77);
             this.cmbPedidos.Name = "cmbPedidos";
             this.cmbPedidos.Size = new System.Drawing.Size(137, 21);
             this.cmbPedidos.TabIndex = 48;
@@ -214,8 +214,9 @@
             this.btnListarCargasPedido.TabIndex = 55;
             this.btnListarCargasPedido.Text = "Listar Cargas";
             this.btnListarCargasPedido.UseVisualStyleBackColor = true;
+            this.btnListarCargasPedido.Click += new System.EventHandler(this.btnListarCargasPedido_Click);
             // 
-            // FrmConsultarPedido
+            // FrmPedidoConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -238,7 +239,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmConsultarPedido";
+            this.Name = "FrmPedidoConsultar";
             this.Text = "Consultar Pedidos";
             this.Load += new System.EventHandler(this.FrmConsultarPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosCargas)).EndInit();

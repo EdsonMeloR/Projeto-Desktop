@@ -208,10 +208,10 @@
             // dgvEnderecos
             // 
             this.dgvEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEnderecos.Location = new System.Drawing.Point(18, 242);
+            this.dgvEnderecos.Location = new System.Drawing.Point(12, 242);
             this.dgvEnderecos.Name = "dgvEnderecos";
             this.dgvEnderecos.RowHeadersVisible = false;
-            this.dgvEnderecos.Size = new System.Drawing.Size(491, 220);
+            this.dgvEnderecos.Size = new System.Drawing.Size(497, 220);
             this.dgvEnderecos.TabIndex = 19;
             this.dgvEnderecos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnderecos_CellContentClick);
             // 

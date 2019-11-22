@@ -39,6 +39,7 @@
             this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.associarPlanoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,11 +87,13 @@
             // 
             this.consultarPedidoToolStripMenuItem.Name = "consultarPedidoToolStripMenuItem";
             resources.ApplyResources(this.consultarPedidoToolStripMenuItem, "consultarPedidoToolStripMenuItem");
+            this.consultarPedidoToolStripMenuItem.Click += new System.EventHandler(this.consultarPedidoToolStripMenuItem_Click);
             // 
             // alterarToolStripMenuItem
             // 
             this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
             resources.ApplyResources(this.alterarToolStripMenuItem, "alterarToolStripMenuItem");
+            this.alterarToolStripMenuItem.Click += new System.EventHandler(this.alterarToolStripMenuItem_Click);
             // 
             // planoToolStripMenuItem
             // 
@@ -103,9 +106,11 @@
             this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarClienteToolStripMenuItem,
             this.consultarClienteToolStripMenuItem,
-            this.alterarClienteToolStripMenuItem});
+            this.alterarClienteToolStripMenuItem,
+            this.associarPlanoToolStripMenuItem});
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             resources.ApplyResources(this.clienteToolStripMenuItem, "clienteToolStripMenuItem");
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // cadastrarClienteToolStripMenuItem
             // 
@@ -124,6 +129,12 @@
             this.alterarClienteToolStripMenuItem.Name = "alterarClienteToolStripMenuItem";
             resources.ApplyResources(this.alterarClienteToolStripMenuItem, "alterarClienteToolStripMenuItem");
             this.alterarClienteToolStripMenuItem.Click += new System.EventHandler(this.alterarClienteToolStripMenuItem_Click);
+            // 
+            // associarPlanoToolStripMenuItem
+            // 
+            this.associarPlanoToolStripMenuItem.Name = "associarPlanoToolStripMenuItem";
+            resources.ApplyResources(this.associarPlanoToolStripMenuItem, "associarPlanoToolStripMenuItem");
+            this.associarPlanoToolStripMenuItem.Click += new System.EventHandler(this.associarPlanoToolStripMenuItem_Click);
             // 
             // entregasToolStripMenuItem
             // 
@@ -235,6 +246,7 @@
         private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem associarPlanoToolStripMenuItem;
     }
 }
 

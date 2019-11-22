@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Desktop.Formularios
 {
-    partial class FrmPlanos
+    partial class FrmPlano
     {
         /// <summary>
         /// Required designer variable.
