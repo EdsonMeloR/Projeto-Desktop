@@ -113,7 +113,6 @@
             // 
             // txtRg
             // 
-            this.txtRg.Enabled = false;
             this.txtRg.Location = new System.Drawing.Point(389, 78);
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(171, 20);
@@ -132,7 +131,6 @@
             // 
             // txtCnh
             // 
-            this.txtCnh.Enabled = false;
             this.txtCnh.Location = new System.Drawing.Point(12, 117);
             this.txtCnh.Name = "txtCnh";
             this.txtCnh.Size = new System.Drawing.Size(200, 20);
@@ -177,7 +175,6 @@
             // 
             // cmbCategoriasCnh
             // 
-            this.cmbCategoriasCnh.Enabled = false;
             this.cmbCategoriasCnh.FormattingEnabled = true;
             this.cmbCategoriasCnh.Items.AddRange(new object[] {
             "A",
@@ -207,6 +204,7 @@
             this.dgvMotoristas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMotoristas.Location = new System.Drawing.Point(12, 183);
             this.dgvMotoristas.Name = "dgvMotoristas";
+            this.dgvMotoristas.RowHeadersVisible = false;
             this.dgvMotoristas.Size = new System.Drawing.Size(548, 215);
             this.dgvMotoristas.TabIndex = 22;
             // 

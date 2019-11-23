@@ -50,7 +50,7 @@ namespace Projeto_Desktop.Classes
         /// <summary>
         /// Inserindo veiculo
         /// </summary>
-        public void InserirVeiculo(string placa, string marca, string modelo, string renavam, double pesoMaximo, double altura, double largura, double comprimento)
+        public void InserirVeiculo(string placa, string marca, string modelo, string renavam, double pesoMaximo, double altura, double largura, double comprimento,int eixo)
         {
             db = new Banco();
             try
@@ -66,6 +66,7 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_altura", MySqlDbType.Decimal).Value = altura;
                 comm.Parameters.Add("_largura", MySqlDbType.Decimal).Value = largura;
                 comm.Parameters.Add("_comprimento", MySqlDbType.Decimal).Value = comprimento;
+                comm.Parameters.Add("_eixo", MySqlDbType.Int32).Value = eixo;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
                 {
@@ -141,7 +142,7 @@ namespace Projeto_Desktop.Classes
             try
             {
                 var comm = db.AbrirConexao();
-                comm.CommandText = "select * from veiculo where Placa = " + placa;
+                comm.CommandText = "select * from veiculo where Placa = '" + placa + "'";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
                 {

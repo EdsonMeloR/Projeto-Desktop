@@ -22,14 +22,17 @@ namespace Projeto_Desktop.Formularios
         {
 
         }
-
-        private void FrmMotorista_Load(object sender, EventArgs e)
+        private void CarregarCmbMotorista()
         {
             //Carregando combo box de motoristas
             m = new Motorista();
             cmbCaminhoneiros.ValueMember = "IdMotorista";
             cmbCaminhoneiros.DisplayMember = "Nome";
             cmbCaminhoneiros.DataSource = m.ListaMotoristas();
+        }
+        private void FrmMotorista_Load(object sender, EventArgs e)
+        {
+            CarregarCmbMotorista();
         }
 
         private void cmbCaminhoneiros_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,36 +44,47 @@ namespace Projeto_Desktop.Formularios
             txtRg.Text = m.Rg;
             mskCpf.Text = m.Cpf;
             mskValidadeCnh.Text = m.ValidadeCnh.ToString();
-            cmbCategoriasCnh.Text = m.CategoriaCnh;
+            cmbCategoriasCnh.Text = m.CategoriaCnh;            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             m = new Motorista();
-            if(cmbCaminhoneiros.Text != string.Empty && mskCpf.Text != string.Empty && mskValidadeCnh.Text != string.Empty && txtCnh.Text != string.Empty && txtRg.Text != string.Empty &&cmbCategoriasCnh.Text != string.Empty)
+            m.ConsultarMotorista(txtCnh.Text);
+            if(m.IdMotorista > 0)
             {
-                var senha = cmbCaminhoneiros.Text.Substring(0, cmbCaminhoneiros.Text.IndexOf(" ",1));
-                m.InserirMotorista(cmbCaminhoneiros.Text, mskCpf.Text, txtRg.Text, txtCnh.Text, Convert.ToDateTime(mskValidadeCnh.Text), cmbCategoriasCnh.Text, senha.ToLower(), true);
-                if(m.IdMotorista > 0)
+                MessageBox.Show("Motorista " + m.Nome + " Já cadastrado\n Com esta CNH");
+            }    
+            else
+            {
+                m = new Motorista();
+                if (cmbCaminhoneiros.Text != string.Empty && mskCpf.Text != string.Empty && mskValidadeCnh.Text != string.Empty && txtCnh.Text != string.Empty && txtRg.Text != string.Empty && cmbCategoriasCnh.Text != string.Empty)
                 {
-                    MessageBox.Show("Cadastrado com sucesso");
-                    MessageBox.Show("Será necessário modificar a senha em seu 1° Acesso\nSenha é definidada como seu primeiro nome automaticamente", "Inserido");
+                    var senha = cmbCaminhoneiros.Text.Substring(0, cmbCaminhoneiros.Text.IndexOf(" ", 1));
+                    m.InserirMotorista(cmbCaminhoneiros.Text, mskCpf.Text.Replace("-",""), txtRg.Text, txtCnh.Text, Convert.ToDateTime(mskValidadeCnh.Text), cmbCategoriasCnh.Text, senha.ToLower(), true);
+                    if (m.IdMotorista > 0)
+                    {
+                        MessageBox.Show("Cadastrado com sucesso");
+                        MessageBox.Show("Será necessário modificar a senha em seu 1° Acesso\nSenha é definidada como seu primeiro nome automaticamente", "Inserido");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao cadastrar");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Falha ao cadastrar");
+                    MessageBox.Show("É necessário preencher todos os campos");
                 }
             }
-            else
-            {
-                MessageBox.Show("É necessário preencher todos os campos");
-            }
+            CarregarCmbMotorista();
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
             m = new Motorista();
             dgvMotoristas.DataSource = m.ListaMotoristas();
+            CarregarCmbMotorista();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -78,7 +92,7 @@ namespace Projeto_Desktop.Formularios
             m = new Motorista();
             if(mskValidadeCnh.Text != string.Empty && cmbCategoriasCnh.Text != string.Empty && txtIdMotorista.Text != string.Empty)
             {
-                if(m.AlterarMotorista(Convert.ToDateTime(mskValidadeCnh.Text), cmbCategoriasCnh.Text, Convert.ToInt32(txtIdMotorista)))
+                if(m.AlterarMotorista(Convert.ToDateTime(mskValidadeCnh.Text), cmbCategoriasCnh.Text, Convert.ToInt32(txtIdMotorista.Text)))
                 {
                     MessageBox.Show("Alterado com sucesso !!");
                 }
@@ -91,7 +105,8 @@ namespace Projeto_Desktop.Formularios
             else
             {
                 MessageBox.Show("É necessário preencher todos os campos");
-            }            
+            }
+            CarregarCmbMotorista();
         }
     }
 }

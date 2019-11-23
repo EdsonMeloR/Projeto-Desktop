@@ -118,7 +118,7 @@ namespace Projeto_Desktop.Classes
                 while(dr.Read())
                 {
                     m = new Motorista
-                    {                        
+                    {
                         IdMotorista = dr.GetInt32(0),
                         Nome = dr.GetString(1),
                         Cpf = dr.GetString(2),
@@ -126,7 +126,8 @@ namespace Projeto_Desktop.Classes
                         Cnh = dr.GetString(4),
                         ValidadeCnh = dr.GetDateTime(5),
                         CategoriaCnh = dr.GetString(6),
-                        Senha = dr.GetString(7)
+                        Senha = dr.GetString(7),
+                        PrimeiroLogin = dr.GetBoolean(8)
                     };
                     lista.Add(m);
                 }
@@ -144,7 +145,6 @@ namespace Projeto_Desktop.Classes
         public void ConsultarMotorista(int _id)
         {
             db = new Banco();
-            Motorista m;            
             try
             {
                 var comm = db.AbrirConexao();
@@ -152,19 +152,16 @@ namespace Projeto_Desktop.Classes
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
                 {
-                    m = new Motorista
-                    {
-                        IdMotorista = dr.GetInt32(0),
-                        Nome = dr.GetString(1),
-                        Cpf = dr.GetString(2),
-                        Rg = dr.GetString(3),
-                        Cnh = dr.GetString(4),
-                        ValidadeCnh = dr.GetDateTime(5),
-                        CategoriaCnh = dr.GetString(6),
-                        Senha = dr.GetString(7)
-                    };                    
-                }
-                
+                    this.IdMotorista = dr.GetInt32(0);
+                    this.Nome = dr.GetString(1);
+                    this.Cpf = dr.GetString(2);
+                    this.Rg = dr.GetString(3);
+                    this.Cnh = dr.GetString(4);
+                    this.ValidadeCnh = dr.GetDateTime(5);
+                    this.CategoriaCnh = dr.GetString(6);
+                    this.Senha = dr.GetString(7);
+                    this.PrimeiroLogin = dr.GetBoolean(8);
+                }                
             }
             catch (Exception e)
             {
@@ -194,7 +191,8 @@ namespace Projeto_Desktop.Classes
                         Cnh = dr.GetString(4),
                         ValidadeCnh = dr.GetDateTime(5),
                         CategoriaCnh = dr.GetString(6),
-                        Senha = dr.GetString(7)
+                        Senha = dr.GetString(7),
+                        PrimeiroLogin = dr.GetBoolean(8)
                     };
                 }
 
@@ -203,7 +201,6 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
-        }
-        ///
+        }       
     }
 }

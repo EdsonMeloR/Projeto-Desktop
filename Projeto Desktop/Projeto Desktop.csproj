@@ -224,6 +224,9 @@
     <EmbeddedResource Include="Formularios\FrmNivel.resx">
       <DependentUpon>FrmNivel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmNotaTransporte.resx">
+      <DependentUpon>FrmNotaTransporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPedidoConsultar.pt-BR.resx">
       <DependentUpon>FrmPedidoConsultar.cs</DependentUpon>
     </EmbeddedResource>
