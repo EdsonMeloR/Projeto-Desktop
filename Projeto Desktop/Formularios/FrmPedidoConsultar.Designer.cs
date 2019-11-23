@@ -32,6 +32,7 @@
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.grpPedidos = new System.Windows.Forms.GroupBox();
+            this.cmbDataPedido = new System.Windows.Forms.ComboBox();
             this.cmbEnderecoRemetente = new System.Windows.Forms.ComboBox();
             this.cmbEnderecoDestino = new System.Windows.Forms.ComboBox();
             this.btnListarCargasPedido = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbPedidos = new System.Windows.Forms.ComboBox();
             this.btnListarPedidos = new System.Windows.Forms.Button();
-            this.mskDataPedido = new System.Windows.Forms.MaskedTextBox();
             this.cmbUsuario = new System.Windows.Forms.ComboBox();
             this.chkRetirar = new System.Windows.Forms.CheckBox();
             this.cmbSituacao = new System.Windows.Forms.ComboBox();
@@ -48,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAlterarPedido = new System.Windows.Forms.Button();
             this.grpPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosCargas)).BeginInit();
             this.SuspendLayout();
@@ -65,11 +64,12 @@
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // grpPedidos
             // 
             resources.ApplyResources(this.grpPedidos, "grpPedidos");
-            this.grpPedidos.Controls.Add(this.btnAlterarPedido);
+            this.grpPedidos.Controls.Add(this.cmbDataPedido);
             this.grpPedidos.Controls.Add(this.cmbEnderecoRemetente);
             this.grpPedidos.Controls.Add(this.cmbEnderecoDestino);
             this.grpPedidos.Controls.Add(this.btnListarCargasPedido);
@@ -78,7 +78,6 @@
             this.grpPedidos.Controls.Add(this.label5);
             this.grpPedidos.Controls.Add(this.cmbPedidos);
             this.grpPedidos.Controls.Add(this.btnListarPedidos);
-            this.grpPedidos.Controls.Add(this.mskDataPedido);
             this.grpPedidos.Controls.Add(this.cmbUsuario);
             this.grpPedidos.Controls.Add(this.chkRetirar);
             this.grpPedidos.Controls.Add(this.cmbSituacao);
@@ -89,17 +88,21 @@
             this.grpPedidos.Name = "grpPedidos";
             this.grpPedidos.TabStop = false;
             // 
+            // cmbDataPedido
+            // 
+            resources.ApplyResources(this.cmbDataPedido, "cmbDataPedido");
+            this.cmbDataPedido.FormattingEnabled = true;
+            this.cmbDataPedido.Name = "cmbDataPedido";
+            // 
             // cmbEnderecoRemetente
             // 
             resources.ApplyResources(this.cmbEnderecoRemetente, "cmbEnderecoRemetente");
-            this.cmbEnderecoRemetente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEnderecoRemetente.FormattingEnabled = true;
             this.cmbEnderecoRemetente.Name = "cmbEnderecoRemetente";
             // 
             // cmbEnderecoDestino
             // 
             resources.ApplyResources(this.cmbEnderecoDestino, "cmbEnderecoDestino");
-            this.cmbEnderecoDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEnderecoDestino.FormattingEnabled = true;
             this.cmbEnderecoDestino.Name = "cmbEnderecoDestino";
             // 
@@ -108,6 +111,7 @@
             resources.ApplyResources(this.btnListarCargasPedido, "btnListarCargasPedido");
             this.btnListarCargasPedido.Name = "btnListarCargasPedido";
             this.btnListarCargasPedido.UseVisualStyleBackColor = true;
+            this.btnListarCargasPedido.Click += new System.EventHandler(this.btnListarCargasPedido_Click_1);
             // 
             // dgvPedidosCargas
             // 
@@ -133,23 +137,18 @@
             this.cmbPedidos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPedidos.FormattingEnabled = true;
             this.cmbPedidos.Name = "cmbPedidos";
+            this.cmbPedidos.SelectedIndexChanged += new System.EventHandler(this.cmbPedidos_SelectedIndexChanged_1);
             // 
             // btnListarPedidos
             // 
             resources.ApplyResources(this.btnListarPedidos, "btnListarPedidos");
             this.btnListarPedidos.Name = "btnListarPedidos";
             this.btnListarPedidos.UseVisualStyleBackColor = true;
-            // 
-            // mskDataPedido
-            // 
-            resources.ApplyResources(this.mskDataPedido, "mskDataPedido");
-            this.mskDataPedido.Name = "mskDataPedido";
-            this.mskDataPedido.ValidatingType = typeof(System.DateTime);
+            this.btnListarPedidos.Click += new System.EventHandler(this.btnListarPedidos_Click);
             // 
             // cmbUsuario
             // 
             resources.ApplyResources(this.cmbUsuario, "cmbUsuario");
-            this.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUsuario.FormattingEnabled = true;
             this.cmbUsuario.Name = "cmbUsuario";
             // 
@@ -162,7 +161,6 @@
             // cmbSituacao
             // 
             resources.ApplyResources(this.cmbSituacao, "cmbSituacao");
-            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSituacao.FormattingEnabled = true;
             this.cmbSituacao.Name = "cmbSituacao";
             // 
@@ -186,12 +184,6 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // btnAlterarPedido
-            // 
-            resources.ApplyResources(this.btnAlterarPedido, "btnAlterarPedido");
-            this.btnAlterarPedido.Name = "btnAlterarPedido";
-            this.btnAlterarPedido.UseVisualStyleBackColor = true;
-            // 
             // FrmPedidoConsultar
             // 
             resources.ApplyResources(this, "$this");
@@ -213,7 +205,6 @@
         private System.Windows.Forms.ComboBox cmbClientes;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox grpPedidos;
-        private System.Windows.Forms.Button btnAlterarPedido;
         private System.Windows.Forms.ComboBox cmbEnderecoRemetente;
         private System.Windows.Forms.ComboBox cmbEnderecoDestino;
         private System.Windows.Forms.Button btnListarCargasPedido;
@@ -222,7 +213,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbPedidos;
         private System.Windows.Forms.Button btnListarPedidos;
-        private System.Windows.Forms.MaskedTextBox mskDataPedido;
         private System.Windows.Forms.ComboBox cmbUsuario;
         private System.Windows.Forms.CheckBox chkRetirar;
         private System.Windows.Forms.ComboBox cmbSituacao;
@@ -230,5 +220,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbDataPedido;
     }
 }

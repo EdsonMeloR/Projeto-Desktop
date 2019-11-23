@@ -145,18 +145,53 @@ namespace Projeto_Desktop.Classes
             List<Pedido> lista = new List<Pedido>();
             try
             {
-                var comm = db.AbrirConexao();                
+                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from pedidos where cliente_IdCliente = " + idCliente;
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    p = new Pedido();
+                    p.Id = dr.GetInt32(0);
+                    p.Situacao = dr.GetString(1);
+                    p.DataPedido = dr.GetDateTime(2);
+                    p.Retirar = dr.GetBoolean(3);
+                    p.IdUsuario.Id = dr.GetInt32(4);
+                    p.IdCliente.Id = dr.GetInt32(5);
+                    lista.Add(p);
+                }
+                return lista;
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return null;
+            }
+        }
+        /// <summary>
+        /// Listando Pedidos pela data do pedido e id do cliente
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public List<Pedido> ListarPedidosClientesData(int idCliente, DateTime data)
+        {
+            db = new Banco();
+            var comm = db.AbrirConexao();
+            Pedido p;
+            List<Pedido> lista = new List<Pedido>();
+            try
+            {
+                comm.CommandText = "select * from pedidos where cliente_IdCliente = " + idCliente + " && DataPedido = " + data;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
                 {
                     p = new Pedido();
-                    this.Id = dr.GetInt32(0);
-                    this.Situacao = dr.GetString(1);
-                    this.DataPedido = dr.GetDateTime(2);
-                    this.Retirar = dr.GetBoolean(3);
-                    this.IdUsuario.Id = dr.GetInt32(4);
-                    this.IdCliente.Id = dr.GetInt32(5);
+                    p.Id = dr.GetInt32(0);
+                    p.Situacao = dr.GetString(1);
+                    p.DataPedido = dr.GetDateTime(2);
+                    p.Retirar = dr.GetBoolean(3);
+                    p.IdUsuario.Id = dr.GetInt32(4);
+                    p.IdCliente.Id = dr.GetInt32(5);
                     lista.Add(p);
                 }
                 return lista;

@@ -94,7 +94,7 @@ namespace Projeto_Desktop
 
         private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPedidoConsultar frm = new FrmPedidoConsultar();
+            FrmPedidoAlterar frm = new FrmPedidoAlterar();
             frm.Show();
         }
 

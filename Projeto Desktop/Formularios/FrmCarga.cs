@@ -14,7 +14,7 @@ namespace Projeto_Desktop.Formularios
 {
     public partial class FrmCarga : Form
     {
-        private Pedido pedido;
+        private Pedido pedido = new Pedido();
         public FrmCarga(Pedido p)
         {
             pedido = p;
@@ -39,6 +39,7 @@ namespace Projeto_Desktop.Formularios
         }
         private void CarregarDataGridInner()
         {
+            carga = new Carga();
             dgvCargasPedido.Columns.Clear();
             dgvCargasPedido.Columns.Add("idPedido", "Pedido ID");
             dgvCargasPedido.Columns.Add("idCarga", "Carga ID");

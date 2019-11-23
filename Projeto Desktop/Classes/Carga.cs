@@ -249,10 +249,10 @@ namespace Projeto_Desktop.Classes
                         Altura = dr.GetDouble(5),
                         Comprimento = dr.GetDouble(6),
                         ValorProduto = dr.GetDouble(7),
-                        Quantidade = dr.GetInt32(9)
+                        Quantidade = dr.GetInt32(8)
                     };
                     c.IdPedido.Id = dr.GetInt32(0);
-                    c.IdTipo.Nome = dr.GetString(8);
+                    c.IdTipo.Nome = dr.GetString(9);
                     listaCarga.Add(c);
                 }
                 return listaCarga;

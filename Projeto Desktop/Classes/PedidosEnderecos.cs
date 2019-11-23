@@ -30,7 +30,11 @@ namespace Projeto_Desktop.Classes
             this.idTipoEndereco = idTipoEndereco;
         }
         public PedidosEnderecos()
-        { }
+        {
+            IdPedido = new Pedido();
+            IdEndereco = new Endereco();
+            IdTipoEndereco = new TipoEndereco();
+        }
         //Métodos
         /// <summary>
         /// Inserindo Endereco do remetente e destinatario ao pedido
@@ -134,6 +138,27 @@ namespace Projeto_Desktop.Classes
             catch (Exception e)
             {
                 e.Message.ToString();                
+            }
+        }
+        public void ConsultarEnderecoDestinarioPedido(int idPedido,int idTipo )
+        {
+            db = new Banco();
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select * from pedidosenderecos where idPedidos = " + idPedido + " && idTiposEnderecos = " + idTipo;
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.Id = dr.GetInt32(0);
+                    this.IdEndereco.Id = dr.GetInt32(1);
+                    this.IdPedido.Id = dr.GetInt32(2);
+                    this.IdTipoEndereco.Id = dr.GetInt32(3);
+                }
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
             }
         }
     }
