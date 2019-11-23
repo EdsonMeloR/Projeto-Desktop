@@ -31,7 +31,8 @@ namespace Projeto_Desktop
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmUsuario frm = new FrmUsuario();
+            frm.Show();
         }
 
         private void cadastrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,13 +60,13 @@ namespace Projeto_Desktop
 
         private void inserirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmUsuarioCadastrar f = new FrmUsuarioCadastrar();
+            FrmUsuario f = new FrmUsuario();
             f.Show();                
         }
 
         private void alterarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmUsuarioAlterar f = new FrmUsuarioAlterar();
+            FrmUsuario f = new FrmUsuario();
             f.Show();
         }
 
@@ -76,8 +77,7 @@ namespace Projeto_Desktop
 
         private void planoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPlano frmp = new FrmPlano();
-            frmp.Show();
+            
         }
 
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,12 +88,14 @@ namespace Projeto_Desktop
 
         private void consultarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmPedidoConsultar frm = new FrmPedidoConsultar();
+            frm.Show();            
         }
 
         private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmPedidoConsultar frm = new FrmPedidoConsultar();
+            frm.Show();
         }
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,6 +106,29 @@ namespace Projeto_Desktop
         private void associarPlanoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmAssociarPlano frm = new FrmAssociarPlano();
+            frm.Show();
+        }
+
+        private void administraçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void niveisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmNivel frm = new FrmNivel();
+            frm.Show();
+        }
+
+        private void inserirPlanosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPlano frmp = new FrmPlano();
+            frmp.Show();
+        }
+
+        private void consultarPlanosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPlanoConsultar frm = new FrmPlanoConsultar();
             frm.Show();
         }
     }

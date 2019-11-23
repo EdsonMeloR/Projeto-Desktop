@@ -86,9 +86,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Nome PLano";
+            this.label2.Text = "Nome Plano";
             // 
             // txtDescricao
             // 
@@ -196,7 +196,7 @@
             this.dgvListarPlanos.Size = new System.Drawing.Size(594, 179);
             this.dgvListarPlanos.TabIndex = 20;
             // 
-            // FrmPlanos
+            // FrmPlano
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,8 +218,8 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInserir);
-            this.Name = "FrmPlanos";
-            this.Text = "FrmPlanos";
+            this.Name = "FrmPlano";
+            this.Text = "Planos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarPlanos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

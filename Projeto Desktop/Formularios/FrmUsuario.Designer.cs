@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Desktop.Formularios
 {
-    partial class FrmUsuarioAlterar
+    partial class FrmUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNivel = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.dgvListarUsuarios = new System.Windows.Forms.DataGridView();
-            this.txtNivel = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.btnInserirUsuario = new System.Windows.Forms.Button();
+            this.cmbNivel = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mskCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtNome = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuarios)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblNivel
-            // 
-            this.lblNivel.AutoSize = true;
-            this.lblNivel.Location = new System.Drawing.Point(125, 118);
-            this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(31, 13);
-            this.lblNivel.TabIndex = 29;
-            this.lblNivel.Text = "Nivel";
             // 
             // lblEmail
             // 
@@ -77,66 +67,34 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(259, 70);
+            this.label5.Location = new System.Drawing.Point(9, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 26;
             this.label5.Text = "Telefone";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Senha";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Enabled = false;
-            this.txtSenha.Location = new System.Drawing.Point(12, 134);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha.TabIndex = 23;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(133, 70);
+            this.label3.Location = new System.Drawing.Point(265, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 22;
             this.label3.Text = "Cpf";
             // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(135, 86);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(121, 20);
-            this.txtCpf.TabIndex = 21;
-            // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(29, 70);
+            this.lblNome.Location = new System.Drawing.Point(9, 70);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 20;
             this.lblNome.Text = "Nome";
             // 
-            // txtNome
-            // 
-            this.txtNome.Enabled = false;
-            this.txtNome.Location = new System.Drawing.Point(12, 86);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(117, 20);
-            this.txtNome.TabIndex = 19;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 17);
+            this.label1.Location = new System.Drawing.Point(12, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 18;
@@ -147,8 +105,9 @@
             this.txtIdUsuario.Enabled = false;
             this.txtIdUsuario.Location = new System.Drawing.Point(12, 33);
             this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtIdUsuario.Size = new System.Drawing.Size(117, 20);
             this.txtIdUsuario.TabIndex = 17;
+            this.txtIdUsuario.TextChanged += new System.EventHandler(this.txtIdUsuario_TextChanged);
             // 
             // btnAlterar
             // 
@@ -162,7 +121,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(118, 179);
+            this.btnConsultar.Location = new System.Drawing.Point(135, 179);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(120, 23);
             this.btnConsultar.TabIndex = 32;
@@ -172,7 +131,7 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(244, 179);
+            this.btnListar.Location = new System.Drawing.Point(278, 179);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(120, 23);
             this.btnListar.TabIndex = 33;
@@ -184,53 +143,90 @@
             // 
             this.dgvListarUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListarUsuarios.ColumnHeadersVisible = false;
-            this.dgvListarUsuarios.Location = new System.Drawing.Point(12, 236);
+            this.dgvListarUsuarios.Location = new System.Drawing.Point(12, 208);
             this.dgvListarUsuarios.Name = "dgvListarUsuarios";
-            this.dgvListarUsuarios.Size = new System.Drawing.Size(530, 165);
+            this.dgvListarUsuarios.Size = new System.Drawing.Size(530, 193);
             this.dgvListarUsuarios.TabIndex = 34;
             this.dgvListarUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // txtNivel
+            // mskTelefone
             // 
-            this.txtNivel.Enabled = false;
-            this.txtNivel.Location = new System.Drawing.Point(128, 134);
-            this.txtNivel.Name = "txtNivel";
-            this.txtNivel.Size = new System.Drawing.Size(128, 20);
-            this.txtNivel.TabIndex = 35;
+            this.mskTelefone.Location = new System.Drawing.Point(12, 132);
+            this.mskTelefone.Mask = "(99) 00000-0000";
+            this.mskTelefone.Name = "mskTelefone";
+            this.mskTelefone.Size = new System.Drawing.Size(123, 20);
+            this.mskTelefone.TabIndex = 36;
             // 
-            // txtTelefone
+            // btnInserirUsuario
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(262, 86);
-            this.txtTelefone.Mask = "(99) 0000-0000";
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(123, 20);
-            this.txtTelefone.TabIndex = 36;
+            this.btnInserirUsuario.Location = new System.Drawing.Point(421, 179);
+            this.btnInserirUsuario.Name = "btnInserirUsuario";
+            this.btnInserirUsuario.Size = new System.Drawing.Size(120, 23);
+            this.btnInserirUsuario.TabIndex = 37;
+            this.btnInserirUsuario.Text = "Cadastrar";
+            this.btnInserirUsuario.UseVisualStyleBackColor = true;
+            this.btnInserirUsuario.Click += new System.EventHandler(this.btnInserirUsuario_Click);
             // 
-            // FrmUsuarioAlterar
+            // cmbNivel
+            // 
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNivel.FormattingEnabled = true;
+            this.cmbNivel.Location = new System.Drawing.Point(141, 131);
+            this.cmbNivel.Name = "cmbNivel";
+            this.cmbNivel.Size = new System.Drawing.Size(121, 21);
+            this.cmbNivel.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(138, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Nivel";
+            // 
+            // mskCpf
+            // 
+            this.mskCpf.Location = new System.Drawing.Point(268, 86);
+            this.mskCpf.Mask = "000-000-000-00";
+            this.mskCpf.Name = "mskCpf";
+            this.mskCpf.Size = new System.Drawing.Size(117, 20);
+            this.mskCpf.TabIndex = 41;
+            // 
+            // txtNome
+            // 
+            this.txtNome.FormattingEnabled = true;
+            this.txtNome.Location = new System.Drawing.Point(12, 86);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(250, 21);
+            this.txtNome.TabIndex = 42;
+            this.txtNome.SelectedIndexChanged += new System.EventHandler(this.txtNome_SelectedIndexChanged);
+            // 
+            // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 413);
-            this.Controls.Add(this.txtTelefone);
-            this.Controls.Add(this.txtNivel);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.mskCpf);
+            this.Controls.Add(this.cmbNivel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnInserirUsuario);
+            this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.dgvListarUsuarios);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.lblNivel);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.btnAlterar);
-            this.Name = "FrmUsuarioAlterar";
+            this.Name = "FrmUsuario";
             this.Text = "FrmUsuarioAlterar";
+            this.Load += new System.EventHandler(this.FrmUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,23 +234,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblNivel;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridView dgvListarUsuarios;
-        private System.Windows.Forms.TextBox txtNivel;
-        private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.MaskedTextBox mskTelefone;
+        private System.Windows.Forms.Button btnInserirUsuario;
+        private System.Windows.Forms.ComboBox cmbNivel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox mskCpf;
+        private System.Windows.Forms.ComboBox txtNome;
     }
 }

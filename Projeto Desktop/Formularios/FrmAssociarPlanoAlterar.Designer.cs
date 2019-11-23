@@ -32,6 +32,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.grpAtualizarPlano = new System.Windows.Forms.GroupBox();
+            this.txtIdPlanoClienteAssociado = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnAtualizarPlano = new System.Windows.Forms.Button();
+            this.mskDataTerminoPlano = new System.Windows.Forms.MaskedTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.mskDataInicioPlano = new System.Windows.Forms.MaskedTextBox();
+            this.txtDescontoPlano = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtLimitePedidos = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescricaoPlano = new System.Windows.Forms.TextBox();
@@ -43,6 +52,15 @@
             this.txtNomePlano = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.grpAlterarPlano = new System.Windows.Forms.GroupBox();
+            this.mskDataTerminoAtualizar = new System.Windows.Forms.MaskedTextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.mskDataInicioAtualizar = new System.Windows.Forms.MaskedTextBox();
+            this.txtDescontoAtualizar = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnAlterarPlanoAssociado = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbPlanosAtualizar = new System.Windows.Forms.ComboBox();
             this.txtLimitePedidoAlterar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricaoPlanoAtualizar = new System.Windows.Forms.TextBox();
@@ -53,24 +71,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtNomeAtualizar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmbPlanosAtualizar = new System.Windows.Forms.ComboBox();
-            this.btnAlterarPlanoAssociado = new System.Windows.Forms.Button();
-            this.mskDataTerminoPlano = new System.Windows.Forms.MaskedTextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.mskDataInicioPlano = new System.Windows.Forms.MaskedTextBox();
-            this.txtDescontoPlano = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.mskDataTerminoAtualizar = new System.Windows.Forms.MaskedTextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.mskDataInicioAtualizar = new System.Windows.Forms.MaskedTextBox();
-            this.txtDescontoAtualizar = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.btnAtualizarPlano = new System.Windows.Forms.Button();
-            this.txtIdPlanoClienteAssociado = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.btnAssociarPlano = new System.Windows.Forms.Button();
             this.grpAtualizarPlano.SuspendLayout();
             this.grpAlterarPlano.SuspendLayout();
@@ -134,6 +134,89 @@
             this.grpAtualizarPlano.TabIndex = 14;
             this.grpAtualizarPlano.TabStop = false;
             this.grpAtualizarPlano.Text = "Plano Atual";
+            // 
+            // txtIdPlanoClienteAssociado
+            // 
+            this.txtIdPlanoClienteAssociado.Enabled = false;
+            this.txtIdPlanoClienteAssociado.Location = new System.Drawing.Point(356, 76);
+            this.txtIdPlanoClienteAssociado.Name = "txtIdPlanoClienteAssociado";
+            this.txtIdPlanoClienteAssociado.Size = new System.Drawing.Size(130, 20);
+            this.txtIdPlanoClienteAssociado.TabIndex = 24;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(353, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(133, 13);
+            this.label19.TabIndex = 23;
+            this.label19.Text = "Id Plano Associado Cliente";
+            // 
+            // btnAtualizarPlano
+            // 
+            this.btnAtualizarPlano.Enabled = false;
+            this.btnAtualizarPlano.Location = new System.Drawing.Point(6, 247);
+            this.btnAtualizarPlano.Name = "btnAtualizarPlano";
+            this.btnAtualizarPlano.Size = new System.Drawing.Size(126, 23);
+            this.btnAtualizarPlano.TabIndex = 22;
+            this.btnAtualizarPlano.Text = "Atualizar Plano";
+            this.btnAtualizarPlano.UseVisualStyleBackColor = true;
+            this.btnAtualizarPlano.Click += new System.EventHandler(this.btnAtualizarPlano_Click);
+            // 
+            // mskDataTerminoPlano
+            // 
+            this.mskDataTerminoPlano.Enabled = false;
+            this.mskDataTerminoPlano.Location = new System.Drawing.Point(115, 76);
+            this.mskDataTerminoPlano.Mask = "00/00/0000 90:00";
+            this.mskDataTerminoPlano.Name = "mskDataTerminoPlano";
+            this.mskDataTerminoPlano.Size = new System.Drawing.Size(103, 20);
+            this.mskDataTerminoPlano.TabIndex = 21;
+            this.mskDataTerminoPlano.ValidatingType = typeof(System.DateTime);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(112, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 13);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Data Termino";
+            // 
+            // mskDataInicioPlano
+            // 
+            this.mskDataInicioPlano.Enabled = false;
+            this.mskDataInicioPlano.Location = new System.Drawing.Point(6, 76);
+            this.mskDataInicioPlano.Mask = "00/00/0000 90:00";
+            this.mskDataInicioPlano.Name = "mskDataInicioPlano";
+            this.mskDataInicioPlano.Size = new System.Drawing.Size(103, 20);
+            this.mskDataInicioPlano.TabIndex = 19;
+            this.mskDataInicioPlano.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtDescontoPlano
+            // 
+            this.txtDescontoPlano.Enabled = false;
+            this.txtDescontoPlano.Location = new System.Drawing.Point(224, 76);
+            this.txtDescontoPlano.Name = "txtDescontoPlano";
+            this.txtDescontoPlano.Size = new System.Drawing.Size(126, 20);
+            this.txtDescontoPlano.TabIndex = 18;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(221, 60);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Desconto";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 60);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 13);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Data Inicio";
             // 
             // txtLimitePedidos
             // 
@@ -250,6 +333,88 @@
             this.grpAlterarPlano.TabStop = false;
             this.grpAlterarPlano.Text = "Alterar Plano";
             // 
+            // mskDataTerminoAtualizar
+            // 
+            this.mskDataTerminoAtualizar.Enabled = false;
+            this.mskDataTerminoAtualizar.Location = new System.Drawing.Point(115, 118);
+            this.mskDataTerminoAtualizar.Mask = "00/00/0000 90:00";
+            this.mskDataTerminoAtualizar.Name = "mskDataTerminoAtualizar";
+            this.mskDataTerminoAtualizar.Size = new System.Drawing.Size(103, 20);
+            this.mskDataTerminoAtualizar.TabIndex = 22;
+            this.mskDataTerminoAtualizar.ValidatingType = typeof(System.DateTime);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(112, 102);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(71, 13);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "Data Termino";
+            // 
+            // mskDataInicioAtualizar
+            // 
+            this.mskDataInicioAtualizar.Location = new System.Drawing.Point(6, 118);
+            this.mskDataInicioAtualizar.Mask = "00/00/0000 90:00";
+            this.mskDataInicioAtualizar.Name = "mskDataInicioAtualizar";
+            this.mskDataInicioAtualizar.Size = new System.Drawing.Size(103, 20);
+            this.mskDataInicioAtualizar.TabIndex = 20;
+            this.mskDataInicioAtualizar.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtDescontoAtualizar
+            // 
+            this.txtDescontoAtualizar.Location = new System.Drawing.Point(224, 118);
+            this.txtDescontoAtualizar.Name = "txtDescontoAtualizar";
+            this.txtDescontoAtualizar.Size = new System.Drawing.Size(126, 20);
+            this.txtDescontoAtualizar.TabIndex = 19;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(221, 102);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 13);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "Desconto";
+            // 
+            // btnAlterarPlanoAssociado
+            // 
+            this.btnAlterarPlanoAssociado.Location = new System.Drawing.Point(6, 282);
+            this.btnAlterarPlanoAssociado.Name = "btnAlterarPlanoAssociado";
+            this.btnAlterarPlanoAssociado.Size = new System.Drawing.Size(126, 36);
+            this.btnAlterarPlanoAssociado.TabIndex = 16;
+            this.btnAlterarPlanoAssociado.Text = "Alterar Plano do Cliente";
+            this.btnAlterarPlanoAssociado.UseVisualStyleBackColor = true;
+            this.btnAlterarPlanoAssociado.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 102);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(58, 13);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "Data Inicio";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Planos";
+            // 
+            // cmbPlanosAtualizar
+            // 
+            this.cmbPlanosAtualizar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPlanosAtualizar.FormattingEnabled = true;
+            this.cmbPlanosAtualizar.Location = new System.Drawing.Point(6, 35);
+            this.cmbPlanosAtualizar.Name = "cmbPlanosAtualizar";
+            this.cmbPlanosAtualizar.Size = new System.Drawing.Size(197, 21);
+            this.cmbPlanosAtualizar.TabIndex = 12;
+            this.cmbPlanosAtualizar.SelectedIndexChanged += new System.EventHandler(this.cmbPlanosAtualizar_SelectedIndexChanged);
+            // 
             // txtLimitePedidoAlterar
             // 
             this.txtLimitePedidoAlterar.Enabled = false;
@@ -336,171 +501,6 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "Nome Plano";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 13);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Planos";
-            // 
-            // cmbPlanosAtualizar
-            // 
-            this.cmbPlanosAtualizar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPlanosAtualizar.FormattingEnabled = true;
-            this.cmbPlanosAtualizar.Location = new System.Drawing.Point(6, 35);
-            this.cmbPlanosAtualizar.Name = "cmbPlanosAtualizar";
-            this.cmbPlanosAtualizar.Size = new System.Drawing.Size(197, 21);
-            this.cmbPlanosAtualizar.TabIndex = 12;
-            this.cmbPlanosAtualizar.SelectedIndexChanged += new System.EventHandler(this.cmbPlanosAtualizar_SelectedIndexChanged);
-            // 
-            // btnAlterarPlanoAssociado
-            // 
-            this.btnAlterarPlanoAssociado.Location = new System.Drawing.Point(6, 282);
-            this.btnAlterarPlanoAssociado.Name = "btnAlterarPlanoAssociado";
-            this.btnAlterarPlanoAssociado.Size = new System.Drawing.Size(126, 23);
-            this.btnAlterarPlanoAssociado.TabIndex = 16;
-            this.btnAlterarPlanoAssociado.Text = "Alterar Plano do Cliente";
-            this.btnAlterarPlanoAssociado.UseVisualStyleBackColor = true;
-            this.btnAlterarPlanoAssociado.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // mskDataTerminoPlano
-            // 
-            this.mskDataTerminoPlano.Enabled = false;
-            this.mskDataTerminoPlano.Location = new System.Drawing.Point(115, 76);
-            this.mskDataTerminoPlano.Mask = "00/00/0000 90:00";
-            this.mskDataTerminoPlano.Name = "mskDataTerminoPlano";
-            this.mskDataTerminoPlano.Size = new System.Drawing.Size(103, 20);
-            this.mskDataTerminoPlano.TabIndex = 21;
-            this.mskDataTerminoPlano.ValidatingType = typeof(System.DateTime);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(112, 60);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 13);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Data Termino";
-            // 
-            // mskDataInicioPlano
-            // 
-            this.mskDataInicioPlano.Enabled = false;
-            this.mskDataInicioPlano.Location = new System.Drawing.Point(6, 76);
-            this.mskDataInicioPlano.Mask = "00/00/0000 90:00";
-            this.mskDataInicioPlano.Name = "mskDataInicioPlano";
-            this.mskDataInicioPlano.Size = new System.Drawing.Size(103, 20);
-            this.mskDataInicioPlano.TabIndex = 19;
-            this.mskDataInicioPlano.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtDescontoPlano
-            // 
-            this.txtDescontoPlano.Enabled = false;
-            this.txtDescontoPlano.Location = new System.Drawing.Point(224, 76);
-            this.txtDescontoPlano.Name = "txtDescontoPlano";
-            this.txtDescontoPlano.Size = new System.Drawing.Size(126, 20);
-            this.txtDescontoPlano.TabIndex = 18;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(221, 60);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 13);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "Desconto";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 60);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 13);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Data Inicio";
-            // 
-            // mskDataTerminoAtualizar
-            // 
-            this.mskDataTerminoAtualizar.Enabled = false;
-            this.mskDataTerminoAtualizar.Location = new System.Drawing.Point(115, 118);
-            this.mskDataTerminoAtualizar.Mask = "00/00/0000 90:00";
-            this.mskDataTerminoAtualizar.Name = "mskDataTerminoAtualizar";
-            this.mskDataTerminoAtualizar.Size = new System.Drawing.Size(103, 20);
-            this.mskDataTerminoAtualizar.TabIndex = 22;
-            this.mskDataTerminoAtualizar.ValidatingType = typeof(System.DateTime);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(112, 102);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(71, 13);
-            this.label16.TabIndex = 21;
-            this.label16.Text = "Data Termino";
-            // 
-            // mskDataInicioAtualizar
-            // 
-            this.mskDataInicioAtualizar.Location = new System.Drawing.Point(6, 118);
-            this.mskDataInicioAtualizar.Mask = "00/00/0000 90:00";
-            this.mskDataInicioAtualizar.Name = "mskDataInicioAtualizar";
-            this.mskDataInicioAtualizar.Size = new System.Drawing.Size(103, 20);
-            this.mskDataInicioAtualizar.TabIndex = 20;
-            this.mskDataInicioAtualizar.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtDescontoAtualizar
-            // 
-            this.txtDescontoAtualizar.Location = new System.Drawing.Point(224, 118);
-            this.txtDescontoAtualizar.Name = "txtDescontoAtualizar";
-            this.txtDescontoAtualizar.Size = new System.Drawing.Size(126, 20);
-            this.txtDescontoAtualizar.TabIndex = 19;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(221, 102);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 13);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "Desconto";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 102);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(58, 13);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "Data Inicio";
-            // 
-            // btnAtualizarPlano
-            // 
-            this.btnAtualizarPlano.Enabled = false;
-            this.btnAtualizarPlano.Location = new System.Drawing.Point(6, 247);
-            this.btnAtualizarPlano.Name = "btnAtualizarPlano";
-            this.btnAtualizarPlano.Size = new System.Drawing.Size(126, 23);
-            this.btnAtualizarPlano.TabIndex = 22;
-            this.btnAtualizarPlano.Text = "Atualizar Plano";
-            this.btnAtualizarPlano.UseVisualStyleBackColor = true;
-            this.btnAtualizarPlano.Click += new System.EventHandler(this.btnAtualizarPlano_Click);
-            // 
-            // txtIdPlanoClienteAssociado
-            // 
-            this.txtIdPlanoClienteAssociado.Enabled = false;
-            this.txtIdPlanoClienteAssociado.Location = new System.Drawing.Point(356, 76);
-            this.txtIdPlanoClienteAssociado.Name = "txtIdPlanoClienteAssociado";
-            this.txtIdPlanoClienteAssociado.Size = new System.Drawing.Size(130, 20);
-            this.txtIdPlanoClienteAssociado.TabIndex = 24;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(353, 60);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(133, 13);
-            this.label19.TabIndex = 23;
-            this.label19.Text = "Id Plano Associado Cliente";
-            // 
             // btnAssociarPlano
             // 
             this.btnAssociarPlano.Enabled = false;
@@ -510,6 +510,7 @@
             this.btnAssociarPlano.TabIndex = 16;
             this.btnAssociarPlano.Text = "Associar Plano";
             this.btnAssociarPlano.UseVisualStyleBackColor = true;
+            this.btnAssociarPlano.Click += new System.EventHandler(this.btnAssociarPlano_Click);
             // 
             // FrmAssociarPlanoAlterar
             // 

@@ -19,19 +19,22 @@ namespace Projeto_Desktop.Formularios
         {
             InitializeComponent();
         }
-
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             c = new Cliente();
-            if (txtIdCliente.Text != string.Empty || txtTelefone.Text != string.Empty || txtNomeContato.Text != string.Empty || txtEmail.Text != string.Empty || txtRazaoSocial.Text != string.Empty)
+            if (txtIdCliente.Text != string.Empty || txtTelefone.Text != string.Empty || txtNomeContato.Text != string.Empty || txtEmail.Text != string.Empty || cmbClientes.Text != string.Empty)
             {
-                if (c.AlterarCliente(Convert.ToInt32(txtIdCliente.Text), txtTelefone.Text, txtNomeContato.Text, txtEmail.Text, txtRazaoSocial.Text))
-                    MessageBox.Show("cliente alterado com sucesso");
-                else
-                    MessageBox.Show("Falha ao alterar", "Erro");
+                if (DialogResult.Yes == MessageBox.Show("Deseja alterar o cliente " + cmbClientes.Text + "?", "Alterar", MessageBoxButtons.YesNo))
+                {
+                    if (c.AlterarCliente(Convert.ToInt32(txtIdCliente.Text), txtTelefone.Text, txtNomeContato.Text, txtEmail.Text, cmbClientes.Text))
+                        MessageBox.Show("cliente alterado com sucesso");
+                    else
+                        MessageBox.Show("Falha ao alterar", "Erro");
+                }                
             }
             else
                 MessageBox.Show("É necessário preencher todos os campos !!", "Erro");
+            btnListarClientes_Click(this, e);
         }
 
         private void btnListarClientes_Click(object sender, EventArgs e)
@@ -51,8 +54,7 @@ namespace Projeto_Desktop.Formularios
                 txtEmail.Text = c.Email.ToString();
                 txtInscricaoEstadual.Text = c.InscricaoEstadual.ToString();
                 txtNomeContato.Text = c.NomeContato;
-                txtRazaoSocial.Text = c.RazaoSocial;
-                txtSenha.Text = c.Senha;
+                cmbClientes.Text = c.RazaoSocial;
                 txtTelefone.Text = c.Telefone;
             }
             else
@@ -63,7 +65,22 @@ namespace Projeto_Desktop.Formularios
 
         private void FrmClienteAlterar_Load(object sender, EventArgs e)
         {
+            c = new Cliente();
+            cmbClientes.DisplayMember = "RazaoSocial";
+            cmbClientes.ValueMember = "Id";
+            cmbClientes.DataSource = c.ListarCliente();
+        }
 
+        private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            c = new Cliente();
+            c.ConsultarClienteId(Convert.ToInt32(cmbClientes.SelectedValue));
+            txtCnpj.Text = c.Cnpj.ToString();
+            txtEmail.Text = c.Email.ToString();
+            txtIdCliente.Text = c.Id.ToString();
+            txtInscricaoEstadual.Text = c.InscricaoEstadual.ToString();
+            txtNomeContato.Text = c.NomeContato;
+            txtTelefone.Text = c.Telefone;
         }
     }
 }

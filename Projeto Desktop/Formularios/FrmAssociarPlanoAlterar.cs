@@ -20,12 +20,12 @@ namespace Projeto_Desktop.Formularios
         Cliente c;
         PlanoCliente pc;
         private void button1_Click(object sender, EventArgs e)
-        {
-            pc = new PlanoCliente();
-            var a = Convert.ToDateTime(mskDataInicioAtualizar.Text);
-            a = a.AddMonths(Convert.ToInt32(txtDuracaoPlanoAlterar.Text));
+        {            
             if (mskDataInicioAtualizar.Text != string.Empty && txtDescontoAtualizar.Text != string.Empty)
-            {            
+            {
+                pc = new PlanoCliente();
+                var a = Convert.ToDateTime(mskDataInicioAtualizar.Text);
+                a = a.AddMonths(Convert.ToInt32(txtDuracaoPlanoAlterar.Text));
                 if (pc.AlterarPlanoAssociado(Convert.ToInt32(txtIdPlanoClienteAssociado.Text), Convert.ToInt32(cmbPlanosAtualizar.SelectedValue),
                 Convert.ToInt32(cmbClientes.SelectedValue), Convert.ToDateTime(mskDataInicioAtualizar.Text), a, Convert.ToDouble(txtDescontoAtualizar.Text)))
                 {
@@ -60,30 +60,42 @@ namespace Projeto_Desktop.Formularios
         {
             pc = new PlanoCliente();
             pc.ConsultarPlanoClienteAtivo(Convert.ToInt32(cmbClientes.SelectedValue));
-            p = new Plano();
-            p.ConsultarPlanoId(pc.IdPlano.Id);
-            txtNomePlano.Text = p.NomePlano;
-            txtDuracaoPlano.Text = p.DuracaoPlano.ToString();
-            txtValorPlano.Text = p.ValorPlano.ToString("C");
-            txtLimitePedidos.Text = p.LimitePedido.ToString();
-            txtDescricaoPlano.Text = p.DescricaoPlano.ToString();
-            mskDataInicioPlano.Text = pc.DataInicio.ToString();
-            mskDataTerminoPlano.Text = pc.DataTermino.ToString();
-            txtDescontoPlano.Text = pc.Desconto.ToString("C");
-            txtIdPlanoClienteAssociado.Text = pc.Id.ToString();
-            grpAtualizarPlano.Enabled = true;
-            if (txtIdPlanoClienteAssociado.Text != string.Empty)
+            if(pc.Id > 0)
             {
-                btnAtualizarPlano.Enabled = true;
-                grpAlterarPlano.Enabled = true;
-                txtDescontoPlano.Enabled = true;
-            }
-            else
+                p = new Plano();
+                p.ConsultarPlanoId(pc.IdPlano.Id);
+                txtNomePlano.Text = p.NomePlano;
+                txtDuracaoPlano.Text = p.DuracaoPlano.ToString();
+                txtValorPlano.Text = p.ValorPlano.ToString("C");
+                txtLimitePedidos.Text = p.LimitePedido.ToString();
+                txtDescricaoPlano.Text = p.DescricaoPlano.ToString();
+                mskDataInicioPlano.Text = pc.DataInicio.ToString();
+                mskDataTerminoPlano.Text = pc.DataTermino.ToString();
+                txtDescontoPlano.Text = pc.Desconto.ToString("C");
+                txtIdPlanoClienteAssociado.Text = pc.Id.ToString();
+                grpAtualizarPlano.Enabled = true;
+                if (txtIdPlanoClienteAssociado.Text != string.Empty)
+                {
+                    btnAtualizarPlano.Enabled = true;
+                    grpAlterarPlano.Enabled = true;
+                    txtDescontoPlano.Enabled = true;
+                }
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Nenhum plano ativo foi encontrado\nDeseja associar um novo plano?", "Plano não encontrado", MessageBoxButtons.YesNo))
+                    {
+                        FrmAssociarPlano frm = new FrmAssociarPlano();
+                        frm.Show();
+                    }
+                }
+            }      
+            else if(pc.Id <= 0)
             {
-                if(DialogResult.Yes ==  MessageBox.Show("Nenhum plano ativo foi encontrado\nDeseja associar um novo plano?","Plano não encontrado",MessageBoxButtons.YesNo))
+                if(DialogResult.Yes == MessageBox.Show("Este cliente não possui um plano ativo\nDeseja associar um novo Plano?", "Plano não ativo", MessageBoxButtons.YesNo))
                 {
                     FrmAssociarPlano frm = new FrmAssociarPlano();
                     frm.Show();
+                    this.Close();
                 }
             }
         }
@@ -102,7 +114,17 @@ namespace Projeto_Desktop.Formularios
         private void btnAtualizarPlano_Click(object sender, EventArgs e)
         {
             pc = new PlanoCliente();
-            pc.AlterarPlanoCliente(Convert.ToInt32(txtIdPlanoClienteAssociado.Text), Convert.ToDouble(txtDescontoPlano.Text));
+            if(txtIdPlanoClienteAssociado.Text != string.Empty && txtDescontoPlano.Text != string.Empty)
+            {
+                if(pc.AlterarPlanoCliente(Convert.ToInt32(txtIdPlanoClienteAssociado.Text), Convert.ToDouble(txtDescontoPlano.Text)))
+                {
+                    MessageBox.Show("Plano atualizado com sucesso !!");
+                }
+            }  
+            else
+            {
+                MessageBox.Show("Preencha todos os campos disponiveis", "Aviso");
+            }
         }
 
         private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,6 +133,13 @@ namespace Projeto_Desktop.Formularios
             {
                 btnConsultarPlano.Enabled = true;
             }
+        }
+
+        private void btnAssociarPlano_Click(object sender, EventArgs e)
+        {
+            FrmAssociarPlano frm = new FrmAssociarPlano();
+            frm.Show();
+            this.Close();
         }
     }
 }
