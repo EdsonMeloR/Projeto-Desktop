@@ -217,5 +217,10 @@ namespace Projeto_Desktop.Classes
                 return null;
             }
         }
+
+        public void GerarPdfNotaTransporte()
+        {
+
+        }
     }
 }

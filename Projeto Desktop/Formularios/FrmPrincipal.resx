@@ -222,10 +222,16 @@
     <value>Planos</value>
   </data>
   <data name="caminhoneirosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>75, 20</value>
   </data>
   <data name="caminhoneirosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Caminhoneiros</value>
+    <value>Motoristas</value>
+  </data>
+  <data name="veiculoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="veiculoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Veiculos</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 657</value>
@@ -460,6 +466,12 @@
     <value>caminhoneirosToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;caminhoneirosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;veiculoToolStripMenuItem.Name" xml:space="preserve">
+    <value>veiculoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;veiculoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -225,7 +225,7 @@
             this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.btnAlterar);
             this.Name = "FrmUsuario";
-            this.Text = "FrmUsuarioAlterar";
+            this.Text = "Alterar Usuario";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuarios)).EndInit();
             this.ResumeLayout(false);

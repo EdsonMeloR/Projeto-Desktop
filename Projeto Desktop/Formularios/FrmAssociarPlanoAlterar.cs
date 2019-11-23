@@ -120,6 +120,10 @@ namespace Projeto_Desktop.Formularios
                 {
                     MessageBox.Show("Plano atualizado com sucesso !!");
                 }
+                else
+                {
+                    MessageBox.Show("Falha ao atualizar plano");
+                }
             }  
             else
             {

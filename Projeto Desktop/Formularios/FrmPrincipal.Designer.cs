@@ -51,6 +51,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.caminhoneirosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.veiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,8 @@
             this.entregasToolStripMenuItem,
             this.administraçãoToolStripMenuItem,
             this.planoToolStripMenuItem,
-            this.caminhoneirosToolStripMenuItem});
+            this.caminhoneirosToolStripMenuItem,
+            this.veiculoToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Stretch = false;
@@ -212,6 +214,13 @@
             // 
             this.caminhoneirosToolStripMenuItem.Name = "caminhoneirosToolStripMenuItem";
             resources.ApplyResources(this.caminhoneirosToolStripMenuItem, "caminhoneirosToolStripMenuItem");
+            this.caminhoneirosToolStripMenuItem.Click += new System.EventHandler(this.caminhoneirosToolStripMenuItem_Click);
+            // 
+            // veiculoToolStripMenuItem
+            // 
+            this.veiculoToolStripMenuItem.Name = "veiculoToolStripMenuItem";
+            resources.ApplyResources(this.veiculoToolStripMenuItem, "veiculoToolStripMenuItem");
+            this.veiculoToolStripMenuItem.Click += new System.EventHandler(this.veiculoToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -256,6 +265,7 @@
         private System.Windows.Forms.ToolStripMenuItem inserirPlanosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarPlanosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caminhoneirosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem veiculoToolStripMenuItem;
     }
 }
 

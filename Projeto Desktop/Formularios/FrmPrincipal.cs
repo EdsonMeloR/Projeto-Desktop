@@ -131,5 +131,17 @@ namespace Projeto_Desktop
             FrmPlanoConsultar frm = new FrmPlanoConsultar();
             frm.Show();
         }
+
+        private void caminhoneirosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMotorista frm = new FrmMotorista();
+            frm.Show();
+        }
+
+        private void veiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVeiculo frm = new FrmVeiculo();
+            frm.Show();
+        }
     }
 }

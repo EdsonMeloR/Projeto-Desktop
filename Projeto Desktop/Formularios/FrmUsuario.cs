@@ -75,14 +75,14 @@ namespace Projeto_Desktop.Formularios
             a = a.Replace(")", "");
             a = a.Replace(" ", "");
             //Pegando a senha com base no primeiro nome do usuario antes de 1° espaço
-            var senha = txtNome.Text.Substring(0, txtNome.Text.IndexOf(" ", 0));
-            if (txtNome.Text != string.Empty && mskCpf.Text != string.Empty && txtEmail.Text != string.Empty && mskTelefone.Text != string.Empty && senha != string.Empty)
+            var senha = txtNome.Text.Substring(0, txtNome.Text.IndexOf(" ", 1));
+            if (txtNome.Text != string.Empty && mskCpf.Text != string.Empty && txtEmail.Text != string.Empty && mskTelefone.Text != string.Empty && senha.ToLower() != string.Empty)
             {
                 user.InserirUsuario(txtNome.Text, mskCpf.Text.Replace("-",""), a.Replace("-",""), senha, txtEmail.Text, Convert.ToInt32(cmbNivel.SelectedValue));
                 if(user.Id > 0)
                 {
                     MessageBox.Show("Usuario inserido com sucesso","Inserido");
-                    MessageBox.Show("Será necessário modificar a senha em seu 1° Acesso","Inserido");
+                    MessageBox.Show("Será necessário modificar a senha em seu 1° Acesso\nSenha é definidada como seu primeiro nome automaticamente","Inserido");
                 }
             }
             else

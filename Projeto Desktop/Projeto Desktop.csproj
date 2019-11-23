@@ -123,6 +123,12 @@
     <Compile Include="Formularios\FrmNivel.Designer.cs">
       <DependentUpon>FrmNivel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmNotaTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmNotaTransporte.Designer.cs">
+      <DependentUpon>FrmNotaTransporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmPedidoConsultar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmVeiculo.resx">
+      <DependentUpon>FrmVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -75,8 +75,8 @@ namespace Projeto_Desktop.Classes
                 var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_planocliente";
-                comm.Parameters.Add("_desconto", MySqlDbType.DateTime).Value = _desconto; 
-                comm.Parameters.Add("_id", MySqlDbType.DateTime).Value = _idplanocliente;
+                comm.Parameters.Add("_desconto", MySqlDbType.Decimal).Value = _desconto; 
+                comm.Parameters.Add("_id", MySqlDbType.Int32).Value = _idplanocliente;
                 comm.ExecuteNonQuery();
                 return true;
             }

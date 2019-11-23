@@ -68,17 +68,24 @@ namespace Projeto_Desktop.Formularios
         private void btnInserirCarga_Click(object sender, EventArgs e)
         {
             carga = new Carga();
-            carga.InserirCarga(Pedido.Id, Convert.ToDouble(mskPeso.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskComprimento.Text), txtNomeProduto.Text, txtDetalhes.Text, Convert.ToInt32(cmbTiposCargas.SelectedValue), Convert.ToDouble(mskValorProduto.Text));
-            if(carga.Id > 0)
+            if(mskPeso.Text != string.Empty && mskLargura.Text != string.Empty && mskAltura.Text != string.Empty && mskComprimento.Text != string.Empty && mskValorProduto.Text != string.Empty && txtNomeProduto.Text != string.Empty && txtDetalhes.Text != string.Empty && Convert.ToInt32(cmbTiposCargas.SelectedValue) > 0)
             {
-                MessageBox.Show("Carga inserido com sucesso !");
-                txtIdCarga.Text = carga.Id.ToString();
+                carga.InserirCarga(Pedido.Id, Convert.ToDouble(mskPeso.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskComprimento.Text), txtNomeProduto.Text, txtDetalhes.Text, Convert.ToInt32(cmbTiposCargas.SelectedValue), Convert.ToDouble(mskValorProduto.Text));
+                if (carga.Id > 0)
+                {
+                    MessageBox.Show("Carga inserido com sucesso !");
+                    txtIdCarga.Text = carga.Id.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao inserir a carga");
+                }
+                CarregarDataGridInner();
             }
             else
             {
-                MessageBox.Show("Falha ao inserir a carga");
+                MessageBox.Show("É necessário preencher todos os campos ");
             }
-            CarregarDataGridInner();                    
         }
 
         private void mskValorProduto_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

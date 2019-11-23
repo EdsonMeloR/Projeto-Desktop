@@ -49,11 +49,12 @@ namespace Projeto_Desktop.Formularios
             m = new Motorista();
             if(cmbCaminhoneiros.Text != string.Empty && mskCpf.Text != string.Empty && mskValidadeCnh.Text != string.Empty && txtCnh.Text != string.Empty && txtRg.Text != string.Empty &&cmbCategoriasCnh.Text != string.Empty)
             {
-                var senha = cmbCaminhoneiros.Text.Substring(0, cmbCaminhoneiros.Text.IndexOf(" ",0));
-                m.InserirMotorista(cmbCaminhoneiros.Text, mskCpf.Text, txtRg.Text, txtCnh.Text, Convert.ToDateTime(mskValidadeCnh.Text), cmbCategoriasCnh.Text, senha, true);
+                var senha = cmbCaminhoneiros.Text.Substring(0, cmbCaminhoneiros.Text.IndexOf(" ",1));
+                m.InserirMotorista(cmbCaminhoneiros.Text, mskCpf.Text, txtRg.Text, txtCnh.Text, Convert.ToDateTime(mskValidadeCnh.Text), cmbCategoriasCnh.Text, senha.ToLower(), true);
                 if(m.IdMotorista > 0)
                 {
                     MessageBox.Show("Cadastrado com sucesso");
+                    MessageBox.Show("Será necessário modificar a senha em seu 1° Acesso\nSenha é definidada como seu primeiro nome automaticamente", "Inserido");
                 }
                 else
                 {

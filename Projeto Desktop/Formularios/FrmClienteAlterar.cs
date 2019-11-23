@@ -22,7 +22,7 @@ namespace Projeto_Desktop.Formularios
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             c = new Cliente();
-            if (txtIdCliente.Text != string.Empty || txtTelefone.Text != string.Empty || txtNomeContato.Text != string.Empty || txtEmail.Text != string.Empty || cmbClientes.Text != string.Empty)
+            if (txtIdCliente.Text != string.Empty && txtTelefone.Text != string.Empty && txtNomeContato.Text != string.Empty && txtEmail.Text != string.Empty && cmbClientes.Text != string.Empty)
             {
                 if (DialogResult.Yes == MessageBox.Show("Deseja alterar o cliente " + cmbClientes.Text + "?", "Alterar", MessageBoxButtons.YesNo))
                 {
