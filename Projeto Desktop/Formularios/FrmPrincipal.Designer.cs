@@ -34,7 +34,6 @@
             this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.planoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,13 +42,15 @@
             this.entregasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.niveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserirPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.niveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserirPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caminhoneirosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,8 @@
             this.clienteToolStripMenuItem,
             this.entregasToolStripMenuItem,
             this.administraçãoToolStripMenuItem,
-            this.planoToolStripMenuItem});
+            this.planoToolStripMenuItem,
+            this.caminhoneirosToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Stretch = false;
@@ -94,15 +96,6 @@
             this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
             resources.ApplyResources(this.alterarToolStripMenuItem, "alterarToolStripMenuItem");
             this.alterarToolStripMenuItem.Click += new System.EventHandler(this.alterarToolStripMenuItem_Click);
-            // 
-            // planoToolStripMenuItem
-            // 
-            this.planoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inserirPlanosToolStripMenuItem,
-            this.consultarPlanosToolStripMenuItem});
-            this.planoToolStripMenuItem.Name = "planoToolStripMenuItem";
-            resources.ApplyResources(this.planoToolStripMenuItem, "planoToolStripMenuItem");
-            this.planoToolStripMenuItem.Click += new System.EventHandler(this.planoToolStripMenuItem_Click);
             // 
             // clienteToolStripMenuItem
             // 
@@ -159,6 +152,33 @@
             resources.ApplyResources(this.usuáriosToolStripMenuItem, "usuáriosToolStripMenuItem");
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
+            // niveisToolStripMenuItem
+            // 
+            this.niveisToolStripMenuItem.Name = "niveisToolStripMenuItem";
+            resources.ApplyResources(this.niveisToolStripMenuItem, "niveisToolStripMenuItem");
+            this.niveisToolStripMenuItem.Click += new System.EventHandler(this.niveisToolStripMenuItem_Click);
+            // 
+            // planoToolStripMenuItem
+            // 
+            this.planoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserirPlanosToolStripMenuItem,
+            this.consultarPlanosToolStripMenuItem});
+            this.planoToolStripMenuItem.Name = "planoToolStripMenuItem";
+            resources.ApplyResources(this.planoToolStripMenuItem, "planoToolStripMenuItem");
+            this.planoToolStripMenuItem.Click += new System.EventHandler(this.planoToolStripMenuItem_Click);
+            // 
+            // inserirPlanosToolStripMenuItem
+            // 
+            this.inserirPlanosToolStripMenuItem.Name = "inserirPlanosToolStripMenuItem";
+            resources.ApplyResources(this.inserirPlanosToolStripMenuItem, "inserirPlanosToolStripMenuItem");
+            this.inserirPlanosToolStripMenuItem.Click += new System.EventHandler(this.inserirPlanosToolStripMenuItem_Click);
+            // 
+            // consultarPlanosToolStripMenuItem
+            // 
+            this.consultarPlanosToolStripMenuItem.Name = "consultarPlanosToolStripMenuItem";
+            resources.ApplyResources(this.consultarPlanosToolStripMenuItem, "consultarPlanosToolStripMenuItem");
+            this.consultarPlanosToolStripMenuItem.Click += new System.EventHandler(this.consultarPlanosToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(174)))), ((int)(((byte)(0)))));
@@ -188,23 +208,10 @@
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // niveisToolStripMenuItem
+            // caminhoneirosToolStripMenuItem
             // 
-            this.niveisToolStripMenuItem.Name = "niveisToolStripMenuItem";
-            resources.ApplyResources(this.niveisToolStripMenuItem, "niveisToolStripMenuItem");
-            this.niveisToolStripMenuItem.Click += new System.EventHandler(this.niveisToolStripMenuItem_Click);
-            // 
-            // consultarPlanosToolStripMenuItem
-            // 
-            this.consultarPlanosToolStripMenuItem.Name = "consultarPlanosToolStripMenuItem";
-            resources.ApplyResources(this.consultarPlanosToolStripMenuItem, "consultarPlanosToolStripMenuItem");
-            this.consultarPlanosToolStripMenuItem.Click += new System.EventHandler(this.consultarPlanosToolStripMenuItem_Click);
-            // 
-            // inserirPlanosToolStripMenuItem
-            // 
-            this.inserirPlanosToolStripMenuItem.Name = "inserirPlanosToolStripMenuItem";
-            resources.ApplyResources(this.inserirPlanosToolStripMenuItem, "inserirPlanosToolStripMenuItem");
-            this.inserirPlanosToolStripMenuItem.Click += new System.EventHandler(this.inserirPlanosToolStripMenuItem_Click);
+            this.caminhoneirosToolStripMenuItem.Name = "caminhoneirosToolStripMenuItem";
+            resources.ApplyResources(this.caminhoneirosToolStripMenuItem, "caminhoneirosToolStripMenuItem");
             // 
             // FrmPrincipal
             // 
@@ -248,6 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem niveisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserirPlanosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarPlanosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caminhoneirosToolStripMenuItem;
     }
 }
 

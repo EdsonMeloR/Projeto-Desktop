@@ -212,6 +212,9 @@
     <EmbeddedResource Include="Formularios\FrmCarga.resx">
       <DependentUpon>FrmCarga.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMotorista.resx">
+      <DependentUpon>FrmMotorista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmNivel.resx">
       <DependentUpon>FrmNivel.cs</DependentUpon>
     </EmbeddedResource>

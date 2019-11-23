@@ -26,7 +26,7 @@ namespace Projeto_Desktop.Formularios
 
         private void FrmPrimeiroLogin_Load(object sender, EventArgs e)
         {                       
-            this.lblPrimeiroLogin.Text = "Primeiro Login? " + Program.userLogado.Nome + " Modifique sua senha";
+            this.lblPrimeiroLogin.Text = "Primeiro Login?\n" + Program.userLogado.Nome + "\nModifique sua senha";
         }
 
         private void btnModificarSenha_Click(object sender, EventArgs e)

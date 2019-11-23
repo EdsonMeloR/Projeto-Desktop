@@ -19,6 +19,7 @@ namespace Projeto_Desktop.Classes
         private DateTime validadeCnh;
         private string categoriaCnh;
         private string senha;
+        private bool primeiroLogin;
         Banco db;
         //Propiedades
         public int IdMotorista { get => idMotorista; set => idMotorista = value; }
@@ -29,8 +30,10 @@ namespace Projeto_Desktop.Classes
         public DateTime ValidadeCnh { get => validadeCnh; set => validadeCnh = value; }
         public string CategoriaCnh { get => categoriaCnh; set => categoriaCnh = value; }
         public string Senha { get => senha; set => senha = value; }
+        public bool PrimeiroLogin { get => primeiroLogin; set => primeiroLogin = value; }
+
         //Métodos construtores
-        public Motorista(int idMotorista, string nome, string cpf, string rg, string cnh, DateTime validadeCnh, string categoriaCnh, string senha)
+        public Motorista(int idMotorista, string nome, string cpf, string rg, string cnh, DateTime validadeCnh, string categoriaCnh, string senha,bool primeiroLogin)
         {
             this.IdMotorista = idMotorista;
             this.Nome = nome;
@@ -40,6 +43,7 @@ namespace Projeto_Desktop.Classes
             this.ValidadeCnh = validadeCnh;
             this.CategoriaCnh = categoriaCnh;
             this.Senha = senha;
+            this.PrimeiroLogin = primeiroLogin;
         }
         public Motorista()
         { }
@@ -47,7 +51,7 @@ namespace Projeto_Desktop.Classes
         /// <summary>
         /// Inserindo novo motorista
         /// </summary>
-        public void InserirMotorista(string nome, string cpf, string rg, string cnh, DateTime validadeCnh, string categoriaCnh, string senha)
+        public void InserirMotorista(string nome, string cpf, string rg, string cnh, DateTime validadeCnh, string categoriaCnh, string senha, bool primeiroLogin)
         {
             db = new Banco();
             try
@@ -62,6 +66,7 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_validadecnh", MySqlDbType.Date).Value = validadeCnh;
                 comm.Parameters.Add("_categoriacnh", MySqlDbType.VarChar).Value = categoriaCnh;
                 comm.Parameters.Add("_senha", MySqlDbType.VarChar).Value = senha;
+                comm.Parameters.Add("_primeirologin", MySqlDbType.Bit).Value = primeiroLogin;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
                 {
@@ -76,7 +81,7 @@ namespace Projeto_Desktop.Classes
         /// <summary>
         /// Alterando dados do motorista
         /// </summary>
-        public void AlterarMotorista(DateTime validadeCnh, string categoriaCnh, int _id)
+        public bool AlterarMotorista(DateTime validadeCnh, string categoriaCnh, int _id)
         {
             db = new Banco();
             try
@@ -88,10 +93,12 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_validadecnh", MySqlDbType.Date).Value = validadeCnh;
                 comm.Parameters.Add("_categoriacnh", MySqlDbType.VarChar).Value = categoriaCnh;
                 comm.ExecuteNonQuery();
+                return true;
             }
             catch (Exception e)
             {
                 e.Message.ToString();
+                return false;
             }
         }
         /// <summary>
@@ -197,5 +204,6 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
             }
         }
+        ///
     }
 }

@@ -150,25 +150,25 @@
     <value>Pedidos</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Cadastrar Cliente</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Cliente</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Cliente</value>
   </data>
   <data name="associarPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="associarPlanoToolStripMenuItem.Text" xml:space="preserve">
     <value>AssociarPlano</value>
@@ -204,13 +204,13 @@
     <value>Administração</value>
   </data>
   <data name="inserirPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="inserirPlanosToolStripMenuItem.Text" xml:space="preserve">
     <value>Inserir Planos</value>
   </data>
   <data name="consultarPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="consultarPlanosToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Planos</value>
@@ -220,6 +220,12 @@
   </data>
   <data name="planoToolStripMenuItem.Text" xml:space="preserve">
     <value>Planos</value>
+  </data>
+  <data name="caminhoneirosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="caminhoneirosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Caminhoneiros</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 657</value>
@@ -372,12 +378,6 @@
   <data name="&gt;&gt;alterarToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;planoToolStripMenuItem.Name" xml:space="preserve">
-    <value>planoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;planoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;clienteToolStripMenuItem.Name" xml:space="preserve">
     <value>clienteToolStripMenuItem</value>
   </data>
@@ -426,16 +426,22 @@
   <data name="&gt;&gt;usuáriosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
-    <value>backgroundWorker1</value>
-  </data>
-  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;niveisToolStripMenuItem.Name" xml:space="preserve">
     <value>niveisToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;niveisToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;planoToolStripMenuItem.Name" xml:space="preserve">
+    <value>planoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;planoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;inserirPlanosToolStripMenuItem.Name" xml:space="preserve">
+    <value>inserirPlanosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;inserirPlanosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;consultarPlanosToolStripMenuItem.Name" xml:space="preserve">
@@ -444,10 +450,16 @@
   <data name="&gt;&gt;consultarPlanosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;inserirPlanosToolStripMenuItem.Name" xml:space="preserve">
-    <value>inserirPlanosToolStripMenuItem</value>
+  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
+    <value>backgroundWorker1</value>
   </data>
-  <data name="&gt;&gt;inserirPlanosToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;caminhoneirosToolStripMenuItem.Name" xml:space="preserve">
+    <value>caminhoneirosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;caminhoneirosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
