@@ -70,7 +70,7 @@ namespace Projeto_Desktop.Formularios
             carga = new Carga();
             if(mskPeso.Text != string.Empty && mskLargura.Text != string.Empty && mskAltura.Text != string.Empty && mskComprimento.Text != string.Empty && mskValorProduto.Text != string.Empty && txtNomeProduto.Text != string.Empty && txtDetalhes.Text != string.Empty && Convert.ToInt32(cmbTiposCargas.SelectedValue) > 0)
             {
-                carga.InserirCarga(Pedido.Id, Convert.ToDouble(mskPeso.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskComprimento.Text), txtNomeProduto.Text, txtDetalhes.Text, Convert.ToInt32(cmbTiposCargas.SelectedValue), Convert.ToDouble(mskValorProduto.Text));
+                carga.InserirCarga(Pedido.Id, Convert.ToDouble(mskPeso.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskComprimento.Text), txtNomeProduto.Text, txtDetalhes.Text, Convert.ToInt32(cmbTiposCargas.SelectedValue), Convert.ToDouble(mskValorProduto.Text),Convert.ToInt32(txtQuantidade.Text));
                 if (carga.Id > 0)
                 {
                     MessageBox.Show("Carga inserido com sucesso !");
@@ -110,6 +110,7 @@ namespace Projeto_Desktop.Formularios
                 mskPeso.Text = carga.Peso.ToString();
                 mskValorProduto.Text = carga.ValorProduto.ToString();
                 cmbTiposCargas.Text = tc.Nome;
+                txtQuantidade.Text = carga.Quantidade.ToString();
             }
             else
             {
@@ -132,6 +133,12 @@ namespace Projeto_Desktop.Formularios
             {
                 MessageBox.Show("Preencha todos os campos para realizar a alteração");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmNotaTransporte frm = new FrmNotaTransporte();
+            frm.Show();
         }
     }
 }

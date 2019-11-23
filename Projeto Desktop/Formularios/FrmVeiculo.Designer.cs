@@ -52,14 +52,16 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.txtIdVeiculo = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.mskCustoPorKm = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(12, 200);
+            this.btnCadastrar.Location = new System.Drawing.Point(12, 239);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCadastrar.Size = new System.Drawing.Size(78, 23);
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -77,10 +79,10 @@
             // dgvVeiculos
             // 
             this.dgvVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVeiculos.Location = new System.Drawing.Point(12, 246);
+            this.dgvVeiculos.Location = new System.Drawing.Point(12, 268);
             this.dgvVeiculos.Name = "dgvVeiculos";
             this.dgvVeiculos.RowHeadersVisible = false;
-            this.dgvVeiculos.Size = new System.Drawing.Size(402, 150);
+            this.dgvVeiculos.Size = new System.Drawing.Size(405, 178);
             this.dgvVeiculos.TabIndex = 2;
             // 
             // label1
@@ -137,7 +139,7 @@
             // 
             this.txtModelo.Location = new System.Drawing.Point(284, 82);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(130, 20);
+            this.txtModelo.Size = new System.Drawing.Size(133, 20);
             this.txtModelo.TabIndex = 10;
             // 
             // txtRenavam
@@ -194,7 +196,7 @@
             // 
             this.mskAltura.Location = new System.Drawing.Point(284, 122);
             this.mskAltura.Name = "mskAltura";
-            this.mskAltura.Size = new System.Drawing.Size(130, 20);
+            this.mskAltura.Size = new System.Drawing.Size(133, 20);
             this.mskAltura.TabIndex = 16;
             // 
             // label8
@@ -226,14 +228,14 @@
             // 
             this.txtEixos.Location = new System.Drawing.Point(284, 160);
             this.txtEixos.Name = "txtEixos";
-            this.txtEixos.Size = new System.Drawing.Size(130, 20);
+            this.txtEixos.Size = new System.Drawing.Size(133, 20);
             this.txtEixos.TabIndex = 20;
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(175, 200);
+            this.btnListar.Location = new System.Drawing.Point(175, 239);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.Size = new System.Drawing.Size(78, 23);
             this.btnListar.TabIndex = 22;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
@@ -241,9 +243,9 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(338, 200);
+            this.btnAlterar.Location = new System.Drawing.Point(338, 239);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.Size = new System.Drawing.Size(78, 23);
             this.btnAlterar.TabIndex = 23;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -257,11 +259,29 @@
             this.txtIdVeiculo.Size = new System.Drawing.Size(130, 20);
             this.txtIdVeiculo.TabIndex = 25;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 190);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Custo por Km";
+            // 
+            // mskCustoPorKm
+            // 
+            this.mskCustoPorKm.Location = new System.Drawing.Point(12, 206);
+            this.mskCustoPorKm.Name = "mskCustoPorKm";
+            this.mskCustoPorKm.Size = new System.Drawing.Size(266, 20);
+            this.mskCustoPorKm.TabIndex = 26;
+            // 
             // FrmVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 420);
+            this.ClientSize = new System.Drawing.Size(429, 458);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.mskCustoPorKm);
             this.Controls.Add(this.txtIdVeiculo);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnListar);
@@ -321,5 +341,7 @@
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.TextBox txtIdVeiculo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox mskCustoPorKm;
     }
 }

@@ -38,6 +38,8 @@ namespace Projeto_Desktop.Formularios
             mskComprimento.Text = v.Comprimento.ToString();
             mskLargura.Text = v.Largura.ToString();
             mskPesoMaximo.Text = v.PesoMaximo.ToString();
+            txtEixos.Text = v.Eixos.ToString();
+            mskCustoPorKm.Text = v.CustoPorKm.ToString("C");
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace Projeto_Desktop.Formularios
             {
                 try
                 {
-                    v.InserirVeiculo(cmbPlacas.Text, txtMarca.Text, txtModelo.Text, txtRenavam.Text, Convert.ToDouble(mskPesoMaximo.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskComprimento.Text), Convert.ToInt32(txtEixos.Text));
+                    v.InserirVeiculo(cmbPlacas.Text, txtMarca.Text, txtModelo.Text, txtRenavam.Text, Convert.ToDouble(mskPesoMaximo.Text), Convert.ToDouble(mskAltura.Text), Convert.ToDouble(mskLargura.Text), Convert.ToDouble(mskComprimento.Text), Convert.ToInt32(txtEixos.Text),Convert.ToDouble(mskCustoPorKm.Text));
                     if (v.Id > 0)
                     {
                         txtIdVeiculo.Text = v.Id.ToString();
@@ -98,7 +100,11 @@ namespace Projeto_Desktop.Formularios
                     }
                     else if (mskPesoMaximo.Text == string.Empty)
                     {
-                        MessageBox.Show("É necessário inserir o peso maixmo");
+                        MessageBox.Show("É necessário inserir o peso maximo");
+                    }
+                    else if(mskCustoPorKm.Text == string.Empty)
+                    {
+                        MessageBox.Show("É necessário inserir o Custo por Km");
                     }
                 }
                 catch (Exception ex)

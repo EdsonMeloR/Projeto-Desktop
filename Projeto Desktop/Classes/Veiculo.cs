@@ -20,6 +20,8 @@ namespace Projeto_Desktop.Classes
         private double altura;
         private double largura;
         private double comprimento;
+        private double custoPorKm;
+        private int eixos;
         Banco db;
         //Propiedades
         public int Id { get => id; set => id = value; }
@@ -31,8 +33,11 @@ namespace Projeto_Desktop.Classes
         public double Altura { get => altura; set => altura = value; }
         public double Largura { get => largura; set => largura = value; }
         public double Comprimento { get => comprimento; set => comprimento = value; }
+        public double CustoPorKm { get => custoPorKm; set => custoPorKm = value; }
+        public int Eixos { get => eixos; set => eixos = value; }
+
         //Métodos Construtores
-        public Veiculo(int id,string placa, string marca, string modelo, string renavam, double pesoMaximo, double altura, double largura, double comprimento)
+        public Veiculo(int id,string placa, string marca, string modelo, string renavam, double pesoMaximo, double altura, double largura, double comprimento,double custo,int eixos)
         {
             this.id = id;
             this.placa = placa;
@@ -43,6 +48,8 @@ namespace Projeto_Desktop.Classes
             this.altura = altura;
             this.largura = largura;
             this.comprimento = comprimento;
+            this.custoPorKm = custo;
+            this.eixos = eixos;
         }
         public Veiculo()
         { }
@@ -50,7 +57,7 @@ namespace Projeto_Desktop.Classes
         /// <summary>
         /// Inserindo veiculo
         /// </summary>
-        public void InserirVeiculo(string placa, string marca, string modelo, string renavam, double pesoMaximo, double altura, double largura, double comprimento,int eixo)
+        public void InserirVeiculo(string placa, string marca, string modelo, string renavam, double pesoMaximo, double altura, double largura, double comprimento,int eixo,double custo)
         {
             db = new Banco();
             try
@@ -67,6 +74,7 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_largura", MySqlDbType.Decimal).Value = largura;
                 comm.Parameters.Add("_comprimento", MySqlDbType.Decimal).Value = comprimento;
                 comm.Parameters.Add("_eixo", MySqlDbType.Int32).Value = eixo;
+                comm.Parameters.Add("_custo", MySqlDbType.Decimal).Value = custo;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
                 {
@@ -125,6 +133,8 @@ namespace Projeto_Desktop.Classes
                     this.Altura = dr.GetDouble(6);
                     this.Largura = dr.GetDouble(7);
                     this.Comprimento = dr.GetDouble(8);
+                    this.Eixos = dr.GetInt32(9);
+                    this.CustoPorKm = dr.GetDouble(10);
                 }
             }
             catch (Exception e)
@@ -155,6 +165,8 @@ namespace Projeto_Desktop.Classes
                     this.Altura = dr.GetDouble(6);
                     this.Largura = dr.GetDouble(7);
                     this.Comprimento = dr.GetDouble(8);
+                    this.Eixos = dr.GetInt32(9);
+                    this.CustoPorKm = dr.GetDouble(10);
                 }
             }
             catch (Exception e)
@@ -187,6 +199,8 @@ namespace Projeto_Desktop.Classes
                     v.Altura = dr.GetDouble(6);
                     v.Largura = dr.GetDouble(7);
                     v.Comprimento = dr.GetDouble(8);
+                    v.Eixos = dr.GetInt32(9);
+                    v.CustoPorKm = dr.GetDouble(10);
                     lista.Add(v);
                 }
                 return lista;

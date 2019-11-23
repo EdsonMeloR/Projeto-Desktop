@@ -60,6 +60,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.MaskedTextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.grbCarga.SuspendLayout();
             this.grpListaCargasPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
@@ -132,7 +135,7 @@
             this.txtDetalhes.Location = new System.Drawing.Point(213, 85);
             this.txtDetalhes.Multiline = true;
             this.txtDetalhes.Name = "txtDetalhes";
-            this.txtDetalhes.Size = new System.Drawing.Size(276, 57);
+            this.txtDetalhes.Size = new System.Drawing.Size(276, 34);
             this.txtDetalhes.TabIndex = 15;
             // 
             // label9
@@ -146,6 +149,9 @@
             // 
             // grbCarga
             // 
+            this.grbCarga.Controls.Add(this.label16);
+            this.grbCarga.Controls.Add(this.txtQuantidade);
+            this.grbCarga.Controls.Add(this.label17);
             this.grbCarga.Controls.Add(this.txtNomeProduto);
             this.grbCarga.Controls.Add(this.label15);
             this.grbCarga.Controls.Add(this.label14);
@@ -198,7 +204,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(354, 165);
+            this.label14.Location = new System.Drawing.Point(354, 178);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(0, 13);
             this.label14.TabIndex = 34;
@@ -241,7 +247,7 @@
             // 
             // mskValorProduto
             // 
-            this.mskValorProduto.Location = new System.Drawing.Point(213, 162);
+            this.mskValorProduto.Location = new System.Drawing.Point(213, 175);
             this.mskValorProduto.Name = "mskValorProduto";
             this.mskValorProduto.Size = new System.Drawing.Size(135, 20);
             this.mskValorProduto.TabIndex = 29;
@@ -316,11 +322,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(210, 146);
+            this.label10.Location = new System.Drawing.Point(210, 159);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 13);
+            this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 20;
-            this.label10.Text = "ValorProduto";
+            this.label10.Text = "Valor Produto";
             // 
             // grpListaCargasPedido
             // 
@@ -351,6 +357,7 @@
             this.button1.TabIndex = 35;
             this.button1.Text = "Gerar Nota Transporte";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtIdPedido
             // 
@@ -368,6 +375,30 @@
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 37;
             this.label2.Text = "Id Pedido";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(498, 165);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 13);
+            this.label16.TabIndex = 37;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(213, 136);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(135, 20);
+            this.txtQuantidade.TabIndex = 36;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(210, 120);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "Quantidade";
             // 
             // FrmCarga
             // 
@@ -425,5 +456,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtIdPedido;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.MaskedTextBox txtQuantidade;
+        private System.Windows.Forms.Label label17;
     }
 }
