@@ -197,7 +197,6 @@
             // 
             // cmbSituacao
             // 
-            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSituacao.FormattingEnabled = true;
             this.cmbSituacao.Items.AddRange(new object[] {
             "Aberto",

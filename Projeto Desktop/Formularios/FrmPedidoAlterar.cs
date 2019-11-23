@@ -57,7 +57,7 @@ namespace Projeto_Desktop.Formularios
             Ped = new Pedido();
             if(Convert.ToInt32(cmbPedidos.SelectedValue) > 0 && cmbSituacao.Text != string.Empty)
             {
-                if(cmbSituacao.Text != "Finalizado")
+                if(cmbSituacao.Text != string.Empty)
                 {
                     if (Ped.AlterarPedido(cmbSituacao.Text, Convert.ToInt32(cmbPedidos.SelectedValue)))
                     {
@@ -130,7 +130,9 @@ namespace Projeto_Desktop.Formularios
         private void btnListarCargasPedido_Click(object sender, EventArgs e)
         {
             Carga c = new Carga();
-            dgvPedidosCargas.DataSource = c.ListarCargasPedidoInner(Convert.ToInt32(cmbPedidos.SelectedValue));
+            DataTable dt = new DataTable();
+            dt.Load(c.ListarCargasPedidoInnerDR(Convert.ToInt32(cmbPedidos.SelectedValue)));
+            dgvPedidosCargas.DataSource = dt;
             dgvPedidosCargas.AutoResizeColumns();
         }
 

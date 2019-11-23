@@ -263,5 +263,23 @@ namespace Projeto_Desktop.Classes
                 return null;
             }
         }
+        public MySqlDataReader ListarCargasPedidoInnerDR(int _idPedido)
+        {
+            db = new Banco();  
+            try
+            {
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select c.idPedidos as idPedido, c.idCarga, c.NomeProduto,c.Peso,c.Largura, " +
+                            "c.Altura,c.Comprimento, c.ValorProduto, c.Quantidade, tipo.Nome from carga as c " +
+                             "inner join tiposcargas as tipo on c.idTipo = tipo.idTipo " +
+                            "where idPedidos = " + _idPedido;
+                return comm.ExecuteReader();                
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return null;
+            }
+        }
     }
 }
