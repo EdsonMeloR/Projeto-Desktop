@@ -34,16 +34,16 @@
             this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.grbNotaTransporte = new System.Windows.Forms.GroupBox();
-            this.Observações = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDistancia = new System.Windows.Forms.TextBox();
+            this.Observações = new System.Windows.Forms.Label();
             this.txtObservacoes = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbTiposFretes = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbMotoristas = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDistancia = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.dgvCargasPedido = new System.Windows.Forms.DataGridView();
             this.grbCargasPedido = new System.Windows.Forms.GroupBox();
             this.grbNotaTransporte.SuspendLayout();
@@ -108,12 +108,37 @@
             this.grbNotaTransporte.Controls.Add(this.txtIdNotaTrasnporte);
             this.grbNotaTransporte.Controls.Add(this.label1);
             this.grbNotaTransporte.Controls.Add(this.cmbVeiculos);
-            this.grbNotaTransporte.Location = new System.Drawing.Point(12, 285);
+            this.grbNotaTransporte.Location = new System.Drawing.Point(12, 260);
             this.grbNotaTransporte.Name = "grbNotaTransporte";
             this.grbNotaTransporte.Size = new System.Drawing.Size(883, 211);
             this.grbNotaTransporte.TabIndex = 8;
             this.grbNotaTransporte.TabStop = false;
             this.grbNotaTransporte.Text = "Nota de Transporte";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(374, 80);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(178, 34);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Nova Nota Transporte";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(739, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Distancia (KM)";
+            // 
+            // txtDistancia
+            // 
+            this.txtDistancia.Location = new System.Drawing.Point(742, 41);
+            this.txtDistancia.Name = "txtDistancia";
+            this.txtDistancia.Size = new System.Drawing.Size(135, 20);
+            this.txtDistancia.TabIndex = 11;
             // 
             // Observações
             // 
@@ -123,15 +148,6 @@
             this.Observações.Size = new System.Drawing.Size(70, 13);
             this.Observações.TabIndex = 10;
             this.Observações.Text = "Observações";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(374, 171);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 34);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Nova Nota Transporte";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // txtObservacoes
             // 
@@ -186,22 +202,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Veiculos Disponiveis";
             // 
-            // txtDistancia
-            // 
-            this.txtDistancia.Location = new System.Drawing.Point(742, 41);
-            this.txtDistancia.Name = "txtDistancia";
-            this.txtDistancia.Size = new System.Drawing.Size(135, 20);
-            this.txtDistancia.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(739, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Distancia (KM)";
-            // 
             // dgvCargasPedido
             // 
             this.dgvCargasPedido.AllowUserToOrderColumns = true;
@@ -209,7 +209,7 @@
             this.dgvCargasPedido.Location = new System.Drawing.Point(6, 19);
             this.dgvCargasPedido.Name = "dgvCargasPedido";
             this.dgvCargasPedido.RowHeadersVisible = false;
-            this.dgvCargasPedido.Size = new System.Drawing.Size(871, 202);
+            this.dgvCargasPedido.Size = new System.Drawing.Size(871, 176);
             this.dgvCargasPedido.TabIndex = 9;
             // 
             // grbCargasPedido
@@ -217,7 +217,7 @@
             this.grbCargasPedido.Controls.Add(this.dgvCargasPedido);
             this.grbCargasPedido.Location = new System.Drawing.Point(12, 52);
             this.grbCargasPedido.Name = "grbCargasPedido";
-            this.grbCargasPedido.Size = new System.Drawing.Size(883, 227);
+            this.grbCargasPedido.Size = new System.Drawing.Size(883, 202);
             this.grbCargasPedido.TabIndex = 10;
             this.grbCargasPedido.TabStop = false;
             this.grbCargasPedido.Text = "Cargas";
@@ -226,7 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 543);
+            this.ClientSize = new System.Drawing.Size(907, 482);
             this.Controls.Add(this.grbCargasPedido);
             this.Controls.Add(this.grbNotaTransporte);
             this.Controls.Add(this.txtIdPedido);
