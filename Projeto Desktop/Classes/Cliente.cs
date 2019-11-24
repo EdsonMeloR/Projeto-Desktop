@@ -65,9 +65,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarCliente(int _idcliente,string _telefone,string _nomecontato,string _email,string _razaosocial)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_cliente";
                 comm.Parameters.Add("_idcliente", MySqlDbType.Int32).Value = _idcliente;
@@ -83,13 +83,17 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public void ConsultarClienteId(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from cliente where idCliente = " + _id;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -108,13 +112,17 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public void ConsultarClienteCnpj(string _cnpj)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {               
                 comm.CommandText = "select * from cliente where Cnpj = '" + _cnpj + "'";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -133,15 +141,18 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public List<Cliente> ListarCliente()
         {
             db = new Banco();
             List<Cliente> lista = new List<Cliente>();
-            
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {               
                 comm.CommandText = "select * from cliente";
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -166,13 +177,17 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return null;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public bool AlterarSenhaCliente(int _idcliente,string _senhanova)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_password_cliente";
                 comm.Parameters.Add("_idcliente", MySqlDbType.Int32).Value = _idcliente;
@@ -185,13 +200,17 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public bool EfetuarLogin(string _cnpj, string _senha)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();                
+            {                      
                 comm.CommandText = "select * from cliente where Cnpj = '"+_cnpj+"' && Senha = '"+GerarSenhaMd5(_senha)+"'";                
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -207,6 +226,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return false;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         /// <summary>

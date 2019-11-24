@@ -49,9 +49,9 @@ namespace Projeto_Desktop.Classes
         public void InserirEndereco(string _logradouro, string _cep, string _numero, string _complemento, string _referencia, int _idCliente)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_endereco";
                 comm.Parameters.Add("_logradouro", MySqlDbType.VarChar).Value = _logradouro;
@@ -70,6 +70,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Alterando todas informações do endereço
@@ -77,9 +81,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarEndereco(string _logradouro, string _cep, string _numero, string _complemento, string _referencia, int _idEndereco)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_endereco";
                 comm.Parameters.Add("_logradouro", MySqlDbType.VarChar).Value = _logradouro;
@@ -95,6 +99,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando endereco pelo id do Endereco e cliente
@@ -102,9 +110,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarEndereco(int _idcliente, int _idendereco)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from endereco where idCliente = " + _idcliente + " && idEndereco = " + _idendereco;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -122,6 +130,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Retorna uma lista de endereços de todos os clientes
@@ -130,9 +142,9 @@ namespace Projeto_Desktop.Classes
         {
             db = new Banco();
             List<Endereco> lista = new List<Endereco>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from endereco where idEndereco = " + _id;
                 var dr = comm.ExecuteReader();
                 Endereco e = new Endereco();
@@ -154,6 +166,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return null;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Listando todos os endereços do cliente
@@ -164,9 +180,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Endereco en;
             List<Endereco> lista = new List<Endereco>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select end.idEndereco as Id, end.Logradouro, end.Cep, end.Numero,  end.Complemento, " +
                 "c.RazaoSocial from endereco as end inner join cliente as c on end.IdCliente = c.IdCliente where end.IdCliente = " + _id + "";
                 var dr = comm.ExecuteReader();                
@@ -188,6 +204,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return null;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Excluindo endereco do cliente
@@ -196,9 +216,9 @@ namespace Projeto_Desktop.Classes
         public bool ExcluirEndereco(int _idEndereco,int _idcliente)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "delete_endereco";
                 comm.Parameters.Add("_idendereco", MySqlDbType.Int32).Value = _idEndereco;
@@ -210,6 +230,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return false;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

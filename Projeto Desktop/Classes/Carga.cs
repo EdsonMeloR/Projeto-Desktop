@@ -83,6 +83,7 @@ namespace Projeto_Desktop.Classes
             comm.Parameters.Add("_valor", MySqlDbType.Int32).Value = valor;
             comm.Parameters.Add("_quantidade", MySqlDbType.Int32).Value = quantidade;
             this.Id = Convert.ToInt32(comm.ExecuteScalar());
+            comm.Connection.Close();
         }
         public bool AtualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto,int _idtipo,double _valor)
         {
@@ -192,13 +193,12 @@ namespace Projeto_Desktop.Classes
         public List<Carga> ListarCargasPedido(int _idPedido)
         {
             db = new Banco();
-            List<Carga> listaCarga = new List<Carga>(); ;
+            List<Carga> listaCarga = new List<Carga>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {               
                 comm.CommandText = "select * from carga where idPedidos = "+ _idPedido;
                 var dr = comm.ExecuteReader();
-
                 while (dr.Read())
                 {
                     Carga C = new Carga
@@ -224,15 +224,19 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return null;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public List<Carga> ListarCargasPedidoInner(int _idPedido)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             Carga c;
             List<Carga> listaCarga = new List<Carga>(); ;
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select c.idPedidos as idPedido, c.idCarga, c.NomeProduto,c.Peso,c.Largura, "+
                             "c.Altura,c.Comprimento, c.ValorProduto, c.Quantidade, tipo.Nome from carga as c "+
                              "inner join tiposcargas as tipo on c.idTipo = tipo.idTipo "+
@@ -262,13 +266,17 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return null;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public MySqlDataReader ListarCargasPedidoInnerDR(int _idPedido)
         {
-            db = new Banco();  
+            db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select c.idPedidos as idPedido, c.idCarga, c.NomeProduto,c.Peso,c.Largura, " +
                             "c.Altura,c.Comprimento, c.ValorProduto, c.Quantidade, tipo.Nome from carga as c " +
                              "inner join tiposcargas as tipo on c.idTipo = tipo.idTipo " +
@@ -279,6 +287,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

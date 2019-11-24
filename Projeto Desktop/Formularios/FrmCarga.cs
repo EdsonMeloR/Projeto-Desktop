@@ -138,7 +138,9 @@ namespace Projeto_Desktop.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmNotaTransporte frm = new FrmNotaTransporte();
+            pedido = new Pedido();
+            pedido.ConsultarPedido(Convert.ToInt32(txtIdPedido.Text));
+            FrmNotaTransporte frm = new FrmNotaTransporte(pedido);
             frm.Show();
         }
     }

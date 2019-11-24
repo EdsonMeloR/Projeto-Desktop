@@ -44,9 +44,9 @@ namespace Projeto_Desktop.Classes
         public void InserirEntrega(byte[] _assinatura, string _rg, DateTime _data, string _status, int _idNotaTransporte)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_entrega";
                 comm.Parameters.Add("_assinatura", MySqlDbType.Blob).Value = _assinatura;
@@ -63,7 +63,11 @@ namespace Projeto_Desktop.Classes
             catch (Exception e)
             {
                 e.Message.ToString();
-            }                
+            }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Atualizando status da entrea
@@ -72,9 +76,9 @@ namespace Projeto_Desktop.Classes
         public bool AtualizarEntrega(int id, string status)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_entrega";
                 comm.Parameters.Add("_identrega", MySqlDbType.Int32).Value = id;
@@ -87,6 +91,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando entrega
@@ -94,9 +102,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarEntrega(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from entrega where idEntrega = " + _id;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -113,6 +121,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Listando entrega com base na nota de transporte
@@ -122,9 +134,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Entrega e = new Entrega();
             List<Entrega> lista = new List<Entrega>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from entrega where idNotaTransporte = " + idNota;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -144,6 +156,10 @@ namespace Projeto_Desktop.Classes
                 ex.Message.ToString();
                 return null;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Retorna uma lista de entregas
@@ -153,9 +169,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Entrega e = new Entrega();
             List<Entrega> lista = new List<Entrega>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from entrega ";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -174,6 +190,10 @@ namespace Projeto_Desktop.Classes
             {
                 ex.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

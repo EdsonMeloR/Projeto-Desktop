@@ -46,6 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgvCargasPedido = new System.Windows.Forms.DataGridView();
             this.grbCargasPedido = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCargasCubadas = new System.Windows.Forms.TextBox();
             this.grbNotaTransporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
@@ -108,6 +110,7 @@
             this.grbNotaTransporte.Controls.Add(this.txtIdNotaTrasnporte);
             this.grbNotaTransporte.Controls.Add(this.label1);
             this.grbNotaTransporte.Controls.Add(this.cmbVeiculos);
+            this.grbNotaTransporte.Enabled = false;
             this.grbNotaTransporte.Location = new System.Drawing.Point(12, 260);
             this.grbNotaTransporte.Name = "grbNotaTransporte";
             this.grbNotaTransporte.Size = new System.Drawing.Size(883, 211);
@@ -209,7 +212,7 @@
             this.dgvCargasPedido.Location = new System.Drawing.Point(6, 19);
             this.dgvCargasPedido.Name = "dgvCargasPedido";
             this.dgvCargasPedido.RowHeadersVisible = false;
-            this.dgvCargasPedido.Size = new System.Drawing.Size(871, 176);
+            this.dgvCargasPedido.Size = new System.Drawing.Size(644, 176);
             this.dgvCargasPedido.TabIndex = 9;
             // 
             // grbCargasPedido
@@ -217,17 +220,35 @@
             this.grbCargasPedido.Controls.Add(this.dgvCargasPedido);
             this.grbCargasPedido.Location = new System.Drawing.Point(12, 52);
             this.grbCargasPedido.Name = "grbCargasPedido";
-            this.grbCargasPedido.Size = new System.Drawing.Size(883, 202);
+            this.grbCargasPedido.Size = new System.Drawing.Size(656, 202);
             this.grbCargasPedido.TabIndex = 10;
             this.grbCargasPedido.TabStop = false;
             this.grbCargasPedido.Text = "Cargas";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(671, 54);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(135, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Cubagem Total das Cargas";
+            // 
+            // txtCargasCubadas
+            // 
+            this.txtCargasCubadas.Location = new System.Drawing.Point(674, 71);
+            this.txtCargasCubadas.Name = "txtCargasCubadas";
+            this.txtCargasCubadas.Size = new System.Drawing.Size(221, 20);
+            this.txtCargasCubadas.TabIndex = 13;
             // 
             // FrmNotaTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 482);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.grbCargasPedido);
+            this.Controls.Add(this.txtCargasCubadas);
             this.Controls.Add(this.grbNotaTransporte);
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label2);
@@ -262,5 +283,7 @@
         private System.Windows.Forms.TextBox txtDistancia;
         private System.Windows.Forms.DataGridView dgvCargasPedido;
         private System.Windows.Forms.GroupBox grbCargasPedido;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCargasCubadas;
     }
 }

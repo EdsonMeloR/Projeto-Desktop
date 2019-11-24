@@ -24,10 +24,20 @@ namespace Projeto_Desktop.Formularios
             p = new Pedido();
             p = pedido;
         }
-        
+        Carga c;
         private void FrmNotaTransporte_Load(object sender, EventArgs e)
         {
-
+            c = new Carga();
+            txtIdPedido.Text = p.Id.ToString();
+            DataTable dt = new DataTable();
+            dt.Load(c.ListarCargasPedidoInnerDR(int.Parse(txtIdPedido.Text)));
+            dgvCargasPedido.DataSource = dt;
+            double CubagemCargas = new double();
+            foreach(var Car in c.ListarCargasPedido(int.Parse(txtIdPedido.Text)))
+            {
+                CubagemCargas = Car.Largura * Car.Altura * Car.Comprimento;
+            }
+            txtCargasCubadas.Text = CubagemCargas.ToString();
         }
     }
 }

@@ -29,9 +29,9 @@ namespace Projeto_Desktop.Classes
         public void InserirItensNotaTransporte(int idcarga, int idnota)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_itensnotatransporte";
                 comm.Parameters.Add("_idcarga", MySqlDbType.Int32).Value = idcarga;
@@ -41,6 +41,10 @@ namespace Projeto_Desktop.Classes
             catch(Exception e)
             {
                 e.Message.ToString();
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }        
     }

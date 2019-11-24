@@ -54,9 +54,9 @@ namespace Projeto_Desktop.Classes
         public void InserirMotorista(string nome, string cpf, string rg, string cnh, DateTime validadeCnh, string categoriaCnh, string senha, bool primeiroLogin)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_motorista";
                 comm.Parameters.Add("_nome", MySqlDbType.VarChar).Value = nome;
@@ -77,16 +77,20 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }    
         /// <summary>
         /// Alterando dados do motorista
         /// </summary>
         public bool AlterarMotorista(DateTime validadeCnh, string categoriaCnh, int _id)
-        {
+        {                
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_motorista";
                 comm.Parameters.Add("_id", MySqlDbType.Int32).Value = _id;                
@@ -100,6 +104,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Listando Motoristas
@@ -110,9 +118,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Motorista m;
             List<Motorista> lista = new List<Motorista>();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from motorista";
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -138,6 +146,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return null;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando motorista pelo id
@@ -145,9 +157,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarMotorista(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from motorista where idMotorista = " + _id; 
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -167,6 +179,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();                
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando motorista pela cnh
@@ -175,9 +191,9 @@ namespace Projeto_Desktop.Classes
         {
             db = new Banco();
             Motorista m;
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from motorista where Cnh = " + _cnh;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -200,6 +216,10 @@ namespace Projeto_Desktop.Classes
             catch (Exception e)
             {
                 e.Message.ToString();
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }       
     }
