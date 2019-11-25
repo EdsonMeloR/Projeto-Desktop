@@ -41,9 +41,11 @@
             this.grbCargasPedido = new System.Windows.Forms.GroupBox();
             this.btnGerarNotaTransporte = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label5 = new System.Windows.Forms.Label();
             this.grpNotasTransportes = new System.Windows.Forms.GroupBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -130,11 +132,18 @@
             // 
             // dgvCargasPedido
             // 
-            this.dgvCargasPedido.AllowUserToOrderColumns = true;
+            this.dgvCargasPedido.AllowUserToAddRows = false;
+            this.dgvCargasPedido.AllowUserToDeleteRows = false;
             this.dgvCargasPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCargasPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
             this.dgvCargasPedido.Location = new System.Drawing.Point(6, 19);
             this.dgvCargasPedido.Name = "dgvCargasPedido";
+            this.dgvCargasPedido.ReadOnly = true;
             this.dgvCargasPedido.RowHeadersVisible = false;
+            this.dgvCargasPedido.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCargasPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCargasPedido.Size = new System.Drawing.Size(610, 158);
             this.dgvCargasPedido.TabIndex = 9;
             // 
@@ -175,6 +184,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(383, 15);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 17;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -193,11 +208,15 @@
             this.grpNotasTransportes.TabStop = false;
             this.grpNotasTransportes.Text = "Notas Transportes";
             // 
-            // monthCalendar1
+            // Column1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(383, 15);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 17;
+            this.Column1.HeaderText = "id";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "carga";
+            this.Column2.Name = "Column2";
             // 
             // FrmNotaTransporte
             // 
@@ -239,5 +258,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox grpNotasTransportes;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

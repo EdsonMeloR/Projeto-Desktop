@@ -210,6 +210,8 @@ namespace Projeto_Desktop.Classes
                     this.Email = dr.GetString(5);
                     this.IdNivel.IdNivel = dr.GetInt32(6);
                     this.PrimeiroLogin = dr.GetBoolean(7);
+                    Program.userLogado = new Usuario();
+                    Program.userLogado = this;
                 }
                 if (this.Id > 0)
                     return true;

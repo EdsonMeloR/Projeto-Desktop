@@ -11,10 +11,11 @@ namespace Projeto_Desktop.Classes
         { }        
         public MySqlCommand AbrirConexao()//Método abre conexão com banco de dados
         {
-            stringBuilder.Database = "prosperitydb";
-            stringBuilder.Server = "localhost";
+            stringBuilder.Database = "softklee_prosperity";
+            stringBuilder.Server = "softkleen.com.br";
             stringBuilder.Port = 3306;
-            stringBuilder.UserID = "root";            
+            stringBuilder.UserID = "softklee_prosperity";
+            stringBuilder.Password = "senac@prosp";
             MySqlCommand comm;
             try
             {
