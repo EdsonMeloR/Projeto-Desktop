@@ -16,6 +16,7 @@ namespace Projeto_Desktop
     public partial class FrmPrincipal : Form
     {
         static BancoSqLite bancoLocal;
+        Niveis niveis;
         public static BancoSqLite BancoLocal
         {
             get
@@ -35,10 +36,26 @@ namespace Projeto_Desktop
         private void Form1_Load(object sender, EventArgs e)
         {
             var a = BancoLocal.ObterListaSessao();
+            niveis = new Niveis();
+            
             foreach(var user in a.Result)
             {
                 MessageBox.Show("Bem vindo " + user.Nome);
-            }            
+                niveis.ConsultarNivel(user.Nivel);
+                if (niveis.NomeNivel == "Operador")
+                {
+                    veiculoToolStripMenuItem.Enabled = false;
+                    veiculoToolStripMenuItem.Visible = false;
+                }
+                else if(niveis.NomeNivel == "Gerente")
+                {
+
+                }
+                else if(niveis.NomeNivel == "Administrador")
+                {
+
+                }
+            }        
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,7 +145,6 @@ namespace Projeto_Desktop
 
         private void administraçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void niveisToolStripMenuItem_Click(object sender, EventArgs e)

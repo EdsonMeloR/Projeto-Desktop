@@ -45,7 +45,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtIdCliente = new System.Windows.Forms.Button();
-            this.btnCadastrarEndereco = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -186,22 +185,11 @@
             this.txtIdCliente.Size = new System.Drawing.Size(75, 23);
             this.txtIdCliente.TabIndex = 29;
             // 
-            // btnCadastrarEndereco
-            // 
-            this.btnCadastrarEndereco.Location = new System.Drawing.Point(169, 260);
-            this.btnCadastrarEndereco.Name = "btnCadastrarEndereco";
-            this.btnCadastrarEndereco.Size = new System.Drawing.Size(134, 36);
-            this.btnCadastrarEndereco.TabIndex = 30;
-            this.btnCadastrarEndereco.Text = "Cadastrar Endereços";
-            this.btnCadastrarEndereco.UseVisualStyleBackColor = true;
-            this.btnCadastrarEndereco.Click += new System.EventHandler(this.btnCadastrarEndereco_Click);
-            // 
             // FrmClienteCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 330);
-            this.Controls.Add(this.btnCadastrarEndereco);
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.label8);
@@ -220,7 +208,7 @@
             this.Controls.Add(this.txtRazaoSocial);
             this.Controls.Add(this.label1);
             this.Name = "FrmClienteCadastrar";
-            this.Text = "FrmCliente";
+            this.Text = "Cadastrar Cliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -246,6 +234,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button txtIdCliente;
-        private System.Windows.Forms.Button btnCadastrarEndereco;
     }
 }

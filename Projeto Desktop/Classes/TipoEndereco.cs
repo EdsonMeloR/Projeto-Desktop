@@ -33,15 +33,19 @@ namespace Projeto_Desktop.Classes
         public void InserirTipoEndereco(string nome, string descricao)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "insert into tiposenderecos (Nome,Descricao) values ('" + nome + "','" + descricao + "'); select * from tiposcargas where idTiposEnderecos = last_insert_id();";
                 this.Id = Convert.ToInt32(comm.ExecuteScalar());
             }
             catch (Exception e)
             {
                 e.Message.ToString();
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         /// <summary>
@@ -50,9 +54,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarTipoEndereco(string _nome, string _descricao, int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "update tiposenderecos set Nome = '" + _nome + ", Descricao = '" + _descricao + "'";
                 comm.ExecuteNonQuery();
                 return true;
@@ -62,6 +66,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Excluindo Tipo Endereco
@@ -69,9 +77,9 @@ namespace Projeto_Desktop.Classes
         public bool DeleteTipoEndereco(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "delete from tiposenderecos where idTipo = " + _id;
                 comm.ExecuteNonQuery();
                 return true;
@@ -81,6 +89,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando tipo de endereco
@@ -88,9 +100,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarTipoEnderecoNome(string _nome)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from tiposenderecos where Nome = '" + _nome + "'";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -104,6 +116,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando tipo de endereco
@@ -111,9 +127,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarTipoEndereco(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from tiposenderecos where idTiposEnderecos = " + _id;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -127,6 +143,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Listando tipos de enderecos
@@ -136,9 +156,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             TipoEndereco te;
             List<TipoEndereco> lista = new List<TipoEndereco>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from tiposenderecos";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -155,6 +175,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

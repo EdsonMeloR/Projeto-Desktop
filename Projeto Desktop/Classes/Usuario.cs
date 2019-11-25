@@ -56,9 +56,9 @@ namespace Projeto_Desktop.Classes
         public void InserirUsuario(string nome, string cpf, string telefone, string senha, string email, int idNivel)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_usuario";
                 comm.Parameters.Add("_nome", MySqlDbType.VarChar).Value = nome;
@@ -74,6 +74,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Alterando dados usuario
@@ -81,9 +85,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarUsuario(int id, string telefone, string email)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_usuario";
                 comm.Parameters.Add("_id", MySqlDbType.Int32).Value = id;
@@ -97,6 +101,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando usuario pelo id
@@ -105,9 +113,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarUsuario(int id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from usuario where idUsuario = " + id;
                 var dr = comm.ExecuteReader();              
                 while(dr.Read())
@@ -126,6 +134,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();                
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando usuario pelo CPF
@@ -133,9 +145,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarUsuario(string cpf)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from usuario where Cpf = " + cpf;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -154,6 +166,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Gerando lista de usuarios
@@ -164,9 +180,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Usuario user;
             List<Usuario> lista = new List<Usuario>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from usuario";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -188,15 +204,19 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
-            }            
+            }          
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public bool EfetuarLogin(string cpf, string senha)
         {
             db = new Banco();
             var senhac = GerarSenhaMd5(senha);
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from usuario where Cpf = '" + cpf + "' && Senha = '"+senhac+"'";
                 var dr = comm.ExecuteReader();
                 IdNivel = new Niveis();
@@ -224,6 +244,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }       
         /// <summary>
         /// Alterando senha do usuario
@@ -234,9 +258,9 @@ namespace Projeto_Desktop.Classes
         {
             var senhac = GerarSenhaMd5(senha);
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {               
                 comm.CommandText = "update usuario set Senha = '" + senhac + "' where idUsuario =" + id;                
                 comm.ExecuteNonQuery();
                 return true;
@@ -246,6 +270,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Alterando primeiro login para false
@@ -254,15 +282,19 @@ namespace Projeto_Desktop.Classes
         public void AlterarFirstLogin(int id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();                
+            {                
                 comm.CommandText = "update usuario set PrimeiroLogin = 0";                
                 comm.ExecuteNonQuery();                
             }
             catch (Exception e)
             {
                 e.Message.ToString();                
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         /// <summary>
@@ -283,9 +315,9 @@ namespace Projeto_Desktop.Classes
         {
             IdNivel = new Niveis();
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from usuario where Cpf = '" + CPF + "'";
                 var dr = comm.ExecuteReader();                
                 while (dr.Read())
@@ -332,6 +364,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return false;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

@@ -28,25 +28,18 @@ namespace Projeto_Desktop.Formularios
         private void FrmNotaTransporte_Load(object sender, EventArgs e)
         {
             //Carregando cargas do Pedido e fazendo calculo de cubagem
-            //c = new Carga();
-            //txtIdPedido.Text = p.Id.ToString();
-            //DataTable dt = new DataTable();
-            //dt.Load(c.ListarCargasPedidoInnerDR(int.Parse(txtIdPedido.Text)));
-            //dgvCargasPedido.DataSource = dt;
-            //double CubagemCargas = new double();
-            //foreach(var Car in c.ListarCargasPedido(int.Parse(txtIdPedido.Text)))
-            //{
-            //    CubagemCargas = Car.Largura * Car.Altura * Car.Comprimento;
-            //}
-            //txtCargasCubadas.Text = CubagemCargas.ToString();
-            //
-
-            for (int i = 0; i < 4; i++)
+            c = new Carga();
+            txtIdPedido.Text = p.Id.ToString();
+            DataTable dt = new DataTable();
+            dt.Load(c.ListarCargasPedidoInnerDR(int.Parse(txtIdPedido.Text)));
+            dgvCargasPedido.DataSource = dt;
+            double CubagemCargas = new double();
+            foreach (var Car in c.ListarCargasPedido(int.Parse(txtIdPedido.Text)))
             {
-                dgvCargasPedido.Rows.Add();
-                dgvCargasPedido.Rows[i].Cells[0].Value = i + 12 * 4;
-                dgvCargasPedido.Rows[i].Cells[1].Value = (i + 12 * 4) + DateTime.Now.ToString();
+                CubagemCargas = Car.Largura * Car.Altura * Car.Comprimento;
             }
+            txtCargasCubadas.Text = CubagemCargas.ToString();
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

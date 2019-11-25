@@ -71,26 +71,7 @@ namespace Projeto_Desktop.Formularios
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
-            var a = BancoLocal.ObterListaSessao();
-            if (a.Result.Count == 1)
-            {
-                foreach (var user in a.Result)
-                {
-                    if(user.Sessao)
-                    {
-                        FrmPrincipal frm = new FrmPrincipal();
-                        frm.Show();
-                        this.Hide();
-                        MessageBox.Show("Bem vindo " + user.Nome,"Bem Vindo");
-                    }
-                }
-            }
-            else
-            {
-                Su = new SessaoUsuario();
-                BancoLocal.InserirSessao(Su);
-            }
+            
         }   
     }
 }

@@ -5,12 +5,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_Desktop.Formularios;
 using Projeto_Desktop.Classes;
+using System.IO;
 
 namespace Projeto_Desktop
 {
     static class Program
     {
         public static Usuario userLogado; //Objetos globais
+        static BancoSqLite bancoLocal;
+        static SessaoUsuario Su;
+        public static BancoSqLite BancoLocal
+        {
+            get
+            {
+                if (bancoLocal == null)
+                {
+                    bancoLocal = new BancoSqLite(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ProjetoSQLite.db"));
+                }
+                return bancoLocal;
+            }
+        }
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -18,10 +32,30 @@ namespace Projeto_Desktop
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new FrmPrincipal());
-            Application.Run(new FrmLogin());
-        }
-        
+            Application.SetCompatibleTextRenderingDefault(false);            
+            var a = BancoLocal.ObterListaSessao();
+            if (a.Result.Count == 1)
+            {
+                foreach (var user in a.Result)
+                {
+                    if (user.Sessao)
+                    {
+                        Application.Run(new FrmPrincipal());
+                        userLogado = new Usuario();
+                        userLogado.ConsultarUsuario(user.Cpf);
+                    }
+                    else
+                    {
+                        Application.Run(new FrmLogin());
+                    }
+                }
+            }
+            else
+            {
+                Su = new SessaoUsuario();
+                BancoLocal.InserirSessao(Su);
+                Application.Run(new FrmLogin());
+            }
+        }        
     }
 }

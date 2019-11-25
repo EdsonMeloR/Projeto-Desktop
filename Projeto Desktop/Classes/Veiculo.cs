@@ -80,6 +80,7 @@ namespace Projeto_Desktop.Classes
                 {
                     this.Id = dr.GetInt32(0);
                 }
+                comm.Connection.Close();
             }
             catch(Exception e)
             {
@@ -92,9 +93,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarVeiculo(int id, double pesoMaximo, double altura, double largura, double comprimento)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_veiculo";
                 comm.Parameters.Add("_id", MySqlDbType.Int32).Value = id;
@@ -110,6 +111,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultar veiculo pelo id
@@ -117,9 +122,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarVeiculoId(int id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();                
+            {                              
                 comm.CommandText = "select * from veiculo where idVeiculo = " + id;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -141,6 +146,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();                
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando veiculo pela placa
@@ -149,9 +158,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarVeiculoPlaca(string placa)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {               
                 comm.CommandText = "select * from veiculo where Placa = '" + placa + "'";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -173,6 +182,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Gerando lista de veiculos
@@ -182,9 +195,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Veiculo v;
             List<Veiculo> lista = new List<Veiculo>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from veiculo";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -209,6 +222,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         /// <summary>

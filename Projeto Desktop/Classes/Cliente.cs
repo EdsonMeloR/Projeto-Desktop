@@ -47,20 +47,27 @@ namespace Projeto_Desktop.Classes
         {
             db = new Banco();
             var comm = db.AbrirConexao();
-            comm.CommandType = CommandType.StoredProcedure;
-            comm.CommandText = "insert_cliente";
-            comm.Parameters.Add("_razaosocial", MySqlDbType.VarChar).Value = _razaoSocial;
-            comm.Parameters.Add("_cnpj", MySqlDbType.VarChar).Value = _cnpj;
-            comm.Parameters.Add("_email", MySqlDbType.VarChar).Value = _email;
-            comm.Parameters.Add("_inscricaoestadual", MySqlDbType.VarChar).Value = _inscricaoEstadual;
-            comm.Parameters.Add("_senha", MySqlDbType.VarChar).Value = GerarSenhaMd5(_senha);
-            comm.Parameters.Add("_telefone", MySqlDbType.VarChar).Value = _telefone;
-            comm.Parameters.Add("_nomecontato", MySqlDbType.VarChar).Value = _nomeContato;
-            var dr = comm.ExecuteReader();
-            while(dr.Read())
+            try
             {
-                this.Id = dr.GetInt32(0);                
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "insert_cliente";
+                comm.Parameters.Add("_razaosocial", MySqlDbType.VarChar).Value = _razaoSocial;
+                comm.Parameters.Add("_cnpj", MySqlDbType.VarChar).Value = _cnpj;
+                comm.Parameters.Add("_email", MySqlDbType.VarChar).Value = _email;
+                comm.Parameters.Add("_inscricaoestadual", MySqlDbType.VarChar).Value = _inscricaoEstadual;
+                comm.Parameters.Add("_senha", MySqlDbType.VarChar).Value = GerarSenhaMd5(_senha);
+                comm.Parameters.Add("_telefone", MySqlDbType.VarChar).Value = _telefone;
+                comm.Parameters.Add("_nomecontato", MySqlDbType.VarChar).Value = _nomeContato;
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.Id = dr.GetInt32(0);
+                }
             }
+            catch(Exception ex)
+            {
+                ex.Message.ToString();
+            }            
         }
         public bool AlterarCliente(int _idcliente,string _telefone,string _nomecontato,string _email,string _razaosocial)
         {

@@ -35,6 +35,9 @@ namespace Projeto_Desktop.Formularios
             if(c.Id > 0)
             {
                 txtIdCliente.Text = c.Id.ToString();
+                FrmEnderecos frm = new FrmEnderecos();
+                frm.Show();
+                this.Close();
             }
         }        
 

@@ -51,7 +51,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -261,7 +260,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnFechar;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem associarPlanoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem niveisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserirPlanosToolStripMenuItem;
