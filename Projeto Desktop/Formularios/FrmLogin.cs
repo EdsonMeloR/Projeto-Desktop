@@ -48,12 +48,15 @@ namespace Projeto_Desktop.Formularios
                 {
                     Su = new SessaoUsuario();
                     FrmPrincipal frm = new FrmPrincipal(); 
-                    Su.Cpf = user.Cpf;
-                    Su.Id = user.Id;
-                    Su.Nivel = user.IdNivel.IdNivel;
-                    Su.Nome = user.Nome;
-                    Su.Sessao = true;
-                    BancoLocal.AtualizarSessao(Su);
+                    if(rbManterConectado.Checked)
+                    {
+                        Su.Cpf = user.Cpf;
+                        Su.Id = user.Id;
+                        Su.Nivel = user.IdNivel.IdNivel;
+                        Su.Nome = user.Nome;
+                        Su.Sessao = true;
+                        BancoLocal.AtualizarSessao(Su);
+                    }                    
                     this.Hide();
                     frm.Show();
                 }
