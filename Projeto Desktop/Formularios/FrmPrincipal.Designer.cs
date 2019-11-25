@@ -46,12 +46,12 @@
             this.planoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.caminhoneirosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -181,35 +181,6 @@
             resources.ApplyResources(this.consultarPlanosToolStripMenuItem, "consultarPlanosToolStripMenuItem");
             this.consultarPlanosToolStripMenuItem.Click += new System.EventHandler(this.consultarPlanosToolStripMenuItem_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(174)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // caminhoneirosToolStripMenuItem
             // 
             this.caminhoneirosToolStripMenuItem.Name = "caminhoneirosToolStripMenuItem";
@@ -221,6 +192,37 @@
             this.veiculoToolStripMenuItem.Name = "veiculoToolStripMenuItem";
             resources.ApplyResources(this.veiculoToolStripMenuItem, "veiculoToolStripMenuItem");
             this.veiculoToolStripMenuItem.Click += new System.EventHandler(this.veiculoToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(174)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.btnFechar);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnMinimizar
+            // 
+            resources.ApplyResources(this.btnMinimizar, "btnMinimizar");
+            this.btnMinimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnFechar
+            // 
+            resources.ApplyResources(this.btnFechar, "btnFechar");
+            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // FrmPrincipal
             // 
@@ -257,8 +259,8 @@
         private System.Windows.Forms.ToolStripMenuItem administraçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnFechar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem associarPlanoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem niveisToolStripMenuItem;

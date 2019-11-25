@@ -9,11 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_Desktop.Formularios;
 using Projeto_Desktop.Classes;
+using System.IO;
 
 namespace Projeto_Desktop
 {
     public partial class FrmPrincipal : Form
     {
+        static BancoSqLite bancoLocal;
+        public static BancoSqLite BancoLocal
+        {
+            get
+            {
+                if (bancoLocal == null)
+                {
+                    bancoLocal = new BancoSqLite(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ProjetoSQLite.db"));
+                }
+                return bancoLocal;
+            }
+        }
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -21,7 +34,11 @@ namespace Projeto_Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            var a = BancoLocal.ObterListaSessao();
+            foreach(var user in a.Result)
+            {
+                MessageBox.Show("Bem vindo " + user.Nome);
+            }            
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,6 +159,16 @@ namespace Projeto_Desktop
         {
             FrmVeiculo frm = new FrmVeiculo();
             frm.Show();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -125,53 +125,11 @@
     <value>Bottom</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="novoPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="novoPedidoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Novo Pedido</value>
-  </data>
-  <data name="consultarPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="consultarPedidoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Consultar Pedido</value>
-  </data>
-  <data name="alterarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="alterarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alterar Pedido</value>
-  </data>
   <data name="pedidosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="pedidosToolStripMenuItem.Text" xml:space="preserve">
     <value>Pedidos</value>
-  </data>
-  <data name="cadastrarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="cadastrarClienteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cadastrar Cliente</value>
-  </data>
-  <data name="consultarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="consultarClienteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Consultar Cliente</value>
-  </data>
-  <data name="alterarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="alterarClienteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alterar Cliente</value>
-  </data>
-  <data name="associarPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 22</value>
-  </data>
-  <data name="associarPlanoToolStripMenuItem.Text" xml:space="preserve">
-    <value>AssociarPlano</value>
   </data>
   <data name="clienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
@@ -185,35 +143,11 @@
   <data name="entregasToolStripMenuItem.Text" xml:space="preserve">
     <value>Entregas</value>
   </data>
-  <data name="usuáriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="usuáriosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Usuários</value>
-  </data>
-  <data name="niveisToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="niveisToolStripMenuItem.Text" xml:space="preserve">
-    <value>Niveis</value>
-  </data>
   <data name="administraçãoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 20</value>
   </data>
   <data name="administraçãoToolStripMenuItem.Text" xml:space="preserve">
     <value>Administração</value>
-  </data>
-  <data name="inserirPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
-  </data>
-  <data name="inserirPlanosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Inserir Planos</value>
-  </data>
-  <data name="consultarPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
-  </data>
-  <data name="consultarPlanosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Consultar Planos</value>
   </data>
   <data name="planoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 20</value>
@@ -258,61 +192,127 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="novoPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="novoPedidoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Novo Pedido</value>
+  </data>
+  <data name="consultarPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="consultarPedidoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Consultar Pedido</value>
+  </data>
+  <data name="alterarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="alterarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alterar Pedido</value>
+  </data>
+  <data name="cadastrarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="cadastrarClienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cadastrar Cliente</value>
+  </data>
+  <data name="consultarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="consultarClienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Consultar Cliente</value>
+  </data>
+  <data name="alterarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="alterarClienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alterar Cliente</value>
+  </data>
+  <data name="associarPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 22</value>
+  </data>
+  <data name="associarPlanoToolStripMenuItem.Text" xml:space="preserve">
+    <value>AssociarPlano</value>
+  </data>
+  <data name="usuáriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 22</value>
+  </data>
+  <data name="usuáriosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Usuários</value>
+  </data>
+  <data name="niveisToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 22</value>
+  </data>
+  <data name="niveisToolStripMenuItem.Text" xml:space="preserve">
+    <value>Niveis</value>
+  </data>
+  <data name="inserirPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="inserirPlanosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Inserir Planos</value>
+  </data>
+  <data name="consultarPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="consultarPlanosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Consultar Planos</value>
+  </data>
+  <data name="btnMinimizar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="button2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnMinimizar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnMinimizar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnMinimizar.Location" type="System.Drawing.Point, System.Drawing">
     <value>1133, 12</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnMinimizar.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 40</value>
   </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnMinimizar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="&gt;&gt;btnMinimizar.Name" xml:space="preserve">
+    <value>btnMinimizar</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnMinimizar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnMinimizar.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnMinimizar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="btnFechar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnFechar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnFechar.Location" type="System.Drawing.Point, System.Drawing">
     <value>1202, 12</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnFechar.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 40</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnFechar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;btnFechar.Name" xml:space="preserve">
+    <value>btnFechar</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnFechar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnFechar.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnFechar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -456,12 +456,6 @@
   <data name="&gt;&gt;consultarPlanosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
-    <value>backgroundWorker1</value>
-  </data>
-  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;caminhoneirosToolStripMenuItem.Name" xml:space="preserve">
     <value>caminhoneirosToolStripMenuItem</value>
   </data>
@@ -473,6 +467,12 @@
   </data>
   <data name="&gt;&gt;veiculoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Name" xml:space="preserve">
+    <value>backgroundWorker1</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker1.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FrmPrincipal</value>

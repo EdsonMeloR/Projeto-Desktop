@@ -211,5 +211,34 @@ namespace Projeto_Desktop.Classes
                 return null;
             }
         }
+        /// <summary>
+        /// Listando todos os veiculos que estão disponiveis para novas entregas
+        /// </summary>
+        public List<Veiculo> ListarVeiculosDisponiveis(List<Veiculo> lista)
+        {
+            db = new Banco();
+            var comm = db.AbrirConexao();
+            List<Veiculo> veiculos = new List<Veiculo>();
+            Veiculo v;
+            try
+            {
+                foreach(var ve in lista)
+                {
+                    v = new Veiculo();
+                    v.ConsultarVeiculoId(ve.Id);
+                    veiculos.Add(v);                    
+                }
+                return veiculos;
+            }
+            catch(Exception ex)
+            {
+                ex.Message.ToString();
+                return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
+            }
+        }
     }
 }

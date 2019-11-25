@@ -27,6 +27,7 @@ namespace Projeto_Desktop.Formularios
         Carga c;
         private void FrmNotaTransporte_Load(object sender, EventArgs e)
         {
+            //Carregando cargas do Pedido e fazendo calculo de cubagem
             c = new Carga();
             txtIdPedido.Text = p.Id.ToString();
             DataTable dt = new DataTable();
@@ -38,6 +39,17 @@ namespace Projeto_Desktop.Formularios
                 CubagemCargas = Car.Largura * Car.Altura * Car.Comprimento;
             }
             txtCargasCubadas.Text = CubagemCargas.ToString();
+            //
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }
