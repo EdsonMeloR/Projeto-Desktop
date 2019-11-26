@@ -150,25 +150,25 @@
     <value>Pedidos</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Cadastrar Cliente</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Cliente</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Cliente</value>
   </data>
   <data name="associarPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="associarPlanoToolStripMenuItem.Text" xml:space="preserve">
     <value>AssociarPlano</value>
@@ -196,6 +196,12 @@
   </data>
   <data name="niveisToolStripMenuItem.Text" xml:space="preserve">
     <value>Niveis</value>
+  </data>
+  <data name="tiposFretesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tiposFretesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tipos Fretes</value>
   </data>
   <data name="administraçãoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 20</value>
@@ -258,11 +264,87 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lblNomeUsuarioLogado.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNomeUsuarioLogado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 26</value>
+  </data>
+  <data name="lblNomeUsuarioLogado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblNomeUsuarioLogado.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblNomeUsuarioLogado.Name" xml:space="preserve">
+    <value>lblNomeUsuarioLogado</value>
+  </data>
+  <data name="&gt;&gt;lblNomeUsuarioLogado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNomeUsuarioLogado.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lblNomeUsuarioLogado.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnMeuUsuario.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnMeuUsuario.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnMeuUsuario.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAjpJREFUWEft
+        2M2rTVEYx/EzkLyV5LUYIv4AI8rAgEwJf4DyPxBzRlLkbajkb5BIKd1CmJEUyoiS1wHx/dY9tVvrWWev
+        s7ZzJvzqU7d7nudZ557uXnvtM/qfGWQFDuEWHuMNfuAb3uIJbuIwlmFmWY9rcOHflay1x96/liU4hS+I
+        Fq1hrzOcNShr8ADRIi2c5cymbMNrRIOHcKazp8o6vEM0MHUH5xf5c1STcvZGVGU5HiEa1PUB+5DG3/la
+        1NP1DCvRm3OIBqSOopRjiHpSZzExm/EdUXOXf11frIl6u1xrC4pxz4gaU9b1pXbWdYRZitpN7yr6Yk3U
+        m3JN185yEFFD5Dn6Yk3UG3HtLJcRFZccQSm+FvWUXEGWe4iKS4Ze9l2uneUFouI+t3FhUe3GmHLtLF8R
+        Fc+DN98snxEVz4NrZ3mJqHgeXDvLfUTFKfeNGziB3ejej/x5D3zNmtp9zbWz9F3273EcHmFrsxqX8AvR
+        zLHwsp+0MXqGWYvW+Kl9RDRb4cbo9l260g5gaEp/cPHWYUr3n/0YGmdEsyfeqD3FRcePT9iJ1uyAM9K5
+        rrUBE1M6oHns3IVpY0/pOOxavfEI+xTRgJ84jZqjp1fYGdgTzfKY7FpV2QSfQqNB8uO/iL3YilWwx/+T
+        k7iL0huRn5gPElNlO14hGjhE02PQOD7UPUQ0uMUCmh8Ux3GP8DG49jYQsdcZxf2mJW4J7hnTvDFr7al+
+        KGyJV0b0dYx7SvfrGGtm+nXMv5jR6A8kZ2pDfyyX+gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnMeuUsuario.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnMeuUsuario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 6</value>
+  </data>
+  <data name="btnMeuUsuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 52</value>
+  </data>
+  <data name="btnMeuUsuario.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnMeuUsuario.Name" xml:space="preserve">
+    <value>btnMeuUsuario</value>
+  </data>
+  <data name="&gt;&gt;btnMeuUsuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMeuUsuario.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnMeuUsuario.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnMinimizar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="btnMinimizar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="btnMinimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAADlJREFUWEft
+        0bEJACAMRcFs5miOrmYBi5BC5A5e+wkkAAC4GqfZXG6W5cBqLjfLnjvouZcBAPwtYgOomj6pKz9fqAAA
+        AABJRU5ErkJggg==
+</value>
   </data>
   <data name="btnMinimizar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -286,13 +368,26 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnMinimizar.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnFechar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="btnFechar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="btnFechar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAOlJREFUWEft
+        lsEKwkAMRNcfE/WL/AQ9efTm0ZPfqc5QAiHUspus3R7yYKCUZnbaZsOWJEmSeQ7Qbrp0wVp6dOEMfaAn
+        5AnFGta+IXqF2EMMI6JxK6zRHvQMcYO04QOqhc/qWnp14Q5p45pQNgw9umJDLS3Q8myImrdeLYyw1BeR
+        fgthd84Fupp7q4UhMlt0AC3PeAjDUC9oLoxngIb59ZWGBNrcL7Nh2NDDmnpT296GGToYWxb6eyi7QM2v
+        qPmaLiJ9YUPpfnNhD2gtYQS7I8MHNH2E9SAzq8sRVjhCkenL2tN0mSRJoijlC7rGlB4D1ntXAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="btnFechar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnFechar.Location" type="System.Drawing.Point, System.Drawing">
     <value>1202, 12</value>
@@ -313,7 +408,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnFechar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -463,6 +558,12 @@
     <value>veiculoToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;veiculoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tiposFretesToolStripMenuItem.Name" xml:space="preserve">
+    <value>tiposFretesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;tiposFretesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

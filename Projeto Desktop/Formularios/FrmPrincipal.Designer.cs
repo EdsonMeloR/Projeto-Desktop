@@ -49,8 +49,11 @@
             this.caminhoneirosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNomeUsuarioLogado = new System.Windows.Forms.Label();
+            this.btnMeuUsuario = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.tiposFretesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -142,7 +145,8 @@
             // 
             this.administraçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuáriosToolStripMenuItem,
-            this.niveisToolStripMenuItem});
+            this.niveisToolStripMenuItem,
+            this.tiposFretesToolStripMenuItem});
             this.administraçãoToolStripMenuItem.Name = "administraçãoToolStripMenuItem";
             resources.ApplyResources(this.administraçãoToolStripMenuItem, "administraçãoToolStripMenuItem");
             this.administraçãoToolStripMenuItem.Click += new System.EventHandler(this.administraçãoToolStripMenuItem_Click);
@@ -195,11 +199,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(174)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.lblNomeUsuarioLogado);
+            this.panel1.Controls.Add(this.btnMeuUsuario);
             this.panel1.Controls.Add(this.btnMinimizar);
             this.panel1.Controls.Add(this.btnFechar);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblNomeUsuarioLogado
+            // 
+            resources.ApplyResources(this.lblNomeUsuarioLogado, "lblNomeUsuarioLogado");
+            this.lblNomeUsuarioLogado.Name = "lblNomeUsuarioLogado";
+            // 
+            // btnMeuUsuario
+            // 
+            resources.ApplyResources(this.btnMeuUsuario, "btnMeuUsuario");
+            this.btnMeuUsuario.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMeuUsuario.FlatAppearance.BorderSize = 0;
+            this.btnMeuUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMeuUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnMeuUsuario.Name = "btnMeuUsuario";
+            this.btnMeuUsuario.UseVisualStyleBackColor = true;
+            this.btnMeuUsuario.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnMinimizar
             // 
@@ -223,6 +245,12 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // tiposFretesToolStripMenuItem
+            // 
+            this.tiposFretesToolStripMenuItem.Name = "tiposFretesToolStripMenuItem";
+            resources.ApplyResources(this.tiposFretesToolStripMenuItem, "tiposFretesToolStripMenuItem");
+            this.tiposFretesToolStripMenuItem.Click += new System.EventHandler(this.tiposFretesToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -237,6 +265,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,7 +287,6 @@
         private System.Windows.Forms.ToolStripMenuItem administraçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.ToolStripMenuItem associarPlanoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem niveisToolStripMenuItem;
@@ -266,6 +294,10 @@
         private System.Windows.Forms.ToolStripMenuItem consultarPlanosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caminhoneirosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veiculoToolStripMenuItem;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnMeuUsuario;
+        private System.Windows.Forms.Label lblNomeUsuarioLogado;
+        private System.Windows.Forms.ToolStripMenuItem tiposFretesToolStripMenuItem;
     }
 }
 

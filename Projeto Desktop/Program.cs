@@ -40,9 +40,9 @@ namespace Projeto_Desktop
                 {
                     if (user.Sessao)
                     {
-                        Application.Run(new FrmPrincipal());
                         userLogado = new Usuario();
                         userLogado.ConsultarUsuario(user.Cpf);
+                        Application.Run(new FrmPrincipal());                        
                     }
                     else
                     {

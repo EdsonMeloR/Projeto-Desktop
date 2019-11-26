@@ -132,6 +132,12 @@
     <Compile Include="Formularios\FrmCarga.Designer.cs">
       <DependentUpon>FrmCarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmMeuUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMeuUsuario.Designer.cs">
+      <DependentUpon>FrmMeuUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmMotorista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,12 @@
     <Compile Include="Formularios\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmTipoFrete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmTipoFrete.Designer.cs">
+      <DependentUpon>FrmTipoFrete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCarga.resx">
       <DependentUpon>FrmCarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMeuUsuario.resx">
+      <DependentUpon>FrmMeuUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMotorista.resx">
       <DependentUpon>FrmMotorista.cs</DependentUpon>
@@ -295,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmTipoFrete.resx">
+      <DependentUpon>FrmTipoFrete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>

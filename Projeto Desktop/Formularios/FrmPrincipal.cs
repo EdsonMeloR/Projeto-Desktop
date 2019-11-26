@@ -41,11 +41,13 @@ namespace Projeto_Desktop
             foreach(var user in a.Result)
             {
                 MessageBox.Show("Bem vindo " + user.Nome);
+                lblNomeUsuarioLogado.Text = user.Nome;
                 niveis.ConsultarNivel(user.Nivel);
                 if (niveis.NomeNivel == "Operador")
                 {
-                    veiculoToolStripMenuItem.Enabled = false;
                     veiculoToolStripMenuItem.Visible = false;
+                    administraçãoToolStripMenuItem.Visible = false;
+                    caminhoneirosToolStripMenuItem.Visible = false;
                 }
                 else if(niveis.NomeNivel == "Gerente")
                 {
@@ -185,6 +187,17 @@ namespace Projeto_Desktop
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMeuUsuario frm = new FrmMeuUsuario();
+            frm.Show();
+        }
+
+        private void tiposFretesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

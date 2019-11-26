@@ -88,6 +88,7 @@ namespace Projeto_Desktop.Formularios
                     {
                         FrmEnderecos frm = new FrmEnderecos();
                         frm.Show();
+                        this.Close();
                     }
                 }
                 else
