@@ -220,6 +220,13 @@ namespace Projeto_Desktop
                         this.Hide();
                     }
                 }
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Sessão encerrada, deseja finalizar a aplicação?", "Sessão encerrada", MessageBoxButtons.YesNo))
+                    {
+                        this.Close();
+                    }
+                }
             }
         }
     }

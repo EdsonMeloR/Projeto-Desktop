@@ -54,6 +54,13 @@ namespace Projeto_Desktop.Formularios
 
         private void btnAdicionarCargasNota_Click(object sender, EventArgs e)
         {
+            dgvCargasPedido.Rows.Remove(dgvCargasPedido.CurrentRow);
+
+        }
+
+        private void dgvCargasPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

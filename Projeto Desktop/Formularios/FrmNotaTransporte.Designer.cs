@@ -50,6 +50,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mncData = new System.Windows.Forms.MonthCalendar();
             this.label5 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Largura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Altura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
             this.grpGerarNotaTransporte.SuspendLayout();
@@ -140,6 +147,14 @@
             this.dgvCargasPedido.AllowUserToAddRows = false;
             this.dgvCargasPedido.AllowUserToDeleteRows = false;
             this.dgvCargasPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCargasPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.NomeProduto,
+            this.Quantidade,
+            this.Peso,
+            this.Largura,
+            this.Altura,
+            this.ValorProduto});
             this.dgvCargasPedido.Location = new System.Drawing.Point(6, 19);
             this.dgvCargasPedido.Name = "dgvCargasPedido";
             this.dgvCargasPedido.ReadOnly = true;
@@ -148,6 +163,7 @@
             this.dgvCargasPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCargasPedido.Size = new System.Drawing.Size(831, 158);
             this.dgvCargasPedido.TabIndex = 9;
+            this.dgvCargasPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargasPedido_CellContentClick);
             // 
             // grbCargasPedido
             // 
@@ -270,6 +286,48 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Tipos de Fretes";
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.HeaderText = "Produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            // 
+            // Peso
+            // 
+            this.Peso.HeaderText = "Peso";
+            this.Peso.Name = "Peso";
+            this.Peso.ReadOnly = true;
+            // 
+            // Largura
+            // 
+            this.Largura.HeaderText = "Largura";
+            this.Largura.Name = "Largura";
+            this.Largura.ReadOnly = true;
+            // 
+            // Altura
+            // 
+            this.Altura.HeaderText = "Altura";
+            this.Altura.Name = "Altura";
+            this.Altura.ReadOnly = true;
+            // 
+            // ValorProduto
+            // 
+            this.ValorProduto.HeaderText = "Valor";
+            this.ValorProduto.Name = "ValorProduto";
+            this.ValorProduto.ReadOnly = true;
+            // 
             // FrmNotaTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,5 +373,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAdicionarCargasNota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Largura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Altura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,18 @@ namespace Projeto_Desktop.Formularios
 {
     public partial class FrmPrimeiroLogin : Form
     {
+        static BancoSqLite bancoLocal;
+        public static BancoSqLite BancoLocal
+        {
+            get
+            {
+                if (bancoLocal == null)
+                {
+                    bancoLocal = new BancoSqLite(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ProjetoSQLite.db"));
+                }
+                return bancoLocal;
+            }
+        }
         public FrmPrimeiroLogin()
         {
             InitializeComponent();
@@ -36,10 +49,17 @@ namespace Projeto_Desktop.Formularios
             {
                 if(user.AlterarSenha(Program.userLogado.Id,txtSenha.Text.ToString()))
                 {
+                    SessaoUsuario su = new SessaoUsuario();
                     user.AlterarFirstLogin(Program.userLogado.Id);
                     this.Hide();
                     FrmPrincipal frm = new FrmPrincipal();
                     frm.Show();
+                    su.Cpf = Program.userLogado.Cpf;
+                    su.Id = 1;
+                    su.Nivel = Program.userLogado.IdNivel.IdNivel;
+                    su.Nome = Program.userLogado.Nome;
+                    su.Sessao = false;
+                    BancoLocal.AtualizarSessao(su);
                 }
             }
             else
@@ -49,6 +69,21 @@ namespace Projeto_Desktop.Formularios
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSenha2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -51,12 +51,21 @@ namespace Projeto_Desktop.Formularios
                     if(rbManterConectado.Checked)
                     {
                         Su.Cpf = user.Cpf;
-                        Su.Id = user.Id;
+                        Su.Id = 1;
                         Su.Nivel = user.IdNivel.IdNivel;
                         Su.Nome = user.Nome;
                         Su.Sessao = true;
                         BancoLocal.AtualizarSessao(Su);
-                    }                    
+                    }
+                    else
+                    {
+                        Su.Cpf = user.Cpf;
+                        Su.Id = 1;
+                        Su.Nivel = user.IdNivel.IdNivel;
+                        Su.Nome = user.Nome;
+                        Su.Sessao = false;
+                        BancoLocal.AtualizarSessao(Su);
+                    }
                     this.Hide();
                     frm.Show();
                 }
