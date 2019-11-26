@@ -54,6 +54,8 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.tiposFretesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDesconectar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -199,6 +201,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(174)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnDesconectar);
             this.panel1.Controls.Add(this.lblNomeUsuarioLogado);
             this.panel1.Controls.Add(this.btnMeuUsuario);
             this.panel1.Controls.Add(this.btnMinimizar);
@@ -251,6 +255,22 @@
             resources.ApplyResources(this.tiposFretesToolStripMenuItem, "tiposFretesToolStripMenuItem");
             this.tiposFretesToolStripMenuItem.Click += new System.EventHandler(this.tiposFretesToolStripMenuItem_Click);
             // 
+            // btnDesconectar
+            // 
+            resources.ApplyResources(this.btnDesconectar, "btnDesconectar");
+            this.btnDesconectar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDesconectar.FlatAppearance.BorderSize = 0;
+            this.btnDesconectar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDesconectar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnDesconectar.Name = "btnDesconectar";
+            this.btnDesconectar.UseVisualStyleBackColor = true;
+            this.btnDesconectar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // FrmPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -298,6 +318,8 @@
         private System.Windows.Forms.Button btnMeuUsuario;
         private System.Windows.Forms.Label lblNomeUsuarioLogado;
         private System.Windows.Forms.ToolStripMenuItem tiposFretesToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDesconectar;
     }
 }
 

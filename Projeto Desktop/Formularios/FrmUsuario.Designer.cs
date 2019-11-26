@@ -145,6 +145,7 @@
             this.dgvListarUsuarios.ColumnHeadersVisible = false;
             this.dgvListarUsuarios.Location = new System.Drawing.Point(12, 208);
             this.dgvListarUsuarios.Name = "dgvListarUsuarios";
+            this.dgvListarUsuarios.RowHeadersVisible = false;
             this.dgvListarUsuarios.Size = new System.Drawing.Size(530, 193);
             this.dgvListarUsuarios.TabIndex = 34;
             this.dgvListarUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);

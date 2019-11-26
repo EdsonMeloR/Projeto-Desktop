@@ -39,6 +39,7 @@
             this.cmbMotoristas = new System.Windows.Forms.ComboBox();
             this.dgvCargasPedido = new System.Windows.Forms.DataGridView();
             this.grbCargasPedido = new System.Windows.Forms.GroupBox();
+            this.btnAdicionarCargasNota = new System.Windows.Forms.Button();
             this.btnGerarNotaTransporte = new System.Windows.Forms.Button();
             this.grpGerarNotaTransporte = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mncData = new System.Windows.Forms.MonthCalendar();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnAdicionarCargasNota = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
             this.grpGerarNotaTransporte.SuspendLayout();
@@ -160,6 +160,16 @@
             this.grbCargasPedido.TabStop = false;
             this.grbCargasPedido.Text = "Cargas";
             // 
+            // btnAdicionarCargasNota
+            // 
+            this.btnAdicionarCargasNota.Location = new System.Drawing.Point(6, 183);
+            this.btnAdicionarCargasNota.Name = "btnAdicionarCargasNota";
+            this.btnAdicionarCargasNota.Size = new System.Drawing.Size(187, 31);
+            this.btnAdicionarCargasNota.TabIndex = 24;
+            this.btnAdicionarCargasNota.Text = "Adicionar Cargas Selecionadas";
+            this.btnAdicionarCargasNota.UseVisualStyleBackColor = true;
+            this.btnAdicionarCargasNota.Click += new System.EventHandler(this.btnAdicionarCargasNota_Click);
+            // 
             // btnGerarNotaTransporte
             // 
             this.btnGerarNotaTransporte.Location = new System.Drawing.Point(9, 380);
@@ -259,15 +269,6 @@
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Tipos de Fretes";
-            // 
-            // btnAdicionarCargasNota
-            // 
-            this.btnAdicionarCargasNota.Location = new System.Drawing.Point(6, 183);
-            this.btnAdicionarCargasNota.Name = "btnAdicionarCargasNota";
-            this.btnAdicionarCargasNota.Size = new System.Drawing.Size(187, 31);
-            this.btnAdicionarCargasNota.TabIndex = 24;
-            this.btnAdicionarCargasNota.Text = "Adicionar Cargas Selecionadas";
-            this.btnAdicionarCargasNota.UseVisualStyleBackColor = true;
             // 
             // FrmNotaTransporte
             // 

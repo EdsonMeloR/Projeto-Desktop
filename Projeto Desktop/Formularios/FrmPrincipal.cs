@@ -199,5 +199,28 @@ namespace Projeto_Desktop
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SessaoUsuario su = new SessaoUsuario();
+            foreach(var a in BancoLocal.ObterListaSessao().Result)
+            {
+                if(a.Sessao)
+                {
+                    a.Sessao = false;
+                    BancoLocal.AtualizarSessao(a);
+                    if(DialogResult.Yes == MessageBox.Show("Sessão encerrada, deseja finalizar a aplicação?", "Sessão encerrada", MessageBoxButtons.YesNo))
+                    {
+                        this.Close();
+                    }
+                    else
+                    {                        
+                        FrmLogin frm = new FrmLogin();
+                        frm.Show();
+                        this.Hide();
+                    }
+                }
+            }
+        }
     }
 }

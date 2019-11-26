@@ -264,6 +264,77 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>980, 26</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Desconectar-se</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnDesconectar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnDesconectar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDesconectar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAIASURBVFhH7ZexS1tRFIdjC2Jx6eDgVFyqoiC62akVt9q5gyjOnWtRF9F/QBfp0LGlHQQnF13F
+        SrdSRHFzchO6SEtLq36/kB88XkzuvcnTOOSDD19Ozjn3xLx330upTZt7wAtcqajjlqNBrirquOW0ZKDH
+        lb83ETtQvR5JLOMZPi2/qiZmINWqx2L5VRPMoxc7xyeYJzRQH6rWOerZEAP4D91oGx9gntBAHfgenaOe
+        g5jMV3STb9iJNxEayHxE5+0rkMJLdLE+kf5btYgdqAd/onOnMJrP6MINBeoQO5BYQud+USCGLvyNLuzH
+        eqQMpIvCub/wEQZ5hi76oUCAlIHEd3T+uAIhXqMLNhUIkDqQejpfawV5iy5YVyBA6kDq6XytFSQ70JoC
+        AVIHUk/nRw00jS6I+cpSHz+yX5nWCvIcXXCqQMGop/tHPT9pR9Yl6aIRLAr1cl+tUWv3r2ILXfhBgYJQ
+        L/fVGtFoW3fhfxzGZhnCS3TfV5jEAbr4CLWDN4pqj9H9dLNOZhT/opt8woeYimqyd3r1HMOGmEM3knvY
+        i7EoVzXZHjPYFNmNT17gAtYbTO8pR7nZ2lUshDeYPSHtCepq0e1A6lixfJ5q1aNQtIkdYn6xkKq5tR+Q
+        ej7WebWD2RM+7x/cReWq5k7oxknUSaqfN+9wFidQ77Vp0wJKpWsXDtuIB2EJaQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnDesconectar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDesconectar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1068, 6</value>
+  </data>
+  <data name="btnDesconectar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 52</value>
+  </data>
+  <data name="btnDesconectar.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Name" xml:space="preserve">
+    <value>btnDesconectar</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblNomeUsuarioLogado.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -286,7 +357,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblNomeUsuarioLogado.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnMeuUsuario.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -331,7 +402,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnMeuUsuario.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnMinimizar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -368,7 +439,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnMinimizar.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnFechar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -408,7 +479,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnFechar.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>

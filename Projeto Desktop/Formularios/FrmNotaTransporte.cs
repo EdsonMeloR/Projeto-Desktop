@@ -51,5 +51,9 @@ namespace Projeto_Desktop.Formularios
         {
 
         }
+
+        private void btnAdicionarCargasNota_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
