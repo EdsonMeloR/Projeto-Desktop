@@ -47,9 +47,10 @@ namespace Projeto_Desktop.Classes
         public void InserirNotaTransporte(int idVeiculo, int idMotorista, int idTipoFrete, string observacoes, double valorFrete, double distancia)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
+                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_notatransporte";
                 comm.Parameters.Add("_idmotorista", MySqlDbType.Int32).Value = idMotorista;
@@ -74,6 +75,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Alterando nota de transporte
@@ -81,9 +86,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarNotaTransporte(int _id,int idVeiculo, int idMotorista, int idTipoFrete, string observacoes, double valorFrete, double distancia)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_notatransporte";
                 comm.Parameters.Add("_idmotorista", MySqlDbType.Int32).Value = idMotorista;
@@ -101,6 +106,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultar nota de transporte pelo id
@@ -108,9 +117,10 @@ namespace Projeto_Desktop.Classes
         public void ConsultarNotaTransporteId(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
+
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from notatransporte where idNotaTransporte = " + _id;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -128,6 +138,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();                
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultar nota de transporte pelo motorista
@@ -135,9 +149,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarNotaTransporteMotorista(int _idMotorista)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from notatransporte where idMotorista = " + _idMotorista;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -155,6 +169,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultar nota de transporte pelo veiculo
@@ -162,9 +180,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarNotaTransporteVeiculo(int _veiculo)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from notatransporte where idVeiculo = " + _veiculo;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -182,6 +200,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Listando nota de transporte
@@ -192,9 +214,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             List<NotaTransporte> lista = new List<NotaTransporte>();
             NotaTransporte n;
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from notatransporte";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -215,6 +237,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
 

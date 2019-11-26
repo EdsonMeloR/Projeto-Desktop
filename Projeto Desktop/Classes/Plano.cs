@@ -44,9 +44,9 @@ namespace Projeto_Desktop.Classes
         public void InserirPlano(string nomePlano, string descricaoPlano, double valorPlano, int duracaoPlano, int limitePedido)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_planos";
                 comm.Parameters.Add("_nomeplano", MySqlDbType.VarChar).Value = nomePlano;
@@ -60,6 +60,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Alterando Plano
@@ -67,9 +71,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarPlano(int _id, string nomePlano, string descricaoPlano, double valorPlano, int duracaoPlano, int limitePedido)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_planos";
                 comm.Parameters.Add("_nomeplano", MySqlDbType.VarChar).Value = nomePlano;
@@ -86,6 +90,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando plano e retornando consulta para os métodos
@@ -93,9 +101,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarPlanoId(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from planos where idPlanos = " + _id;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -112,6 +120,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Gera uma lista de planos
@@ -122,9 +134,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Plano p;
             List<Plano> lista = new List<Plano>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from planos ";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -144,6 +156,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

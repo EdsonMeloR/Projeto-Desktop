@@ -42,9 +42,9 @@ namespace Projeto_Desktop.Classes
         public void InserirPedidoEndereco(int _idEndereco, int _idPedido, int _idTipoEndereco)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_pedidosenderecos";
                 comm.Parameters.Add("_idEndereco", MySqlDbType.Int32).Value = _idEndereco;
@@ -56,6 +56,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Alterando Pedido Endereco
@@ -63,9 +67,9 @@ namespace Projeto_Desktop.Classes
         public void AlterarPedidoEndereco(int _idEndereco, int _idTipoEndereco, int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_pedidosenderecos";
                 comm.Parameters.Add("_idEndereco", MySqlDbType.Int32).Value = _idEndereco;                
@@ -77,6 +81,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Listando Enderecos dos pedidos com Inner Join
@@ -86,9 +94,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             PedidosEnderecos pedend;
             List<PedidosEnderecos> lista = new List<PedidosEnderecos>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "view_listar_pedidosenderecos";
                 var dr = comm.ExecuteReader();
@@ -110,6 +118,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return null;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando Pedido Endereco
@@ -117,9 +129,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarPedidoEndereco(int _idEndereco ,int _idPedido)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "view_listar_pedidosenderecos";
                 comm.Parameters.Add("_idEndereco", MySqlDbType.Int32).Value = _idEndereco;
@@ -139,13 +151,17 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();                
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public void ConsultarEnderecoDestinarioPedido(int idPedido,int idTipo )
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from pedidosenderecos where idPedidos = " + idPedido + " && idTiposEnderecos = " + idTipo;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -159,6 +175,10 @@ namespace Projeto_Desktop.Classes
             catch (Exception e)
             {
                 e.Message.ToString();
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

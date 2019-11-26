@@ -118,11 +118,7 @@ namespace Projeto_Desktop.Classes
             catch(Exception e)
             {
                 e.Message.ToString();
-            }
-            finally
-            {
-                comm.Connection.Close();
-            }
+            }            
         }
         public void ConsultarClienteCnpj(string _cnpj)
         {
@@ -183,11 +179,7 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
-            }
-            finally
-            {
-                comm.Connection.Close();
-            }
+            }            
         }
         public bool AlterarSenhaCliente(int _idcliente,string _senhanova)
         {

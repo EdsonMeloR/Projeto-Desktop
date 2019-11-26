@@ -32,7 +32,6 @@ namespace Projeto_Desktop.Formularios
             cmbClientes.DisplayMember = "RazaoSocial";
             cmbClientes.ValueMember = "Id";
             cmbClientes.DataSource = c.ListarCliente();            
-            cmbClientes.SelectedIndex = 0;
             Usuario u = new Usuario();
             cmbUsuario.DisplayMember = "Nome";
             cmbUsuario.ValueMember = "Id";

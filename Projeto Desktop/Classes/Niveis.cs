@@ -30,9 +30,9 @@ namespace Projeto_Desktop.Classes
         public void InserirNivel(string _nome)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             { 
-                var comm = db.AbrirConexao();
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "insert_nivel";
                 comm.Parameters.Add("_nome", MySql.Data.MySqlClient.MySqlDbType.VarChar).Value = _nome;
@@ -46,6 +46,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Alterando nivel
@@ -53,9 +57,9 @@ namespace Projeto_Desktop.Classes
         public void AlterarNivel(int _id, string _nome)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "update_nivel";
                 comm.Parameters.Add("_nome", MySql.Data.MySqlClient.MySqlDbType.VarChar).Value = _nome;
@@ -66,6 +70,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando nivel pelo ID
@@ -73,9 +81,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarNivel(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from niveis where idNiveis = " + _id;                
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -88,6 +96,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando nivel pelo nome
@@ -95,9 +107,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarNivel(string _nome)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "select * from niveis where NomeNivel = " + _nome;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -110,15 +122,19 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public List<Niveis> ListarNiveis()
         {
             db = new Banco();
             Niveis n;
             List<Niveis> lista = new List<Niveis>();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {               
                 comm.CommandText = "select * from niveis ";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -134,6 +150,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

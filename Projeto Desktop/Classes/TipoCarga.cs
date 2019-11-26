@@ -35,15 +35,19 @@ namespace Projeto_Desktop.Classes
         public void InserirTipoCarga(string nome, string descricao)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandText = "insert into tiposcargas (Nome,DescricaoTipo) values ('"+nome+"','"+descricao+"'); select * from tiposcargas where idTipo = last_insert_id();";
                 this.Id = Convert.ToInt32(comm.ExecuteScalar());
             }
             catch(Exception e)
             {
                 e.Message.ToString();
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         /// <summary>
@@ -52,9 +56,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarTipoCarga(string _nome, string _descricao, int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "update tiposcargas set Nome = '"+_nome+", DescricaoTipo = '"+_descricao+"'";
                 comm.ExecuteNonQuery();
                 return true;
@@ -64,6 +68,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Excluindo Tipo Carga
@@ -72,9 +80,9 @@ namespace Projeto_Desktop.Classes
         public bool DeleteTipoCarga (int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "delete from tiposcargas where idTipo = "+_id;
                 comm.ExecuteNonQuery();
                 return true;
@@ -84,6 +92,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando tipo de carga
@@ -92,9 +104,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarTipoCarga(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from tiposcargas where idTipo = " + _id;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -108,6 +120,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();                
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Listando tipos de cargas
@@ -117,9 +133,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             TipoCarga tp;
             List<TipoCarga> lista = new List<TipoCarga>();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from tiposcargas";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -136,6 +152,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }

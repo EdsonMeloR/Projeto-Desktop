@@ -47,9 +47,9 @@ namespace Projeto_Desktop.Classes
         public void AssociarPlanoCliente(DateTime dataInicio, DateTime dataTermino, double desconto, int idCliente, int idPlano)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_planocliente";
                 comm.Parameters.Add("_datainicio", MySqlDbType.DateTime).Value = dataInicio;
@@ -63,6 +63,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Alterando plano já associado ao cliente
@@ -70,9 +74,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarPlanoCliente(int _idplanocliente,double _desconto)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_planocliente";
                 comm.Parameters.Add("_desconto", MySqlDbType.Decimal).Value = _desconto; 
@@ -85,6 +89,10 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consultando plano pelo id do cliente
@@ -93,9 +101,9 @@ namespace Projeto_Desktop.Classes
         public void ConsultarPlanoClienteIdCliente(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from planocliente where idCliente = " + _id;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -112,14 +120,18 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
 
         public void ConsultarPlanoClienteAtivo(int _id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from planocliente where idCliente = " + _id + " && now() < DataTermino";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -136,6 +148,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Listando planos associado á clientes
@@ -146,9 +162,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             PlanoCliente pc;
             List<PlanoCliente> lista = new List<PlanoCliente>();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from planocliente";
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -168,6 +184,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         /// <summary>

@@ -47,9 +47,9 @@ namespace Projeto_Desktop.Classes
         public void InserirPedido(string situacao, bool retirar, int idUsuario, int idCliente)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_pedido";
                 comm.Parameters.Add("_situacao", MySqlDbType.VarChar).Value = situacao;                
@@ -67,6 +67,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }     
         /// <summary>
         /// Alterando pedido
@@ -75,9 +79,9 @@ namespace Projeto_Desktop.Classes
         public bool AlterarPedido(string situacao,int id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "update_pedido";
                 comm.Parameters.Add("_situacao", MySqlDbType.VarChar).Value = situacao;
@@ -90,13 +94,18 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public void ConsultarPedido(int id)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
+
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from pedidos where idPedidos = " + id;                
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -113,6 +122,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
             }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         /// <summary>
         /// Consulta o pedido pelo idCliente e Id Pedido
@@ -120,9 +133,9 @@ namespace Projeto_Desktop.Classes
         public MySqlDataReader ConsultarPedidosCliente(int idCliente,int idPedido)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "viewPedidosClientes";
                 return comm.ExecuteReader();
@@ -131,6 +144,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         /// <summary>
@@ -143,9 +160,9 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Pedido p;
             List<Pedido> lista = new List<Pedido>();
+            var comm = db.AbrirConexao();
             try
             {
-                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from pedidos where cliente_IdCliente = " + idCliente;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
@@ -165,6 +182,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
         /// <summary>
@@ -200,6 +221,10 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
+            }
+            finally
+            {
+                comm.Connection.Close();
             }
         }
     }
