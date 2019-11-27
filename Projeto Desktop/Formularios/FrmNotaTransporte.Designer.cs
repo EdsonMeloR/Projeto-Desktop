@@ -93,8 +93,7 @@
             // 
             this.dgvCargasPedido.AllowUserToAddRows = false;
             this.dgvCargasPedido.AllowUserToDeleteRows = false;
-            this.dgvCargasPedido.AllowUserToResizeColumns = false;
-            this.dgvCargasPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCargasPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCargasPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.NomeProduto,
@@ -340,8 +339,7 @@
             // 
             this.dgvCargasAdicionadas.AllowUserToAddRows = false;
             this.dgvCargasAdicionadas.AllowUserToDeleteRows = false;
-            this.dgvCargasAdicionadas.AllowUserToResizeColumns = false;
-            this.dgvCargasAdicionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCargasAdicionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCargasAdicionadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCargaAdicionada,
             this.ProdutoAdicionada,
@@ -355,7 +353,6 @@
             this.dgvCargasAdicionadas.Name = "dgvCargasAdicionadas";
             this.dgvCargasAdicionadas.ReadOnly = true;
             this.dgvCargasAdicionadas.RowHeadersVisible = false;
-            this.dgvCargasAdicionadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCargasAdicionadas.Size = new System.Drawing.Size(831, 150);
             this.dgvCargasAdicionadas.TabIndex = 18;
             // 
