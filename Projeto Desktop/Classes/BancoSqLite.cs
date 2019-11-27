@@ -13,7 +13,7 @@ namespace Projeto_Desktop.Classes
         public BancoSqLite(string dbPath)
         {
             banco = new SQLiteAsyncConnection(dbPath);
-            banco.CreateTableAsync<SessaoUsuario>().Wait();
+            banco.CreateTableAsync<SessaoUsuario>();
         }
         public Task<List<SessaoUsuario>> ObterListaSessao()
         {
