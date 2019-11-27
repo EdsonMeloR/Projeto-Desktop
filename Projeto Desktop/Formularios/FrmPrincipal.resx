@@ -126,19 +126,19 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="novoPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="novoPedidoToolStripMenuItem.Text" xml:space="preserve">
     <value>Novo Pedido</value>
   </data>
   <data name="consultarPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="consultarPedidoToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Pedido</value>
   </data>
   <data name="alterarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="alterarToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Pedido</value>
@@ -203,6 +203,12 @@
   <data name="tiposFretesToolStripMenuItem.Text" xml:space="preserve">
     <value>Tipos Fretes</value>
   </data>
+  <data name="tiposCargasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tiposCargasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tipos Cargas</value>
+  </data>
   <data name="administraçãoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 20</value>
   </data>
@@ -210,13 +216,13 @@
     <value>Administração</value>
   </data>
   <data name="inserirPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="inserirPlanosToolStripMenuItem.Text" xml:space="preserve">
     <value>Inserir Planos</value>
   </data>
   <data name="consultarPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>163, 22</value>
   </data>
   <data name="consultarPlanosToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Planos</value>
@@ -299,16 +305,16 @@
   </data>
   <data name="btnDesconectar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAIASURBVFhH7ZexS1tRFIdjC2Jx6eDgVFyqoiC62akVt9q5gyjOnWtRF9F/QBfp0LGlHQQnF13F
-        SrdSRHFzchO6SEtLq36/kB88XkzuvcnTOOSDD19Ozjn3xLx330upTZt7wAtcqajjlqNBrirquOW0ZKDH
-        lb83ETtQvR5JLOMZPi2/qiZmINWqx2L5VRPMoxc7xyeYJzRQH6rWOerZEAP4D91oGx9gntBAHfgenaOe
-        g5jMV3STb9iJNxEayHxE5+0rkMJLdLE+kf5btYgdqAd/onOnMJrP6MINBeoQO5BYQud+USCGLvyNLuzH
-        eqQMpIvCub/wEQZ5hi76oUCAlIHEd3T+uAIhXqMLNhUIkDqQejpfawV5iy5YVyBA6kDq6XytFSQ70JoC
-        AVIHUk/nRw00jS6I+cpSHz+yX5nWCvIcXXCqQMGop/tHPT9pR9Yl6aIRLAr1cl+tUWv3r2ILXfhBgYJQ
-        L/fVGtFoW3fhfxzGZhnCS3TfV5jEAbr4CLWDN4pqj9H9dLNOZhT/opt8woeYimqyd3r1HMOGmEM3knvY
-        i7EoVzXZHjPYFNmNT17gAtYbTO8pR7nZ2lUshDeYPSHtCepq0e1A6lixfJ5q1aNQtIkdYn6xkKq5tR+Q
-        ej7WebWD2RM+7x/cReWq5k7oxknUSaqfN+9wFidQ77Vp0wJKpWsXDtuIB2EJaQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAgBJREFUWEft
+        l7FLW1EUh2MLYnHp4OBUXKqiILrZqRW32rmDKM6da1EX0X9AF+nQsaUdBCcXXcVKt1JEcXNyE7pIS0ur
+        fr+QHzxeTO69ydM45IMPX07OOffEvHffS6lNm3vAC1ypqOOWo0GuKuq45bRkoMeVvzcRO1C9Hkks4xk+
+        Lb+qJmYg1arHYvlVE8yjFzvHJ5gnNFAfqtY56tkQA/gP3WgbH2Ce0EAd+B6do56DmMxXdJNv2Ik3ERrI
+        fETn7SuQwkt0sT6R/lu1iB2oB3+ic6cwms/owg0F6hA7kFhC535RIIYu/I0u7Md6pAyki8K5v/ARBnmG
+        LvqhQICUgcR3dP64AiFeows2FQiQOpB6Ol9rBXmLLlhXIEDqQOrpfK0VJDvQmgIBUgdST+dHDTSNLoj5
+        ylIfP7JfmdYK8hxdcKpAwain+0c9P2lH1iXpohEsCvVyX61Ra/evYgtd+EGBglAv99Ua0Whbd+F/HMZm
+        GcJLdN9XmMQBuvgItYM3imqP0f10s05mFP+im3zCh5iKarJ3evUcw4aYQzeSe9iLsShXNdkeM9gU2Y1P
+        XuAC1htM7ylHudnaVSyEN5g9Ie0J6mrR7UDqWLF8nmrVo1C0iR1ifrGQqrm1H5B6PtZ5tYPZEz7vH9xF
+        5armTujGSdRJqp8373AWJ1DvtWnTAkqlaxcO24gHYQlpAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnDesconectar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -601,6 +607,12 @@
   <data name="&gt;&gt;niveisToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tiposFretesToolStripMenuItem.Name" xml:space="preserve">
+    <value>tiposFretesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;tiposFretesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;planoToolStripMenuItem.Name" xml:space="preserve">
     <value>planoToolStripMenuItem</value>
   </data>
@@ -631,10 +643,10 @@
   <data name="&gt;&gt;veiculoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tiposFretesToolStripMenuItem.Name" xml:space="preserve">
-    <value>tiposFretesToolStripMenuItem</value>
+  <data name="&gt;&gt;tiposCargasToolStripMenuItem.Name" xml:space="preserve">
+    <value>tiposCargasToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;tiposFretesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;tiposCargasToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

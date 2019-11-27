@@ -43,19 +43,20 @@
             this.administraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.niveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposFretesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caminhoneirosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblNomeUsuarioLogado = new System.Windows.Forms.Label();
             this.btnMeuUsuario = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.tiposFretesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDesconectar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tiposCargasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -148,7 +149,8 @@
             this.administraçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuáriosToolStripMenuItem,
             this.niveisToolStripMenuItem,
-            this.tiposFretesToolStripMenuItem});
+            this.tiposFretesToolStripMenuItem,
+            this.tiposCargasToolStripMenuItem});
             this.administraçãoToolStripMenuItem.Name = "administraçãoToolStripMenuItem";
             resources.ApplyResources(this.administraçãoToolStripMenuItem, "administraçãoToolStripMenuItem");
             this.administraçãoToolStripMenuItem.Click += new System.EventHandler(this.administraçãoToolStripMenuItem_Click);
@@ -164,6 +166,12 @@
             this.niveisToolStripMenuItem.Name = "niveisToolStripMenuItem";
             resources.ApplyResources(this.niveisToolStripMenuItem, "niveisToolStripMenuItem");
             this.niveisToolStripMenuItem.Click += new System.EventHandler(this.niveisToolStripMenuItem_Click);
+            // 
+            // tiposFretesToolStripMenuItem
+            // 
+            this.tiposFretesToolStripMenuItem.Name = "tiposFretesToolStripMenuItem";
+            resources.ApplyResources(this.tiposFretesToolStripMenuItem, "tiposFretesToolStripMenuItem");
+            this.tiposFretesToolStripMenuItem.Click += new System.EventHandler(this.tiposFretesToolStripMenuItem_Click);
             // 
             // planoToolStripMenuItem
             // 
@@ -211,6 +219,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // btnDesconectar
+            // 
+            resources.ApplyResources(this.btnDesconectar, "btnDesconectar");
+            this.btnDesconectar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDesconectar.FlatAppearance.BorderSize = 0;
+            this.btnDesconectar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDesconectar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnDesconectar.Name = "btnDesconectar";
+            this.btnDesconectar.UseVisualStyleBackColor = true;
+            this.btnDesconectar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // lblNomeUsuarioLogado
             // 
             resources.ApplyResources(this.lblNomeUsuarioLogado, "lblNomeUsuarioLogado");
@@ -249,27 +273,11 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // tiposFretesToolStripMenuItem
+            // tiposCargasToolStripMenuItem
             // 
-            this.tiposFretesToolStripMenuItem.Name = "tiposFretesToolStripMenuItem";
-            resources.ApplyResources(this.tiposFretesToolStripMenuItem, "tiposFretesToolStripMenuItem");
-            this.tiposFretesToolStripMenuItem.Click += new System.EventHandler(this.tiposFretesToolStripMenuItem_Click);
-            // 
-            // btnDesconectar
-            // 
-            resources.ApplyResources(this.btnDesconectar, "btnDesconectar");
-            this.btnDesconectar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDesconectar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.UseVisualStyleBackColor = true;
-            this.btnDesconectar.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            this.tiposCargasToolStripMenuItem.Name = "tiposCargasToolStripMenuItem";
+            resources.ApplyResources(this.tiposCargasToolStripMenuItem, "tiposCargasToolStripMenuItem");
+            this.tiposCargasToolStripMenuItem.Click += new System.EventHandler(this.tiposCargasToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -320,6 +328,7 @@
         private System.Windows.Forms.ToolStripMenuItem tiposFretesToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.ToolStripMenuItem tiposCargasToolStripMenuItem;
     }
 }
 

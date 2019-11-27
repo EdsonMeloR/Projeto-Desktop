@@ -197,7 +197,8 @@ namespace Projeto_Desktop
 
         private void tiposFretesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmTipoFrete frm = new FrmTipoFrete();
+            frm.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -221,13 +222,16 @@ namespace Projeto_Desktop
                     }
                 }
                 else
-                {
-                    if (DialogResult.Yes == MessageBox.Show("Sessão encerrada, deseja finalizar a aplicação?", "Sessão encerrada", MessageBoxButtons.YesNo))
-                    {
-                        this.Close();
-                    }
+                {                    
+                    this.Close();                    
                 }
             }
+        }
+
+        private void tiposCargasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTipoCarga frm = new FrmTipoCarga();
+            frm.Show();
         }
     }
 }

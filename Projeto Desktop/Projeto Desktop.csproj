@@ -222,6 +222,12 @@
     <Compile Include="Formularios\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmTipoCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmTipoCarga.Designer.cs">
+      <DependentUpon>FrmTipoCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmTipoFrete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmTipoCarga.resx">
+      <DependentUpon>FrmTipoCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmTipoFrete.resx">
       <DependentUpon>FrmTipoFrete.cs</DependentUpon>
