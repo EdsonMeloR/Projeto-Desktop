@@ -36,7 +36,6 @@
             this.cmbEnderecoRemetente = new System.Windows.Forms.ComboBox();
             this.cmbEnderecoDestino = new System.Windows.Forms.ComboBox();
             this.btnListarCargasPedido = new System.Windows.Forms.Button();
-            this.dgvPedidosCargas = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbPedidos = new System.Windows.Forms.ComboBox();
@@ -48,6 +47,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvPedidosCargas = new System.Windows.Forms.DataGridView();
+            this.btnVisualizarNota = new System.Windows.Forms.Button();
             this.grpPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosCargas)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             // grpPedidos
             // 
             resources.ApplyResources(this.grpPedidos, "grpPedidos");
+            this.grpPedidos.Controls.Add(this.btnVisualizarNota);
             this.grpPedidos.Controls.Add(this.cmbDataPedido);
             this.grpPedidos.Controls.Add(this.cmbEnderecoRemetente);
             this.grpPedidos.Controls.Add(this.cmbEnderecoDestino);
@@ -112,14 +114,6 @@
             this.btnListarCargasPedido.Name = "btnListarCargasPedido";
             this.btnListarCargasPedido.UseVisualStyleBackColor = true;
             this.btnListarCargasPedido.Click += new System.EventHandler(this.btnListarCargasPedido_Click_1);
-            // 
-            // dgvPedidosCargas
-            // 
-            resources.ApplyResources(this.dgvPedidosCargas, "dgvPedidosCargas");
-            this.dgvPedidosCargas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedidosCargas.Name = "dgvPedidosCargas";
-            this.dgvPedidosCargas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPedidosCargas.RowHeadersVisible = false;
             // 
             // label6
             // 
@@ -184,6 +178,21 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // dgvPedidosCargas
+            // 
+            resources.ApplyResources(this.dgvPedidosCargas, "dgvPedidosCargas");
+            this.dgvPedidosCargas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidosCargas.Name = "dgvPedidosCargas";
+            this.dgvPedidosCargas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPedidosCargas.RowHeadersVisible = false;
+            // 
+            // btnVisualizarNota
+            // 
+            resources.ApplyResources(this.btnVisualizarNota, "btnVisualizarNota");
+            this.btnVisualizarNota.Name = "btnVisualizarNota";
+            this.btnVisualizarNota.UseVisualStyleBackColor = true;
+            this.btnVisualizarNota.Click += new System.EventHandler(this.btnVisualizarNota_Click);
+            // 
             // FrmPedidoConsultar
             // 
             resources.ApplyResources(this, "$this");
@@ -208,7 +217,6 @@
         private System.Windows.Forms.ComboBox cmbEnderecoRemetente;
         private System.Windows.Forms.ComboBox cmbEnderecoDestino;
         private System.Windows.Forms.Button btnListarCargasPedido;
-        private System.Windows.Forms.DataGridView dgvPedidosCargas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbPedidos;
@@ -221,5 +229,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbDataPedido;
+        private System.Windows.Forms.DataGridView dgvPedidosCargas;
+        private System.Windows.Forms.Button btnVisualizarNota;
     }
 }

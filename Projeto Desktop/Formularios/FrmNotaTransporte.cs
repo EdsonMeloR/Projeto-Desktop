@@ -32,20 +32,18 @@ namespace Projeto_Desktop.Formularios
             txtIdPedido.Text = p.Id.ToString();            
             double CubagemCargas = new double();
             var lista = c.ListarCargasPedido(int.Parse(txtIdPedido.Text));
-            foreach (var Car in lista)
+                            
+            for (int i = 0; i < lista.Count; i++)
             {
                 dgvCargasPedido.Rows.Add();
-                for (int i = 0; i < lista.Count; i++)
-                {                    
-                    dgvCargasPedido.Rows[i].Cells[0].Value = Car.Id.ToString();
-                    dgvCargasPedido.Rows[i].Cells[1].Value = Car.NomeProduto;
-                    dgvCargasPedido.Rows[i].Cells[2].Value = Car.Quantidade.ToString();
-                    dgvCargasPedido.Rows[i].Cells[3].Value = Car.Peso.ToString();
-                    dgvCargasPedido.Rows[i].Cells[4].Value = Car.Largura.ToString();
-                    dgvCargasPedido.Rows[i].Cells[5].Value = Car.Altura.ToString();
-                    dgvCargasPedido.Rows[i].Cells[6].Value = Car.Comprimento.ToString();
-                    dgvCargasPedido.Rows[i].Cells[7].Value = Car.ValorProduto.ToString("C");
-                }                
+                dgvCargasPedido.Rows[i].Cells[0].Value = lista[i].Id.ToString();
+                dgvCargasPedido.Rows[i].Cells[1].Value = lista[i].NomeProduto;
+                dgvCargasPedido.Rows[i].Cells[2].Value = lista[i].Quantidade.ToString();
+                dgvCargasPedido.Rows[i].Cells[3].Value = lista[i].Peso.ToString();
+                dgvCargasPedido.Rows[i].Cells[4].Value = lista[i].Largura.ToString();
+                dgvCargasPedido.Rows[i].Cells[5].Value = lista[i].Altura.ToString();
+                dgvCargasPedido.Rows[i].Cells[6].Value = lista[i].Comprimento.ToString();
+                dgvCargasPedido.Rows[i].Cells[7].Value = lista[i].ValorProduto.ToString("C");                                
             }
             txtCargasCubadas.Text = CubagemCargas.ToString();
         }
@@ -66,25 +64,27 @@ namespace Projeto_Desktop.Formularios
             for (int i = 0; i < dgvCargasPedido.SelectedRows.Count; i++)
             {
                 Carga c = new Carga();
-                c.Id = Convert.ToInt32(dgvCargasPedido.Rows[dgvCargasPedido.CurrentRow.Index].Cells[0].Value);
-                listaSelecionada.Add(c);                
+                c.Id = Convert.ToInt32(dgvCargasPedido.Rows[dgvCargasPedido.SelectedRows[i].Index].Cells[0].Value);
+                listaSelecionada.Add(c);               
             }
-            dgvCargasPedido.Rows.Remove(dgvCargasPedido.CurrentRow);
-            foreach (var Car in listaSelecionada)
+            var a = dgvCargasPedido.SelectedRows;
+            for (int i = 0; i < a.Count ; i++)
             {
-                Car.ConsultarCarga(Car.Id);
-                for (int i = 0; i < listaSelecionada.Count; i++)
-                {
-                    dgvCargasAdicionadas.Rows.Add();
-                    dgvCargasAdicionadas.Rows[i].Cells[0].Value = Car.Id.ToString();
-                    dgvCargasAdicionadas.Rows[i].Cells[1].Value = Car.NomeProduto;
-                    dgvCargasAdicionadas.Rows[i].Cells[2].Value = Car.Quantidade.ToString();
-                    dgvCargasAdicionadas.Rows[i].Cells[3].Value = Car.Peso.ToString();
-                    dgvCargasAdicionadas.Rows[i].Cells[4].Value = Car.Largura.ToString();
-                    dgvCargasAdicionadas.Rows[i].Cells[5].Value = Car.Altura.ToString();
-                    dgvCargasAdicionadas.Rows[i].Cells[6].Value = Car.Comprimento.ToString();
-                    dgvCargasAdicionadas.Rows[i].Cells[7].Value = Car.ValorProduto.ToString("C");
-                }
+                dgvCargasPedido.Rows.RemoveAt(a[i].Index);
+            }
+            for (int i = 0; i < listaSelecionada.Count; i++)
+            {
+                listaSelecionada[i].ConsultarCarga(listaSelecionada[i].Id); 
+                dgvCargasAdicionadas.Rows.Add();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[0].Value = listaSelecionada[i].Id.ToString();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[1].Value = listaSelecionada[i].NomeProduto;
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[2].Value = listaSelecionada[i].Quantidade.ToString();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[3].Value = listaSelecionada[i].Peso.ToString();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[4].Value = listaSelecionada[i].Largura.ToString();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[5].Value = listaSelecionada[i].Altura.ToString();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[6].Value = listaSelecionada[i].Comprimento.ToString();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[7].Value = listaSelecionada[i].ValorProduto.ToString("C");
+                txtCargasCubadas.Text = (Convert.ToInt32(txtCargasCubadas.Text) + Convert.ToInt32(dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[2].Value) * (Convert.ToInt32(dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[4].Value) * Convert.ToInt32(dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[5].Value) * Convert.ToInt32(dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[6].Value))).ToString();
             }
         }
 

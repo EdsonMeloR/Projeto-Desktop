@@ -288,10 +288,7 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return null;
             }
-            finally
-            {
-                comm.Connection.Close();
-            }
+            
         }
     }
 }

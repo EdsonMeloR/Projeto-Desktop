@@ -125,11 +125,27 @@
     <value>19, 9</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnVisualizarNota.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnVisualizarNota.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnVisualizarNota.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 23</value>
+  </data>
+  <data name="btnVisualizarNota.Text" xml:space="preserve">
+    <value>Visualizar Nota Transporte</value>
+  </data>
   <data name="cmbDataPedido.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="cmbDataPedido.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 21</value>
+  </data>
+  <data name="btnListarCargasPedido.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 115</value>
   </data>
   <data name="dgvPedidosCargas.Size" type="System.Drawing.Size, System.Drawing">
     <value>762, 241</value>
@@ -139,5 +155,8 @@
   </data>
   <data name="grpPedidos.Size" type="System.Drawing.Size, System.Drawing">
     <value>774, 391</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

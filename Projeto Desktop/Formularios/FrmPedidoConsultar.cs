@@ -56,6 +56,7 @@ namespace Projeto_Desktop.Formularios
             CarregarComboBoxPedido();
             btnListarPedidos.Enabled = true;
             grpPedidos.Enabled = true;
+            btnVisualizarNota.Enabled = true;
         }
 
         private void cmbPedidos_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,6 +126,14 @@ namespace Projeto_Desktop.Formularios
             dgvPedidosCargas.DataSource = dt;
             dgvPedidosCargas.AutoResizeColumns();
             
+        }
+
+        private void btnVisualizarNota_Click(object sender, EventArgs e)
+        {
+            Ped = new Pedido();
+            Ped.Id = Convert.ToInt32(cmbPedidos.SelectedValue);
+            FrmNotaTransporte frm = new FrmNotaTransporte(Ped);
+            frm.Show();
         }
     }
 }
