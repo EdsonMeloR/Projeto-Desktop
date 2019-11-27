@@ -14,6 +14,9 @@ namespace Projeto_Desktop.Formularios
     public partial class FrmNotaTransporte : Form
     {
         Pedido p;
+        Carga c;
+        Motorista m;
+        Veiculo v;
         public FrmNotaTransporte()
         {
             InitializeComponent();
@@ -23,10 +26,23 @@ namespace Projeto_Desktop.Formularios
             InitializeComponent();
             p = new Pedido();
             p = pedido;
-        }
-        Carga c;
+        }        
         private void FrmNotaTransporte_Load(object sender, EventArgs e)
         {
+            //Carregando combo box de Motoristas
+            m = new Motorista();
+            var listaM = m.ListaMotoristas();
+            cmbMotoristas.ValueMember = "IdMotorista";
+            cmbMotoristas.DisplayMember = "Nome";
+            cmbMotoristas.DataSource = listaM;
+            cmbMotoristas.Text += listaM[cmbMotoristas.SelectedIndex].Rg;
+            //Carregando combo box de Veiculos
+            v = new Veiculo();
+            var listaV = v.ListarVeiculos();            
+            cmbVeiculos.ValueMember = "Id";
+            cmbVeiculos.DisplayMember = "Modelo";
+            cmbVeiculos.DataSource = listaV;
+            cmbVeiculos.Text += listaV[cmbMotoristas.SelectedIndex].Placa;
             //Carregando cargas do Pedido e fazendo calculo de cubagem
             c = new Carga();
             txtIdPedido.Text = p.Id.ToString();            
