@@ -44,6 +44,7 @@
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.niveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposFretesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposCargasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPlanosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,6 @@
             this.btnMeuUsuario = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.tiposCargasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -173,6 +173,12 @@
             resources.ApplyResources(this.tiposFretesToolStripMenuItem, "tiposFretesToolStripMenuItem");
             this.tiposFretesToolStripMenuItem.Click += new System.EventHandler(this.tiposFretesToolStripMenuItem_Click);
             // 
+            // tiposCargasToolStripMenuItem
+            // 
+            this.tiposCargasToolStripMenuItem.Name = "tiposCargasToolStripMenuItem";
+            resources.ApplyResources(this.tiposCargasToolStripMenuItem, "tiposCargasToolStripMenuItem");
+            this.tiposCargasToolStripMenuItem.Click += new System.EventHandler(this.tiposCargasToolStripMenuItem_Click);
+            // 
             // planoToolStripMenuItem
             // 
             this.planoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -272,12 +278,6 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // tiposCargasToolStripMenuItem
-            // 
-            this.tiposCargasToolStripMenuItem.Name = "tiposCargasToolStripMenuItem";
-            resources.ApplyResources(this.tiposCargasToolStripMenuItem, "tiposCargasToolStripMenuItem");
-            this.tiposCargasToolStripMenuItem.Click += new System.EventHandler(this.tiposCargasToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 

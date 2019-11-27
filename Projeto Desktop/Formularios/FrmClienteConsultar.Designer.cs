@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClienteConsultar));
             this.btnListarClientes = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.txtIdCliente = new System.Windows.Forms.Button();
@@ -207,6 +208,7 @@
             this.Controls.Add(this.txtInscricaoEstadual);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmClienteConsultar";
             this.Text = "FrmClienteConsultar";
             this.Load += new System.EventHandler(this.FrmClienteConsultar_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEnderecos));
             this.btnConsultarCep = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -239,6 +240,7 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultarCep);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEnderecos";
             this.Text = "Enderecos";
             this.Load += new System.EventHandler(this.FrmEnderecos_Load);

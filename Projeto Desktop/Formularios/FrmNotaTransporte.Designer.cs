@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNotaTransporte));
             this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCargasPedido = new System.Windows.Forms.DataGridView();
@@ -414,6 +415,7 @@
             this.Controls.Add(this.grbCargasPedido);
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNotaTransporte";
             this.Text = "Nota Transporte";
             this.Load += new System.EventHandler(this.FrmNotaTransporte_Load);

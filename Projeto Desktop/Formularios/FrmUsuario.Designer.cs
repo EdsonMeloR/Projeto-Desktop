@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuario));
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -225,6 +226,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.btnAlterar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmUsuario";
             this.Text = "Alterar Usuario";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);

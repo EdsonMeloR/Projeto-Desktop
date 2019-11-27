@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAssociarPlanoAlterar));
             this.btnConsultarPlano = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
@@ -523,6 +524,7 @@
             this.Controls.Add(this.btnConsultarPlano);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbClientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAssociarPlanoAlterar";
             this.Text = "Alterar Plano Associado";
             this.Load += new System.EventHandler(this.FrmAssociarPlanoAlterar_Load);

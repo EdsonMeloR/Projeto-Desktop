@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClienteCadastrar));
             this.label1 = new System.Windows.Forms.Label();
             this.txtRazaoSocial = new System.Windows.Forms.TextBox();
             this.txtInscricaoEstadual = new System.Windows.Forms.TextBox();
@@ -207,6 +208,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtRazaoSocial);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmClienteCadastrar";
             this.Text = "Cadastrar Cliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);

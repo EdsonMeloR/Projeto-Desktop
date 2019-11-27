@@ -32,10 +32,12 @@
             this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.grpPedidos = new System.Windows.Forms.GroupBox();
+            this.btnVisualizarNota = new System.Windows.Forms.Button();
             this.cmbDataPedido = new System.Windows.Forms.ComboBox();
             this.cmbEnderecoRemetente = new System.Windows.Forms.ComboBox();
             this.cmbEnderecoDestino = new System.Windows.Forms.ComboBox();
             this.btnListarCargasPedido = new System.Windows.Forms.Button();
+            this.dgvPedidosCargas = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbPedidos = new System.Windows.Forms.ComboBox();
@@ -47,8 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvPedidosCargas = new System.Windows.Forms.DataGridView();
-            this.btnVisualizarNota = new System.Windows.Forms.Button();
             this.grpPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosCargas)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +90,13 @@
             this.grpPedidos.Name = "grpPedidos";
             this.grpPedidos.TabStop = false;
             // 
+            // btnVisualizarNota
+            // 
+            resources.ApplyResources(this.btnVisualizarNota, "btnVisualizarNota");
+            this.btnVisualizarNota.Name = "btnVisualizarNota";
+            this.btnVisualizarNota.UseVisualStyleBackColor = true;
+            this.btnVisualizarNota.Click += new System.EventHandler(this.btnVisualizarNota_Click);
+            // 
             // cmbDataPedido
             // 
             resources.ApplyResources(this.cmbDataPedido, "cmbDataPedido");
@@ -114,6 +121,14 @@
             this.btnListarCargasPedido.Name = "btnListarCargasPedido";
             this.btnListarCargasPedido.UseVisualStyleBackColor = true;
             this.btnListarCargasPedido.Click += new System.EventHandler(this.btnListarCargasPedido_Click_1);
+            // 
+            // dgvPedidosCargas
+            // 
+            resources.ApplyResources(this.dgvPedidosCargas, "dgvPedidosCargas");
+            this.dgvPedidosCargas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidosCargas.Name = "dgvPedidosCargas";
+            this.dgvPedidosCargas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPedidosCargas.RowHeadersVisible = false;
             // 
             // label6
             // 
@@ -177,21 +192,6 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            // 
-            // dgvPedidosCargas
-            // 
-            resources.ApplyResources(this.dgvPedidosCargas, "dgvPedidosCargas");
-            this.dgvPedidosCargas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedidosCargas.Name = "dgvPedidosCargas";
-            this.dgvPedidosCargas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPedidosCargas.RowHeadersVisible = false;
-            // 
-            // btnVisualizarNota
-            // 
-            resources.ApplyResources(this.btnVisualizarNota, "btnVisualizarNota");
-            this.btnVisualizarNota.Name = "btnVisualizarNota";
-            this.btnVisualizarNota.UseVisualStyleBackColor = true;
-            this.btnVisualizarNota.Click += new System.EventHandler(this.btnVisualizarNota_Click);
             // 
             // FrmPedidoConsultar
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrimeiroLogin));
             this.lblPrimeiroLogin = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -106,6 +107,7 @@
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPrimeiroLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrimeiroLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primeiro Login";

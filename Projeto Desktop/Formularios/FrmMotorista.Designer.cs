@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMotorista));
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdMotorista = new System.Windows.Forms.TextBox();
@@ -251,6 +252,7 @@
             this.Controls.Add(this.txtIdMotorista);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCadastrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMotorista";
             this.Text = "FrmMotorista";
             this.Load += new System.EventHandler(this.FrmMotorista_Load);

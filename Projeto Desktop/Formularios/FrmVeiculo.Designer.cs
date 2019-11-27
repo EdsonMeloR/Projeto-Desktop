@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVeiculo));
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.cmbPlacas = new System.Windows.Forms.ComboBox();
             this.dgvVeiculos = new System.Windows.Forms.DataGridView();
@@ -306,6 +307,7 @@
             this.Controls.Add(this.dgvVeiculos);
             this.Controls.Add(this.cmbPlacas);
             this.Controls.Add(this.btnCadastrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVeiculo";
             this.Text = "Veiculos";
             this.Load += new System.EventHandler(this.FrmVeiculo_Load);

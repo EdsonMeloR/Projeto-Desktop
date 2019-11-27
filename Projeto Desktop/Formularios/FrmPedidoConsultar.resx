@@ -121,6 +121,9 @@
     <value>Listar Cargas</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 72</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
   </data>
@@ -140,9 +143,6 @@
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
   </data>
-  <data name="&gt;&gt;btnVisualizarNota.Name" xml:space="preserve">
-    <value>btnVisualizarNota</value>
-  </data>
   <data name="&gt;&gt;grpPedidos.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -154,6 +154,9 @@
   </data>
   <data name="mskDataPedido.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="&gt;&gt;cmbEnderecoDestino.Name" xml:space="preserve">
+    <value>cmbEnderecoDestino</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Endereço Destino</value>
@@ -172,9 +175,6 @@
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cmbSituacao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 36</value>
   </data>
   <data name="&gt;&gt;cmbSituacao.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -197,11 +197,17 @@
   <data name="&gt;&gt;dgvPedidosCargas.Name" xml:space="preserve">
     <value>dgvPedidosCargas</value>
   </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
   <data name="&gt;&gt;cmbEnderecoDestino.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="cmbClientes.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Consultar Pedidos</value>
@@ -212,9 +218,6 @@
   <data name="mskDataPedido.Mask" xml:space="preserve">
     <value>00/00/0000   00:00</value>
   </data>
-  <data name="cmbClientes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 21</value>
-  </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
@@ -223,6 +226,9 @@
   </data>
   <data name="chkRetirar.Text" xml:space="preserve">
     <value>Retirar</value>
+  </data>
+  <data name="dgvPedidosCargas.TabIndex" type="System.Int32, mscorlib">
+    <value>71</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>61</value>
@@ -235,9 +241,6 @@
   </data>
   <data name="cmbEnderecoDestino.Size" type="System.Drawing.Size, System.Drawing">
     <value>379, 21</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -272,9 +275,6 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Endereço Remetente</value>
   </data>
-  <data name="cmbDataPedido.TabIndex" type="System.Int32, mscorlib">
-    <value>76</value>
-  </data>
   <data name="&gt;&gt;cmbClientes.Name" xml:space="preserve">
     <value>cmbClientes</value>
   </data>
@@ -284,8 +284,14 @@
   <data name="&gt;&gt;chkRetirar.Parent" xml:space="preserve">
     <value>grpPedidos</value>
   </data>
+  <data name="&gt;&gt;cmbDataPedido.Name" xml:space="preserve">
+    <value>cmbDataPedido</value>
+  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>grpPedidos</value>
   </data>
   <data name="&gt;&gt;cmbPedidos.Parent" xml:space="preserve">
     <value>grpPedidos</value>
@@ -304,6 +310,9 @@
   </data>
   <data name="btnListarCargasPedido.TabIndex" type="System.Int32, mscorlib">
     <value>72</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 115</value>
   </data>
   <data name="chkRetirar.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 17</value>
@@ -335,17 +344,14 @@
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 20</value>
   </data>
-  <data name="&gt;&gt;btnListarCargasPedido.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="chkRetirar.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="cmbEnderecoDestino.TabIndex" type="System.Int32, mscorlib">
     <value>73</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FrmPedidoConsultar</value>
+  <data name="cmbClientes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 21</value>
   </data>
   <data name="mskDataPedido.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 20</value>
@@ -373,9 +379,6 @@
   </data>
   <data name="chkRetirar.Location" type="System.Drawing.Point, System.Drawing">
     <value>632, 38</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chkRetirar.ZOrder" xml:space="preserve">
     <value>11</value>
@@ -413,9 +416,6 @@
   <data name="btnListarCargasPedido.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 23</value>
   </data>
-  <data name="&gt;&gt;cmbDataPedido.Parent" xml:space="preserve">
-    <value>grpPedidos</value>
-  </data>
   <data name="&gt;&gt;mskDataPedido.Name" xml:space="preserve">
     <value>mskDataPedido</value>
   </data>
@@ -424,9 +424,6 @@
   </data>
   <data name="cmbSituacao.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 21</value>
-  </data>
-  <data name="cmbEnderecoDestino.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 88</value>
   </data>
   <data name="&gt;&gt;cmbPedidos.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -467,8 +464,8 @@
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
   </data>
-  <data name="&gt;&gt;cmbEnderecoRemetente.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cmbEnderecoRemetente.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 13</value>
@@ -488,9 +485,6 @@
   <data name="&gt;&gt;cmbEnderecoRemetente.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnAlterarPedido.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 426</value>
-  </data>
   <data name="cmbSituacao.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -509,14 +503,17 @@
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmPedidoConsultar</value>
+  </data>
   <data name="dgvPedidosCargas.Size" type="System.Drawing.Size, System.Drawing">
     <value>762, 215</value>
   </data>
   <data name="&gt;&gt;cmbClientes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>77</value>
+  <data name="&gt;&gt;cmbEnderecoRemetente.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -548,11 +545,11 @@
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
-  <data name="dgvPedidosCargas.TabIndex" type="System.Int32, mscorlib">
-    <value>71</value>
+  <data name="&gt;&gt;btnListarCargasPedido.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;cmbEnderecoDestino.Name" xml:space="preserve">
-    <value>cmbEnderecoDestino</value>
+  <data name="btnAlterarPedido.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 426</value>
   </data>
   <data name="cmbEnderecoRemetente.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 88</value>
@@ -560,8 +557,8 @@
   <data name="&gt;&gt;mskDataPedido.Parent" xml:space="preserve">
     <value>grpPedidos</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;btnVisualizarNota.Name" xml:space="preserve">
+    <value>btnVisualizarNota</value>
   </data>
   <data name="cmbUsuario.TabIndex" type="System.Int32, mscorlib">
     <value>65</value>
@@ -647,14 +644,14 @@
   <data name="&gt;&gt;cmbPedidos.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 115</value>
+  <data name="&gt;&gt;cmbDataPedido.Parent" xml:space="preserve">
+    <value>grpPedidos</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="cmbEnderecoRemetente.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="cmbSituacao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 36</value>
   </data>
   <data name="btnVisualizarNota.TabIndex" type="System.Int32, mscorlib">
     <value>77</value>
@@ -665,6 +662,9 @@
   <data name="cmbPedidos.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 36</value>
   </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;btnAlterarPedido.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -674,8 +674,8 @@
   <data name="btnAlterarPedido.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>grpPedidos</value>
+  <data name="cmbEnderecoDestino.Location" type="System.Drawing.Point, System.Drawing">
+    <value>389, 88</value>
   </data>
   <data name="&gt;&gt;cmbDataPedido.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -686,13 +686,13 @@
   <data name="cmbUsuario.Location" type="System.Drawing.Point, System.Drawing">
     <value>468, 36</value>
   </data>
-  <data name="&gt;&gt;cmbDataPedido.Name" xml:space="preserve">
-    <value>cmbDataPedido</value>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 72</value>
+  <data name="cmbDataPedido.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label4.Text" xml:space="preserve">

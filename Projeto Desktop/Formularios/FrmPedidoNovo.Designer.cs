@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPedidoNovo));
             this.btnNovoPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdPedido = new System.Windows.Forms.TextBox();
@@ -491,7 +492,7 @@
             this.btnAdicionarCargas.UseVisualStyleBackColor = true;
             this.btnAdicionarCargas.Click += new System.EventHandler(this.btnAdicionarCargas_Click);
             // 
-            // FrmPedido
+            // FrmPedidoNovo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -511,7 +512,8 @@
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNovoPedido);
-            this.Name = "FrmPedido";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmPedidoNovo";
             this.Text = "FrmPedido";
             this.Load += new System.EventHandler(this.FrmPedido_Load);
             this.grbEnderecosRemetente.ResumeLayout(false);

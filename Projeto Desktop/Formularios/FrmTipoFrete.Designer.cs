@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoFrete));
             this.dgvTiposFretes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIdTipoFrete = new System.Windows.Forms.TextBox();
@@ -149,6 +150,7 @@
             this.Controls.Add(this.txtIdTipoFrete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvTiposFretes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTipoFrete";
             this.Text = "FrmTipoFrete";
             this.Load += new System.EventHandler(this.FrmTipoFrete_Load);

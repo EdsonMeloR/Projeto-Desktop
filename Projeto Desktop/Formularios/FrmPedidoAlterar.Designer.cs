@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPedidoAlterar));
             this.cmbDataPedido = new System.Windows.Forms.ComboBox();
             this.btnAlterarPedido = new System.Windows.Forms.Button();
             this.cmbEnderecoRemetente = new System.Windows.Forms.ComboBox();
@@ -283,6 +284,7 @@
             this.Controls.Add(this.cmbClientes);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.grpPedidos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPedidoAlterar";
             this.Text = "FrmPedidoAlterar";
             this.Load += new System.EventHandler(this.FrmPedidoAlterar_Load);
