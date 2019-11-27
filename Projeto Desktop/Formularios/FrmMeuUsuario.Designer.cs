@@ -215,7 +215,7 @@
             this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.btnAlterar);
             this.Name = "FrmMeuUsuario";
-            this.Text = "FrmMeuUsuario";
+            this.Text = "Meu Usuario";
             this.Load += new System.EventHandler(this.FrmMeuUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

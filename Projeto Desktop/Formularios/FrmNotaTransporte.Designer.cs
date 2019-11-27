@@ -184,7 +184,7 @@
             // 
             // btnGerarNotaTransporte
             // 
-            this.btnGerarNotaTransporte.Location = new System.Drawing.Point(136, 15);
+            this.btnGerarNotaTransporte.Location = new System.Drawing.Point(9, 364);
             this.btnGerarNotaTransporte.Name = "btnGerarNotaTransporte";
             this.btnGerarNotaTransporte.Size = new System.Drawing.Size(150, 31);
             this.btnGerarNotaTransporte.TabIndex = 17;
@@ -195,6 +195,7 @@
             // 
             this.grpGerarNotaTransporte.Controls.Add(this.textBox2);
             this.grpGerarNotaTransporte.Controls.Add(this.label6);
+            this.grpGerarNotaTransporte.Controls.Add(this.btnGerarNotaTransporte);
             this.grpGerarNotaTransporte.Controls.Add(this.textBox1);
             this.grpGerarNotaTransporte.Controls.Add(this.label1);
             this.grpGerarNotaTransporte.Controls.Add(this.mncData);
@@ -210,7 +211,7 @@
             this.grpGerarNotaTransporte.Controls.Add(this.dgvCargasAdicionadas);
             this.grpGerarNotaTransporte.Location = new System.Drawing.Point(12, 275);
             this.grpGerarNotaTransporte.Name = "grpGerarNotaTransporte";
-            this.grpGerarNotaTransporte.Size = new System.Drawing.Size(843, 419);
+            this.grpGerarNotaTransporte.Size = new System.Drawing.Size(843, 404);
             this.grpGerarNotaTransporte.TabIndex = 18;
             this.grpGerarNotaTransporte.TabStop = false;
             this.grpGerarNotaTransporte.Text = "Nota Transporte";
@@ -411,7 +412,6 @@
             this.ClientSize = new System.Drawing.Size(867, 702);
             this.Controls.Add(this.grpGerarNotaTransporte);
             this.Controls.Add(this.grbCargasPedido);
-            this.Controls.Add(this.btnGerarNotaTransporte);
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label2);
             this.Name = "FrmNotaTransporte";

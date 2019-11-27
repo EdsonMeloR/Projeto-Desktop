@@ -524,7 +524,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbClientes);
             this.Name = "FrmAssociarPlanoAlterar";
-            this.Text = " ";
+            this.Text = "Alterar Plano Associado";
             this.Load += new System.EventHandler(this.FrmAssociarPlanoAlterar_Load);
             this.grpAtualizarPlano.ResumeLayout(false);
             this.grpAtualizarPlano.PerformLayout();
