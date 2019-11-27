@@ -44,9 +44,10 @@
             this.btnAdicionarCargasNota = new System.Windows.Forms.Button();
             this.btnGerarNotaTransporte = new System.Windows.Forms.Button();
             this.grpGerarNotaTransporte = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtDistancia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValorFrete = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mncData = new System.Windows.Forms.MonthCalendar();
             this.txtCargasCubadas = new System.Windows.Forms.TextBox();
@@ -67,6 +68,7 @@
             this.AlturaAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ComprimentoAltura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trvNotasTransportes = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
             this.grpGerarNotaTransporte.SuspendLayout();
@@ -164,8 +166,10 @@
             // 
             // grbCargasPedido
             // 
+            this.grbCargasPedido.BackColor = System.Drawing.SystemColors.Control;
             this.grbCargasPedido.Controls.Add(this.btnAdicionarCargasNota);
             this.grbCargasPedido.Controls.Add(this.dgvCargasPedido);
+            this.grbCargasPedido.Enabled = false;
             this.grbCargasPedido.Location = new System.Drawing.Point(12, 52);
             this.grbCargasPedido.Name = "grbCargasPedido";
             this.grbCargasPedido.Size = new System.Drawing.Size(843, 217);
@@ -175,7 +179,7 @@
             // 
             // btnAdicionarCargasNota
             // 
-            this.btnAdicionarCargasNota.Location = new System.Drawing.Point(6, 183);
+            this.btnAdicionarCargasNota.Location = new System.Drawing.Point(6, 180);
             this.btnAdicionarCargasNota.Name = "btnAdicionarCargasNota";
             this.btnAdicionarCargasNota.Size = new System.Drawing.Size(187, 31);
             this.btnAdicionarCargasNota.TabIndex = 24;
@@ -185,19 +189,20 @@
             // 
             // btnGerarNotaTransporte
             // 
-            this.btnGerarNotaTransporte.Location = new System.Drawing.Point(9, 364);
+            this.btnGerarNotaTransporte.Location = new System.Drawing.Point(124, 19);
             this.btnGerarNotaTransporte.Name = "btnGerarNotaTransporte";
             this.btnGerarNotaTransporte.Size = new System.Drawing.Size(150, 31);
             this.btnGerarNotaTransporte.TabIndex = 17;
             this.btnGerarNotaTransporte.Text = "Nova Nota Transporte";
             this.btnGerarNotaTransporte.UseVisualStyleBackColor = true;
+            this.btnGerarNotaTransporte.Click += new System.EventHandler(this.btnGerarNotaTransporte_Click);
             // 
             // grpGerarNotaTransporte
             // 
-            this.grpGerarNotaTransporte.Controls.Add(this.textBox2);
+            this.grpGerarNotaTransporte.Controls.Add(this.button1);
+            this.grpGerarNotaTransporte.Controls.Add(this.txtDistancia);
             this.grpGerarNotaTransporte.Controls.Add(this.label6);
-            this.grpGerarNotaTransporte.Controls.Add(this.btnGerarNotaTransporte);
-            this.grpGerarNotaTransporte.Controls.Add(this.textBox1);
+            this.grpGerarNotaTransporte.Controls.Add(this.txtValorFrete);
             this.grpGerarNotaTransporte.Controls.Add(this.label1);
             this.grpGerarNotaTransporte.Controls.Add(this.mncData);
             this.grpGerarNotaTransporte.Controls.Add(this.txtCargasCubadas);
@@ -210,37 +215,48 @@
             this.grpGerarNotaTransporte.Controls.Add(this.cmbTiposFretes);
             this.grpGerarNotaTransporte.Controls.Add(this.label8);
             this.grpGerarNotaTransporte.Controls.Add(this.dgvCargasAdicionadas);
+            this.grpGerarNotaTransporte.Enabled = false;
             this.grpGerarNotaTransporte.Location = new System.Drawing.Point(12, 275);
             this.grpGerarNotaTransporte.Name = "grpGerarNotaTransporte";
             this.grpGerarNotaTransporte.Size = new System.Drawing.Size(843, 404);
             this.grpGerarNotaTransporte.TabIndex = 18;
             this.grpGerarNotaTransporte.TabStop = false;
             this.grpGerarNotaTransporte.Text = "Nota Transporte";
+            this.grpGerarNotaTransporte.Enter += new System.EventHandler(this.grpGerarNotaTransporte_Enter);
             // 
-            // textBox2
+            // button1
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(199, 338);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 20);
-            this.textBox2.TabIndex = 35;
+            this.button1.Location = new System.Drawing.Point(9, 364);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 31);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Nova Nota Transporte";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtDistancia
+            // 
+            this.txtDistancia.Enabled = false;
+            this.txtDistancia.Location = new System.Drawing.Point(199, 338);
+            this.txtDistancia.Name = "txtDistancia";
+            this.txtDistancia.Size = new System.Drawing.Size(184, 20);
+            this.txtDistancia.TabIndex = 35;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(196, 322);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 36;
-            this.label6.Text = "Distância";
+            this.label6.Text = "Distância (KM)";
             // 
-            // textBox1
+            // txtValorFrete
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(9, 338);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 33;
+            this.txtValorFrete.Enabled = false;
+            this.txtValorFrete.Location = new System.Drawing.Point(9, 338);
+            this.txtValorFrete.Name = "txtValorFrete";
+            this.txtValorFrete.Size = new System.Drawing.Size(184, 20);
+            this.txtValorFrete.TabIndex = 33;
             // 
             // label1
             // 
@@ -406,13 +422,23 @@
             this.ValorAdicionado.Name = "ValorAdicionado";
             this.ValorAdicionado.ReadOnly = true;
             // 
+            // trvNotasTransportes
+            // 
+            this.trvNotasTransportes.Location = new System.Drawing.Point(861, 61);
+            this.trvNotasTransportes.Name = "trvNotasTransportes";
+            this.trvNotasTransportes.Size = new System.Drawing.Size(216, 223);
+            this.trvNotasTransportes.TabIndex = 19;
+            this.trvNotasTransportes.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
             // FrmNotaTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 702);
+            this.ClientSize = new System.Drawing.Size(1089, 683);
+            this.Controls.Add(this.trvNotasTransportes);
             this.Controls.Add(this.grpGerarNotaTransporte);
             this.Controls.Add(this.grbCargasPedido);
+            this.Controls.Add(this.btnGerarNotaTransporte);
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -447,9 +473,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Altura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comprimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDistancia;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValorFrete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MonthCalendar mncData;
         private System.Windows.Forms.TextBox txtCargasCubadas;
@@ -468,5 +494,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AlturaAdicionado;
         private System.Windows.Forms.DataGridViewTextBoxColumn ComprimentoAltura;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorAdicionado;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TreeView trvNotasTransportes;
     }
 }

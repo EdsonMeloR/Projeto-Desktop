@@ -108,5 +108,20 @@ namespace Projeto_Desktop.Formularios
         {
 
         }
+
+        private void grpGerarNotaTransporte_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGerarNotaTransporte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }
