@@ -38,6 +38,9 @@
             this.txtDetalhes = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.grbCarga = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.MaskedTextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -60,9 +63,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.MaskedTextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.grbCarga.SuspendLayout();
             this.grpListaCargasPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
@@ -184,6 +184,30 @@
             this.grbCarga.TabIndex = 19;
             this.grbCarga.TabStop = false;
             this.grbCarga.Text = "Inserir Cargas";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(498, 165);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 13);
+            this.label16.TabIndex = 37;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(213, 136);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(135, 20);
+            this.txtQuantidade.TabIndex = 36;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(210, 120);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "Quantidade";
             // 
             // txtNomeProduto
             // 
@@ -376,30 +400,6 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Id Pedido";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(498, 165);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(0, 13);
-            this.label16.TabIndex = 37;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(213, 136);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(135, 20);
-            this.txtQuantidade.TabIndex = 36;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(210, 120);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 13);
-            this.label17.TabIndex = 35;
-            this.label17.Text = "Quantidade";
-            // 
             // FrmCarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,7 +411,7 @@
             this.Controls.Add(this.grpListaCargasPedido);
             this.Controls.Add(this.grbCarga);
             this.Name = "FrmCarga";
-            this.Text = "FrmCarga";
+            this.Text = "Carga";
             this.Load += new System.EventHandler(this.FrmCarga_Load);
             this.grbCarga.ResumeLayout(false);
             this.grbCarga.PerformLayout();
