@@ -235,14 +235,7 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
-            }
-            finally
-            {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
-            }
+            }            
         }
         public List<Carga> ListarCargasPedidoInner(int _idPedido)
         {
