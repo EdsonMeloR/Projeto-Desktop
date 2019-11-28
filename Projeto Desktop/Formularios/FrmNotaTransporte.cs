@@ -17,6 +17,8 @@ namespace Projeto_Desktop.Formularios
         Carga c;
         Motorista m;
         Veiculo v;
+        TipoFrete tf;
+        NotaTransporte nt;
         public FrmNotaTransporte()
         {
             InitializeComponent();
@@ -29,6 +31,15 @@ namespace Projeto_Desktop.Formularios
         }        
         private void FrmNotaTransporte_Load(object sender, EventArgs e)
         {
+            if(txtIdPedido.Text != string.Empty)
+            {
+                tf = new TipoFrete();
+                grbNotaTransporte.Enabled = true;
+                cmbTiposFretes.ValueMember = "Id";
+                cmbTiposFretes.DisplayMember = "Nome";
+                cmbTiposFretes.DataSource = tf.ListarTiposFretes();
+
+            }
             //Carregando combo box de Motoristas
             m = new Motorista();
             var listaM = m.ListaMotoristas();
@@ -46,7 +57,6 @@ namespace Projeto_Desktop.Formularios
             //Carregando cargas do Pedido e fazendo calculo de cubagem
             c = new Carga();
             txtIdPedido.Text = p.Id.ToString();            
-            double CubagemCargas = new double();
             var lista = c.ListarCargasPedido(int.Parse(txtIdPedido.Text));
                             
             for (int i = 0; i < lista.Count; i++)
@@ -56,12 +66,9 @@ namespace Projeto_Desktop.Formularios
                 dgvCargasPedido.Rows[i].Cells[1].Value = lista[i].NomeProduto;
                 dgvCargasPedido.Rows[i].Cells[2].Value = lista[i].Quantidade.ToString();
                 dgvCargasPedido.Rows[i].Cells[3].Value = lista[i].Peso.ToString();
-                dgvCargasPedido.Rows[i].Cells[4].Value = lista[i].Largura.ToString();
-                dgvCargasPedido.Rows[i].Cells[5].Value = lista[i].Altura.ToString();
-                dgvCargasPedido.Rows[i].Cells[6].Value = lista[i].Comprimento.ToString();
-                dgvCargasPedido.Rows[i].Cells[7].Value = lista[i].ValorProduto.ToString("C");                                
+                dgvCargasPedido.Rows[i].Cells[4].Value = (lista[i].Largura * lista[i].Altura * lista[i].Comprimento).ToString();
+                dgvCargasPedido.Rows[i].Cells[5].Value = lista[i].ValorProduto.ToString("C");                                
             }
-            txtCargasCubadas.Text = CubagemCargas.ToString();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -96,11 +103,8 @@ namespace Projeto_Desktop.Formularios
                 dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[1].Value = listaSelecionada[i].NomeProduto;
                 dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[2].Value = listaSelecionada[i].Quantidade.ToString();
                 dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[3].Value = listaSelecionada[i].Peso.ToString();
-                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[4].Value = listaSelecionada[i].Largura.ToString();
-                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[5].Value = listaSelecionada[i].Altura.ToString();
-                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[6].Value = listaSelecionada[i].Comprimento.ToString();
-                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[7].Value = listaSelecionada[i].ValorProduto.ToString("C");
-                txtCargasCubadas.Text = (Convert.ToInt32(txtCargasCubadas.Text) + Convert.ToInt32(dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[2].Value) * (Convert.ToInt32(dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[4].Value) * Convert.ToInt32(dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[5].Value) * Convert.ToInt32(dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[6].Value))).ToString();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[4].Value = (listaSelecionada[i].Largura * listaSelecionada[i].Altura * listaSelecionada[i].Comprimento).ToString();
+                dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[5].Value = listaSelecionada[i].ValorProduto.ToString("C");
             }
         }
 
@@ -122,6 +126,46 @@ namespace Projeto_Desktop.Formularios
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTiposFretes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGerarNotaTransporte_Click_1(object sender, EventArgs e)
+        {
+            nt = new NotaTransporte();
+            try
+            {
+                if (Convert.ToInt32(cmbTiposFretes.SelectedValue) > 0 && Convert.ToInt32(cmbMotoristas.SelectedValue) > 0 && Convert.ToInt32(cmbVeiculos.SelectedValue) > 0 && txtDistancia.Text != string.Empty && txtValorFrete.Text != string.Empty && txtValorPedagios.Text != string.Empty && txtObservacoes.Text != string.Empty)
+                {
+                    nt.InserirNotaTransporte(Convert.ToInt32(cmbVeiculos.SelectedValue), Convert.ToInt32(cmbMotoristas.SelectedValue), Convert.ToInt32(cmbTiposFretes.SelectedValue), txtObservacoes.Text, Convert.ToDouble(txtValorFrete.Text), Convert.ToDouble(txtDistancia.Text));
+                    if(nt.Id > 0)
+                    {
+                        MessageBox.Show("Cadastrado com sucesso !");
+                        grbCargasPedido.Enabled = true;
+                        grbGerarNotaTransporte.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao cadastrar !");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("É necessário preencher todos os campos !!");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(),"Erro");
+            }            
         }
     }
 }

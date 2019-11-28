@@ -100,7 +100,7 @@ namespace Projeto_Desktop.Formularios
                     frm.Show();
                 }                
             }
-            else
+            if(Convert.ToDateTime(mskDataInicioPlano.Text) >= DateTime.Now && Convert.ToDouble(txtDescontoPlano.Text) > 0 && Convert.ToInt32(cmbPlanos.SelectedValue) > 0)
             {
                 pc.AssociarPlanoCliente(Convert.ToDateTime(mskDataInicioPlano.Text), a, Convert.ToDouble(txtDescontoPlano.Text), Convert.ToInt32(cmbClientes.SelectedValue), Convert.ToInt32(cmbPlanos.SelectedValue));
                 if (pc.Id > 0)
@@ -112,7 +112,11 @@ namespace Projeto_Desktop.Formularios
                 {
                     MessageBox.Show("Erro ao associar plano ao cliente !!");
                 }                    
-            }            
+            }
+            else
+            {
+                MessageBox.Show("Preencha os campos data Inicio e Desconto e selecione um plano");
+            }
         }
 
         private void btnAlterarPlanoCliente_Click(object sender, EventArgs e)

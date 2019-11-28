@@ -67,7 +67,11 @@ namespace Projeto_Desktop.Classes
             catch(Exception ex)
             {
                 ex.Message.ToString();
-            }            
+            }
+            finally
+            {
+                comm.Connection.Close();
+            }
         }
         public bool AlterarCliente(int _idcliente,string _telefone,string _nomecontato,string _email,string _razaosocial)
         {
@@ -228,7 +232,7 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                comm.Connection.Close();                
             }
         }
         /// <summary>

@@ -32,61 +32,62 @@
             this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCargasPedido = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Largura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Altura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comprimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbCargasPedido = new System.Windows.Forms.GroupBox();
             this.btnAdicionarCargasNota = new System.Windows.Forms.Button();
-            this.btnGerarNotaTransporte = new System.Windows.Forms.Button();
-            this.grpGerarNotaTransporte = new System.Windows.Forms.GroupBox();
+            this.grbGerarNotaTransporte = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dgvCargasAdicionadas = new System.Windows.Forms.DataGridView();
+            this.txtIdNotaTransporte = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.grbNotaTransporte = new System.Windows.Forms.GroupBox();
             this.txtDistancia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtValorFrete = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.mncData = new System.Windows.Forms.MonthCalendar();
-            this.txtCargasCubadas = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbMotoristas = new System.Windows.Forms.ComboBox();
             this.cmbVeiculos = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbTiposFretes = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dgvCargasAdicionadas = new System.Windows.Forms.DataGridView();
+            this.btnGerarNotaTransporte = new System.Windows.Forms.Button();
+            this.btnFinalizarNota = new System.Windows.Forms.Button();
+            this.txtObservacoes = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtValorPedagios = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.IdCargaAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProdutoAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuantidadeAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PesoAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LarguraAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AlturaAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ComprimentoAltura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CubagemAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trvNotasTransportes = new System.Windows.Forms.TreeView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cubagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
-            this.grpGerarNotaTransporte.SuspendLayout();
+            this.grbGerarNotaTransporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasAdicionadas)).BeginInit();
+            this.grbNotaTransporte.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtIdPedido
             // 
             this.txtIdPedido.Enabled = false;
-            this.txtIdPedido.Location = new System.Drawing.Point(18, 25);
+            this.txtIdPedido.Location = new System.Drawing.Point(12, 20);
             this.txtIdPedido.Name = "txtIdPedido";
-            this.txtIdPedido.Size = new System.Drawing.Size(100, 20);
+            this.txtIdPedido.Size = new System.Drawing.Size(135, 20);
             this.txtIdPedido.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 9);
+            this.label2.Location = new System.Drawing.Point(9, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 6;
@@ -102,9 +103,7 @@
             this.NomeProduto,
             this.Quantidade,
             this.Peso,
-            this.Largura,
-            this.Altura,
-            this.Comprimento,
+            this.Cubagem,
             this.ValorProduto});
             this.dgvCargasPedido.Location = new System.Drawing.Point(6, 19);
             this.dgvCargasPedido.Name = "dgvCargasPedido";
@@ -116,61 +115,13 @@
             this.dgvCargasPedido.TabIndex = 9;
             this.dgvCargasPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargasPedido_CellContentClick);
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // NomeProduto
-            // 
-            this.NomeProduto.HeaderText = "Produto";
-            this.NomeProduto.Name = "NomeProduto";
-            this.NomeProduto.ReadOnly = true;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            // 
-            // Peso
-            // 
-            this.Peso.HeaderText = "Peso";
-            this.Peso.Name = "Peso";
-            this.Peso.ReadOnly = true;
-            // 
-            // Largura
-            // 
-            this.Largura.HeaderText = "Largura";
-            this.Largura.Name = "Largura";
-            this.Largura.ReadOnly = true;
-            // 
-            // Altura
-            // 
-            this.Altura.HeaderText = "Altura";
-            this.Altura.Name = "Altura";
-            this.Altura.ReadOnly = true;
-            // 
-            // Comprimento
-            // 
-            this.Comprimento.HeaderText = "Comprimento";
-            this.Comprimento.Name = "Comprimento";
-            this.Comprimento.ReadOnly = true;
-            // 
-            // ValorProduto
-            // 
-            this.ValorProduto.HeaderText = "Valor";
-            this.ValorProduto.Name = "ValorProduto";
-            this.ValorProduto.ReadOnly = true;
-            // 
             // grbCargasPedido
             // 
             this.grbCargasPedido.BackColor = System.Drawing.SystemColors.Control;
             this.grbCargasPedido.Controls.Add(this.btnAdicionarCargasNota);
             this.grbCargasPedido.Controls.Add(this.dgvCargasPedido);
             this.grbCargasPedido.Enabled = false;
-            this.grbCargasPedido.Location = new System.Drawing.Point(12, 52);
+            this.grbCargasPedido.Location = new System.Drawing.Point(12, 207);
             this.grbCargasPedido.Name = "grbCargasPedido";
             this.grbCargasPedido.Size = new System.Drawing.Size(843, 217);
             this.grbCargasPedido.TabIndex = 10;
@@ -187,162 +138,29 @@
             this.btnAdicionarCargasNota.UseVisualStyleBackColor = true;
             this.btnAdicionarCargasNota.Click += new System.EventHandler(this.btnAdicionarCargasNota_Click);
             // 
-            // btnGerarNotaTransporte
+            // grbGerarNotaTransporte
             // 
-            this.btnGerarNotaTransporte.Location = new System.Drawing.Point(124, 19);
-            this.btnGerarNotaTransporte.Name = "btnGerarNotaTransporte";
-            this.btnGerarNotaTransporte.Size = new System.Drawing.Size(150, 31);
-            this.btnGerarNotaTransporte.TabIndex = 17;
-            this.btnGerarNotaTransporte.Text = "Nova Nota Transporte";
-            this.btnGerarNotaTransporte.UseVisualStyleBackColor = true;
-            this.btnGerarNotaTransporte.Click += new System.EventHandler(this.btnGerarNotaTransporte_Click);
-            // 
-            // grpGerarNotaTransporte
-            // 
-            this.grpGerarNotaTransporte.Controls.Add(this.button1);
-            this.grpGerarNotaTransporte.Controls.Add(this.txtDistancia);
-            this.grpGerarNotaTransporte.Controls.Add(this.label6);
-            this.grpGerarNotaTransporte.Controls.Add(this.txtValorFrete);
-            this.grpGerarNotaTransporte.Controls.Add(this.label1);
-            this.grpGerarNotaTransporte.Controls.Add(this.mncData);
-            this.grpGerarNotaTransporte.Controls.Add(this.txtCargasCubadas);
-            this.grpGerarNotaTransporte.Controls.Add(this.label7);
-            this.grpGerarNotaTransporte.Controls.Add(this.label4);
-            this.grpGerarNotaTransporte.Controls.Add(this.cmbMotoristas);
-            this.grpGerarNotaTransporte.Controls.Add(this.cmbVeiculos);
-            this.grpGerarNotaTransporte.Controls.Add(this.label5);
-            this.grpGerarNotaTransporte.Controls.Add(this.label3);
-            this.grpGerarNotaTransporte.Controls.Add(this.cmbTiposFretes);
-            this.grpGerarNotaTransporte.Controls.Add(this.label8);
-            this.grpGerarNotaTransporte.Controls.Add(this.dgvCargasAdicionadas);
-            this.grpGerarNotaTransporte.Enabled = false;
-            this.grpGerarNotaTransporte.Location = new System.Drawing.Point(12, 275);
-            this.grpGerarNotaTransporte.Name = "grpGerarNotaTransporte";
-            this.grpGerarNotaTransporte.Size = new System.Drawing.Size(843, 404);
-            this.grpGerarNotaTransporte.TabIndex = 18;
-            this.grpGerarNotaTransporte.TabStop = false;
-            this.grpGerarNotaTransporte.Text = "Nota Transporte";
-            this.grpGerarNotaTransporte.Enter += new System.EventHandler(this.grpGerarNotaTransporte_Enter);
+            this.grbGerarNotaTransporte.Controls.Add(this.btnFinalizarNota);
+            this.grbGerarNotaTransporte.Controls.Add(this.label8);
+            this.grbGerarNotaTransporte.Controls.Add(this.dgvCargasAdicionadas);
+            this.grbGerarNotaTransporte.Controls.Add(this.button1);
+            this.grbGerarNotaTransporte.Enabled = false;
+            this.grbGerarNotaTransporte.Location = new System.Drawing.Point(12, 430);
+            this.grbGerarNotaTransporte.Name = "grbGerarNotaTransporte";
+            this.grbGerarNotaTransporte.Size = new System.Drawing.Size(843, 229);
+            this.grbGerarNotaTransporte.TabIndex = 18;
+            this.grbGerarNotaTransporte.TabStop = false;
+            this.grbGerarNotaTransporte.Text = "Nota Transporte";
+            this.grbGerarNotaTransporte.Enter += new System.EventHandler(this.grpGerarNotaTransporte_Enter);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(9, 364);
+            this.button1.Location = new System.Drawing.Point(6, 190);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 31);
             this.button1.TabIndex = 19;
             this.button1.Text = "Nova Nota Transporte";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txtDistancia
-            // 
-            this.txtDistancia.Enabled = false;
-            this.txtDistancia.Location = new System.Drawing.Point(199, 338);
-            this.txtDistancia.Name = "txtDistancia";
-            this.txtDistancia.Size = new System.Drawing.Size(184, 20);
-            this.txtDistancia.TabIndex = 35;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(196, 322);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Distância (KM)";
-            // 
-            // txtValorFrete
-            // 
-            this.txtValorFrete.Enabled = false;
-            this.txtValorFrete.Location = new System.Drawing.Point(9, 338);
-            this.txtValorFrete.Name = "txtValorFrete";
-            this.txtValorFrete.Size = new System.Drawing.Size(184, 20);
-            this.txtValorFrete.TabIndex = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 322);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Valor Frete";
-            // 
-            // mncData
-            // 
-            this.mncData.Location = new System.Drawing.Point(604, 196);
-            this.mncData.Name = "mncData";
-            this.mncData.TabIndex = 32;
-            // 
-            // txtCargasCubadas
-            // 
-            this.txtCargasCubadas.Enabled = false;
-            this.txtCargasCubadas.Location = new System.Drawing.Point(9, 209);
-            this.txtCargasCubadas.Name = "txtCargasCubadas";
-            this.txtCargasCubadas.Size = new System.Drawing.Size(150, 20);
-            this.txtCargasCubadas.TabIndex = 28;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 193);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 13);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Cubagem Total das Cargas";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(162, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 13);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Motoristas Disponiveis";
-            // 
-            // cmbMotoristas
-            // 
-            this.cmbMotoristas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMotoristas.FormattingEnabled = true;
-            this.cmbMotoristas.Location = new System.Drawing.Point(165, 209);
-            this.cmbMotoristas.Name = "cmbMotoristas";
-            this.cmbMotoristas.Size = new System.Drawing.Size(218, 21);
-            this.cmbMotoristas.TabIndex = 31;
-            // 
-            // cmbVeiculos
-            // 
-            this.cmbVeiculos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVeiculos.FormattingEnabled = true;
-            this.cmbVeiculos.Location = new System.Drawing.Point(9, 254);
-            this.cmbVeiculos.Name = "cmbVeiculos";
-            this.cmbVeiculos.Size = new System.Drawing.Size(374, 21);
-            this.cmbVeiculos.TabIndex = 24;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 284);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Tipos de Fretes";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 238);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Veiculos Disponiveis";
-            // 
-            // cmbTiposFretes
-            // 
-            this.cmbTiposFretes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTiposFretes.FormattingEnabled = true;
-            this.cmbTiposFretes.Location = new System.Drawing.Point(9, 300);
-            this.cmbTiposFretes.Name = "cmbTiposFretes";
-            this.cmbTiposFretes.Size = new System.Drawing.Size(374, 21);
-            this.cmbTiposFretes.TabIndex = 27;
             // 
             // label8
             // 
@@ -357,22 +175,202 @@
             // 
             this.dgvCargasAdicionadas.AllowUserToAddRows = false;
             this.dgvCargasAdicionadas.AllowUserToDeleteRows = false;
-            this.dgvCargasAdicionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCargasAdicionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCargasAdicionadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCargaAdicionada,
             this.ProdutoAdicionada,
             this.QuantidadeAdicionada,
             this.PesoAdicionado,
-            this.LarguraAdicionado,
-            this.AlturaAdicionado,
-            this.ComprimentoAltura,
+            this.CubagemAdicionada,
             this.ValorAdicionado});
             this.dgvCargasAdicionadas.Location = new System.Drawing.Point(6, 34);
             this.dgvCargasAdicionadas.Name = "dgvCargasAdicionadas";
             this.dgvCargasAdicionadas.ReadOnly = true;
             this.dgvCargasAdicionadas.RowHeadersVisible = false;
+            this.dgvCargasAdicionadas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCargasAdicionadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCargasAdicionadas.Size = new System.Drawing.Size(831, 150);
             this.dgvCargasAdicionadas.TabIndex = 18;
+            // 
+            // txtIdNotaTransporte
+            // 
+            this.txtIdNotaTransporte.Enabled = false;
+            this.txtIdNotaTransporte.Location = new System.Drawing.Point(166, 20);
+            this.txtIdNotaTransporte.Name = "txtIdNotaTransporte";
+            this.txtIdNotaTransporte.Size = new System.Drawing.Size(135, 20);
+            this.txtIdNotaTransporte.TabIndex = 74;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(163, 4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 13);
+            this.label7.TabIndex = 73;
+            this.label7.Text = "Id Nota";
+            // 
+            // grbNotaTransporte
+            // 
+            this.grbNotaTransporte.Controls.Add(this.txtValorPedagios);
+            this.grbNotaTransporte.Controls.Add(this.label10);
+            this.grbNotaTransporte.Controls.Add(this.label9);
+            this.grbNotaTransporte.Controls.Add(this.txtObservacoes);
+            this.grbNotaTransporte.Controls.Add(this.btnGerarNotaTransporte);
+            this.grbNotaTransporte.Controls.Add(this.txtDistancia);
+            this.grbNotaTransporte.Controls.Add(this.label6);
+            this.grbNotaTransporte.Controls.Add(this.txtValorFrete);
+            this.grbNotaTransporte.Controls.Add(this.cmbTiposFretes);
+            this.grbNotaTransporte.Controls.Add(this.label1);
+            this.grbNotaTransporte.Controls.Add(this.label3);
+            this.grbNotaTransporte.Controls.Add(this.label4);
+            this.grbNotaTransporte.Controls.Add(this.label5);
+            this.grbNotaTransporte.Controls.Add(this.cmbMotoristas);
+            this.grbNotaTransporte.Controls.Add(this.cmbVeiculos);
+            this.grbNotaTransporte.Enabled = false;
+            this.grbNotaTransporte.Location = new System.Drawing.Point(12, 46);
+            this.grbNotaTransporte.Name = "grbNotaTransporte";
+            this.grbNotaTransporte.Size = new System.Drawing.Size(843, 155);
+            this.grbNotaTransporte.TabIndex = 75;
+            this.grbNotaTransporte.TabStop = false;
+            this.grbNotaTransporte.Text = "Gerar Nota";
+            // 
+            // txtDistancia
+            // 
+            this.txtDistancia.Location = new System.Drawing.Point(162, 82);
+            this.txtDistancia.Name = "txtDistancia";
+            this.txtDistancia.Size = new System.Drawing.Size(150, 20);
+            this.txtDistancia.TabIndex = 85;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(162, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "Distância (KM)";
+            // 
+            // txtValorFrete
+            // 
+            this.txtValorFrete.Location = new System.Drawing.Point(12, 82);
+            this.txtValorFrete.Name = "txtValorFrete";
+            this.txtValorFrete.Size = new System.Drawing.Size(144, 20);
+            this.txtValorFrete.TabIndex = 83;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 84;
+            this.label1.Text = "Valor Frete";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 13);
+            this.label4.TabIndex = 81;
+            this.label4.Text = "Motoristas Disponiveis";
+            // 
+            // cmbMotoristas
+            // 
+            this.cmbMotoristas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMotoristas.FormattingEnabled = true;
+            this.cmbMotoristas.Location = new System.Drawing.Point(12, 40);
+            this.cmbMotoristas.Name = "cmbMotoristas";
+            this.cmbMotoristas.Size = new System.Drawing.Size(218, 21);
+            this.cmbMotoristas.TabIndex = 82;
+            // 
+            // cmbVeiculos
+            // 
+            this.cmbVeiculos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVeiculos.FormattingEnabled = true;
+            this.cmbVeiculos.Location = new System.Drawing.Point(236, 40);
+            this.cmbVeiculos.Name = "cmbVeiculos";
+            this.cmbVeiculos.Size = new System.Drawing.Size(238, 21);
+            this.cmbVeiculos.TabIndex = 77;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 79;
+            this.label5.Text = "Tipos de Fretes";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(233, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 78;
+            this.label3.Text = "Veiculos Disponiveis";
+            // 
+            // cmbTiposFretes
+            // 
+            this.cmbTiposFretes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTiposFretes.FormattingEnabled = true;
+            this.cmbTiposFretes.Location = new System.Drawing.Point(12, 121);
+            this.cmbTiposFretes.Name = "cmbTiposFretes";
+            this.cmbTiposFretes.Size = new System.Drawing.Size(218, 21);
+            this.cmbTiposFretes.TabIndex = 80;
+            // 
+            // btnGerarNotaTransporte
+            // 
+            this.btnGerarNotaTransporte.Location = new System.Drawing.Point(236, 111);
+            this.btnGerarNotaTransporte.Name = "btnGerarNotaTransporte";
+            this.btnGerarNotaTransporte.Size = new System.Drawing.Size(238, 31);
+            this.btnGerarNotaTransporte.TabIndex = 76;
+            this.btnGerarNotaTransporte.Text = "Nova Nota Transporte";
+            this.btnGerarNotaTransporte.UseVisualStyleBackColor = true;
+            this.btnGerarNotaTransporte.Click += new System.EventHandler(this.btnGerarNotaTransporte_Click_1);
+            // 
+            // btnFinalizarNota
+            // 
+            this.btnFinalizarNota.Location = new System.Drawing.Point(162, 190);
+            this.btnFinalizarNota.Name = "btnFinalizarNota";
+            this.btnFinalizarNota.Size = new System.Drawing.Size(150, 31);
+            this.btnFinalizarNota.TabIndex = 24;
+            this.btnFinalizarNota.Text = "Finalizar Nota Transporte";
+            this.btnFinalizarNota.UseVisualStyleBackColor = true;
+            // 
+            // txtObservacoes
+            // 
+            this.txtObservacoes.Location = new System.Drawing.Point(480, 41);
+            this.txtObservacoes.Multiline = true;
+            this.txtObservacoes.Name = "txtObservacoes";
+            this.txtObservacoes.Size = new System.Drawing.Size(357, 101);
+            this.txtObservacoes.TabIndex = 87;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(477, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 13);
+            this.label9.TabIndex = 88;
+            this.label9.Text = "Observações";
+            // 
+            // txtValorPedagios
+            // 
+            this.txtValorPedagios.Location = new System.Drawing.Point(318, 82);
+            this.txtValorPedagios.Name = "txtValorPedagios";
+            this.txtValorPedagios.Size = new System.Drawing.Size(156, 20);
+            this.txtValorPedagios.TabIndex = 89;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(318, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.TabIndex = 90;
+            this.label10.Text = "Valor Pedagios";
             // 
             // IdCargaAdicionada
             // 
@@ -385,71 +383,100 @@
             this.ProdutoAdicionada.HeaderText = "Produto";
             this.ProdutoAdicionada.Name = "ProdutoAdicionada";
             this.ProdutoAdicionada.ReadOnly = true;
+            this.ProdutoAdicionada.Width = 150;
             // 
             // QuantidadeAdicionada
             // 
             this.QuantidadeAdicionada.HeaderText = "Quantidade";
             this.QuantidadeAdicionada.Name = "QuantidadeAdicionada";
             this.QuantidadeAdicionada.ReadOnly = true;
+            this.QuantidadeAdicionada.Width = 128;
             // 
             // PesoAdicionado
             // 
             this.PesoAdicionado.HeaderText = "Peso";
             this.PesoAdicionado.Name = "PesoAdicionado";
             this.PesoAdicionado.ReadOnly = true;
+            this.PesoAdicionado.Width = 150;
             // 
-            // LarguraAdicionado
+            // CubagemAdicionada
             // 
-            this.LarguraAdicionado.HeaderText = "Largura";
-            this.LarguraAdicionado.Name = "LarguraAdicionado";
-            this.LarguraAdicionado.ReadOnly = true;
-            // 
-            // AlturaAdicionado
-            // 
-            this.AlturaAdicionado.HeaderText = "Altura";
-            this.AlturaAdicionado.Name = "AlturaAdicionado";
-            this.AlturaAdicionado.ReadOnly = true;
-            // 
-            // ComprimentoAltura
-            // 
-            this.ComprimentoAltura.HeaderText = "Comprimento";
-            this.ComprimentoAltura.Name = "ComprimentoAltura";
-            this.ComprimentoAltura.ReadOnly = true;
+            this.CubagemAdicionada.HeaderText = "A x L x C";
+            this.CubagemAdicionada.Name = "CubagemAdicionada";
+            this.CubagemAdicionada.ReadOnly = true;
+            this.CubagemAdicionada.Width = 150;
             // 
             // ValorAdicionado
             // 
             this.ValorAdicionado.HeaderText = "Valor";
             this.ValorAdicionado.Name = "ValorAdicionado";
             this.ValorAdicionado.ReadOnly = true;
+            this.ValorAdicionado.Width = 150;
             // 
-            // trvNotasTransportes
+            // Id
             // 
-            this.trvNotasTransportes.Location = new System.Drawing.Point(861, 61);
-            this.trvNotasTransportes.Name = "trvNotasTransportes";
-            this.trvNotasTransportes.Size = new System.Drawing.Size(216, 223);
-            this.trvNotasTransportes.TabIndex = 19;
-            this.trvNotasTransportes.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.HeaderText = "Produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            this.NomeProduto.Width = 150;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 128;
+            // 
+            // Peso
+            // 
+            this.Peso.HeaderText = "Peso";
+            this.Peso.Name = "Peso";
+            this.Peso.ReadOnly = true;
+            this.Peso.Width = 150;
+            // 
+            // Cubagem
+            // 
+            this.Cubagem.HeaderText = "A x L x C";
+            this.Cubagem.Name = "Cubagem";
+            this.Cubagem.ReadOnly = true;
+            this.Cubagem.Width = 150;
+            // 
+            // ValorProduto
+            // 
+            this.ValorProduto.HeaderText = "Valor";
+            this.ValorProduto.Name = "ValorProduto";
+            this.ValorProduto.ReadOnly = true;
+            this.ValorProduto.Width = 150;
             // 
             // FrmNotaTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 683);
-            this.Controls.Add(this.trvNotasTransportes);
-            this.Controls.Add(this.grpGerarNotaTransporte);
+            this.ClientSize = new System.Drawing.Size(871, 663);
+            this.Controls.Add(this.grbNotaTransporte);
+            this.Controls.Add(this.txtIdNotaTransporte);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.grbGerarNotaTransporte);
             this.Controls.Add(this.grbCargasPedido);
-            this.Controls.Add(this.btnGerarNotaTransporte);
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNotaTransporte";
-            this.Text = "Nota Transporte";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmNotaTransporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).EndInit();
             this.grbCargasPedido.ResumeLayout(false);
-            this.grpGerarNotaTransporte.ResumeLayout(false);
-            this.grpGerarNotaTransporte.PerformLayout();
+            this.grbGerarNotaTransporte.ResumeLayout(false);
+            this.grbGerarNotaTransporte.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasAdicionadas)).EndInit();
+            this.grbNotaTransporte.ResumeLayout(false);
+            this.grbNotaTransporte.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,41 +487,41 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvCargasPedido;
         private System.Windows.Forms.GroupBox grbCargasPedido;
-        private System.Windows.Forms.Button btnGerarNotaTransporte;
-        private System.Windows.Forms.GroupBox grpGerarNotaTransporte;
+        private System.Windows.Forms.GroupBox grbGerarNotaTransporte;
         private System.Windows.Forms.DataGridView dgvCargasAdicionadas;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAdicionarCargasNota;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtIdNotaTransporte;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox grbNotaTransporte;
+        private System.Windows.Forms.TextBox txtDistancia;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnGerarNotaTransporte;
+        private System.Windows.Forms.TextBox txtValorFrete;
+        private System.Windows.Forms.ComboBox cmbTiposFretes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbMotoristas;
+        private System.Windows.Forms.ComboBox cmbVeiculos;
+        private System.Windows.Forms.Button btnFinalizarNota;
+        private System.Windows.Forms.TextBox txtObservacoes;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtValorPedagios;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Largura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Altura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comprimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cubagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
-        private System.Windows.Forms.TextBox txtDistancia;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtValorFrete;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MonthCalendar mncData;
-        private System.Windows.Forms.TextBox txtCargasCubadas;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbMotoristas;
-        private System.Windows.Forms.ComboBox cmbVeiculos;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbTiposFretes;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCargaAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProdutoAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn PesoAdicionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LarguraAdicionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AlturaAdicionado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ComprimentoAltura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CubagemAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorAdicionado;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TreeView trvNotasTransportes;
     }
 }
