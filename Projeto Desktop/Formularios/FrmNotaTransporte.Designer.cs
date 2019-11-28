@@ -50,7 +50,7 @@
             this.PesoAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CubagemAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNovaNotaTransporte = new System.Windows.Forms.Button();
             this.txtIdNotaTransporte = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.grbNotaTransporte = new System.Windows.Forms.GroupBox();
@@ -65,6 +65,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbMotoristas = new System.Windows.Forms.ComboBox();
             this.cmbVeiculos = new System.Windows.Forms.ComboBox();
+            this.btnRemoverItemSelecionado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
             this.grbGerarNotaTransporte.SuspendLayout();
@@ -177,10 +178,11 @@
             // 
             // grbGerarNotaTransporte
             // 
+            this.grbGerarNotaTransporte.Controls.Add(this.btnRemoverItemSelecionado);
             this.grbGerarNotaTransporte.Controls.Add(this.btnFinalizarNota);
             this.grbGerarNotaTransporte.Controls.Add(this.label8);
             this.grbGerarNotaTransporte.Controls.Add(this.dgvCargasAdicionadas);
-            this.grbGerarNotaTransporte.Controls.Add(this.button1);
+            this.grbGerarNotaTransporte.Controls.Add(this.btnNovaNotaTransporte);
             this.grbGerarNotaTransporte.Enabled = false;
             this.grbGerarNotaTransporte.Location = new System.Drawing.Point(12, 394);
             this.grbGerarNotaTransporte.Name = "grbGerarNotaTransporte";
@@ -192,7 +194,7 @@
             // 
             // btnFinalizarNota
             // 
-            this.btnFinalizarNota.Location = new System.Drawing.Point(162, 190);
+            this.btnFinalizarNota.Location = new System.Drawing.Point(318, 190);
             this.btnFinalizarNota.Name = "btnFinalizarNota";
             this.btnFinalizarNota.Size = new System.Drawing.Size(150, 31);
             this.btnFinalizarNota.TabIndex = 24;
@@ -228,6 +230,7 @@
             this.dgvCargasAdicionadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCargasAdicionadas.Size = new System.Drawing.Size(831, 150);
             this.dgvCargasAdicionadas.TabIndex = 18;
+            this.dgvCargasAdicionadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargasAdicionadas_CellContentClick);
             // 
             // IdCargaAdicionada
             // 
@@ -270,19 +273,19 @@
             this.ValorAdicionado.ReadOnly = true;
             this.ValorAdicionado.Width = 150;
             // 
-            // button1
+            // btnNovaNotaTransporte
             // 
-            this.button1.Location = new System.Drawing.Point(6, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 31);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Nova Nota Transporte";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNovaNotaTransporte.Location = new System.Drawing.Point(162, 190);
+            this.btnNovaNotaTransporte.Name = "btnNovaNotaTransporte";
+            this.btnNovaNotaTransporte.Size = new System.Drawing.Size(150, 31);
+            this.btnNovaNotaTransporte.TabIndex = 19;
+            this.btnNovaNotaTransporte.Text = "Nova Nota Transporte";
+            this.btnNovaNotaTransporte.UseVisualStyleBackColor = true;
             // 
             // txtIdNotaTransporte
             // 
             this.txtIdNotaTransporte.Enabled = false;
-            this.txtIdNotaTransporte.Location = new System.Drawing.Point(166, 20);
+            this.txtIdNotaTransporte.Location = new System.Drawing.Point(153, 20);
             this.txtIdNotaTransporte.Name = "txtIdNotaTransporte";
             this.txtIdNotaTransporte.Size = new System.Drawing.Size(135, 20);
             this.txtIdNotaTransporte.TabIndex = 74;
@@ -290,7 +293,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(163, 4);
+            this.label7.Location = new System.Drawing.Point(150, 4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 73;
@@ -413,11 +416,21 @@
             this.cmbVeiculos.Size = new System.Drawing.Size(238, 21);
             this.cmbVeiculos.TabIndex = 77;
             // 
+            // btnRemoverItemSelecionado
+            // 
+            this.btnRemoverItemSelecionado.Location = new System.Drawing.Point(6, 190);
+            this.btnRemoverItemSelecionado.Name = "btnRemoverItemSelecionado";
+            this.btnRemoverItemSelecionado.Size = new System.Drawing.Size(150, 31);
+            this.btnRemoverItemSelecionado.TabIndex = 25;
+            this.btnRemoverItemSelecionado.Text = "Remover Item Selecionado";
+            this.btnRemoverItemSelecionado.UseVisualStyleBackColor = true;
+            this.btnRemoverItemSelecionado.Click += new System.EventHandler(this.btnRemoverItemSelecionado_Click);
+            // 
             // FrmNotaTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 632);
+            this.ClientSize = new System.Drawing.Size(867, 632);
             this.Controls.Add(this.grbNotaTransporte);
             this.Controls.Add(this.txtIdNotaTransporte);
             this.Controls.Add(this.label7);
@@ -450,7 +463,7 @@
         private System.Windows.Forms.DataGridView dgvCargasAdicionadas;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAdicionarCargasNota;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNovaNotaTransporte;
         private System.Windows.Forms.TextBox txtIdNotaTransporte;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox grbNotaTransporte;
@@ -478,5 +491,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PesoAdicionado;
         private System.Windows.Forms.DataGridViewTextBoxColumn CubagemAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorAdicionado;
+        private System.Windows.Forms.Button btnRemoverItemSelecionado;
     }
 }

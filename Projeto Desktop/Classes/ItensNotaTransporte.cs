@@ -24,7 +24,10 @@ namespace Projeto_Desktop.Classes
             this.IdNotaTransporte = idNotaTransporte;
         }
         public ItensNotaTransporte()
-        { }
+        {
+            IdCarga = new Carga();
+            IdNotaTransporte = new NotaTransporte();
+        }
         //Métodos
         public void InserirItensNotaTransporte(int idcarga, int idnota)
         {
@@ -49,6 +52,76 @@ namespace Projeto_Desktop.Classes
                 else
                     throw new Exception("Falha ao conectar-se com o banco de dados");
             }
-        }        
+        }
+        /// <summary>
+        /// Listando todos os itens do pedidos que já estão associados a uma nota de transporte
+        /// </summary>
+        public List<ItensNotaTransporte> ListarItensNotaTransportePedido(int idPedido)
+        {
+            db = new Banco();
+            var comm = db.AbrirConexao();
+            List<ItensNotaTransporte> lista = new List<ItensNotaTransporte>();
+            ItensNotaTransporte ints;
+            try
+            {
+                comm.CommandText = "select ints.idCarga, ints.idNotaTransporte from itensnotatransporte as ints left join carga as c on ints.idCarga = c.idCarga where c.idPedidos = " + idPedido;
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    ints = new ItensNotaTransporte();
+                    ints.IdCarga.Id = dr.GetInt32(0);
+                    ints.IdNotaTransporte.Id = dr.GetInt32(1);
+                    lista.Add(ints);
+                }
+                return lista;
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return null;
+            }
+            finally
+            {
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
+            }
+        }
+        /// <summary>
+        /// Listando Itens De nota de transporte pelo id nota transporte
+        /// </summary>        
+        public List<ItensNotaTransporte> ListarItensNotaTransporte(int idNota)
+        {
+            db = new Banco();
+            var comm = db.AbrirConexao();
+            List<ItensNotaTransporte> lista = new List<ItensNotaTransporte>();
+            ItensNotaTransporte ints;
+            try
+            {
+                comm.CommandText = "select * from itensnotatransporte where idNotaTransporte = "+ idNota;
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    ints = new ItensNotaTransporte();
+                    ints.IdCarga.Id = dr.GetInt32(0);
+                    ints.IdNotaTransporte.Id = dr.GetInt32(1);
+                    lista.Add(ints);
+                }
+                return lista;
+            }
+            catch (Exception e)
+            {
+                e.Message.ToString();
+                return null;
+            }
+            finally
+            {
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
+            }
+        }
     }
 }

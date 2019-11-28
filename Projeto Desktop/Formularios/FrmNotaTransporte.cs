@@ -19,6 +19,7 @@ namespace Projeto_Desktop.Formularios
         Veiculo v;
         TipoFrete tf;
         NotaTransporte nt;
+        ItensNotaTransporte ints;
         public FrmNotaTransporte()
         {
             InitializeComponent();
@@ -30,13 +31,11 @@ namespace Projeto_Desktop.Formularios
             p = pedido;
         }        
         private void FrmNotaTransporte_Load(object sender, EventArgs e)
-        {
-            
+        {            
             tf = new TipoFrete();            
             cmbTiposFretes.ValueMember = "Id";
             cmbTiposFretes.DisplayMember = "Nome";
-            cmbTiposFretes.DataSource = tf.ListarTiposFretes();
-            
+            cmbTiposFretes.DataSource = tf.ListarTiposFretes();            
             //Carregando combo box de Motoristas
             m = new Motorista();
             var listaM = m.ListaMotoristas();
@@ -50,32 +49,54 @@ namespace Projeto_Desktop.Formularios
             cmbVeiculos.ValueMember = "Id";
             cmbVeiculos.DisplayMember = "Modelo";
             cmbVeiculos.DataSource = listaV;
-            cmbVeiculos.Text += listaV[cmbMotoristas.SelectedIndex].Placa;
-            //Carregando cargas do Pedido e fazendo calculo de cubagem
+            cmbVeiculos.Text += listaV[cmbMotoristas.SelectedIndex].Placa;            
+            txtIdPedido.Text = p.Id.ToString();
+            //Listando cargas do pedido
             c = new Carga();
-            txtIdPedido.Text = p.Id.ToString();            
             var lista = c.ListarCargasPedido(int.Parse(txtIdPedido.Text));
-                            
+            //Listando cargas já associadas a nota de transporte
+            ints = new ItensNotaTransporte();
+            var itensAssociados = ints.ListarItensNotaTransportePedido(Convert.ToInt32(txtIdPedido.Text));            
             for (int i = 0; i < lista.Count; i++)
             {
-                dgvCargasPedido.Rows.Add();
-                dgvCargasPedido.Rows[i].Cells[0].Value = lista[i].Id.ToString();
-                dgvCargasPedido.Rows[i].Cells[1].Value = lista[i].NomeProduto;
-                dgvCargasPedido.Rows[i].Cells[2].Value = lista[i].Quantidade.ToString();
-                dgvCargasPedido.Rows[i].Cells[3].Value = lista[i].Peso.ToString();
-                dgvCargasPedido.Rows[i].Cells[4].Value = (lista[i].Largura * lista[i].Altura * lista[i].Comprimento).ToString();
-                dgvCargasPedido.Rows[i].Cells[5].Value = lista[i].ValorProduto.ToString("C");                                
+                if(itensAssociados.Count > 0)
+                {
+                    foreach (var item in itensAssociados)
+                    {
+                        if (item.IdCarga.Id == lista[i].Id)
+                        {
+                            lista[i].ConsultarCarga(lista[i].Id);
+                            dgvCargasAdicionadas.Rows.Add();
+                            dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[0].Value = lista[i].Id.ToString();
+                            dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[1].Value = lista[i].NomeProduto;
+                            dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[2].Value = lista[i].Quantidade.ToString();
+                            dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[3].Value = lista[i].Peso.ToString();
+                            dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[4].Value = (lista[i].Largura * lista[i].Altura * lista[i].Comprimento).ToString();
+                            dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[5].Value = lista[i].ValorProduto.ToString("C");
+                        }
+                        else
+                        {
+                            dgvCargasPedido.Rows.Add();
+                            dgvCargasPedido.Rows[i].Cells[0].Value = lista[i].Id.ToString();
+                            dgvCargasPedido.Rows[i].Cells[1].Value = lista[i].NomeProduto;
+                            dgvCargasPedido.Rows[i].Cells[2].Value = lista[i].Quantidade.ToString();
+                            dgvCargasPedido.Rows[i].Cells[3].Value = lista[i].Peso.ToString();
+                            dgvCargasPedido.Rows[i].Cells[4].Value = (lista[i].Largura * lista[i].Altura * lista[i].Comprimento).ToString();
+                            dgvCargasPedido.Rows[i].Cells[5].Value = lista[i].ValorProduto.ToString("C");
+                        }
+                    }
+                }
+                else
+                {
+                    dgvCargasPedido.Rows.Add();
+                    dgvCargasPedido.Rows[i].Cells[0].Value = lista[i].Id.ToString();
+                    dgvCargasPedido.Rows[i].Cells[1].Value = lista[i].NomeProduto;
+                    dgvCargasPedido.Rows[i].Cells[2].Value = lista[i].Quantidade.ToString();
+                    dgvCargasPedido.Rows[i].Cells[3].Value = lista[i].Peso.ToString();
+                    dgvCargasPedido.Rows[i].Cells[4].Value = (lista[i].Largura * lista[i].Altura * lista[i].Comprimento).ToString();
+                    dgvCargasPedido.Rows[i].Cells[5].Value = lista[i].ValorProduto.ToString("C");
+                }                
             }
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
         }
 
         private void btnAdicionarCargasNota_Click(object sender, EventArgs e)
@@ -115,26 +136,6 @@ namespace Projeto_Desktop.Formularios
 
         }
 
-        private void btnGerarNotaTransporte_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbTiposFretes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGerarNotaTransporte_Click_1(object sender, EventArgs e)
         {
             nt = new NotaTransporte();
@@ -148,6 +149,7 @@ namespace Projeto_Desktop.Formularios
                         MessageBox.Show("Cadastrado com sucesso !");
                         grbCargasPedido.Enabled = true;
                         grbGerarNotaTransporte.Enabled = true;
+                        txtIdNotaTransporte.Text = nt.Id.ToString();
                     }
                     else
                     {
@@ -166,6 +168,16 @@ namespace Projeto_Desktop.Formularios
         }
 
         private void grbNotaTransporte_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemoverItemSelecionado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCargasAdicionadas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

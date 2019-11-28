@@ -239,14 +239,16 @@ namespace Projeto_Desktop.Classes
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
                 {
-                    n = new NotaTransporte();
-                    n.Id = dr.GetInt32(0);
+                    n = new NotaTransporte
+                    {
+                        Id = dr.GetInt32(0),
+                        Distancia = dr.GetDouble(4),
+                        ValorFrete = dr.GetDouble(5),
+                        DataEmissao = dr.GetDateTime(6)
+                    };
                     n.IdVeiculo.Id = dr.GetInt32(1);
                     n.IdMotorista.IdMotorista = dr.GetInt32(2);
-                    n.IdTipoFrete.Id = dr.GetInt32(3);
-                    n.Distancia = dr.GetDouble(4);
-                    n.ValorFrete = dr.GetDouble(5);
-                    n.DataEmissao = dr.GetDateTime(6);
+                    n.IdTipoFrete.Id = dr.GetInt32(3);                   
                     lista.Add(n);
                 }
                 return lista;
