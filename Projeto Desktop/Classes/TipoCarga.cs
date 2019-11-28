@@ -47,7 +47,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         /// <summary>
@@ -70,7 +73,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         /// <summary>
@@ -94,7 +100,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         /// <summary>
@@ -122,7 +131,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         /// <summary>

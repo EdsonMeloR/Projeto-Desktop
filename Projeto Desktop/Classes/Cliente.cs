@@ -70,7 +70,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         public bool AlterarCliente(int _idcliente,string _telefone,string _nomecontato,string _email,string _razaosocial)
@@ -96,7 +99,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         public void ConsultarClienteId(int _id)
@@ -150,7 +156,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         public List<Cliente> ListarCliente()
@@ -205,7 +214,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         public bool EfetuarLogin(string _cnpj, string _senha)
@@ -232,7 +244,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();                
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         /// <summary>

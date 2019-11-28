@@ -83,7 +83,10 @@ namespace Projeto_Desktop.Classes
             comm.Parameters.Add("_valor", MySqlDbType.Int32).Value = valor;
             comm.Parameters.Add("_quantidade", MySqlDbType.Int32).Value = quantidade;
             this.Id = Convert.ToInt32(comm.ExecuteScalar());
-            comm.Connection.Close();
+            if (comm != null)
+                comm.Connection.Close();
+            else
+                throw new Exception("Falha ao conectar-se com o banco de dados");
         }
         public bool AtualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto,int _idtipo,double _valor)
         {
@@ -112,7 +115,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         /// <summary>
@@ -148,7 +154,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         public List<Carga> ListarCargas()
@@ -187,7 +196,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         public List<Carga> ListarCargasPedido(int _idPedido)
@@ -226,7 +238,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         public List<Carga> ListarCargasPedidoInner(int _idPedido)
@@ -268,7 +283,10 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                comm.Connection.Close();
+                if (comm != null)
+                    comm.Connection.Close();
+                else
+                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         public MySqlDataReader ListarCargasPedidoInnerDR(int _idPedido)
@@ -287,8 +305,7 @@ namespace Projeto_Desktop.Classes
             {
                 e.Message.ToString();
                 return null;
-            }
-            
+            }            
         }
     }
 }
