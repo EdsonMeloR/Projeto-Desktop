@@ -32,24 +32,13 @@
             this.txtIdPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCargasPedido = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cubagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbCargasPedido = new System.Windows.Forms.GroupBox();
             this.btnAdicionarCargasNota = new System.Windows.Forms.Button();
             this.grbGerarNotaTransporte = new System.Windows.Forms.GroupBox();
+            this.btnRemoverItemSelecionado = new System.Windows.Forms.Button();
             this.btnFinalizarNota = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvCargasAdicionadas = new System.Windows.Forms.DataGridView();
-            this.IdCargaAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantidadeAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PesoAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CubagemAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNovaNotaTransporte = new System.Windows.Forms.Button();
             this.txtIdNotaTransporte = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,7 +54,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbMotoristas = new System.Windows.Forms.ComboBox();
             this.cmbVeiculos = new System.Windows.Forms.ComboBox();
-            this.btnRemoverItemSelecionado = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cubagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalculoCubagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCargaAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PesoAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CubagemAdicionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CubagemAssociada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorAdicionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
             this.grbGerarNotaTransporte.SuspendLayout();
@@ -76,7 +78,7 @@
             // txtIdPedido
             // 
             this.txtIdPedido.Enabled = false;
-            this.txtIdPedido.Location = new System.Drawing.Point(12, 20);
+            this.txtIdPedido.Location = new System.Drawing.Point(24, 20);
             this.txtIdPedido.Name = "txtIdPedido";
             this.txtIdPedido.Size = new System.Drawing.Size(135, 20);
             this.txtIdPedido.TabIndex = 7;
@@ -84,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 4);
+            this.label2.Location = new System.Drawing.Point(21, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 6;
@@ -101,6 +103,7 @@
             this.Quantidade,
             this.Peso,
             this.Cubagem,
+            this.CalculoCubagem,
             this.ValorProduto});
             this.dgvCargasPedido.Location = new System.Drawing.Point(6, 19);
             this.dgvCargasPedido.Name = "dgvCargasPedido";
@@ -111,47 +114,6 @@
             this.dgvCargasPedido.Size = new System.Drawing.Size(831, 158);
             this.dgvCargasPedido.TabIndex = 9;
             this.dgvCargasPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargasPedido_CellContentClick);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // NomeProduto
-            // 
-            this.NomeProduto.HeaderText = "Produto";
-            this.NomeProduto.Name = "NomeProduto";
-            this.NomeProduto.ReadOnly = true;
-            this.NomeProduto.Width = 150;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            this.Quantidade.Width = 128;
-            // 
-            // Peso
-            // 
-            this.Peso.HeaderText = "Peso";
-            this.Peso.Name = "Peso";
-            this.Peso.ReadOnly = true;
-            this.Peso.Width = 150;
-            // 
-            // Cubagem
-            // 
-            this.Cubagem.HeaderText = "A x L x C";
-            this.Cubagem.Name = "Cubagem";
-            this.Cubagem.ReadOnly = true;
-            this.Cubagem.Width = 150;
-            // 
-            // ValorProduto
-            // 
-            this.ValorProduto.HeaderText = "Valor";
-            this.ValorProduto.Name = "ValorProduto";
-            this.ValorProduto.ReadOnly = true;
-            this.ValorProduto.Width = 150;
             // 
             // grbCargasPedido
             // 
@@ -192,6 +154,16 @@
             this.grbGerarNotaTransporte.Text = "Nota Transporte";
             this.grbGerarNotaTransporte.Enter += new System.EventHandler(this.grpGerarNotaTransporte_Enter);
             // 
+            // btnRemoverItemSelecionado
+            // 
+            this.btnRemoverItemSelecionado.Location = new System.Drawing.Point(6, 190);
+            this.btnRemoverItemSelecionado.Name = "btnRemoverItemSelecionado";
+            this.btnRemoverItemSelecionado.Size = new System.Drawing.Size(150, 31);
+            this.btnRemoverItemSelecionado.TabIndex = 25;
+            this.btnRemoverItemSelecionado.Text = "Remover Item Selecionado";
+            this.btnRemoverItemSelecionado.UseVisualStyleBackColor = true;
+            this.btnRemoverItemSelecionado.Click += new System.EventHandler(this.btnRemoverItemSelecionado_Click);
+            // 
             // btnFinalizarNota
             // 
             this.btnFinalizarNota.Location = new System.Drawing.Point(318, 190);
@@ -221,6 +193,7 @@
             this.QuantidadeAdicionada,
             this.PesoAdicionado,
             this.CubagemAdicionada,
+            this.CubagemAssociada,
             this.ValorAdicionado});
             this.dgvCargasAdicionadas.Location = new System.Drawing.Point(6, 34);
             this.dgvCargasAdicionadas.Name = "dgvCargasAdicionadas";
@@ -231,47 +204,6 @@
             this.dgvCargasAdicionadas.Size = new System.Drawing.Size(831, 150);
             this.dgvCargasAdicionadas.TabIndex = 18;
             this.dgvCargasAdicionadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargasAdicionadas_CellContentClick);
-            // 
-            // IdCargaAdicionada
-            // 
-            this.IdCargaAdicionada.HeaderText = "Id";
-            this.IdCargaAdicionada.Name = "IdCargaAdicionada";
-            this.IdCargaAdicionada.ReadOnly = true;
-            // 
-            // ProdutoAdicionada
-            // 
-            this.ProdutoAdicionada.HeaderText = "Produto";
-            this.ProdutoAdicionada.Name = "ProdutoAdicionada";
-            this.ProdutoAdicionada.ReadOnly = true;
-            this.ProdutoAdicionada.Width = 150;
-            // 
-            // QuantidadeAdicionada
-            // 
-            this.QuantidadeAdicionada.HeaderText = "Quantidade";
-            this.QuantidadeAdicionada.Name = "QuantidadeAdicionada";
-            this.QuantidadeAdicionada.ReadOnly = true;
-            this.QuantidadeAdicionada.Width = 128;
-            // 
-            // PesoAdicionado
-            // 
-            this.PesoAdicionado.HeaderText = "Peso";
-            this.PesoAdicionado.Name = "PesoAdicionado";
-            this.PesoAdicionado.ReadOnly = true;
-            this.PesoAdicionado.Width = 150;
-            // 
-            // CubagemAdicionada
-            // 
-            this.CubagemAdicionada.HeaderText = "A x L x C";
-            this.CubagemAdicionada.Name = "CubagemAdicionada";
-            this.CubagemAdicionada.ReadOnly = true;
-            this.CubagemAdicionada.Width = 150;
-            // 
-            // ValorAdicionado
-            // 
-            this.ValorAdicionado.HeaderText = "Valor";
-            this.ValorAdicionado.Name = "ValorAdicionado";
-            this.ValorAdicionado.ReadOnly = true;
-            this.ValorAdicionado.Width = 150;
             // 
             // btnNovaNotaTransporte
             // 
@@ -285,7 +217,7 @@
             // txtIdNotaTransporte
             // 
             this.txtIdNotaTransporte.Enabled = false;
-            this.txtIdNotaTransporte.Location = new System.Drawing.Point(153, 20);
+            this.txtIdNotaTransporte.Location = new System.Drawing.Point(165, 20);
             this.txtIdNotaTransporte.Name = "txtIdNotaTransporte";
             this.txtIdNotaTransporte.Size = new System.Drawing.Size(135, 20);
             this.txtIdNotaTransporte.TabIndex = 74;
@@ -293,7 +225,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(150, 4);
+            this.label7.Location = new System.Drawing.Point(162, 4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 73;
@@ -416,15 +348,101 @@
             this.cmbVeiculos.Size = new System.Drawing.Size(238, 21);
             this.cmbVeiculos.TabIndex = 77;
             // 
-            // btnRemoverItemSelecionado
+            // Id
             // 
-            this.btnRemoverItemSelecionado.Location = new System.Drawing.Point(6, 190);
-            this.btnRemoverItemSelecionado.Name = "btnRemoverItemSelecionado";
-            this.btnRemoverItemSelecionado.Size = new System.Drawing.Size(150, 31);
-            this.btnRemoverItemSelecionado.TabIndex = 25;
-            this.btnRemoverItemSelecionado.Text = "Remover Item Selecionado";
-            this.btnRemoverItemSelecionado.UseVisualStyleBackColor = true;
-            this.btnRemoverItemSelecionado.Click += new System.EventHandler(this.btnRemoverItemSelecionado_Click);
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 70;
+            // 
+            // NomeProduto
+            // 
+            this.NomeProduto.HeaderText = "Produto";
+            this.NomeProduto.Name = "NomeProduto";
+            this.NomeProduto.ReadOnly = true;
+            this.NomeProduto.Width = 150;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 128;
+            // 
+            // Peso
+            // 
+            this.Peso.HeaderText = "Peso";
+            this.Peso.Name = "Peso";
+            this.Peso.ReadOnly = true;
+            this.Peso.Width = 130;
+            // 
+            // Cubagem
+            // 
+            this.Cubagem.HeaderText = "A x L x C";
+            this.Cubagem.Name = "Cubagem";
+            this.Cubagem.ReadOnly = true;
+            this.Cubagem.Width = 130;
+            // 
+            // CalculoCubagem
+            // 
+            this.CalculoCubagem.HeaderText = "Cubagem M³";
+            this.CalculoCubagem.Name = "CalculoCubagem";
+            this.CalculoCubagem.ReadOnly = true;
+            // 
+            // ValorProduto
+            // 
+            this.ValorProduto.HeaderText = "Valor";
+            this.ValorProduto.Name = "ValorProduto";
+            this.ValorProduto.ReadOnly = true;
+            this.ValorProduto.Width = 120;
+            // 
+            // IdCargaAdicionada
+            // 
+            this.IdCargaAdicionada.HeaderText = "Id";
+            this.IdCargaAdicionada.Name = "IdCargaAdicionada";
+            this.IdCargaAdicionada.ReadOnly = true;
+            this.IdCargaAdicionada.Width = 70;
+            // 
+            // ProdutoAdicionada
+            // 
+            this.ProdutoAdicionada.HeaderText = "Produto";
+            this.ProdutoAdicionada.Name = "ProdutoAdicionada";
+            this.ProdutoAdicionada.ReadOnly = true;
+            this.ProdutoAdicionada.Width = 150;
+            // 
+            // QuantidadeAdicionada
+            // 
+            this.QuantidadeAdicionada.HeaderText = "Quantidade";
+            this.QuantidadeAdicionada.Name = "QuantidadeAdicionada";
+            this.QuantidadeAdicionada.ReadOnly = true;
+            this.QuantidadeAdicionada.Width = 128;
+            // 
+            // PesoAdicionado
+            // 
+            this.PesoAdicionado.HeaderText = "Peso";
+            this.PesoAdicionado.Name = "PesoAdicionado";
+            this.PesoAdicionado.ReadOnly = true;
+            this.PesoAdicionado.Width = 150;
+            // 
+            // CubagemAdicionada
+            // 
+            this.CubagemAdicionada.HeaderText = "A x L x C";
+            this.CubagemAdicionada.Name = "CubagemAdicionada";
+            this.CubagemAdicionada.ReadOnly = true;
+            this.CubagemAdicionada.Width = 110;
+            // 
+            // CubagemAssociada
+            // 
+            this.CubagemAssociada.HeaderText = "Cubagem M³";
+            this.CubagemAssociada.Name = "CubagemAssociada";
+            this.CubagemAssociada.ReadOnly = true;
+            // 
+            // ValorAdicionado
+            // 
+            this.ValorAdicionado.HeaderText = "Valor";
+            this.ValorAdicionado.Name = "ValorAdicionado";
+            this.ValorAdicionado.ReadOnly = true;
+            this.ValorAdicionado.Width = 120;
             // 
             // FrmNotaTransporte
             // 
@@ -440,7 +458,7 @@
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNotaTransporte";
-            this.Text = " ";
+            this.Text = "l";
             this.Load += new System.EventHandler(this.FrmNotaTransporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).EndInit();
             this.grbCargasPedido.ResumeLayout(false);
@@ -479,18 +497,20 @@
         private System.Windows.Forms.ComboBox cmbMotoristas;
         private System.Windows.Forms.ComboBox cmbVeiculos;
         private System.Windows.Forms.Button btnFinalizarNota;
+        private System.Windows.Forms.Button btnRemoverItemSelecionado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cubagem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CalculoCubagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCargaAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProdutoAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn PesoAdicionado;
         private System.Windows.Forms.DataGridViewTextBoxColumn CubagemAdicionada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CubagemAssociada;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorAdicionado;
-        private System.Windows.Forms.Button btnRemoverItemSelecionado;
     }
 }
