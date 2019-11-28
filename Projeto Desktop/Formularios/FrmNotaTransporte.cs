@@ -31,15 +31,12 @@ namespace Projeto_Desktop.Formularios
         }        
         private void FrmNotaTransporte_Load(object sender, EventArgs e)
         {
-            if(txtIdPedido.Text != string.Empty)
-            {
-                tf = new TipoFrete();
-                grbNotaTransporte.Enabled = true;
-                cmbTiposFretes.ValueMember = "Id";
-                cmbTiposFretes.DisplayMember = "Nome";
-                cmbTiposFretes.DataSource = tf.ListarTiposFretes();
-
-            }
+            
+            tf = new TipoFrete();            
+            cmbTiposFretes.ValueMember = "Id";
+            cmbTiposFretes.DisplayMember = "Nome";
+            cmbTiposFretes.DataSource = tf.ListarTiposFretes();
+            
             //Carregando combo box de Motoristas
             m = new Motorista();
             var listaM = m.ListaMotoristas();
@@ -143,9 +140,9 @@ namespace Projeto_Desktop.Formularios
             nt = new NotaTransporte();
             try
             {
-                if (Convert.ToInt32(cmbTiposFretes.SelectedValue) > 0 && Convert.ToInt32(cmbMotoristas.SelectedValue) > 0 && Convert.ToInt32(cmbVeiculos.SelectedValue) > 0 && txtDistancia.Text != string.Empty && txtValorFrete.Text != string.Empty && txtValorPedagios.Text != string.Empty && txtObservacoes.Text != string.Empty)
+                if (Convert.ToInt32(cmbTiposFretes.SelectedValue) > 0 && Convert.ToInt32(cmbMotoristas.SelectedValue) > 0 && Convert.ToInt32(cmbVeiculos.SelectedValue) > 0 && txtDistancia.Text != string.Empty && txtValorFrete.Text != string.Empty)
                 {
-                    nt.InserirNotaTransporte(Convert.ToInt32(cmbVeiculos.SelectedValue), Convert.ToInt32(cmbMotoristas.SelectedValue), Convert.ToInt32(cmbTiposFretes.SelectedValue), txtObservacoes.Text, Convert.ToDouble(txtValorFrete.Text), Convert.ToDouble(txtDistancia.Text));
+                    nt.InserirNotaTransporte(Convert.ToInt32(cmbVeiculos.SelectedValue), Convert.ToInt32(cmbMotoristas.SelectedValue), Convert.ToInt32(cmbTiposFretes.SelectedValue), Convert.ToDouble(txtValorFrete.Text), Convert.ToDouble(txtDistancia.Text));
                     if(nt.Id > 0)
                     {
                         MessageBox.Show("Cadastrado com sucesso !");
@@ -166,6 +163,11 @@ namespace Projeto_Desktop.Formularios
             {
                 MessageBox.Show(ex.Message.ToString(),"Erro");
             }            
+        }
+
+        private void grbNotaTransporte_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
