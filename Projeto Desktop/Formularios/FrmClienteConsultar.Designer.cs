@@ -210,7 +210,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmClienteConsultar";
-            this.Text = "FrmClienteConsultar";
+            this.Text = "Consultar Clientes";
             this.Load += new System.EventHandler(this.FrmClienteConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);

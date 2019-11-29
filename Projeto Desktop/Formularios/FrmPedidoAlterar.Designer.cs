@@ -286,7 +286,7 @@
             this.Controls.Add(this.grpPedidos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPedidoAlterar";
-            this.Text = "FrmPedidoAlterar";
+            this.Text = "Alterar Pedido";
             this.Load += new System.EventHandler(this.FrmPedidoAlterar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosCargas)).EndInit();
             this.grpPedidos.ResumeLayout(false);

@@ -514,7 +514,7 @@
             this.Controls.Add(this.btnNovoPedido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPedidoNovo";
-            this.Text = "FrmPedido";
+            this.Text = "Novo Pedido";
             this.Load += new System.EventHandler(this.FrmPedido_Load);
             this.grbEnderecosRemetente.ResumeLayout(false);
             this.grbEnderecosRemetente.PerformLayout();

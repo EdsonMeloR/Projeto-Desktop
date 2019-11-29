@@ -254,7 +254,7 @@
             this.Controls.Add(this.btnCadastrar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMotorista";
-            this.Text = "FrmMotorista";
+            this.Text = "Motorista";
             this.Load += new System.EventHandler(this.FrmMotorista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotoristas)).EndInit();
             this.ResumeLayout(false);

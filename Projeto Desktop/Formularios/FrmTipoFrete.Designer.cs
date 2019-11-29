@@ -152,7 +152,7 @@
             this.Controls.Add(this.dgvTiposFretes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTipoFrete";
-            this.Text = "FrmTipoFrete";
+            this.Text = "Tipos Fretes";
             this.Load += new System.EventHandler(this.FrmTipoFrete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposFretes)).EndInit();
             this.ResumeLayout(false);

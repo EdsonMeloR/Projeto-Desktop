@@ -44,7 +44,7 @@ namespace Projeto_Desktop.Formularios
                         MessageBox.Show("A senha é igual a atual\nNão foi possivel alterar");
                     }
                     else
-                    {
+                    {                        
                         if (user.AlterarSenha(Program.userLogado.Id, txtNovaSenha.Text))
                         {
                             MessageBox.Show("Senha alterada com sucesso !!");
@@ -57,9 +57,10 @@ namespace Projeto_Desktop.Formularios
                 }
             }
             var a = mskTelefone.Text.Replace("(", "");
-            a = mskTelefone.Text.Replace(")", "");
-            a = mskTelefone.Text.Replace("-", "");
-            if(user.AlterarUsuario(Convert.ToInt32(txtIdUsuario.Text), a, txtEmail.Text))
+            a = a.Replace(")", "");
+            a = a.Replace("-", "");
+            a = a.Replace(" ", "");
+            if (user.AlterarUsuario(Convert.ToInt32(txtIdUsuario.Text), a, txtEmail.Text))
             {
                 MessageBox.Show("Usuario alterado com sucesso !!");
             }
