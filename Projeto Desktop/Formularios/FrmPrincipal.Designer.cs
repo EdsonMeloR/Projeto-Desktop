@@ -286,6 +286,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";

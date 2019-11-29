@@ -29,7 +29,7 @@ namespace Projeto_Desktop.Classes
             IdNotaTransporte = new NotaTransporte();
         }
         //Métodos
-        public void InserirItensNotaTransporte(int idcarga, int idnota)
+        public bool InserirItensNotaTransporte(int idcarga, int idnota)
         {
             db = new Banco();
             var comm = db.AbrirConexao();
@@ -39,18 +39,25 @@ namespace Projeto_Desktop.Classes
                 comm.CommandText = "insert_itensnotatransporte";
                 comm.Parameters.Add("_idcarga", MySqlDbType.Int32).Value = idcarga;
                 comm.Parameters.Add("_idnotatransporte", MySqlDbType.Int32).Value = idnota;
-                comm.ExecuteNonQuery();             
+                comm.ExecuteNonQuery();
+                return true;
             }
             catch(Exception e)
             {
                 e.Message.ToString();
+                return false;
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();                    
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         /// <summary>
@@ -82,10 +89,15 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();                    
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         /// <summary>
@@ -117,10 +129,15 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
     }
