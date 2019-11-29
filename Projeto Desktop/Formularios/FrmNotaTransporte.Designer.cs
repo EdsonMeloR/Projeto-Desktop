@@ -42,6 +42,7 @@
             this.grbCargasPedido = new System.Windows.Forms.GroupBox();
             this.btnAdicionarCargasNota = new System.Windows.Forms.Button();
             this.grbGerarNotaTransporte = new System.Windows.Forms.GroupBox();
+            this.btnVisualizarNotaTransporte = new System.Windows.Forms.Button();
             this.btnRemoverItemSelecionado = new System.Windows.Forms.Button();
             this.btnFinalizarNota = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbMotoristas = new System.Windows.Forms.ComboBox();
             this.cmbVeiculos = new System.Windows.Forms.ComboBox();
-            this.btnVisualizarNotaTransporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
             this.grbGerarNotaTransporte.SuspendLayout();
@@ -201,6 +201,16 @@
             this.grbGerarNotaTransporte.TabStop = false;
             this.grbGerarNotaTransporte.Text = "Nota Transporte";
             this.grbGerarNotaTransporte.Enter += new System.EventHandler(this.grpGerarNotaTransporte_Enter);
+            // 
+            // btnVisualizarNotaTransporte
+            // 
+            this.btnVisualizarNotaTransporte.Location = new System.Drawing.Point(318, 190);
+            this.btnVisualizarNotaTransporte.Name = "btnVisualizarNotaTransporte";
+            this.btnVisualizarNotaTransporte.Size = new System.Drawing.Size(150, 31);
+            this.btnVisualizarNotaTransporte.TabIndex = 26;
+            this.btnVisualizarNotaTransporte.Text = "Gerar Pdf";
+            this.btnVisualizarNotaTransporte.UseVisualStyleBackColor = true;
+            this.btnVisualizarNotaTransporte.Click += new System.EventHandler(this.btnVisualizarNotaTransporte_Click);
             // 
             // btnRemoverItemSelecionado
             // 
@@ -435,15 +445,6 @@
             this.cmbVeiculos.Name = "cmbVeiculos";
             this.cmbVeiculos.Size = new System.Drawing.Size(238, 21);
             this.cmbVeiculos.TabIndex = 77;
-            // 
-            // btnVisualizarNotaTransporte
-            // 
-            this.btnVisualizarNotaTransporte.Location = new System.Drawing.Point(318, 190);
-            this.btnVisualizarNotaTransporte.Name = "btnVisualizarNotaTransporte";
-            this.btnVisualizarNotaTransporte.Size = new System.Drawing.Size(150, 31);
-            this.btnVisualizarNotaTransporte.TabIndex = 26;
-            this.btnVisualizarNotaTransporte.Text = "Gerar Pdf";
-            this.btnVisualizarNotaTransporte.UseVisualStyleBackColor = true;
             // 
             // FrmNotaTransporte
             // 

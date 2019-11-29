@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_Desktop.Classes;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace Projeto_Desktop.Formularios
 {
@@ -213,6 +216,29 @@ namespace Projeto_Desktop.Formularios
             catch(Exception ex)
             {
                 ex.Message.ToString();
+            }
+        }
+
+        private void btnVisualizarNotaTransporte_Click(object sender, EventArgs e)
+        {
+            Document doc = new Document(PageSize.A4);
+            if(!Directory.Exists(@"C:\\Users\" + SystemInformation.UserName + @"\Documents\Notas"))
+            {
+                Directory.CreateDirectory(@"C:\\Users\" + SystemInformation.UserName + @"\Documents\Notas");
+            }
+            var caminho = @"C:\\Users\" + SystemInformation.UserName + @"\Documents\Notas\"+txtIdNotaTransporte.Text;
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+            try
+            {
+                doc.Open();
+                Paragraph p = new Paragraph();
+                p.Alignment = Element.ALIGN_LEFT;
+                p.Font.Size = 14;
+                p.Add("Teste de paragrafo utilizando nota de transporte " + txtIdNotaTransporte.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
     }

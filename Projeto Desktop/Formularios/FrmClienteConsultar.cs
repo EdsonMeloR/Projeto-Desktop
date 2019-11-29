@@ -28,14 +28,21 @@ namespace Projeto_Desktop.Formularios
 
         private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            c = new Cliente();
-            c.ConsultarClienteId(Convert.ToInt32(cmbClientes.SelectedValue));
-            txtCnpj.Text = c.Cnpj.ToString();
-            txtEmail.Text = c.Email.ToString();
-            txtIdCliente.Text = c.Id.ToString();
-            txtInscricaoEstadual.Text = c.InscricaoEstadual.ToString();
-            txtNomeContato.Text = c.NomeContato;
-            txtTelefone.Text = c.Telefone;
+            try
+            {
+                c = new Cliente();
+                c.ConsultarClienteId(Convert.ToInt32(cmbClientes.SelectedValue));
+                txtCnpj.Text = c.Cnpj.ToString();
+                txtEmail.Text = c.Email.ToString();
+                txtIdCliente.Text = c.Id.ToString();
+                txtInscricaoEstadual.Text = c.InscricaoEstadual.ToString();
+                txtNomeContato.Text = c.NomeContato;
+                txtTelefone.Text = c.Telefone;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }            
         }
 
         private void btnListarClientes_Click(object sender, EventArgs e)
