@@ -36,7 +36,7 @@ namespace Projeto_Desktop.Classes
             try
             {                
                 comm.CommandType = CommandType.StoredProcedure;
-                comm.CommandText = "insert_itensnotatransporte";
+                comm.CommandText = "insert_itensnotatrans";
                 comm.Parameters.Add("_idcarga", MySqlDbType.Int32).Value = idcarga;
                 comm.Parameters.Add("_idnotatransporte", MySqlDbType.Int32).Value = idnota;
                 comm.ExecuteNonQuery();

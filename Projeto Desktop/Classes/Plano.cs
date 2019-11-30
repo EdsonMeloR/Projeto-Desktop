@@ -168,10 +168,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
     }

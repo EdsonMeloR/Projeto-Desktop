@@ -79,18 +79,7 @@ namespace Projeto_Desktop.Formularios
                                 dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[4].Value = lista[i].Largura.ToString() + " * " + lista[i].Altura.ToString() + " * " + lista[i].Comprimento.ToString();
                                 dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[5].Value = (lista[i].Largura * lista[i].Altura * lista[i].Comprimento).ToString();
                                 dgvCargasAdicionadas.Rows[dgvCargasAdicionadas.Rows.Count - 1].Cells[6].Value = lista[i].ValorProduto.ToString("C");
-                            }
-                            else
-                            {
-                                dgvCargasPedido.Rows.Add();
-                                dgvCargasPedido.Rows[i].Cells[0].Value = lista[i].Id.ToString();
-                                dgvCargasPedido.Rows[i].Cells[1].Value = lista[i].NomeProduto;
-                                dgvCargasPedido.Rows[i].Cells[2].Value = lista[i].Quantidade.ToString();
-                                dgvCargasPedido.Rows[i].Cells[3].Value = lista[i].Peso.ToString();
-                                dgvCargasPedido.Rows[i].Cells[4].Value = lista[i].Largura.ToString() + " * " + lista[i].Altura.ToString() + " * " + lista[i].Comprimento.ToString();
-                                dgvCargasPedido.Rows[i].Cells[5].Value = (lista[i].Largura * lista[i].Altura * lista[i].Comprimento).ToString();
-                                dgvCargasPedido.Rows[i].Cells[6].Value = lista[i].ValorProduto.ToString("C");
-                            }
+                            }                         
                         }
                     }
                     else
@@ -171,6 +160,7 @@ namespace Projeto_Desktop.Formularios
                         grbCargasPedido.Enabled = true;
                         grbGerarNotaTransporte.Enabled = true;
                         txtIdNotaTransporte.Text = nt.Id.ToString();
+                        grbNotaTransporte.Enabled = false;
                     }
                     else
                     {
@@ -226,15 +216,87 @@ namespace Projeto_Desktop.Formularios
             {
                 Directory.CreateDirectory(@"C:\\Users\" + SystemInformation.UserName + @"\Documents\Notas");
             }
-            var caminho = @"C:\\Users\" + SystemInformation.UserName + @"\Documents\Notas\"+txtIdNotaTransporte.Text;
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+            var caminho = @"C:\\Users\" + SystemInformation.UserName + @"\Documents\Notas\"+txtIdNotaTransporte.Text+".pdf";            
             try
             {
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+                doc.AddCreationDate();
                 doc.Open();
-                Paragraph p = new Paragraph();
-                p.Alignment = Element.ALIGN_LEFT;
+                iTextSharp.text.pdf.draw.VerticalPositionMark seperator = new iTextSharp.text.pdf.draw.LineSeparator();
+                Paragraph p = new Paragraph
+                {
+                    Alignment = Element.ALIGN_CENTER,
+                };
+                p.Font.Size = 18;                
+                p.Add("Nota de Transporte");
+                p.Add("\n");
+                doc.Add(p);                
+                p = new Paragraph
+                {
+                    Alignment = Element.ALIGN_LEFT
+                };
+
                 p.Font.Size = 14;
-                p.Add("Teste de paragrafo utilizando nota de transporte " + txtIdNotaTransporte.Text);
+                p.Add("\nId Nota Transporte: " + txtIdNotaTransporte.Text + "\n" + DateTime.Now);
+                p.Add("\n");
+                p.Add(seperator);
+                doc.Add(p);
+                p = new Paragraph
+                {
+                    Alignment = Element.ALIGN_CENTER
+                };
+                p.Font.Size = 18;
+                p.Add("Cliente");
+                doc.Add(p);
+                p = new Paragraph
+                {
+                    Alignment = Element.ALIGN_LEFT
+                };
+                Pedido ped = new Pedido();
+                ped.ConsultarPedido(Convert.ToInt32(txtIdPedido.Text));
+                Cliente cli = new Cliente();
+                cli.ConsultarClienteId(Convert.ToInt32(ped.IdCliente.Id));
+                PedidosEnderecos pedend = new PedidosEnderecos();
+                TipoEndereco te = new TipoEndereco();
+                te.ConsultarTipoEnderecoNome("Destinatário");
+                pedend.ConsultarEnderecoDestinarioPedido(Convert.ToInt32(txtIdPedido.Text), te.Id);
+                Endereco end = new Endereco();
+                end.ConsultarEndereco(cli.Id, pedend.IdEndereco.Id);
+                p.Add("\n\nCliente: " + cli.RazaoSocial + " | CNPJ: " + cli.Cnpj.ToString() + " |");
+                p.Add("\n");
+                p.Add("Endereço Destino: " + end.Cep + ", " + end.Logradouro + ", " + end.Numero.ToString());
+                p.Add("\n");
+                pedend = new PedidosEnderecos();
+                te = new TipoEndereco();
+                te.ConsultarTipoEnderecoNome("Remetente");
+                p.Add("\n");
+                pedend.ConsultarEnderecoDestinarioPedido(Convert.ToInt32(txtIdPedido.Text), te.Id);
+                end = new Endereco();
+                end.ConsultarEndereco(cli.Id, pedend.IdEndereco.Id);
+                p.Add("Endereço Remetente: " + end.Cep + ", " + end.Logradouro + ", " + end.Numero.ToString());                
+                p.Add(seperator);
+                p.Add("\n");
+                doc.Add(p);
+                p = new Paragraph
+                {
+                    Alignment = Element.ALIGN_CENTER
+                };
+                p.Font.Size = 18;
+                p.Add("Pedido");
+                doc.Add(p);
+                p = new Paragraph();
+                p.Font.Size = 12;
+                p.Add("Pedido :" + txtIdPedido.Text +"\n");
+                ints = new ItensNotaTransporte();
+                c = new Carga();
+                foreach (var item in ints.ListarItensNotaTransporte(Convert.ToInt32(txtIdNotaTransporte.Text)))
+                {
+                    c.ConsultarCarga(item.IdCarga.Id);
+                    p.Add("Carga: " + c.Id + " | Nome: " + c.NomeProduto + " ");
+                }
+                doc.Add(p);
+                doc.Close();
+                System.Diagnostics.Process.Start(caminho);
             }
             catch(Exception ex)
             {
