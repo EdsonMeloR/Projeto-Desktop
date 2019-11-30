@@ -60,9 +60,9 @@ namespace Projeto_Desktop.Classes
         public void InserirVeiculo(string placa, string marca, string modelo, string renavam, double pesoMaximo, double altura, double largura, double comprimento,int eixo,double custo)
         {
             db = new Banco();
+            var comm = db.AbrirConexao();
             try
-            {
-                var comm = db.AbrirConexao();
+            {                
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_veiculo";
                 comm.Parameters.Add("_placa", MySqlDbType.VarChar).Value = placa;
@@ -85,6 +85,20 @@ namespace Projeto_Desktop.Classes
             catch(Exception e)
             {
                 e.Message.ToString();
+            }
+            finally
+            {
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         /// <summary>
@@ -113,10 +127,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         /// <summary>
@@ -151,10 +172,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         /// <summary>
@@ -190,10 +218,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         /// <summary>
@@ -259,10 +294,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
     }

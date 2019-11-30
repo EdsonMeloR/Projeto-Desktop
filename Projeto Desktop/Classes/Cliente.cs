@@ -70,10 +70,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         public bool AlterarCliente(int _idcliente,string _telefone,string _nomecontato,string _email,string _razaosocial)
@@ -99,10 +106,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         public void ConsultarClienteId(int _id)
@@ -128,7 +142,21 @@ namespace Projeto_Desktop.Classes
             catch(Exception e)
             {
                 e.Message.ToString();
-            }            
+            }
+            finally
+            {
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
+            }
         }
         public void ConsultarClienteCnpj(string _cnpj)
         {
@@ -156,10 +184,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         public List<Cliente> ListarCliente()
@@ -214,10 +249,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         public bool EfetuarLogin(string _cnpj, string _senha)
@@ -244,10 +286,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         /// <summary>

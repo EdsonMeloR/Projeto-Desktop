@@ -70,23 +70,40 @@ namespace Projeto_Desktop.Classes
         {
             db = new Banco();
             var comm = db.AbrirConexao();
-            comm.CommandType = CommandType.StoredProcedure;
-            comm.CommandText = "insert_carga";
-            comm.Parameters.Add("_idpedido", MySqlDbType.Int32).Value = _idPedido;
-            comm.Parameters.Add("_peso", MySqlDbType.Decimal).Value = _peso;
-            comm.Parameters.Add("_largura", MySqlDbType.Decimal).Value = _largura;
-            comm.Parameters.Add("_altura", MySqlDbType.Decimal).Value = _altura;
-            comm.Parameters.Add("_comprimento", MySqlDbType.Decimal).Value = _comprimento;
-            comm.Parameters.Add("_nomeproduto", MySqlDbType.VarChar).Value = _nomeProduto;
-            comm.Parameters.Add("_detalhesproduto", MySqlDbType.VarChar).Value = _detalhesProduto;
-            comm.Parameters.Add("_idtipo", MySqlDbType.Int32).Value = idtipo;
-            comm.Parameters.Add("_valor", MySqlDbType.Int32).Value = valor;
-            comm.Parameters.Add("_quantidade", MySqlDbType.Int32).Value = quantidade;
-            this.Id = Convert.ToInt32(comm.ExecuteScalar());
-            if (comm != null)
-                comm.Connection.Close();
-            else
-                throw new Exception("Falha ao conectar-se com o banco de dados");
+            try
+            {
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "insert_carga";
+                comm.Parameters.Add("_idpedido", MySqlDbType.Int32).Value = _idPedido;
+                comm.Parameters.Add("_peso", MySqlDbType.Decimal).Value = _peso;
+                comm.Parameters.Add("_largura", MySqlDbType.Decimal).Value = _largura;
+                comm.Parameters.Add("_altura", MySqlDbType.Decimal).Value = _altura;
+                comm.Parameters.Add("_comprimento", MySqlDbType.Decimal).Value = _comprimento;
+                comm.Parameters.Add("_nomeproduto", MySqlDbType.VarChar).Value = _nomeProduto;
+                comm.Parameters.Add("_detalhesproduto", MySqlDbType.VarChar).Value = _detalhesProduto;
+                comm.Parameters.Add("_idtipo", MySqlDbType.Int32).Value = idtipo;
+                comm.Parameters.Add("_valor", MySqlDbType.Int32).Value = valor;
+                comm.Parameters.Add("_quantidade", MySqlDbType.Int32).Value = quantidade;
+                this.Id = Convert.ToInt32(comm.ExecuteScalar());
+            }
+            catch(Exception ex)
+            {
+                ex.Message.ToString();
+            }
+            finally
+            {
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
+            }
         }
         public bool AtualizarCarga(int _id,double _peso, double _largura, double _altura, double _comprimento, string _nomeProduto, string _detalhesProduto,int _idtipo,double _valor)
         {
@@ -115,10 +132,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         /// <summary>
@@ -154,10 +178,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         public List<Carga> ListarCargas()
@@ -196,10 +227,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         public List<Carga> ListarCargasPedido(int _idPedido)
@@ -276,10 +314,17 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
             }
         }
         public MySqlDataReader ListarCargasPedidoInnerDR(int _idPedido)

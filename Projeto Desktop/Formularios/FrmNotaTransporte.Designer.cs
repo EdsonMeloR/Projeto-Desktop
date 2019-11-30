@@ -41,8 +41,8 @@
             this.ValorProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbCargasPedido = new System.Windows.Forms.GroupBox();
             this.btnAdicionarCargasNota = new System.Windows.Forms.Button();
-            this.grbGerarNotaTransporte = new System.Windows.Forms.GroupBox();
-            this.btnVisualizarNotaTransporte = new System.Windows.Forms.Button();
+            this.grbItensNotaTransporte = new System.Windows.Forms.GroupBox();
+            this.btnNotaTransporte = new System.Windows.Forms.Button();
             this.btnRemoverItemSelecionado = new System.Windows.Forms.Button();
             this.btnFinalizarNota = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,9 +68,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbMotoristas = new System.Windows.Forms.ComboBox();
             this.cmbVeiculos = new System.Windows.Forms.ComboBox();
+            this.cmbNotasGeradas = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).BeginInit();
             this.grbCargasPedido.SuspendLayout();
-            this.grbGerarNotaTransporte.SuspendLayout();
+            this.grbItensNotaTransporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasAdicionadas)).BeginInit();
             this.grbNotaTransporte.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +98,8 @@
             // 
             this.dgvCargasPedido.AllowUserToAddRows = false;
             this.dgvCargasPedido.AllowUserToDeleteRows = false;
+            this.dgvCargasPedido.AllowUserToResizeColumns = false;
+            this.dgvCargasPedido.AllowUserToResizeRows = false;
             this.dgvCargasPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCargasPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -175,6 +179,7 @@
             this.grbCargasPedido.TabIndex = 10;
             this.grbCargasPedido.TabStop = false;
             this.grbCargasPedido.Text = "Cargas";
+            this.grbCargasPedido.Enter += new System.EventHandler(this.grbCargasPedido_Enter);
             // 
             // btnAdicionarCargasNota
             // 
@@ -186,31 +191,32 @@
             this.btnAdicionarCargasNota.UseVisualStyleBackColor = true;
             this.btnAdicionarCargasNota.Click += new System.EventHandler(this.btnAdicionarCargasNota_Click);
             // 
-            // grbGerarNotaTransporte
+            // grbItensNotaTransporte
             // 
-            this.grbGerarNotaTransporte.Controls.Add(this.btnVisualizarNotaTransporte);
-            this.grbGerarNotaTransporte.Controls.Add(this.btnRemoverItemSelecionado);
-            this.grbGerarNotaTransporte.Controls.Add(this.btnFinalizarNota);
-            this.grbGerarNotaTransporte.Controls.Add(this.label8);
-            this.grbGerarNotaTransporte.Controls.Add(this.dgvCargasAdicionadas);
-            this.grbGerarNotaTransporte.Enabled = false;
-            this.grbGerarNotaTransporte.Location = new System.Drawing.Point(12, 394);
-            this.grbGerarNotaTransporte.Name = "grbGerarNotaTransporte";
-            this.grbGerarNotaTransporte.Size = new System.Drawing.Size(843, 229);
-            this.grbGerarNotaTransporte.TabIndex = 18;
-            this.grbGerarNotaTransporte.TabStop = false;
-            this.grbGerarNotaTransporte.Text = "Nota Transporte";
-            this.grbGerarNotaTransporte.Enter += new System.EventHandler(this.grpGerarNotaTransporte_Enter);
+            this.grbItensNotaTransporte.Controls.Add(this.btnNotaTransporte);
+            this.grbItensNotaTransporte.Controls.Add(this.btnRemoverItemSelecionado);
+            this.grbItensNotaTransporte.Controls.Add(this.btnFinalizarNota);
+            this.grbItensNotaTransporte.Controls.Add(this.label8);
+            this.grbItensNotaTransporte.Controls.Add(this.dgvCargasAdicionadas);
+            this.grbItensNotaTransporte.Enabled = false;
+            this.grbItensNotaTransporte.Location = new System.Drawing.Point(12, 394);
+            this.grbItensNotaTransporte.Name = "grbItensNotaTransporte";
+            this.grbItensNotaTransporte.Size = new System.Drawing.Size(843, 229);
+            this.grbItensNotaTransporte.TabIndex = 18;
+            this.grbItensNotaTransporte.TabStop = false;
+            this.grbItensNotaTransporte.Text = "Nota Transporte";
+            this.grbItensNotaTransporte.Enter += new System.EventHandler(this.grpGerarNotaTransporte_Enter);
             // 
-            // btnVisualizarNotaTransporte
+            // btnNotaTransporte
             // 
-            this.btnVisualizarNotaTransporte.Location = new System.Drawing.Point(318, 190);
-            this.btnVisualizarNotaTransporte.Name = "btnVisualizarNotaTransporte";
-            this.btnVisualizarNotaTransporte.Size = new System.Drawing.Size(150, 31);
-            this.btnVisualizarNotaTransporte.TabIndex = 26;
-            this.btnVisualizarNotaTransporte.Text = "Gerar Pdf";
-            this.btnVisualizarNotaTransporte.UseVisualStyleBackColor = true;
-            this.btnVisualizarNotaTransporte.Click += new System.EventHandler(this.btnVisualizarNotaTransporte_Click);
+            this.btnNotaTransporte.Enabled = false;
+            this.btnNotaTransporte.Location = new System.Drawing.Point(318, 190);
+            this.btnNotaTransporte.Name = "btnNotaTransporte";
+            this.btnNotaTransporte.Size = new System.Drawing.Size(150, 31);
+            this.btnNotaTransporte.TabIndex = 26;
+            this.btnNotaTransporte.Text = "Gerar Pdf";
+            this.btnNotaTransporte.UseVisualStyleBackColor = true;
+            this.btnNotaTransporte.Click += new System.EventHandler(this.btnVisualizarNotaTransporte_Click);
             // 
             // btnRemoverItemSelecionado
             // 
@@ -245,6 +251,8 @@
             // 
             this.dgvCargasAdicionadas.AllowUserToAddRows = false;
             this.dgvCargasAdicionadas.AllowUserToDeleteRows = false;
+            this.dgvCargasAdicionadas.AllowUserToResizeColumns = false;
+            this.dgvCargasAdicionadas.AllowUserToResizeRows = false;
             this.dgvCargasAdicionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCargasAdicionadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCargaAdicionada,
@@ -446,15 +454,35 @@
             this.cmbVeiculos.Size = new System.Drawing.Size(238, 21);
             this.cmbVeiculos.TabIndex = 77;
             // 
+            // cmbNotasGeradas
+            // 
+            this.cmbNotasGeradas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNotasGeradas.FormattingEnabled = true;
+            this.cmbNotasGeradas.Location = new System.Drawing.Point(693, 19);
+            this.cmbNotasGeradas.Name = "cmbNotasGeradas";
+            this.cmbNotasGeradas.Size = new System.Drawing.Size(162, 21);
+            this.cmbNotasGeradas.TabIndex = 76;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(690, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 13);
+            this.label9.TabIndex = 77;
+            this.label9.Text = "Notas Geradas Pedido";
+            // 
             // FrmNotaTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 632);
+            this.ClientSize = new System.Drawing.Size(869, 632);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cmbNotasGeradas);
             this.Controls.Add(this.grbNotaTransporte);
             this.Controls.Add(this.txtIdNotaTransporte);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.grbGerarNotaTransporte);
+            this.Controls.Add(this.grbItensNotaTransporte);
             this.Controls.Add(this.grbCargasPedido);
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.label2);
@@ -464,8 +492,8 @@
             this.Load += new System.EventHandler(this.FrmNotaTransporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).EndInit();
             this.grbCargasPedido.ResumeLayout(false);
-            this.grbGerarNotaTransporte.ResumeLayout(false);
-            this.grbGerarNotaTransporte.PerformLayout();
+            this.grbItensNotaTransporte.ResumeLayout(false);
+            this.grbItensNotaTransporte.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasAdicionadas)).EndInit();
             this.grbNotaTransporte.ResumeLayout(false);
             this.grbNotaTransporte.PerformLayout();
@@ -479,7 +507,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvCargasPedido;
         private System.Windows.Forms.GroupBox grbCargasPedido;
-        private System.Windows.Forms.GroupBox grbGerarNotaTransporte;
+        private System.Windows.Forms.GroupBox grbItensNotaTransporte;
         private System.Windows.Forms.DataGridView dgvCargasAdicionadas;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAdicionarCargasNota;
@@ -513,6 +541,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CubagemAdicionada;
         private System.Windows.Forms.DataGridViewTextBoxColumn CubagemAssociada;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorAdicionado;
-        private System.Windows.Forms.Button btnVisualizarNotaTransporte;
+        private System.Windows.Forms.Button btnNotaTransporte;
+        private System.Windows.Forms.ComboBox cmbNotasGeradas;
+        private System.Windows.Forms.Label label9;
     }
 }
