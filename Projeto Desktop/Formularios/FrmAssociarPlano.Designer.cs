@@ -74,9 +74,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Planos";
+            this.label2.Text = "Planos disponíveis";
             // 
             // label3
             // 
@@ -206,7 +206,7 @@
             // 
             // btnAssociarPlano
             // 
-            this.btnAssociarPlano.Location = new System.Drawing.Point(18, 397);
+            this.btnAssociarPlano.Location = new System.Drawing.Point(213, 425);
             this.btnAssociarPlano.Name = "btnAssociarPlano";
             this.btnAssociarPlano.Size = new System.Drawing.Size(144, 23);
             this.btnAssociarPlano.TabIndex = 7;
@@ -216,7 +216,7 @@
             // 
             // btnCriarPlanoPeronalizado
             // 
-            this.btnCriarPlanoPeronalizado.Location = new System.Drawing.Point(318, 397);
+            this.btnCriarPlanoPeronalizado.Location = new System.Drawing.Point(513, 425);
             this.btnCriarPlanoPeronalizado.Name = "btnCriarPlanoPeronalizado";
             this.btnCriarPlanoPeronalizado.Size = new System.Drawing.Size(144, 23);
             this.btnCriarPlanoPeronalizado.TabIndex = 8;
@@ -226,7 +226,7 @@
             // 
             // btnAlterarPlanoCliente
             // 
-            this.btnAlterarPlanoCliente.Location = new System.Drawing.Point(168, 397);
+            this.btnAlterarPlanoCliente.Location = new System.Drawing.Point(363, 425);
             this.btnAlterarPlanoCliente.Name = "btnAlterarPlanoCliente";
             this.btnAlterarPlanoCliente.Size = new System.Drawing.Size(144, 23);
             this.btnAlterarPlanoCliente.TabIndex = 9;
@@ -257,7 +257,7 @@
             this.grbAssociarPlanoCliente.Controls.Add(this.cmbClientes);
             this.grbAssociarPlanoCliente.Location = new System.Drawing.Point(12, 262);
             this.grbAssociarPlanoCliente.Name = "grbAssociarPlanoCliente";
-            this.grbAssociarPlanoCliente.Size = new System.Drawing.Size(645, 129);
+            this.grbAssociarPlanoCliente.Size = new System.Drawing.Size(645, 150);
             this.grbAssociarPlanoCliente.TabIndex = 12;
             this.grbAssociarPlanoCliente.TabStop = false;
             this.grbAssociarPlanoCliente.Text = "Plano Cliente";
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 482);
+            this.ClientSize = new System.Drawing.Size(671, 464);
             this.Controls.Add(this.grbAssociarPlanoCliente);
             this.Controls.Add(this.btnAlterarPlanoCliente);
             this.Controls.Add(this.btnCriarPlanoPeronalizado);

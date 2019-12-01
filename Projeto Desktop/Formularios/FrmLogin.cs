@@ -84,6 +84,11 @@ namespace Projeto_Desktop.Formularios
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             
-        }   
+        }
+
+        private void rbManterConectado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

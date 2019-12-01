@@ -41,20 +41,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(153, 162);
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(153, 160);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "CPF";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(153, 211);
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(153, 208);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Senha";
             // 
@@ -75,7 +75,7 @@
             // 
             // btnLogar
             // 
-            this.btnLogar.BackColor = System.Drawing.Color.White;
+            this.btnLogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.btnLogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogar.Location = new System.Drawing.Point(156, 268);
             this.btnLogar.Name = "btnLogar";
@@ -87,7 +87,7 @@
             // 
             // btnRecuperarSenha
             // 
-            this.btnRecuperarSenha.BackColor = System.Drawing.Color.White;
+            this.btnRecuperarSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.btnRecuperarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecuperarSenha.Location = new System.Drawing.Point(156, 297);
             this.btnRecuperarSenha.Name = "btnRecuperarSenha";
@@ -100,21 +100,22 @@
             // rbManterConectado
             // 
             this.rbManterConectado.AutoSize = true;
-            this.rbManterConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbManterConectado.Location = new System.Drawing.Point(170, 342);
+            this.rbManterConectado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.rbManterConectado.Location = new System.Drawing.Point(167, 354);
             this.rbManterConectado.Name = "rbManterConectado";
-            this.rbManterConectado.Size = new System.Drawing.Size(145, 17);
+            this.rbManterConectado.Size = new System.Drawing.Size(159, 20);
             this.rbManterConectado.TabIndex = 6;
             this.rbManterConectado.TabStop = true;
             this.rbManterConectado.Text = "Mantenha conectado";
             this.rbManterConectado.UseVisualStyleBackColor = true;
+            this.rbManterConectado.CheckedChanged += new System.EventHandler(this.rbManterConectado_CheckedChanged);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(486, 450);
             this.Controls.Add(this.rbManterConectado);
             this.Controls.Add(this.btnRecuperarSenha);
