@@ -75,7 +75,7 @@
             // 
             // btnLogar
             // 
-            this.btnLogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.btnLogar.BackColor = System.Drawing.Color.White;
             this.btnLogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogar.Location = new System.Drawing.Point(156, 268);
             this.btnLogar.Name = "btnLogar";
@@ -87,21 +87,23 @@
             // 
             // btnRecuperarSenha
             // 
+            this.btnRecuperarSenha.BackColor = System.Drawing.Color.White;
             this.btnRecuperarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecuperarSenha.Location = new System.Drawing.Point(156, 297);
             this.btnRecuperarSenha.Name = "btnRecuperarSenha";
             this.btnRecuperarSenha.Size = new System.Drawing.Size(186, 23);
             this.btnRecuperarSenha.TabIndex = 5;
             this.btnRecuperarSenha.Text = "Recuperar Senha";
-            this.btnRecuperarSenha.UseVisualStyleBackColor = true;
+            this.btnRecuperarSenha.UseVisualStyleBackColor = false;
             this.btnRecuperarSenha.Click += new System.EventHandler(this.btnRecuperarSenha_Click);
             // 
             // rbManterConectado
             // 
             this.rbManterConectado.AutoSize = true;
-            this.rbManterConectado.Location = new System.Drawing.Point(156, 345);
+            this.rbManterConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbManterConectado.Location = new System.Drawing.Point(170, 342);
             this.rbManterConectado.Name = "rbManterConectado";
-            this.rbManterConectado.Size = new System.Drawing.Size(127, 17);
+            this.rbManterConectado.Size = new System.Drawing.Size(145, 17);
             this.rbManterConectado.TabIndex = 6;
             this.rbManterConectado.TabStop = true;
             this.rbManterConectado.Text = "Mantenha conectado";

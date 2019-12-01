@@ -83,8 +83,8 @@
             this.novoPedidoToolStripMenuItem,
             this.consultarPedidoToolStripMenuItem,
             this.alterarToolStripMenuItem});
-            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
             resources.ApplyResources(this.pedidosToolStripMenuItem, "pedidosToolStripMenuItem");
+            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
             // 
             // novoPedidoToolStripMenuItem
             // 
@@ -111,8 +111,8 @@
             this.consultarClienteToolStripMenuItem,
             this.alterarClienteToolStripMenuItem,
             this.associarPlanoToolStripMenuItem});
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             resources.ApplyResources(this.clienteToolStripMenuItem, "clienteToolStripMenuItem");
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // cadastrarClienteToolStripMenuItem
@@ -141,8 +141,8 @@
             // 
             // entregasToolStripMenuItem
             // 
-            this.entregasToolStripMenuItem.Name = "entregasToolStripMenuItem";
             resources.ApplyResources(this.entregasToolStripMenuItem, "entregasToolStripMenuItem");
+            this.entregasToolStripMenuItem.Name = "entregasToolStripMenuItem";
             // 
             // administraçãoToolStripMenuItem
             // 
@@ -151,8 +151,8 @@
             this.niveisToolStripMenuItem,
             this.tiposFretesToolStripMenuItem,
             this.tiposCargasToolStripMenuItem});
-            this.administraçãoToolStripMenuItem.Name = "administraçãoToolStripMenuItem";
             resources.ApplyResources(this.administraçãoToolStripMenuItem, "administraçãoToolStripMenuItem");
+            this.administraçãoToolStripMenuItem.Name = "administraçãoToolStripMenuItem";
             this.administraçãoToolStripMenuItem.Click += new System.EventHandler(this.administraçãoToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem
@@ -184,8 +184,8 @@
             this.planoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inserirPlanosToolStripMenuItem,
             this.consultarPlanosToolStripMenuItem});
-            this.planoToolStripMenuItem.Name = "planoToolStripMenuItem";
             resources.ApplyResources(this.planoToolStripMenuItem, "planoToolStripMenuItem");
+            this.planoToolStripMenuItem.Name = "planoToolStripMenuItem";
             this.planoToolStripMenuItem.Click += new System.EventHandler(this.planoToolStripMenuItem_Click);
             // 
             // inserirPlanosToolStripMenuItem
@@ -202,14 +202,14 @@
             // 
             // caminhoneirosToolStripMenuItem
             // 
-            this.caminhoneirosToolStripMenuItem.Name = "caminhoneirosToolStripMenuItem";
             resources.ApplyResources(this.caminhoneirosToolStripMenuItem, "caminhoneirosToolStripMenuItem");
+            this.caminhoneirosToolStripMenuItem.Name = "caminhoneirosToolStripMenuItem";
             this.caminhoneirosToolStripMenuItem.Click += new System.EventHandler(this.caminhoneirosToolStripMenuItem_Click);
             // 
             // veiculoToolStripMenuItem
             // 
-            this.veiculoToolStripMenuItem.Name = "veiculoToolStripMenuItem";
             resources.ApplyResources(this.veiculoToolStripMenuItem, "veiculoToolStripMenuItem");
+            this.veiculoToolStripMenuItem.Name = "veiculoToolStripMenuItem";
             this.veiculoToolStripMenuItem.Click += new System.EventHandler(this.veiculoToolStripMenuItem_Click);
             // 
             // panel1

@@ -129,130 +129,151 @@
     <value>Times New Roman, 15.75pt</value>
   </data>
   <data name="novoPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 28</value>
+    <value>226, 26</value>
   </data>
   <data name="novoPedidoToolStripMenuItem.Text" xml:space="preserve">
     <value>Novo Pedido</value>
   </data>
   <data name="consultarPedidoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 28</value>
+    <value>226, 26</value>
   </data>
   <data name="consultarPedidoToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Pedido</value>
   </data>
   <data name="alterarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 28</value>
+    <value>226, 26</value>
   </data>
   <data name="alterarToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Pedido</value>
   </data>
+  <data name="pedidosToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 14.25pt</value>
+  </data>
   <data name="pedidosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 27</value>
+    <value>93, 26</value>
   </data>
   <data name="pedidosToolStripMenuItem.Text" xml:space="preserve">
     <value>Pedidos</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 28</value>
+    <value>226, 26</value>
   </data>
   <data name="cadastrarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Cadastrar Cliente</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 28</value>
+    <value>226, 26</value>
   </data>
   <data name="consultarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Cliente</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 28</value>
+    <value>226, 26</value>
   </data>
   <data name="alterarClienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Alterar Cliente</value>
   </data>
   <data name="associarPlanoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 28</value>
+    <value>226, 26</value>
   </data>
   <data name="associarPlanoToolStripMenuItem.Text" xml:space="preserve">
     <value>Associar Plano</value>
   </data>
+  <data name="clienteToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 14.25pt</value>
+  </data>
   <data name="clienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 27</value>
+    <value>91, 26</value>
   </data>
   <data name="clienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
+  <data name="entregasToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 14.25pt</value>
+  </data>
   <data name="entregasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 27</value>
+    <value>98, 26</value>
   </data>
   <data name="entregasToolStripMenuItem.Text" xml:space="preserve">
     <value>Entregas</value>
   </data>
   <data name="usuáriosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 28</value>
+    <value>193, 26</value>
   </data>
   <data name="usuáriosToolStripMenuItem.Text" xml:space="preserve">
     <value>Usuários</value>
   </data>
   <data name="niveisToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 28</value>
+    <value>193, 26</value>
   </data>
   <data name="niveisToolStripMenuItem.Text" xml:space="preserve">
     <value>Niveis</value>
   </data>
   <data name="tiposFretesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 28</value>
+    <value>193, 26</value>
   </data>
   <data name="tiposFretesToolStripMenuItem.Text" xml:space="preserve">
     <value>Tipos Fretes</value>
   </data>
   <data name="tiposCargasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 28</value>
+    <value>193, 26</value>
   </data>
   <data name="tiposCargasToolStripMenuItem.Text" xml:space="preserve">
     <value>Tipos Cargas</value>
   </data>
+  <data name="administraçãoToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 14.25pt</value>
+  </data>
   <data name="administraçãoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 27</value>
+    <value>142, 26</value>
   </data>
   <data name="administraçãoToolStripMenuItem.Text" xml:space="preserve">
     <value>Administração</value>
   </data>
   <data name="inserirPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 28</value>
+    <value>223, 26</value>
   </data>
   <data name="inserirPlanosToolStripMenuItem.Text" xml:space="preserve">
     <value>Inserir Planos</value>
   </data>
   <data name="consultarPlanosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 28</value>
+    <value>223, 26</value>
   </data>
   <data name="consultarPlanosToolStripMenuItem.Text" xml:space="preserve">
     <value>Consultar Planos</value>
   </data>
+  <data name="planoToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 14.25pt</value>
+  </data>
   <data name="planoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 27</value>
+    <value>80, 26</value>
   </data>
   <data name="planoToolStripMenuItem.Text" xml:space="preserve">
     <value>Planos</value>
   </data>
+  <data name="caminhoneirosToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 14.25pt</value>
+  </data>
   <data name="caminhoneirosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 27</value>
+    <value>109, 26</value>
   </data>
   <data name="caminhoneirosToolStripMenuItem.Text" xml:space="preserve">
     <value>Motoristas</value>
   </data>
+  <data name="veiculoToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 14.25pt</value>
+  </data>
   <data name="veiculoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 27</value>
+    <value>94, 26</value>
   </data>
   <data name="veiculoToolStripMenuItem.Text" xml:space="preserve">
     <value>Veiculos</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 650</value>
+    <value>0, 651</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1264, 31</value>
+    <value>1264, 30</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
