@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace Projeto_Desktop.Classes
 {
@@ -57,6 +58,7 @@ namespace Projeto_Desktop.Classes
             var comm = db.AbrirConexao();
             try
             {
+                var senhac = GerarSenhaMd5(senha);
                 comm.CommandType = CommandType.StoredProcedure;
                 comm.CommandText = "insert_motorista";
                 comm.Parameters.Add("_nome", MySqlDbType.VarChar).Value = nome;
@@ -65,7 +67,7 @@ namespace Projeto_Desktop.Classes
                 comm.Parameters.Add("_cnh", MySqlDbType.VarChar).Value = cnh;
                 comm.Parameters.Add("_validadecnh", MySqlDbType.Date).Value = validadeCnh;
                 comm.Parameters.Add("_categoriacnh", MySqlDbType.VarChar).Value = categoriaCnh;
-                comm.Parameters.Add("_senha", MySqlDbType.VarChar).Value = senha;
+                comm.Parameters.Add("_senha", MySqlDbType.VarChar).Value = senhac;
                 comm.Parameters.Add("_primeirologin", MySqlDbType.Bit).Value = primeiroLogin;
                 var dr = comm.ExecuteReader();
                 while(dr.Read())
@@ -229,11 +231,32 @@ namespace Projeto_Desktop.Classes
             }
             finally
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                try
+                {
+                    if (comm != null)
+                        comm.Connection.Close();
+                    else
+                        throw new Exception("Falha ao conectar-se com o banco de dados");
+                }
+                catch(Exception ex)
+                {
+                    ex.Message.ToString();
+                }                
             }
-        }       
+        }
+        /// <summary>
+        /// Gera md5 de strings
+        /// </summary>       
+        public string GerarSenhaMd5(string senha)
+        {
+            var hash = MD5.Create();
+            byte[] chave = hash.ComputeHash(Encoding.UTF8.GetBytes(senha));
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < chave.Length; i++)
+            {
+                builder.Append(chave[i].ToString("X2"));
+            }
+            return builder.ToString();
+        }
     }
 }
