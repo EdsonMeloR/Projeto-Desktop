@@ -42,7 +42,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(153, 160);
+            this.label1.Location = new System.Drawing.Point(157, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(153, 208);
+            this.label2.Location = new System.Drawing.Point(157, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 1;
@@ -60,14 +60,14 @@
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(156, 179);
+            this.txtCpf.Location = new System.Drawing.Point(160, 153);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(186, 20);
             this.txtCpf.TabIndex = 2;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(156, 227);
+            this.txtSenha.Location = new System.Drawing.Point(160, 201);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(186, 20);
@@ -77,7 +77,7 @@
             // 
             this.btnLogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.btnLogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogar.Location = new System.Drawing.Point(156, 268);
+            this.btnLogar.Location = new System.Drawing.Point(160, 242);
             this.btnLogar.Name = "btnLogar";
             this.btnLogar.Size = new System.Drawing.Size(186, 23);
             this.btnLogar.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             this.btnRecuperarSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.btnRecuperarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecuperarSenha.Location = new System.Drawing.Point(156, 297);
+            this.btnRecuperarSenha.Location = new System.Drawing.Point(160, 271);
             this.btnRecuperarSenha.Name = "btnRecuperarSenha";
             this.btnRecuperarSenha.Size = new System.Drawing.Size(186, 23);
             this.btnRecuperarSenha.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             this.rbManterConectado.AutoSize = true;
             this.rbManterConectado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.rbManterConectado.Location = new System.Drawing.Point(167, 354);
+            this.rbManterConectado.Location = new System.Drawing.Point(171, 328);
             this.rbManterConectado.Name = "rbManterConectado";
             this.rbManterConectado.Size = new System.Drawing.Size(159, 20);
             this.rbManterConectado.TabIndex = 6;
