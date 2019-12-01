@@ -97,9 +97,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(336, 47);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 64;
-            this.label7.Text = "Email";
+            this.label7.Text = "E-mail";
             // 
             // txtCnpj
             // 
@@ -114,9 +114,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(196, 47);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 62;
-            this.label6.Text = "Cnpj";
+            this.label6.Text = "CNPJ";
             // 
             // txtNomeContato
             // 
@@ -210,6 +210,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmClienteConsultar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Clientes";
             this.Load += new System.EventHandler(this.FrmClienteConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
