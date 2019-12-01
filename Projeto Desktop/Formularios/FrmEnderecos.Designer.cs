@@ -57,7 +57,7 @@
             this.btnConsultarCep.Name = "btnConsultarCep";
             this.btnConsultarCep.Size = new System.Drawing.Size(88, 23);
             this.btnConsultarCep.TabIndex = 0;
-            this.btnConsultarCep.Text = "Consultar Cep";
+            this.btnConsultarCep.Text = "Consultar CEP";
             this.btnConsultarCep.UseVisualStyleBackColor = true;
             this.btnConsultarCep.Click += new System.EventHandler(this.btnConsultarCep_Click);
             // 
@@ -66,9 +66,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(147, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Id Endereço";
+            this.label1.Text = "ID Endereço";
             // 
             // txtId
             // 
@@ -115,9 +115,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(260, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Cep";
+            this.label4.Text = "CEP";
             // 
             // txtReferencia
             // 
@@ -134,7 +134,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Referencia";
+            this.label5.Text = "Referência";
             // 
             // txtNumero
             // 
@@ -150,7 +150,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Numero";
+            this.label6.Text = "Número";
             // 
             // txtCep
             // 
@@ -242,7 +242,8 @@
             this.Controls.Add(this.btnConsultarCep);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEnderecos";
-            this.Text = "Enderecos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Endereços";
             this.Load += new System.EventHandler(this.FrmEnderecos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnderecos)).EndInit();
             this.ResumeLayout(false);
