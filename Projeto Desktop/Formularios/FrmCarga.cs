@@ -172,5 +172,10 @@ namespace Projeto_Desktop.Formularios
             frm.Show();
             this.Close();
         }
+
+        private void grbCarga_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
