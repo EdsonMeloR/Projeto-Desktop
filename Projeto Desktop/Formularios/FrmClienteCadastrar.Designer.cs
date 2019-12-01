@@ -140,9 +140,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(213, 57);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Cnpj";
+            this.label6.Text = "CNPJ";
             // 
             // txtEmail
             // 
@@ -156,9 +156,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(26, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Email";
+            this.label7.Text = "E-mail";
             // 
             // label8
             // 
@@ -171,7 +171,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(29, 260);
+            this.btnCadastrar.Location = new System.Drawing.Point(248, 260);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(134, 36);
             this.btnCadastrar.TabIndex = 24;
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 330);
+            this.ClientSize = new System.Drawing.Size(400, 310);
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.label8);
@@ -210,7 +210,8 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmClienteCadastrar";
-            this.Text = "Cadastrar Cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastrar Novo Cliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
