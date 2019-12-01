@@ -99,7 +99,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(339, 73);
+            this.txtEmail.Location = new System.Drawing.Point(339, 66);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(171, 20);
             this.txtEmail.TabIndex = 44;
@@ -107,15 +107,15 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(336, 57);
+            this.label7.Location = new System.Drawing.Point(336, 50);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 43;
-            this.label7.Text = "Email";
+            this.label7.Text = "E- mail";
             // 
             // txtCnpj
             // 
-            this.txtCnpj.Location = new System.Drawing.Point(199, 73);
+            this.txtCnpj.Location = new System.Drawing.Point(199, 66);
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(134, 20);
             this.txtCnpj.TabIndex = 42;
@@ -123,15 +123,15 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(196, 57);
+            this.label6.Location = new System.Drawing.Point(196, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 41;
-            this.label6.Text = "Cnpj";
+            this.label6.Text = "CNPJ";
             // 
             // txtNomeContato
             // 
-            this.txtNomeContato.Location = new System.Drawing.Point(199, 112);
+            this.txtNomeContato.Location = new System.Drawing.Point(199, 105);
             this.txtNomeContato.Name = "txtNomeContato";
             this.txtNomeContato.Size = new System.Drawing.Size(171, 20);
             this.txtNomeContato.TabIndex = 40;
@@ -139,7 +139,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(196, 96);
+            this.label3.Location = new System.Drawing.Point(196, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 39;
@@ -147,7 +147,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(12, 112);
+            this.txtTelefone.Location = new System.Drawing.Point(12, 105);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(181, 20);
             this.txtTelefone.TabIndex = 38;
@@ -155,15 +155,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 96);
+            this.label2.Location = new System.Drawing.Point(9, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 37;
-            this.label2.Text = "Telefone";
+            this.label2.Text = "Telefone (xx) xxxx-xxxx";
             // 
             // txtInscricaoEstadual
             // 
-            this.txtInscricaoEstadual.Location = new System.Drawing.Point(516, 73);
+            this.txtInscricaoEstadual.Location = new System.Drawing.Point(516, 66);
             this.txtInscricaoEstadual.Name = "txtInscricaoEstadual";
             this.txtInscricaoEstadual.Size = new System.Drawing.Size(166, 20);
             this.txtInscricaoEstadual.TabIndex = 34;
@@ -171,7 +171,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(513, 57);
+            this.label5.Location = new System.Drawing.Point(513, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 33;
@@ -180,7 +180,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 57);
+            this.label1.Location = new System.Drawing.Point(9, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 31;
@@ -191,14 +191,14 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(9, 6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 13);
+            this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 52;
-            this.label9.Text = "Id Cliente";
+            this.label9.Text = "ID Cliente";
             // 
             // cmbClientes
             // 
             this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(12, 73);
+            this.cmbClientes.Location = new System.Drawing.Point(12, 66);
             this.cmbClientes.Name = "cmbClientes";
             this.cmbClientes.Size = new System.Drawing.Size(181, 21);
             this.cmbClientes.TabIndex = 73;
@@ -229,7 +229,8 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmClienteAlterar";
-            this.Text = "Alterar Cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Alterar Dados de Cliente";
             this.Load += new System.EventHandler(this.FrmClienteAlterar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
