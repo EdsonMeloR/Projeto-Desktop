@@ -90,9 +90,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Id Pedido";
+            this.label2.Text = "ID Pedido";
             // 
             // dgvCargasPedido
             // 
@@ -333,9 +333,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(162, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
+            this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 73;
-            this.label7.Text = "Id Nota";
+            this.label7.Text = "ID Nota";
             // 
             // grbNotaTransporte
             // 
@@ -360,7 +360,7 @@
             // 
             // btnGerarNotaTransporte
             // 
-            this.btnGerarNotaTransporte.Location = new System.Drawing.Point(236, 74);
+            this.btnGerarNotaTransporte.Location = new System.Drawing.Point(236, 78);
             this.btnGerarNotaTransporte.Name = "btnGerarNotaTransporte";
             this.btnGerarNotaTransporte.Size = new System.Drawing.Size(238, 31);
             this.btnGerarNotaTransporte.TabIndex = 76;
@@ -488,6 +488,7 @@
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNotaTransporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerar Nota Transporte";
             this.Load += new System.EventHandler(this.FrmNotaTransporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargasPedido)).EndInit();

@@ -91,9 +91,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Id Veiculo";
+            this.label1.Text = "ID Veiculo";
             // 
             // txtMarca
             // 
@@ -155,9 +155,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Renavam";
+            this.label4.Text = "RENAVAM";
             // 
             // label5
             // 
@@ -166,7 +166,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Peso Maximo";
+            this.label5.Text = "Peso Máximo";
             // 
             // label6
             // 
@@ -265,9 +265,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(9, 190);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 27;
-            this.label10.Text = "Custo por Km";
+            this.label10.Text = "Custo por KM";
             // 
             // mskCustoPorKm
             // 
@@ -309,6 +309,7 @@
             this.Controls.Add(this.btnCadastrar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVeiculo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veiculos";
             this.Load += new System.EventHandler(this.FrmVeiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVeiculos)).EndInit();

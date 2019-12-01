@@ -91,15 +91,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Id Pedido";
+            this.label1.Text = "ID Pedido";
             // 
             // txtIdPedido
             // 
             this.txtIdPedido.Enabled = false;
             this.txtIdPedido.Location = new System.Drawing.Point(12, 31);
             this.txtIdPedido.Name = "txtIdPedido";
+            this.txtIdPedido.ReadOnly = true;
             this.txtIdPedido.Size = new System.Drawing.Size(100, 20);
             this.txtIdPedido.TabIndex = 2;
             // 
@@ -128,7 +129,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Usuarios";
+            this.label4.Text = "Usuários";
             // 
             // cmbSituacao
             // 
@@ -264,7 +265,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 13);
             this.label13.TabIndex = 29;
-            this.label13.Text = "Referencia";
+            this.label13.Text = "Referência";
             // 
             // txtComplemento
             // 
@@ -298,7 +299,7 @@
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 27;
-            this.lblNumero.Text = "Numero";
+            this.lblNumero.Text = "Número";
             // 
             // txtCep
             // 
@@ -313,9 +314,9 @@
             this.lblCep.AutoSize = true;
             this.lblCep.Location = new System.Drawing.Point(549, 24);
             this.lblCep.Name = "lblCep";
-            this.lblCep.Size = new System.Drawing.Size(26, 13);
+            this.lblCep.Size = new System.Drawing.Size(28, 13);
             this.lblCep.TabIndex = 25;
-            this.lblCep.Text = "Cep";
+            this.lblCep.Text = "CEP";
             // 
             // txtLogradouro
             // 
@@ -373,7 +374,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 29;
-            this.label6.Text = "Referencia";
+            this.label6.Text = "Referência";
             // 
             // txtComplementoDestino
             // 
@@ -407,7 +408,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 27;
-            this.label8.Text = "Numero";
+            this.label8.Text = "Número";
             // 
             // txtCepDestino
             // 
@@ -422,9 +423,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(549, 24);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 13);
+            this.label10.Size = new System.Drawing.Size(28, 13);
             this.label10.TabIndex = 25;
-            this.label10.Text = "Cep";
+            this.label10.Text = "CEP";
             // 
             // txtLogradouroDestino
             // 
@@ -484,9 +485,9 @@
             // btnAdicionarCargas
             // 
             this.btnAdicionarCargas.Enabled = false;
-            this.btnAdicionarCargas.Location = new System.Drawing.Point(12, 415);
+            this.btnAdicionarCargas.Location = new System.Drawing.Point(629, 398);
             this.btnAdicionarCargas.Name = "btnAdicionarCargas";
-            this.btnAdicionarCargas.Size = new System.Drawing.Size(129, 23);
+            this.btnAdicionarCargas.Size = new System.Drawing.Size(129, 40);
             this.btnAdicionarCargas.TabIndex = 32;
             this.btnAdicionarCargas.Text = "Adicionar Cargas";
             this.btnAdicionarCargas.UseVisualStyleBackColor = true;
@@ -514,6 +515,7 @@
             this.Controls.Add(this.btnNovoPedido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPedidoNovo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Pedido";
             this.Load += new System.EventHandler(this.FrmPedido_Load);
             this.grbEnderecosRemetente.ResumeLayout(false);

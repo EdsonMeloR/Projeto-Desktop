@@ -55,9 +55,9 @@
             // 
             // cmbClientes
             // 
-            resources.ApplyResources(this.cmbClientes, "cmbClientes");
             this.cmbClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClientes.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbClientes, "cmbClientes");
             this.cmbClientes.Name = "cmbClientes";
             this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
             // 
@@ -69,7 +69,6 @@
             // 
             // grpPedidos
             // 
-            resources.ApplyResources(this.grpPedidos, "grpPedidos");
             this.grpPedidos.Controls.Add(this.btnVisualizarNota);
             this.grpPedidos.Controls.Add(this.cmbDataPedido);
             this.grpPedidos.Controls.Add(this.cmbEnderecoRemetente);
@@ -87,6 +86,7 @@
             this.grpPedidos.Controls.Add(this.label3);
             this.grpPedidos.Controls.Add(this.label2);
             this.grpPedidos.Controls.Add(this.label1);
+            resources.ApplyResources(this.grpPedidos, "grpPedidos");
             this.grpPedidos.Name = "grpPedidos";
             this.grpPedidos.TabStop = false;
             // 
@@ -99,8 +99,8 @@
             // 
             // cmbDataPedido
             // 
-            resources.ApplyResources(this.cmbDataPedido, "cmbDataPedido");
             this.cmbDataPedido.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbDataPedido, "cmbDataPedido");
             this.cmbDataPedido.Name = "cmbDataPedido";
             // 
             // cmbEnderecoRemetente
@@ -124,8 +124,8 @@
             // 
             // dgvPedidosCargas
             // 
-            resources.ApplyResources(this.dgvPedidosCargas, "dgvPedidosCargas");
             this.dgvPedidosCargas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dgvPedidosCargas, "dgvPedidosCargas");
             this.dgvPedidosCargas.Name = "dgvPedidosCargas";
             this.dgvPedidosCargas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPedidosCargas.RowHeadersVisible = false;
@@ -142,9 +142,9 @@
             // 
             // cmbPedidos
             // 
-            resources.ApplyResources(this.cmbPedidos, "cmbPedidos");
             this.cmbPedidos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPedidos.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbPedidos, "cmbPedidos");
             this.cmbPedidos.Name = "cmbPedidos";
             this.cmbPedidos.SelectedIndexChanged += new System.EventHandler(this.cmbPedidos_SelectedIndexChanged_1);
             // 
@@ -177,6 +177,7 @@
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 

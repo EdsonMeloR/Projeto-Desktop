@@ -54,9 +54,9 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(388, 70);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 28;
-            this.lblEmail.Text = "Email";
+            this.lblEmail.Text = "E-mail";
             // 
             // txtEmail
             // 
@@ -79,9 +79,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(265, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 22;
-            this.label3.Text = "Cpf";
+            this.label3.Text = "CPF";
             // 
             // lblNome
             // 
@@ -97,9 +97,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Id Usuario";
+            this.label1.Text = "ID Usuario";
             // 
             // txtIdUsuario
             // 
@@ -183,9 +183,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(138, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 38;
-            this.label2.Text = "Nivel";
+            this.label2.Text = "Nível";
             // 
             // mskCpf
             // 
@@ -228,6 +228,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Usuario";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuarios)).EndInit();

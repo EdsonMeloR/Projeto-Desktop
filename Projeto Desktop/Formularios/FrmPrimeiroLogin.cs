@@ -87,5 +87,10 @@ namespace Projeto_Desktop.Formularios
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

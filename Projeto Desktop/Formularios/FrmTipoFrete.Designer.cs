@@ -59,9 +59,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Id Tipo Frete";
+            this.label1.Text = "ID Tipo Frete";
             // 
             // txtIdTipoFrete
             // 
@@ -152,6 +152,7 @@
             this.Controls.Add(this.dgvTiposFretes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTipoFrete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipos Fretes";
             this.Load += new System.EventHandler(this.FrmTipoFrete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposFretes)).EndInit();

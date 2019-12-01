@@ -86,7 +86,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Descricao";
+            this.label3.Text = "Descrição";
             // 
             // label2
             // 
@@ -153,6 +153,7 @@
             this.Controls.Add(this.dgvTiposFretes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTipoCarga";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipo Carga";
             this.Load += new System.EventHandler(this.FrmTipoCarga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposFretes)).EndInit();

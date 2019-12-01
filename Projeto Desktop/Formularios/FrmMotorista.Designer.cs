@@ -67,15 +67,16 @@
             this.label1.Enabled = false;
             this.label1.Location = new System.Drawing.Point(9, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Id Motorista";
+            this.label1.Text = "ID Motorista";
             // 
             // txtIdMotorista
             // 
             this.txtIdMotorista.Enabled = false;
             this.txtIdMotorista.Location = new System.Drawing.Point(12, 29);
             this.txtIdMotorista.Name = "txtIdMotorista";
+            this.txtIdMotorista.ReadOnly = true;
             this.txtIdMotorista.Size = new System.Drawing.Size(100, 20);
             this.txtIdMotorista.TabIndex = 2;
             // 
@@ -254,7 +255,8 @@
             this.Controls.Add(this.btnCadastrar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMotorista";
-            this.Text = "Motorista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastrando novo motorista";
             this.Load += new System.EventHandler(this.FrmMotorista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMotoristas)).EndInit();
             this.ResumeLayout(false);

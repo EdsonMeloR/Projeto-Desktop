@@ -51,9 +51,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Id Nivel";
+            this.label1.Text = "ID Nivel";
             // 
             // label2
             // 
@@ -105,6 +105,7 @@
             this.Controls.Add(this.txtIdNivel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNivel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nivel";
             this.Load += new System.EventHandler(this.FrmNivel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNiveis)).EndInit();

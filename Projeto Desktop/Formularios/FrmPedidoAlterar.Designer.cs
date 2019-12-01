@@ -272,9 +272,9 @@
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(5, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 59;
-            this.label1.Text = "Id Pedido";
+            this.label1.Text = "ID Pedido";
             // 
             // FrmPedidoAlterar
             // 
@@ -286,6 +286,7 @@
             this.Controls.Add(this.grpPedidos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPedidoAlterar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Pedido";
             this.Load += new System.EventHandler(this.FrmPedidoAlterar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosCargas)).EndInit();
