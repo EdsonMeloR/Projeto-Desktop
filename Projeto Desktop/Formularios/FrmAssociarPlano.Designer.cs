@@ -329,6 +329,7 @@
             this.Controls.Add(this.cmbPlanos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAssociarPlano";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Associar Plano ao Cliente";
             this.Load += new System.EventHandler(this.FrmAssociarPlano_Load);
             this.grpPlano.ResumeLayout(false);
