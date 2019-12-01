@@ -106,11 +106,26 @@ namespace Projeto_Desktop.Formularios
             try
             {
                 List<Carga> listaSelecionada = new List<Carga>();
+                v.ConsultarVeiculoId(Convert.ToInt32(cmbVeiculos.SelectedValue));
                 for (int i = 0; i < dgvCargasPedido.SelectedRows.Count; i++)
                 {
                     Carga c = new Carga();
+                    if (Convert.ToDouble(dgvCargasPedido.SelectedRows[i].Cells[5].Value) > v.Altura * v.Largura * v.Comprimento)
+                    {
+                        throw new Exception("A carga " + dgvCargasPedido.SelectedRows[i].Cells[0].Value + " possui uma cubagem maior do que o caminhão");
+                    }
+                    //Somando cubagem dos itens já adicionados
+                    double soma = 0;
+                    for (int ix = 0; ix < dgvCargasAdicionadas.Rows.Count; ix++)
+                    {
+                        soma += Convert.ToDouble(dgvCargasAdicionadas.Rows[i].Cells[5].Value);
+                    }
+                    if (soma + Convert.ToDouble(dgvCargasPedido.Rows[i].Cells[5].Value) > v.Altura * v.Largura * v.Comprimento)
+                    {
+                        throw new Exception("Limite de cubagem excedido !!");
+                    }                    
                     c.Id = Convert.ToInt32(dgvCargasPedido.Rows[dgvCargasPedido.SelectedRows[i].Index].Cells[0].Value);
-                    listaSelecionada.Add(c);
+                    listaSelecionada.Add(c);                                       
                 }
                 var a = dgvCargasPedido.SelectedRows;
                 for (int i = 0; i < a.Count; i++)
@@ -132,7 +147,7 @@ namespace Projeto_Desktop.Formularios
             }
             catch(Exception ex)
             {
-                ex.Message.ToString();
+                MessageBox.Show(ex.Message.ToString(), "Cubagem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -393,14 +408,14 @@ namespace Projeto_Desktop.Formularios
                 p.Add("Valor frete: " + txtValorFrete.Text);
                 if (plano.Id > 0)
                 {
-                    p.Add("Desconto Plano: 3%");
-                    var a = Convert.ToDouble(txtValorFrete.Text) / 0.003;
-                    p.Add("Valor Final: " + a.ToString("C"));
+                    p.Add("\nDesconto Plano: 5%");
+                    var a = Convert.ToDouble(txtValorFrete.Text) - (Convert.ToDouble(txtValorFrete.Text) * 0.05);
+                    p.Add("\nValor Final: " + a.ToString("C"));
                 }                    
                 else
                 {
                     p.Add("Desconto Plano: 0%");
-                    p.Add("Valor Final: " + Convert.ToDouble(txtValorFrete.Text).ToString("C"));
+                    p.Add("\nValor Final: " + Convert.ToDouble(txtValorFrete.Text).ToString("C"));
                 }                
                 doc.Add(p);
                 doc.Close();
@@ -408,7 +423,7 @@ namespace Projeto_Desktop.Formularios
                 if (dgvCargasPedido.Rows.Count > 0 && Convert.ToInt32(dgvCargasPedido.Rows[0].Cells[0].Value) > 0)
                 {
                     MessageBox.Show("Ainda há cargas a serem adicionadas\nGere outra nota de transporte !!", "Cargas Pendentes", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cmbNotasGeradas.Items.Add(nt);
+                    cmbNotasGeradas.Items.Add(nt.Id);
                     txtDistancia.Text = string.Empty;
                     txtIdNotaTransporte.Text = string.Empty;
                     txtValorFrete.Text = string.Empty;
@@ -421,6 +436,8 @@ namespace Projeto_Desktop.Formularios
                     {
                         dgvCargasAdicionadas.Rows.RemoveAt(0);
                     }
+                    ped = new Pedido();
+                    ped.AlterarPedido("Finalizado", Convert.ToInt32(txtIdPedido.Text));
                 }
                 else
                 {

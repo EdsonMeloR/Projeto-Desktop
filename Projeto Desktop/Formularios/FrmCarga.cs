@@ -170,6 +170,7 @@ namespace Projeto_Desktop.Formularios
             pedido.ConsultarPedido(Convert.ToInt32(txtIdPedido.Text));
             FrmNotaTransporte frm = new FrmNotaTransporte(pedido);
             frm.Show();
+            this.Close();
         }
     }
 }
