@@ -57,6 +57,7 @@
             this.btnMeuUsuario = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.visualizarEntregaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +142,8 @@
             // 
             // entregasToolStripMenuItem
             // 
+            this.entregasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarEntregaToolStripMenuItem});
             resources.ApplyResources(this.entregasToolStripMenuItem, "entregasToolStripMenuItem");
             this.entregasToolStripMenuItem.Name = "entregasToolStripMenuItem";
             // 
@@ -279,6 +282,11 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // visualizarEntregaToolStripMenuItem
+            // 
+            this.visualizarEntregaToolStripMenuItem.Name = "visualizarEntregaToolStripMenuItem";
+            resources.ApplyResources(this.visualizarEntregaToolStripMenuItem, "visualizarEntregaToolStripMenuItem");
+            // 
             // FrmPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -330,6 +338,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.ToolStripMenuItem tiposCargasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarEntregaToolStripMenuItem;
     }
 }
 

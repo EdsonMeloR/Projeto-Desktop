@@ -188,6 +188,12 @@
   <data name="clienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
+  <data name="visualizarEntregaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 26</value>
+  </data>
+  <data name="visualizarEntregaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Visualizar Entrega</value>
+  </data>
   <data name="entregasToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 14.25pt</value>
   </data>
@@ -4977,6 +4983,12 @@
     <value>veiculoToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;veiculoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;visualizarEntregaToolStripMenuItem.Name" xml:space="preserve">
+    <value>visualizarEntregaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;visualizarEntregaToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
