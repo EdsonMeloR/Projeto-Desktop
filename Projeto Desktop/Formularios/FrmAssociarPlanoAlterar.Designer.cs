@@ -149,14 +149,14 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(353, 60);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(133, 13);
+            this.label19.Size = new System.Drawing.Size(135, 13);
             this.label19.TabIndex = 23;
-            this.label19.Text = "Id Plano Associado Cliente";
+            this.label19.Text = "ID Plano Associado Cliente";
             // 
             // btnAtualizarPlano
             // 
             this.btnAtualizarPlano.Enabled = false;
-            this.btnAtualizarPlano.Location = new System.Drawing.Point(6, 247);
+            this.btnAtualizarPlano.Location = new System.Drawing.Point(519, 247);
             this.btnAtualizarPlano.Name = "btnAtualizarPlano";
             this.btnAtualizarPlano.Size = new System.Drawing.Size(126, 23);
             this.btnAtualizarPlano.TabIndex = 22;
@@ -380,7 +380,7 @@
             // 
             // btnAlterarPlanoAssociado
             // 
-            this.btnAlterarPlanoAssociado.Location = new System.Drawing.Point(6, 282);
+            this.btnAlterarPlanoAssociado.Location = new System.Drawing.Point(513, 282);
             this.btnAlterarPlanoAssociado.Name = "btnAlterarPlanoAssociado";
             this.btnAlterarPlanoAssociado.Size = new System.Drawing.Size(126, 36);
             this.btnAlterarPlanoAssociado.TabIndex = 16;
@@ -526,6 +526,7 @@
             this.Controls.Add(this.cmbClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAssociarPlanoAlterar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar Plano Associado";
             this.Load += new System.EventHandler(this.FrmAssociarPlanoAlterar_Load);
             this.grpAtualizarPlano.ResumeLayout(false);
