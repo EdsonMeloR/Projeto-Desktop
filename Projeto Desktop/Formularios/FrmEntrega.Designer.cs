@@ -45,7 +45,7 @@
             // 
             this.pcbAssinatura.Location = new System.Drawing.Point(12, 65);
             this.pcbAssinatura.Name = "pcbAssinatura";
-            this.pcbAssinatura.Size = new System.Drawing.Size(375, 161);
+            this.pcbAssinatura.Size = new System.Drawing.Size(640, 215);
             this.pcbAssinatura.TabIndex = 0;
             this.pcbAssinatura.TabStop = false;
             // 
@@ -111,7 +111,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(102, 232);
+            this.button1.Location = new System.Drawing.Point(102, 286);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 27);
             this.button1.TabIndex = 9;
@@ -120,7 +120,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 232);
+            this.button2.Location = new System.Drawing.Point(12, 286);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 27);
             this.button2.TabIndex = 10;
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 286);
+            this.ClientSize = new System.Drawing.Size(664, 319);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
