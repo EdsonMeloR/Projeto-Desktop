@@ -4925,6 +4925,12 @@
   <data name="&gt;&gt;entregasToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;visualizarEntregaToolStripMenuItem.Name" xml:space="preserve">
+    <value>visualizarEntregaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;visualizarEntregaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;administraçãoToolStripMenuItem.Name" xml:space="preserve">
     <value>administraçãoToolStripMenuItem</value>
   </data>
@@ -4983,12 +4989,6 @@
     <value>veiculoToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;veiculoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;visualizarEntregaToolStripMenuItem.Name" xml:space="preserve">
-    <value>visualizarEntregaToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;visualizarEntregaToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

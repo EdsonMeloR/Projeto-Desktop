@@ -11,8 +11,8 @@ namespace Projeto_Desktop.Classes
     public class Entrega
     {
         //Atributos
-        private int id;        
-        private byte[] assinatura;
+        private int id;
+        private Byte[] assinatura;
         private string rg;
         private DateTime data;
         private string status;
@@ -36,26 +36,27 @@ namespace Projeto_Desktop.Classes
             this.IdNotaTransporte = idNotaTransporte;
         }
         public Entrega()
-        { }
+        {
+            IdNotaTransporte = new NotaTransporte();
+        }
         //Métodos
         /// <summary>
         /// Inserindo uma nova entrega
         /// </summary>       
-        public void InserirEntrega(byte[] _assinatura, string _rg, DateTime _data, string _status, int _idNotaTransporte)
+        public void InserirEntrega(byte[] _assinatura, string _rg, string _status, int _idNotaTransporte)
         {
             db = new Banco();
-            var comm = db.AbrirConexao();
             try
             {
-                comm.CommandType = CommandType.StoredProcedure;
+                var comm = db.AbrirConexao();
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "insert_entrega";
-                comm.Parameters.Add("_assinatura", MySqlDbType.Blob).Value = _assinatura;
+                comm.Parameters.Add("_assinatura", MySqlDbType.LongBlob).Value = _assinatura;
                 comm.Parameters.Add("_rg", MySqlDbType.VarChar).Value = _rg;
-                comm.Parameters.Add("_data", MySqlDbType.DateTime).Value = _data;
                 comm.Parameters.Add("_status", MySqlDbType.VarChar).Value = _status;
                 comm.Parameters.Add("_idnotatransporte", MySqlDbType.Int32).Value = _idNotaTransporte;
                 var dr = comm.ExecuteReader();
-                while(dr.Read())
+                while (dr.Read())
                 {
                     this.Id = dr.GetInt32(0);
                 }
@@ -63,20 +64,6 @@ namespace Projeto_Desktop.Classes
             catch (Exception e)
             {
                 e.Message.ToString();
-            }
-            finally
-            {
-                try
-                {
-                    if (comm != null)
-                        comm.Connection.Close();
-                    else
-                        throw new Exception("Falha ao conectar-se com o banco de dados");
-                }
-                catch (Exception ex)
-                {
-                    ex.Message.ToString();
-                }
             }
         }
         /// <summary>
@@ -86,10 +73,10 @@ namespace Projeto_Desktop.Classes
         public bool AtualizarEntrega(int id, string status)
         {
             db = new Banco();
-            var comm = db.AbrirConexao();
             try
             {
-                comm.CommandType = CommandType.StoredProcedure;
+                var comm = db.AbrirConexao();
+                comm.CommandType = System.Data.CommandType.StoredProcedure;
                 comm.CommandText = "update_entrega";
                 comm.Parameters.Add("_identrega", MySqlDbType.Int32).Value = id;
                 comm.Parameters.Add("status", MySqlDbType.VarChar).Value = status;
@@ -101,20 +88,6 @@ namespace Projeto_Desktop.Classes
                 e.Message.ToString();
                 return false;
             }
-            finally
-            {
-                try
-                {
-                    if (comm != null)
-                        comm.Connection.Close();
-                    else
-                        throw new Exception("Falha ao conectar-se com o banco de dados");
-                }
-                catch (Exception ex)
-                {
-                    ex.Message.ToString();
-                }
-            }
         }
         /// <summary>
         /// Consultando entrega
@@ -122,31 +95,24 @@ namespace Projeto_Desktop.Classes
         public void ConsultarEntrega(int _id)
         {
             db = new Banco();
-            var comm = db.AbrirConexao();
             try
-            {                
+            {
+                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from entrega where idEntrega = " + _id;
                 var dr = comm.ExecuteReader();
-                while(dr.Read())
+                while (dr.Read())
                 {
                     this.Id = dr.GetInt32(0);
-                    //this.Assinatura = dr.GetByte(1);
+                    this.Assinatura = (byte[])dr["Assinatura"];
                     this.Rg = dr.GetString(2);
                     this.Data = dr.GetDateTime(3);
                     this.Status = dr.GetString(4);
                     this.IdNotaTransporte.Id = dr.GetInt32(5);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 e.Message.ToString();
-            }
-            finally
-            {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
             }
         }
         /// <summary>
@@ -157,53 +123,15 @@ namespace Projeto_Desktop.Classes
             db = new Banco();
             Entrega e = new Entrega();
             List<Entrega> lista = new List<Entrega>();
-            var comm = db.AbrirConexao();
             try
-            {                
+            {
+                var comm = db.AbrirConexao();
                 comm.CommandText = "select * from entrega where idNotaTransporte = " + idNota;
                 var dr = comm.ExecuteReader();
                 while (dr.Read())
                 {
                     e.Id = dr.GetInt32(0);
-                    //this.Assinatura = dr.GetByte(1);
-                    e.Rg = dr.GetString(2);
-                    e.Data = dr.GetDateTime(3);
-                    e.Status = dr.GetString(4);
-                    e.IdNotaTransporte.Id = dr.GetInt32(5);
-                    lista.Add(e);
-                }
-                return lista;
-            }
-            catch(Exception ex)
-            {
-                ex.Message.ToString();
-                return null;
-            }
-            finally
-            {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
-            }
-        }
-        /// <summary>
-        /// Retorna uma lista de entregas
-        /// </summary>        
-        public List<Entrega> ListarEntregas()
-        {
-            db = new Banco();
-            Entrega e = new Entrega();
-            List<Entrega> lista = new List<Entrega>();
-            var comm = db.AbrirConexao();
-            try
-            {                
-                comm.CommandText = "select * from entrega ";
-                var dr = comm.ExecuteReader();
-                while (dr.Read())
-                {
-                    e.Id = dr.GetInt32(0);
-                    //this.Assinatura = dr.GetByte(1);
+                    e.Assinatura = BitConverter.GetBytes(dr.GetBytes(1, 0, null, 0, int.MaxValue));
                     e.Rg = dr.GetString(2);
                     e.Data = dr.GetDateTime(3);
                     e.Status = dr.GetString(4);
@@ -217,12 +145,36 @@ namespace Projeto_Desktop.Classes
                 ex.Message.ToString();
                 return null;
             }
-            finally
+        }
+        /// <summary>
+        /// Retorna uma lista de entregas
+        /// </summary>        
+        public List<Entrega> ListarEntregas()
+        {
+            db = new Banco();
+            Entrega e = new Entrega();
+            List<Entrega> lista = new List<Entrega>();
+            try
             {
-                if (comm != null)
-                    comm.Connection.Close();
-                else
-                    throw new Exception("Falha ao conectar-se com o banco de dados");
+                var comm = db.AbrirConexao();
+                comm.CommandText = "select * from entrega ";
+                var dr = comm.ExecuteReader();
+                while (dr.Read())
+                {
+                    e.Id = dr.GetInt32(0);
+                    e.Assinatura = BitConverter.GetBytes(dr.GetBytes(1, 1, null, 0, int.MaxValue));
+                    e.Rg = dr.GetString(2);
+                    e.Data = dr.GetDateTime(3);
+                    e.Status = dr.GetString(4);
+                    e.IdNotaTransporte.Id = dr.GetInt32(5);
+                    lista.Add(e);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+                return null;
             }
         }
     }

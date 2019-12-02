@@ -233,5 +233,11 @@ namespace Projeto_Desktop
             FrmTipoCarga frm = new FrmTipoCarga();
             frm.Show();
         }
+
+        private void visualizarEntregaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEntrega frm = new FrmEntrega();
+            frm.Show();
+        }
     }
 }

@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDataEntrega = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAssinatura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,17 +45,19 @@
             // 
             this.pcbAssinatura.Location = new System.Drawing.Point(12, 65);
             this.pcbAssinatura.Name = "pcbAssinatura";
-            this.pcbAssinatura.Size = new System.Drawing.Size(336, 87);
+            this.pcbAssinatura.Size = new System.Drawing.Size(375, 161);
             this.pcbAssinatura.TabIndex = 0;
             this.pcbAssinatura.TabStop = false;
             // 
             // cmbEntregas
             // 
+            this.cmbEntregas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEntregas.FormattingEnabled = true;
             this.cmbEntregas.Location = new System.Drawing.Point(12, 25);
             this.cmbEntregas.Name = "cmbEntregas";
             this.cmbEntregas.Size = new System.Drawing.Size(121, 21);
             this.cmbEntregas.TabIndex = 1;
+            this.cmbEntregas.SelectedIndexChanged += new System.EventHandler(this.cmbEntregas_SelectedIndexChanged);
             // 
             // txtIdNota
             // 
@@ -105,11 +109,31 @@
             this.txtDataEntrega.Size = new System.Drawing.Size(121, 20);
             this.txtDataEntrega.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(102, 232);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 27);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Listar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 232);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 27);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Listar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // FrmEntrega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(407, 286);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDataEntrega);
             this.Controls.Add(this.label2);
@@ -120,6 +144,7 @@
             this.Controls.Add(this.pcbAssinatura);
             this.Name = "FrmEntrega";
             this.Text = "Entrega";
+            this.Load += new System.EventHandler(this.FrmEntrega_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbAssinatura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -136,5 +161,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDataEntrega;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

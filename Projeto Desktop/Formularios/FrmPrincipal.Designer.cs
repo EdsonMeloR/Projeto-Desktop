@@ -40,6 +40,7 @@
             this.alterarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.associarPlanoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarEntregaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.niveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,6 @@
             this.btnMeuUsuario = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.visualizarEntregaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -146,6 +146,12 @@
             this.visualizarEntregaToolStripMenuItem});
             resources.ApplyResources(this.entregasToolStripMenuItem, "entregasToolStripMenuItem");
             this.entregasToolStripMenuItem.Name = "entregasToolStripMenuItem";
+            // 
+            // visualizarEntregaToolStripMenuItem
+            // 
+            this.visualizarEntregaToolStripMenuItem.Name = "visualizarEntregaToolStripMenuItem";
+            resources.ApplyResources(this.visualizarEntregaToolStripMenuItem, "visualizarEntregaToolStripMenuItem");
+            this.visualizarEntregaToolStripMenuItem.Click += new System.EventHandler(this.visualizarEntregaToolStripMenuItem_Click);
             // 
             // administraçãoToolStripMenuItem
             // 
@@ -281,11 +287,6 @@
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // visualizarEntregaToolStripMenuItem
-            // 
-            this.visualizarEntregaToolStripMenuItem.Name = "visualizarEntregaToolStripMenuItem";
-            resources.ApplyResources(this.visualizarEntregaToolStripMenuItem, "visualizarEntregaToolStripMenuItem");
             // 
             // FrmPrincipal
             // 
