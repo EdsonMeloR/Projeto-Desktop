@@ -35,6 +35,7 @@ namespace Projeto_Desktop.Formularios
         }        
         private void FrmNotaTransporte_Load(object sender, EventArgs e)
         {            
+            
             try
             {
                 tf = new TipoFrete();
@@ -47,7 +48,6 @@ namespace Projeto_Desktop.Formularios
                 cmbMotoristas.ValueMember = "IdMotorista";
                 cmbMotoristas.DisplayMember = "Nome";
                 cmbMotoristas.DataSource = listaM;
-                cmbMotoristas.Text += listaM[cmbMotoristas.SelectedIndex].Rg;
                 //Carregando combo box de Veiculos
                 v = new Veiculo();
                 var listaV = v.ListarVeiculos();

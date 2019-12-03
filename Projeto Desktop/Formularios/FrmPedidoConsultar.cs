@@ -120,12 +120,18 @@ namespace Projeto_Desktop.Formularios
 
         private void btnListarCargasPedido_Click_1(object sender, EventArgs e)
         {
-            Carga c = new Carga();
-            DataTable dt = new DataTable();
-            dt.Load(c.ListarCargasPedidoInnerDR(Convert.ToInt32(cmbPedidos.SelectedValue)));
-            dgvPedidosCargas.DataSource = dt;
-            dgvPedidosCargas.AutoResizeColumns();
-            
+            try
+            {
+                Carga c = new Carga();
+                DataTable dt = new DataTable();
+                dt.Load(c.ListarCargasPedidoInnerDR(Convert.ToInt32(cmbPedidos.SelectedValue)));
+                dgvPedidosCargas.DataSource = dt;
+                dgvPedidosCargas.AutoResizeColumns();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void btnVisualizarNota_Click(object sender, EventArgs e)
